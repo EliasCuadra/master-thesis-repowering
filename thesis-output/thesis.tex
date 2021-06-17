@@ -4,7 +4,9 @@
 % --- PREAMBLE ---
 % -------------------------------
 \documentclass[a4paper,11pt]{article}
-
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{tgtermes}
 \usepackage{amsmath,amssymb,amsfonts,amsthm}    % Typical maths resource packages
 \usepackage{graphicx}                           % Packages to allow inclusion of graphics
 \usepackage[authoryear]{natbib}                 % literature reference style
@@ -58,7 +60,7 @@
 % save thesis parameters for later
 \newcommand{\thesistype}{Master's Thesis}
 \newcommand{\thesisauthor}{Elias Cuadra Braatz}
-\newcommand{\thesisdate}{MMMM dd, yyyy}
+\newcommand{\thesisdate}{June 17, 2021}
 
 % define tightlist to work with newer versions of pandoc
 \providecommand{\tightlist}{%
@@ -156,7 +158,7 @@
   in partial fulfillment of the requirements \\
   for the degree of \\
   \textbf{Master of Environmental Sciences} \\\vspace{0.5cm}
-  MMMM dd, yyyy
+  June 17, 2021
   
 \end{center}
 
@@ -177,7 +179,7 @@
 \addcontentsline{toc}{section}{Abstract}
 
 This is the template for a thesis at the Chair of Econometrics of
-Humboldt--UniversitÃ¤t zu Berlin. A popular approach to write a thesis or a
+Humboldt--Universit"at zu Berlin. A popular approach to write a thesis or a
 paper is the IMRAD method (Introduction, Methods, Results and Discussion). This
 approach is not mandatory! You can find more information about formal
 requirements in the booklet `Hinweise zur Gestaltung der Ã¤uÃŸeren Form von
@@ -220,29 +222,6 @@ busy reader to obtain quickly a clear idea of the thesis content.
 \pagestyle{plain}       
 \setcounter{page}{1}    % start page numbering anew
 \pagenumbering{arabic}  % page numbers in arabic style
-
-\hypertarget{about-this-thesis-template}{%
-\section*{About this Thesis Template}\label{about-this-thesis-template}}
-\addcontentsline{toc}{section}{About this Thesis Template}
-
-Welcome to the thesis template. This template is based on (and in many places
-copied directly from) the HU Berlin School of Business and Economics LaTeX
-template, but hopefully it will provide a nicer interface for those that have
-never used LaTeX before.
-
-\hypertarget{why-use-r-markdown}{%
-\subsection*{Why use R Markdown?}\label{why-use-r-markdown}}
-\addcontentsline{toc}{subsection}{Why use R Markdown?}
-
-\emph{R Markdown} creates a simple and straightforward way to interface with the
-beauty of LaTeX. Packages have been written in \textbf{R} to work directly with LaTeX
-to produce nicely formatting tables and paragraphs.
-
-\emph{R Markdown} also allows you to read in your data, to analyze it and to
-visualize it using \textbf{R} functions, and also to provide the documentation and
-commentary on the results of your project. Using \emph{R Markdown} will also allow
-you to easily keep track of your analyses in \textbf{R} chunks of code, with the
-resulting plots and output included as well.
 
 \hypertarget{introduction}{%
 \section{Introduction}\label{introduction}}

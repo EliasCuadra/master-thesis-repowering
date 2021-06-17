@@ -1,2 +1,2 @@
-\contentsline {section}{List of Figures}{vi}{section*.2}%
-\contentsline {section}{List of Tables}{vii}{section*.3}%
+\contentsline {section}{List of Figures}{5}{section*.2}%
+\contentsline {section}{List of Tables}{6}{section*.3}%

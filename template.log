@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.6.13)  15 JUN 2021 18:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.6.13)  17 JUN 2021 11:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -394,6 +394,10 @@ Package: footnotebackref 2012/07/01 v1.0 Backreferences for footnotes (Holger L
 ange)
 \c@BackrefHyperFootnoteCounter=\count293
 )
+(c:/Users/Dell/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/setspace/setspace.s
+ty
+Package: setspace 2011/12/19 v6.7a set line spacing
+)
 (c:/Users/Dell/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/koma-script/scrlaye
 r-scrpage.sty
 Package: scrlayer-scrpage 2021/03/17 v3.33 KOMA-Script package (end user interf
@@ -444,7 +448,7 @@ Package scrlayer-scrpage Info: auto-selection of `pagestyleset=standard'.
 1: section
 
 Package scrlayer-scrpage Warning: replacing deprecated \clearscrheading by
-(scrlayer-scrpage)                \clearmainofpairofpagestyles on input line 29
+(scrlayer-scrpage)                \clearmainofpairofpagestyles on input line 30
 .
 
 
@@ -454,17 +458,17 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.46 $
+l.47 $
       if(space_between_paragraphs)$
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 46.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 47.
 
 (c:/Users/Dell/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 46.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 47.
 
 
 (c:/Users/Dell/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -485,7 +489,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.48 $
+l.49 $
       endif$
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -497,7 +501,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.72 $
+l.73 $
       for(header-includes)$
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -509,7 +513,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.78 $
+l.79 $
       if(csl-refs)$
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -537,24 +541,24 @@ File: l3backend-pdftex.def 2021-05-07 L3 backend support: PDF output (pdfTeX)
 ) (./template.aux)
 \openout1 = `template.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 133.
-LaTeX Font Info:    ... okay on input line 133.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 133.
-LaTeX Font Info:    ... okay on input line 133.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 133.
-LaTeX Font Info:    ... okay on input line 133.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 133.
-LaTeX Font Info:    ... okay on input line 133.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 133.
-LaTeX Font Info:    ... okay on input line 133.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 133.
-LaTeX Font Info:    ... okay on input line 133.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 133.
-LaTeX Font Info:    ... okay on input line 133.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 133.
-LaTeX Font Info:    ... okay on input line 133.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 133.
-LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 134.
+LaTeX Font Info:    ... okay on input line 134.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 134.
+LaTeX Font Info:    ... okay on input line 134.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 134.
+LaTeX Font Info:    ... okay on input line 134.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 134.
+LaTeX Font Info:    ... okay on input line 134.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 134.
+LaTeX Font Info:    ... okay on input line 134.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 134.
+LaTeX Font Info:    ... okay on input line 134.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 134.
+LaTeX Font Info:    ... okay on input line 134.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 134.
+LaTeX Font Info:    ... okay on input line 134.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 134.
+LaTeX Font Info:    ... okay on input line 134.
 
 (c:/Users/Dell/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstop
 df-base.sty
@@ -582,7 +586,7 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package color Info: Driver file: pdftex.def on input line 149.
 )
-Package hyperref Info: Link coloring OFF on input line 133.
+Package hyperref Info: Link coloring OFF on input line 134.
 
 (c:/Users/Dell/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.st
 y
@@ -598,15 +602,15 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count299
 )
-LaTeX Info: Redefining \ref on input line 133.
-LaTeX Info: Redefining \pageref on input line 133.
-LaTeX Info: Redefining \nameref on input line 133.
+LaTeX Info: Redefining \ref on input line 134.
+LaTeX Info: Redefining \pageref on input line 134.
+LaTeX Info: Redefining \nameref on input line 134.
  (./template.out) (./template.out)
 \@outlinefile=\write3
 \openout3 = `template.out'.
 
 Package scrlayer Info: Setting magic \footheight to \baselineskip while
-(scrlayer)             \begin{document} on input line 133.
+(scrlayer)             \begin{document} on input line 134.
 
 
 Package scrlayer-scrpage Warning: Very small head height detected!
@@ -624,16 +628,16 @@ Package scrlayer-scrpage Warning: Very small head height detected!
 <Uni-Logo-2.jpg, id=12, 4701.565pt x 753.81625pt>
 File: Uni-Logo-2.jpg Graphic file (type jpg)
 <use Uni-Logo-2.jpg>
-Package pdftex.def Info: Uni-Logo-2.jpg  used on input line 151.
-(pdftex.def)             Requested size: 330.76328pt x 53.02557pt.
-
-Overfull \vbox (26.00267pt too high) has occurred while \output is active []
-
-
+Package pdftex.def Info: Uni-Logo-2.jpg  used on input line 150.
+(pdftex.def)             Requested size: 220.50885pt x 35.34654pt.
 [1
 
 {c:/Users/Dell/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex
-.map} <./Uni-Logo-2.jpg>]
+.map} <./Uni-Logo-2.jpg>] (./template.toc)
+\tf@toc=\write4
+\openout4 = `template.toc'.
+
+
 
 Package scrlayer-scrpage Warning: \headheight to low.
 (scrlayer-scrpage)                At least 20.4pt needed,
@@ -644,44 +648,51 @@ Package scrlayer-scrpage Warning: \headheight to low.
 (scrlayer-scrpage)                  \setlength{\headheight}{20.4pt}
 (scrlayer-scrpage)                in your preamble.
 (scrlayer-scrpage)                I'll also decrease \topmargin on input line 1
-80.
+78.
 
 
 Overfull \vbox (5.43991pt too high) has occurred while \output is active []
 
 
-[1] [2] (./template.toc)
-\tf@toc=\write4
-\openout4 = `template.toc'.
+[2] [3
 
- [3] [4
-
-] [5] (./template.lof)
+] [4] (./template.lof)
 \tf@lof=\write5
 \openout5 = `template.lof'.
 
- [6] (./template.lot)
+ [5] (./template.lot)
 \tf@lot=\write6
 \openout6 = `template.lot'.
 
-
-[7]pdfTeX warning (ext4): destination with the same identifier (name{page.1}) h
-as been already used, duplicate ignored
+ [6]pdfTeX warning (ext4): destination with the same identifier (name{page.1}) 
+has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.233 \newpage
-               [1] [2] (./template.aux)
+l.230 \newpage
+               [1]
+> \OT1/cmr/m/n/10.95 .
+<recently read> \font 
+                      
+l.240 \showthe\font
+                   
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.250 \end{document}
+                     [2] (./template.aux)
 Package rerunfilecheck Info: File `template.out' has not changed.
 (rerunfilecheck)             Checksum: ECE62534941880E07A4C5AA351DAEFD7;245.
  ) 
 Here is how much of TeX's memory you used:
- 13431 strings out of 480403
- 233767 string characters out of 5894662
- 571633 words of memory out of 5000000
- 30933 multiletter control sequences out of 15000+600000
+ 13474 strings out of 480403
+ 235021 string characters out of 5894662
+ 571923 words of memory out of 5000000
+ 30975 multiletter control sequences out of 15000+600000
  413989 words of font info for 67 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 123i,19n,122p,508b,421s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 123i,19n,122p,508b,434s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c:/Users/Dell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmbx10.pfb><c:/Users/Dell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/pu
 blic/amsfonts/cm/cmbx12.pfb><c:/Users/Dell/AppData/Roaming/TinyTeX/texmf-dist/f
@@ -690,11 +701,12 @@ onts/type1/public/amsfonts/cm/cmmi10.pfb><c:/Users/Dell/AppData/Roaming/TinyTeX
 aming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/Users/Del
 l/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><
 c:/Users/Dell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmsy10.pfb>
-Output written on template.pdf (10 pages, 430932 bytes).
+/cmsl10.pfb><c:/Users/Dell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmsy10.pfb>
+Output written on template.pdf (8 pages, 441341 bytes).
 PDF statistics:
- 103 PDF objects out of 1000 (max. 8388607)
- 75 compressed objects within 1 object stream
- 15 named destinations out of 1000 (max. 500000)
+ 98 PDF objects out of 1000 (max. 8388607)
+ 70 compressed objects within 1 object stream
+ 12 named destinations out of 1000 (max. 500000)
  22 words of extra memory for PDF output out of 10000 (max. 10000000)
 
