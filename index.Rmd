@@ -25,14 +25,15 @@ toc: true                              # table of contents
 toc_depth: 3
 lot: true                              # list of tables
 lof: true                              # list of figures
-link-citations: true
-bibliography: bib/references.bib       # bibliography file
+link-citations: TRUE
+bibliography: bib/repowering_final.bib       # bibliography file
+csl: csl/abhandlungen-aus-dem-mathematischen-seminar-der-universitat-hamburg.csl
 #
 # Rendering Options -----------------------------------------------------------
 #
 knit: "bookdown::render_book"
 output: 
-  huwiwidown::thesis_pdf 
+  huwiwidown::thesis_pdf
 space_between_paragraphs: true       # if you want spaces bt paragraph
 # header-includes:     # if including additional latex packages or commands
   # - \setlength{\parindent}{17pt}

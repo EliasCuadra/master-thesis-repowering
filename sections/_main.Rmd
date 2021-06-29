@@ -1,0 +1,332 @@
+---
+#
+# Required Information --------------------------------------------------------
+# change lines 5 - 15
+title: "Windenergy and repowering potential in Rhineland-Palatinate from 2021 until 2030"
+type: "Master's Thesis"
+author: "Elias Cuadra Braatz"
+matriculation_number: "219202265"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+university: "Universität Koblenz - Landau"
+institute: "Institute of Environmental Sciences" 
+chair: "Environmental Economics"
+chair2: "Chair: Prof. Oliver Frör"
+advisor1: "Dr. Stefan Jergentz"
+advisor2: "Dr. Nanki Sidhu"            
+program: "Master of Environmental Sciences"
+#
+abstract: |  
+  `r if(knitr:::is_latex_output()) paste(readLines("prelim/00-abstract.Rmd"), collapse = '\n  ')`
+acknowledge: |  
+  `r if(knitr:::is_latex_output()) paste(readLines("prelim/00-acknowledge.Rmd"), collapse = '\n  ')`
+abbreviations: |  
+  `r if(knitr:::is_latex_output()) paste(readLines("prelim/00-abbreviations.Rmd"), collapse = '\n  ')`
+toc: true                              # table of contents
+toc_depth: 3
+lot: true                              # list of tables
+lof: true                              # list of figures
+link-citations: TRUE
+bibliography: ../bib/repowering_final.bib       # bibliography file
+csl: csl/abhandlungen-aus-dem-mathematischen-seminar-der-universitat-hamburg.csl
+#
+# Rendering Options -----------------------------------------------------------
+#
+knit: "bookdown::render_book"
+output: 
+  huwiwidown::thesis_pdf
+space_between_paragraphs: true       # if you want spaces bt paragraph
+# header-includes:     # if including additional latex packages or commands
+  # - \setlength{\parindent}{17pt}
+---
+
+
+```{r include_packages, include = FALSE}
+# This chunk ensures that the `huwiwidown` package is installed and loaded. This
+# package includes the template files for the thesis.
+if (!require(devtools)) {
+  install.packages("devtools", repos = "http://cran.rstudio.com")
+}
+if (!require(huwiwidown)) {
+  devtools::install_github("phister/huwiwidown")
+  library(huwiwidown)
+}
+```
+
+
+
+
+
+
+<!--chapter:end:index.Rmd-->
+
+# Introduction
+
+<div style="text-align: justify">
+This work was executed and written in scientific recognition of the importance of reducing greenhouse gas emissions and expanding renewable energies to mitigate the effects of climate change. 
+This study was also carried out on behalf of the state-owned energy agency @EnergieagenturRheinlandPfalz.2021 within the project “municipal greenhouse gas accounting and regional climate protection portals in Rhineland-Palatinate” @KomBiReK.2021 which is funded by the “European Regional Development Fund” @EuropeanRegionalDevelopmentFund.2021 and the state of Rhineland-Palatinate. This project supports the creation of municipal climate protection measures in order to achieve the climate protection goals of the municipalities and the state and thereby increases regional added value, ensures sustainability and thus improves the quality of life of all citizens. When developing municipal climate protection, a sound strategy is required regarding the legally anchored striving for climate neutrality of the state of Rhineland-Palatinate (Landesklimaschutzgesetz §4, 2014, @RheinlandPfalz.19.08.2014). Even more pressure comes from the recent press release No. 31/2021 of April 29 in 2021 @Bundesverfassungsgericht.24.03.2021, in which the first Senate of the Federal Constitutional Court decided that the regulations of the Climate Protection Act of December 12 in 2019 [KSG, 2019] on the national climate protection targets and the annual emission quantities permitted up to 2030 are incompatible with fundamental rights, as there are no sufficient criteria for further emission reductions from 2031 onwards. It is stated that the legal requirements are not sufficient to bring about a timely transition to climate neutrality. The legislature has therefore published an adjusted edition of this act that strives for a faster development of renewable energies and the energy transition in general @BundesministeriumfurUmweltNaturschutzundnukleareSicherheit.12.05.2021. This shows that this study is also highly embedded in a socio-economic context.
+The energy transition is a cornerstone of a decent strategy to climate neutrality and Rhineland-Palatinate wants to play a pioneering role in the implementation of the energy transition. The state government publishes on its website that Rhineland-Palatinate will cover 100 % of its electricity needs from renewable energies by 2030. In addition to energy from the sun, water and biomass, two thirds of the electricity generated in 2030 should come from wind power and is therefore the subject of this master thesis @LandesregierungRheinlandPfalz.2021.
+The gross electricity generation in Rhineland-Palatinate from wind power rose in 2017 with 5.9 TWh to 29 % of the total 20.7 TWh generated electricity. The total consumption in the same year was 29.1 TWh @Lehnert.2020. It can be assumed that, on the one hand, electricity consumption will increase in the future due to the electrification of transport and domestic heating, and on the other hand, efficiency measures can also lead to a lower energy consumption. Various scenarios about future electricity consumption assume a slightly reduced to increased, but on average relatively unchanged electricity consumption for the whole of Germany in 2030 @NormanGerhardt.2015. In order to achieve the self-set goals of using two thirds of the electricity demand from wind power with constant or higher electricity demand, electricity generation with wind turbines (WT’s) must be increased to at least 14 TWh per year. If Rhineland-Palatinate wants to become independent of electricity imports, an increase to around 20 TWh is necessary. There are two ways of increasing the amount of electricity generated by wind energy. On the one hand, areas that are still available can be identified and built on with new WPP’s. On the other hand, existing old systems, whose absolute electricity feed-in quantity is low, can be replaced by new, higher and more efficient systems through the so-called "repowering".
+The aim of this work is to develop a methodology for calculating the wind energy potential and its related area consumption at the state level as well as for the districts and association communities in Rhineland-Palatinate. With this results an evaluation of the desired expansion targets should be assessed. The central three questions of this work are therefore:
+
+1.	How much electric energy can be generated by a new wind turbine from 2021 until 2030 in Rhineland-Palatinate per area?
+
+2.	How large is the potential when all wind turbines with a commissioning date before 2005 are repowered?
+
+3.	How much area is needed to generate the target amount of 20 TWh out of wind energy?
+
+In order to answer these questions, the technical fundamentals of the electricity yield from WT’s are explained first. Subsequently, the master and movement data provided by the transmission system operator Amprion, which document all electricity fed into the public grid by WT’s and other technical information, is analysed and a forecasted up to the year 2030. The respective area consumption to generate that electricity is calculated using a GIS based approach. As a by-product the greenhouse gas reduction potential can be derived from the potential for electricity generation. Knowing the electricity potential per area, the required area for the generation targets can be calculated and an assessment of the given expectations can be made subsequently.
+
+</div>
+
+<!--chapter:end:01-intro.Rmd-->
+
+---
+output:
+  bookdown::pdf_document2:
+documentclass: book
+bibliography: ../bib/repowering_final.bib
+---
+# State of the art
+
+## Technical and physical basics
+
+<div style="text-align: justify">
+Wind energy has been used by humans for thousands of years, but the generation of electrical power has only been possible since the 19th century with the beginning of industrialization and is now the subject of constant research and development in the context of the energy transition @Wikipedia.2021. A wind turbine usually consists of the three main components rotor blades, nacelle and tower. The nacelle contains besides other elements the gearbox, the generator, the transformer and the control system @MladenBosnjakovic.2013. The mostly three rotor blades are attached to the rotor hub and absorb the kinetic energy of the wind and convert it into a rotary motion. If the winds are too strong, the rotor blades can be “taken out of the wind” by adjusting the blades, thus protecting the system from damage. Mainly the gearbox and the generator convert the kinetic energy into electricity. However, there are also systems with direct drive and without gear. The nacelle can be rotated to an optimal position when the wind conditions change, and an electromagnetic brake helps to shut down the system when the winds are too strong or during maintenance work. In addition to its load-bearing function, the tower also contains the power lines that conduct electricity to the grid connection of the distribution network @NetzKonstrukteur.16.11.2020.
+
+
+* Present the underlying economic model/theory and give reasons why it is
+  suitable to answer the given problem[^1].
+
+
+
+[^1]: Here is an example of a footnote.
+
+</div>
+
+<!--chapter:end:02-method.Rmd-->
+
+# Data
+
+* Describe the data and its quality.
+
+* How was the data sample selected?
+
+* Provide descriptive statistics such as:
+
+  * time period,
+
+  * item number of observations, data frequency,
+
+  * item mean, median,
+
+  * item min, max, standard deviation,
+
+  * item skewness, kurtosis, Jarque--Bera statistic,
+
+  * item time series plots, histogram.
+
+* For example:
+
+```{r table1, echo=FALSE}
+col_names <- c(
+  "3m", "6m", "1yr", "2yr", "3yr", "5yr", "7yr", "10yr", "12yr", "15yr"
+)
+means     <- c(
+  3.138, 3.191, 3.307, 3.544, 3.756, 4.093, 4.354, 4.621, 4.741, 4.878
+)
+stddev    <- c(
+  0.915, 0.919, 0.935, 0.910, 0.876, 0.825, 0.803, 0.776, 0.768, 0.762
+)
+row_names <- c("Mean", "StD")
+
+df <- matrix(data = c(means, stddev), nrow = 2, byrow = T)
+rownames(df) <- row_names
+colnames(df) <- col_names
+df <- data.frame(df)
+knitr::kable(
+  df,
+  booktabs = TRUE,
+  caption = "Detailed descriptive statistics of location and dispersion for 2100 observed swap rates for the period from February 15, 1999 to March 2, 2007. Swap rates measured as 3.12 (instead of 0.0312).",
+  col.names = col_names, 
+  escape = FALSE
+) %>%
+kable_styling(latex_options = c("HOLD_position")) %>%
+row_spec(2, hline_after = T)
+```
+
+* Allows the reader to judge whether the sample is biased or to evaluate 
+  possible impacts of outliers, for example.
+
+* Here tables can be easily integrated using the `kable()` function in the
+  `knitr` package (with perhaps some additional help from the `kableExtra`
+  package). `kable()` will automatically generate a label for the table
+  environment. That way you don't have to manually enter in the table in LaTex,
+  you can embed tables from R code. 
+
+* Tables can be referenced using `\@ref(label)`, where `label` is `tab:<name>`,
+  where `<name>` is the code chunk label.
+
+* The appearance may look different to tables directly typed with LaTex, due to
+  limitations in `kable()`. To compare:
+    \begin{table}[ht]
+
+    \begin{center}
+        {\footnotesize
+        \begin{tabular}{l|cccccccccc}
+            \hline \hline
+                      & 3m    & 6m    & 1yr   & 2yr   & 3yr   & 5yr   & 7yr   & 10yr  & 12yr  & 15yr   \\
+            \hline
+                Mean   & 3.138 & 3.191 & 3.307 & 3.544 & 3.756 & 4.093 & 4.354 & 4.621 & 4.741 & 4.878  \\
+                StD    & 0.915 & 0.919 & 0.935 & 0.910 & 0.876 & 0.825 & 0.803 & 0.776 & 0.768 & 0.762  \\
+            \hline \hline
+        \end{tabular}}
+    \end{center}
+    \caption{This table was handwritten with LaTeX.}
+    \label{tab:table2}
+    \end{table}
+
+<!--chapter:end:03-data.Rmd-->
+
+# Results
+
+* Organize material and present results.
+
+* Use tables, figures (but prefer visual presentation):
+
+  + Tables and figures should supplement (and not duplicate) the text.
+
+  + Tables and figures should be provided with legends.
+
+  + _Figure \@ref(fig:graph) shows how to include and reference graphics.
+    The graphic must be labelled before. Files must be in __.eps__ format. You
+    can do this really easily in R Markdown with `knitr::include_graphics()`_!
+
+  + Figures can be referenced with `\@ref(fig:<name>)`, where `<name>` is the
+    name of the code chunk.
+
+```{r graph, echo=FALSE, fig.cap="Estimated residuals from model XXX. ...", out.width = "50%"}
+knitr::include_graphics("figures/graph.eps")
+```
+  + Tables and graphics may appear in the text or in the appendix, especially if
+  there are many simulation results tabulated, but is also depends on the study
+  and number of tables resp. figures. The key graphs and tables must appear in
+  the text!
+
+* R Markdown can also supports math equations just like _LaTeX_!
+
+  + _Equation \@ref(eq:SpecDens) represents the ACs of a stationary
+    stochastic process:_
+    \begin{equation}
+            f_y(\lambda) = (2\pi)^{-1} \sum_{j=-\infty}^{\infty}
+                           \gamma_j e^{-i\lambda j}
+                         =(2\pi)^{-1}\left(\gamma_0 + 2 \sum_{j=1}^{\infty}
+        \gamma_j \cos(\lambda j)\right)
+                                       (\#eq:SpecDens)
+    \end{equation}
+    _where $i=\sqrt{-1}$ is the imaginary unit, $\lambda \in [-\pi, \pi]$ is the
+    frequency and the $\gamma_j$ are the autocovariances of $y_t$._
+
+  + Equations can be referenced with `\@ref(eq:<name>)`, where name is defined
+    by adding `(\#eq:<name>)` in the line immediately before `\end{equation}`.
+
+## Review of Results
+
+*  Do the results support or do they contradict economic theory ?
+
+*  What does the reader learn from the results?
+
+*  Try to give an intuition for your results.
+
+*  Provide robustness checks.
+
+*  Compare to previous research.
+
+<!--chapter:end:04-results.Rmd-->
+
+# Conclusion
+
+* Give a short summary of what has been done and what has been found.
+
+* Expose results concisely.
+
+* Draw conclusions about the problem studied. What are the implications of your
+  findings?
+
+* Point out some limitations of study (assist reader in judging validity of
+  findings).
+
+* Suggest issues for future research.
+
+
+<!--chapter:end:05-conclusion.Rmd-->
+
+\newpage
+
+# References {-}
+
+<!--
+To remove the indentation of the first entry.
+-->
+\noindent
+
+<!--
+To create a hanging indent and spacing between entries.  These three lines may need to be removed for styles that don't require the hanging indent.
+-->
+
+\setlength{\parindent}{-0.5cm}
+\setlength{\leftskip}{0.5cm}
+\setlength{\parskip}{8pt}
+
+<div id="refs"></div>
+
+<!--
+Restore to defaults
+-->
+
+\indent
+\setlength{\parindent}{17pt}
+\setlength{\leftskip}{0pt}
+\setlength{\parskip}{0pt}
+
+\newpage
+
+<!--chapter:end:98-references.Rmd-->
+
+\appendix
+# Appendix
+
+Here goes the appendix!
+
+## Figures
+
+```{r graph2, echo=FALSE, out.extra = "", fig.cap="Estimated residuals (2) from model XXX. ...", out.width = "50%"}
+knitr::include_graphics("figures/graph.eps")
+```
+
+## Tables
+
+\begin{table}[ht]
+    \begin{center}
+        {\footnotesize
+        \begin{tabular}{l|cccccccccc}
+        \hline \hline
+                        & 3m    & 6m    & 1yr   & 2yr   & 3yr   & 5yr   & 7yr   & 10yr  & 12yr  & 15yr   \\
+            \hline
+                Mean   & 3.138 & 3.191 & 3.307 & 3.544 & 3.756 & 4.093 & 4.354 & 4.621 & 4.741 & 4.878  \\
+                Median & 3.013 & 3.109 & 3.228 & 3.490 & 3.680 & 3.906 & 4.117 & 4.420 & 4.575 & 4.759  \\
+                Min    & 1.984 & 1.950 & 1.956 & 2.010 & 2.240 & 2.615 & 2.850 & 3.120 & 3.250 & 3.395  \\
+                Max    & 5.211 & 5.274 & 5.415 & 5.583 & 5.698 & 5.805 & 5.900 & 6.031 & 6.150 & 6.295  \\
+                StD    & 0.915 & 0.919 & 0.935 & 0.910 & 0.876 & 0.825 & 0.803 & 0.776 & 0.768 & 0.762  \\
+            \hline \hline
+        \end{tabular}}
+    \end{center}
+    \caption{Detailed descriptive statistics of location and dispersion for
+    2100 observed swap rates for the period from
+    February 15, 1999 to March 2, 2007. Swap rates measured as 3.12 (instead of 0.0312).}
+    \label{tab:apptable}
+\end{table}
+
+\newpage
+
+<!--chapter:end:99-appendix.Rmd-->
+

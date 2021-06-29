@@ -9,15 +9,14 @@
 \usepackage{tgtermes}
 \usepackage{amsmath,amssymb,amsfonts,amsthm}    % Typical maths resource packages
 \usepackage{graphicx}                           % Packages to allow inclusion of graphics
-\usepackage[authoryear]{natbib}                 % literature reference style
 \usepackage[bf]{caption}
 \usepackage{textcomp}                           % For single quotes
 \usepackage{floatrow}                           % For image and table position
 \usepackage{booktabs}                           % For tables
-% \usepackage[colorlinks=true]{hyperref}                           
+%\usepackage[driverfallback=hypertex]{hyperref}                          
 % \usepackage[bottom]{footmisc}                   
 \usepackage[bottom, flushmargin]{footmisc}                   % For footnotes
-\usepackage[citebordercolor={0 1 0}]{hyperref}                           % For creating hyperlinks in cross references
+\usepackage[citebordercolor={0 1 0}]{hyperref}               % For creating hyperlinks in cross references
 \usepackage{footnotebackref}
 \usepackage{setspace}
 
@@ -32,8 +31,8 @@
 \clearscrheadings
 \ohead{\headmark}
 
-% define citation style
-\bibliographystyle{ecta}
+
+
 
 % define page size, margin size
 \setlength{\headheight}{1.1\baselineskip}
@@ -60,7 +59,7 @@
 % save thesis parameters for later
 \newcommand{\thesistype}{Master's Thesis}
 \newcommand{\thesisauthor}{Elias Cuadra Braatz}
-\newcommand{\thesisdate}{June 17, 2021}
+\newcommand{\thesisdate}{June 29, 2021}
 
 % define tightlist to work with newer versions of pandoc
 \providecommand{\tightlist}{%
@@ -72,7 +71,7 @@
 % Additional LaTeX parameters added in the YAML header of index.Rmd
 
 
-%fix cls issue
+%fix csl issue
 \newlength{\cslhangindent}
 \setlength{\cslhangindent}{1.5em}
 \newlength{\csllabelwidth}
@@ -158,7 +157,7 @@
   in partial fulfillment of the requirements \\
   for the degree of \\
   \textbf{Master of Environmental Sciences} \\\vspace{0.5cm}
-  June 17, 2021
+  June 29, 2021
   
 \end{center}
 
@@ -225,45 +224,45 @@ busy reader to obtain quickly a clear idea of the thesis content.
 
 \hypertarget{introduction}{%
 \section{Introduction}\label{introduction}}
-\begin{itemize}
+
+This work was executed and written in scientific recognition of the importance of reducing greenhouse gas emissions and expanding renewable energies to mitigate the effects of climate change.
+This study was also carried out on behalf of the state-owned energy agency {[}\protect\hyperlink{ref-EnergieagenturRheinlandPfalz.2021}{1}{]} within the project ``municipal greenhouse gas accounting and regional climate protection portals in Rhineland-Palatinate'' {[}\protect\hyperlink{ref-KomBiReK.2021}{2}{]} which is funded by the ``European Regional Development Fund'' {[}\protect\hyperlink{ref-EuropeanRegionalDevelopmentFund.2021}{3}{]} and the state of Rhineland-Palatinate. This project supports the creation of municipal climate protection measures in order to achieve the climate protection goals of the municipalities and the state and thereby increases regional added value, ensures sustainability and thus improves the quality of life of all citizens. When developing municipal climate protection, a sound strategy is required regarding the legally anchored striving for climate neutrality of the state of Rhineland-Palatinate (Landesklimaschutzgesetz §4, 2014, {[}\protect\hyperlink{ref-RheinlandPfalz.19.08.2014}{4}{]}). Even more pressure comes from the recent press release No.~31/2021 of April 29 in 2021 {[}\protect\hyperlink{ref-Bundesverfassungsgericht.24.03.2021}{5}{]}, in which the first Senate of the Federal Constitutional Court decided that the regulations of the Climate Protection Act of December 12 in 2019 {[}KSG, 2019{]} on the national climate protection targets and the annual emission quantities permitted up to 2030 are incompatible with fundamental rights, as there are no sufficient criteria for further emission reductions from 2031 onwards. It is stated that the legal requirements are not sufficient to bring about a timely transition to climate neutrality. The legislature has therefore published an adjusted edition of this act that strives for a faster development of renewable energies and the energy transition in general {[}\protect\hyperlink{ref-BundesministeriumfurUmweltNaturschutzundnukleareSicherheit.12.05.2021}{6}{]}. This shows that this study is also highly embedded in a socio-economic context.
+The energy transition is a cornerstone of a decent strategy to climate neutrality and Rhineland-Palatinate wants to play a pioneering role in the implementation of the energy transition. The state government publishes on its website that Rhineland-Palatinate will cover 100 \% of its electricity needs from renewable energies by 2030. In addition to energy from the sun, water and biomass, two thirds of the electricity generated in 2030 should come from wind power and is therefore the subject of this master thesis {[}\protect\hyperlink{ref-LandesregierungRheinlandPfalz.2021}{7}{]}.
+The gross electricity generation in Rhineland-Palatinate from wind power rose in 2017 with 5.9 TWh to 29 \% of the total 20.7 TWh generated electricity. The total consumption in the same year was 29.1 TWh {[}\protect\hyperlink{ref-Lehnert.2020}{8}{]}. It can be assumed that, on the one hand, electricity consumption will increase in the future due to the electrification of transport and domestic heating, and on the other hand, efficiency measures can also lead to a lower energy consumption. Various scenarios about future electricity consumption assume a slightly reduced to increased, but on average relatively unchanged electricity consumption for the whole of Germany in 2030 {[}\protect\hyperlink{ref-NormanGerhardt.2015}{9}{]}. In order to achieve the self-set goals of using two thirds of the electricity demand from wind power with constant or higher electricity demand, electricity generation with wind turbines (WT's) must be increased to at least 14 TWh per year. If Rhineland-Palatinate wants to become independent of electricity imports, an increase to around 20 TWh is necessary. There are two ways of increasing the amount of electricity generated by wind energy. On the one hand, areas that are still available can be identified and built on with new WPP's. On the other hand, existing old systems, whose absolute electricity feed-in quantity is low, can be replaced by new, higher and more efficient systems through the so-called ``repowering.''
+The aim of this work is to develop a methodology for calculating the wind energy potential and its related area consumption at the state level as well as for the districts and association communities in Rhineland-Palatinate. With this results an evaluation of the desired expansion targets should be assessed. The central three questions of this work are therefore:
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
 \item
-  What is the subject of the study? Describe the economic/econometric problem.
+  How much electric energy can be generated by a new wind turbine from 2021 until 2030 in Rhineland-Palatinate per area?
 \item
-  What is the purpose of the study (working hypothesis)?
+  How large is the potential when all wind turbines with a commissioning date before 2005 are repowered?
 \item
-  What do we already know about the subject (literature review)? Use citations:
-  \protect\hyperlink{ref-lingenfelser2011systematic}{Lingenfelser, Wagner, and André} (\protect\hyperlink{ref-lingenfelser2011systematic}{2011}) shows that\ldots{} Alternative Forms of the Wald test are
-  considered (\protect\hyperlink{ref-kuncheva2004combining}{Kuncheva 2004}).
-\item
-  What is the innovation of the study?
-\item
-  Provide an overview of your results.
-\item
-  Outline of the paper:\\
-  \emph{The paper is organized as follows. The next section describes the model
-  under investigation. Section ``\protect\hyperlink{data}{Data}'' describes the data set
-  and Section ``\protect\hyperlink{results}{Results}'' presents the results. Finally, Section
-  ``\protect\hyperlink{conclusion}{Conclusion}'' concludes.}
-\item
-  The introduction should not be longer than 4 pages.
-\end{itemize}
-\hypertarget{methodology}{%
-\section{Methodology}\label{methodology}}
-\begin{itemize}
-\item
-  How was the data analyzed ?
-\item
-  Present the underlying economic model/theory and give reasons why it is
-  suitable to answer the given problem\footnote{Here is an example of a footnote.}.
-\item
-  Present econometric/statistical estimation method and give reasons why it is
-  suitable to answer the given problem.
-\item
-  Allows the reader to judge the validity of the study and its findings.
-\item
-  Depending on the topic this section can also be split up into separate
-  sections.
-\end{itemize}
+  How much area is needed to generate the target amount of 20 TWh out of wind energy?
+\end{enumerate}
+In order to answer these questions, the technical fundamentals of the electricity yield from WT's are explained first. Subsequently, the master and movement data provided by the transmission system operator Amprion, which document all electricity fed into the public grid by WT's and other technical information, is analysed and a forecasted up to the year 2030. The respective area consumption to generate that electricity is calculated using a GIS based approach. As a by-product the greenhouse gas reduction potential can be derived from the potential for electricity generation. Knowing the electricity potential per area, the required area for the generation targets can be calculated and an assessment of the given expectations can be made subsequently.
+
+\hypertarget{state-of-the-art}{%
+\section{State of the art}\label{state-of-the-art}}
+
+\hypertarget{technical-and-physical-basics}{%
+\subsection{Technical and physical basics}\label{technical-and-physical-basics}}
+
+Wind energy has been used by humans for thousands of years, but the generation of electrical power has only been possible since the 19th century with the beginning of industrialization and is now the subject of constant research and development in the context of the energy transition {[}\protect\hyperlink{ref-Wikipedia.2021}{10}{]}. A wind turbine usually consists of the three main components rotor blades, nacelle and tower. The nacelle contains besides other elements the gearbox, the generator, the transformer and the control system {[}\protect\hyperlink{ref-MladenBosnjakovic.2013}{11}{]}. The mostly three rotor blades are attached to the rotor hub and absorb the kinetic energy of the wind and convert it into a rotary motion. If the winds are too strong, the rotor blades can be ``taken out of the wind'' by adjusting the blades, thus protecting the system from damage. Mainly the gearbox and the generator convert the kinetic energy into electricity. However, there are also systems with direct drive and without gear. The nacelle can be rotated to an optimal position when the wind conditions change, and an electromagnetic brake helps to shut down the system when the winds are too strong or during maintenance work. In addition to its load-bearing function, the tower also contains the power lines that conduct electricity to the grid connection of the distribution network {[}\protect\hyperlink{ref-NetzKonstrukteur.16.11.2020}{12}{]}.
+
+The transmission system operators, in this case Amprion, are obliged to publish master and so-called movement data for each calendar year in accordance with section 77 Renewable Energy Act 2017. These movement data include the annual electricity generation and the underlying tariff for each renewable energy system. The movement data for Rhineland-Palatinate are currently available until 2019. The total amount of electricity fed in with remuneration in 2019 from wind turbines in RLP is 6,782,180,753 kWh, i.e.~approx. 6,782 TWh {[}\protect\hyperlink{ref-EnergieagenturRheinlandPfalz.2019}{13}{]}.
+
+The amount of electricity generated by a wind turbine, the electricity yield, can be derived from the physical relationship between the kinetic energy and the power of the wind. Without claiming to be exhaustive, the following applies:
+\begin{equation}
+E_{kin} = \frac{1}{2}mv^2
+\end{equation}
+The air throughput or mass flow \(\hat{m}\) that flows through the area swept by the rotor blades in a certain time can be calculated by multiplying the air density, rotor area and wind speed as well as the time interval required with:
+\begin{equation}
+\hat{m}=\rho A V
+\end{equation}
+The power P is equal to the energy per unit of time \(\hat{E}\). This results in the power of the wind with:
+\begin{equation}
+P_{wind}=\hat{E}=\frac{1}{2}\hat{m}v^2=\frac{1}{2} \rho \pi r^2 v^3
+\end{equation}
 \hypertarget{data}{%
 \section{Data}\label{data}}
 \begin{itemize}
@@ -434,12 +433,58 @@ StD & 0.915 & 0.919 & 0.935 & 0.910 & 0.876 & 0.825 & 0.803 & 0.776 & 0.768 & 0.
 \setlength{\parskip}{8pt}
 
 \hypertarget{refs}{}
-\begin{CSLReferences}{1}{0}
-\leavevmode\hypertarget{ref-kuncheva2004combining}{}%
-Kuncheva, Ludmila I. 2004. \emph{Combining Pattern Classifiers: Methods and Algorithms}. John Wiley \& Sons.
+\begin{CSLReferences}{0}{0}
+\leavevmode\hypertarget{ref-EnergieagenturRheinlandPfalz.2021}{}%
+\CSLLeftMargin{1. }
+\CSLRightInline{Energieagentur Rheinland-Pfalz: \url{https://www.energieagentur.rlp.de/}, (2021)}
 
-\leavevmode\hypertarget{ref-lingenfelser2011systematic}{}%
-Lingenfelser, Florian, Johannes Wagner, and Elisabeth André. 2011. {``A Systematic Discussion of Fusion Techniques for Multi-Modal Affect Recognition Tasks.''} In \emph{Proceedings of the 13th International Conference on Multimodal Interfaces}, 19--26. ACM.
+\leavevmode\hypertarget{ref-KomBiReK.2021}{}%
+\CSLLeftMargin{2. }
+\CSLRightInline{KomBiReK: Kommunale treibhausgas-bilanzierung und regionale klimaschutzportale rheinland-pfalz, \url{https://www.energieagentur.rlp.de/projekte/kommune/kombirek}, (2021)}
+
+\leavevmode\hypertarget{ref-EuropeanRegionalDevelopmentFund.2021}{}%
+\CSLLeftMargin{3. }
+\CSLRightInline{European Regional Development Fund: \url{https://ec.europa.eu/regional_policy/de/funding/erdf/}, (2021)}
+
+\leavevmode\hypertarget{ref-RheinlandPfalz.19.08.2014}{}%
+\CSLLeftMargin{4. }
+\CSLRightInline{Rheinland-Pfalz: Landesgesetz zur f{ö}rderung des klimaschutzes - landesklimaschutzgesetz: LKSG, \url{http://landesrecht.rlp.de/jportal/portal/t/onc/page/bsrlpprod.psml?pid=Dokumentanzeige\&showdoccase=1\&js_peid=Trefferliste\&documentnumber=1\&numberofresults=22\&fromdoctodoc=yes\&doc.id=jlr-KlimaSchGRPrahmen\&doc.part=X\&doc.price=0.0\&doc.hl=1}, 19.08.2014}
+
+\leavevmode\hypertarget{ref-Bundesverfassungsgericht.24.03.2021}{}%
+\CSLLeftMargin{5. }
+\CSLRightInline{Bundesverfassungsgericht: Verfassungsbeschwerden gegen das klimaschutzgesetz teilweise erfolgreich: Pressemitteilung nr. 31/2021 vom 29. April 2021, \url{https://www.bundesverfassungsgericht.de/SharedDocs/Pressemitteilungen/DE/2021/bvg21-031.html}, 24.03.2021}
+
+\leavevmode\hypertarget{ref-BundesministeriumfurUmweltNaturschutzundnukleareSicherheit.12.05.2021}{}%
+\CSLLeftMargin{6. }
+\CSLRightInline{Bundesministerium für Umwelt, Naturschutz und nukleare Sicherheit: Entwurf eines ersten gesetzes zur {Ä}nderung des bundes-klimaschutzgesetzes, \url{https://www.bmu.de/gesetz/952/}, 12.05.2021}
+
+\leavevmode\hypertarget{ref-LandesregierungRheinlandPfalz.2021}{}%
+\CSLLeftMargin{7. }
+\CSLRightInline{Landesregierung Rheinland-Pfalz: Wind, sonne, wasser: Ausbau der erneuerbaren energien in der stromerzeugung, \url{https://www.rlp.de/de/regierung/schwerpunkte/energiewende/\#:~:text=Rheinland\%2DPfalz\%20wird\%20bis\%20zum,einem\%20Viertel\%20entfallen}, (2021)}
+
+\leavevmode\hypertarget{ref-Lehnert.2020}{}%
+\CSLLeftMargin{8. }
+\CSLRightInline{Dr. N. M. Lehnert und M. Herzig: Statistische monatshefte rheinland-pfalz: Strommix und energieverbrauch in rheinland-pfalz, \url{https://www.statistik.rlp.de/fileadmin/dokumente/monatshefte/2020/April/04-2020-225.pdf}, (2020)}
+
+\leavevmode\hypertarget{ref-NormanGerhardt.2015}{}%
+\CSLLeftMargin{9. }
+\CSLRightInline{Norman Gerhardt, F.S.: Fraunhofer IWES (2015): Wie hoch ist der stromverbrauch in der energiewende? Energiepolitische zielszenarien 2050 -- r{ü}ckwirkungen auf den ausbaubedarf von windenergie und photovoltaik: Studie im auftrag von agora energiewende. 086/19-S-2015/DE, (2015)}
+
+\leavevmode\hypertarget{ref-Wikipedia.2021}{}%
+\CSLLeftMargin{10. }
+\CSLRightInline{Wikipedia: Geschichte der windenergie, \url{https://de.wikipedia.org/wiki/Geschichte_der_Windenergienutzung}, (2021)}
+
+\leavevmode\hypertarget{ref-MladenBosnjakovic.2013}{}%
+\CSLLeftMargin{11. }
+\CSLRightInline{Mladen Bošnjaković: Wind energy technology trends: Conference paper, \url{https://www.researchgate.net/publication/310766589_WIND_ENERGY_TECHNOLOGY_TRENDS}, (2013)}
+
+\leavevmode\hypertarget{ref-NetzKonstrukteur.16.11.2020}{}%
+\CSLLeftMargin{12. }
+\CSLRightInline{NetzKonstrukteur: Wie funktioniert eine windkraftanlage? Aufbau einer windkraftanlage, \url{https://netzkonstrukteur.de/wie-funktioniert-eine-windkraftanlage/}, 16.11.2020}
+
+\leavevmode\hypertarget{ref-EnergieagenturRheinlandPfalz.2019}{}%
+\CSLLeftMargin{13. }
+\CSLRightInline{EEG-StammBew{\_}2019{\_}amprion-EAtlas.xlsx /master and movement data from amprion of the year 2019 preprocessed through the energy agency of rhineland-palatinate - the file and the code with which the data was further processed comes with this document., (2019)}
 
 \end{CSLReferences}
 \indent
@@ -492,6 +537,7 @@ Here goes the appendix!
 
 % change rmd_files in `_bookdown.yml` files to determine order
 % note that references and appendix are also contained here.
+
 
 
 % --------------------------------------------
