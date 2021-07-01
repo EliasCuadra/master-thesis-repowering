@@ -1,4 +1,3 @@
-\newpage
 # Data
 
 * Describe the data and its quality.
