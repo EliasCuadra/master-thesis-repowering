@@ -5,11 +5,10 @@
 \contentsline {section}{\numberline {1}Introduction}{1}{section.1}%
 \contentsline {section}{\numberline {2}State of the art}{2}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Technical and physical basics}{2}{subsection.2.1}%
-\contentsline {section}{\numberline {3}Data}{3}{section.3}%
-\contentsline {section}{\numberline {4}Results}{5}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Review of Results}{6}{subsection.4.1}%
-\contentsline {section}{\numberline {5}Conclusion}{6}{section.5}%
-\contentsline {section}{References}{7}{section*.9}%
-\contentsline {section}{\numberline {A}Appendix}{9}{appendix.A}%
-\contentsline {subsection}{\numberline {A.1}Figures}{9}{subsection.A.1}%
-\contentsline {subsection}{\numberline {A.2}Tables}{9}{subsection.A.2}%
+\contentsline {section}{\numberline {3}Data}{7}{section.3}%
+\contentsline {section}{\numberline {4}Results}{8}{section.4}%
+\contentsline {section}{\numberline {5}Conclusion}{8}{section.5}%
+\contentsline {section}{References}{9}{section*.12}%
+\contentsline {section}{\numberline {A}Appendix}{11}{appendix.A}%
+\contentsline {subsection}{\numberline {A.1}Figures}{11}{subsection.A.1}%
+\contentsline {subsection}{\numberline {A.2}Tables}{11}{subsection.A.2}%

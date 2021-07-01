@@ -5,9 +5,6 @@ Here goes the appendix!
 
 ## Figures
 
-```{r graph2, echo=FALSE, out.extra = "", fig.cap="Estimated residuals (2) from model XXX. ...", out.width = "50%"}
-knitr::include_graphics("figures/graph.eps")
-```
 
 ## Tables
 
