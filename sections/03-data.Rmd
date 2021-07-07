@@ -1,24 +1,24 @@
 # Data
 
-* Describe the data and its quality.
+## Materials
 
-* How was the data sample selected?
+The Master and Movement data from the transmission system operator Amprion of the years 2017 to 2019 prepared by the energy agency of RLP is used to analyze the electricity yield mainly over the rated capacity and the commissioning date. Amprion lists 1,702 WT's in RLP in 2019. In comparison the Structure and Approval Directorate North registers 1,704 WT's with technical details and coordinate references that are connected to the public grid. In addition the Marked Master Data Register (MaStR) of the Federal Network Agency @Marktstammdatenregister.2020, in which all electricity and gas generation systems must be registered, is used. The MaStR contains technical details of the WT's and also the exact coordinate refernces of their location but not the electricity yield. The data from Amprion and the MaStR both contain a system key according to the Renewable Energy Law, by which they can be joined to a single data set which contains the electricity yield as well as the coordinates for the assessment of the area consumption per quantity of generated electricity.
 
-* Provide descriptive statistics such as:
+For the preparation and the analysis of the data R version 4.0.5 (2021-03-31) -- "Shake and Throw" and RStudio Version 1.4.1106 were used. Due to exhaustive code and iterative preparation steps the full documentation can not be displayed here but is to be found on [https://github.com/EliasCuadra/master-thesis-repowering](https://github.com/EliasCuadra/master-thesis-repowering) with explanatory README.md files that contain description of variables and proccessing steps. Nonetheless, important aspects or code chunks are directly included or can be found in the appendix.
 
-  * time period,
+## Methods
 
-  * item number of observations, data frequency,
+### Preparation and Analysis of data from the transmission system operator Amprion
 
-  * item mean, median,
+### Area consumption of WT'S in RLP
 
-  * item min, max, standard deviation,
+### CO\textsubscript{2} reduction potential
 
-  * item skewness, kurtosis, Jarque--Bera statistic,
+### Repowering potential  
 
-  * item time series plots, histogram.
 
-* For example:
+
+
 
 ```{r table1, echo=FALSE}
 col_names <- c(

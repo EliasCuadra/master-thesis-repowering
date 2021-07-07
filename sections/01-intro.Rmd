@@ -13,10 +13,14 @@ The aim of this work is to develop a methodology for calculating the wind energy
 
 3.	How much area is needed to generate the target amount of 20 TWh out of wind energy?
 
-In order to answer these questions, the technical fundamentals of the electricity yield from WT’s are explained first. Subsequently, the master and movement data provided by the transmission system operator Amprion, which document all electricity fed into the public grid by WT’s and other technical information, is analysed and a forecasted up to the year 2030. The respective area consumption to generate that electricity is calculated using a GIS based approach. As a by-product the greenhouse gas reduction potential can be derived from the potential for electricity generation. Knowing the electricity potential per area, the required area for the generation targets can be calculated and an assessment of the given expectations can be made subsequently.
+In order to answer these questions, the technical fundamentals of the electricity yield from WT’s are explained first. Subsequently, the master and movement data provided by the transmission system operator Amprion, which contains all electricity fed into the public grid by WT’s and other technical information, is analyzed and forecasted up to the year 2030. The respective area consumption to generate that electricity is calculated using a GIS based approach and data from the market master data register (MaStR). As a by-product the greenhouse gas reduction potential can be derived from the potential for electricity generation. Knowing the electricity potential per area, the required area for the generation targets can be calculated and an assessment of the given expectations can be made subsequently.
 
 
 
-```{r wind, echo=FALSE, fig.cap="Rhineland-Palatinate with modeled wind speeds at 140 m above ground", out.width = "100%", fig.pos="H"}
+(ref:foo) Wind speeds in RLP 140 m above Ground @MinisteriumfurWirtschaftKlimaschutzEnergieundLandesplanung.2013. 
+
+
+
+```{r wind, echo=FALSE, fig.cap="(ref:foo)", out.width = "100%", fig.pos="H"}
 knitr::include_graphics("figures/wind_140m.pdf")
 ```
