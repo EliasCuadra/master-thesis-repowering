@@ -1,38 +1,61 @@
-###################################################################################################
-#Preparation of the master and movement data of the transmission system operator Amprion from 2019#
-###################################################################################################
+##########################################################################################################
+#Preparation of the master and movement data of the transmission system operator Amprion from 2017 - 2019#
+##########################################################################################################
 
 #packages#
 Sys.setenv(LANG = "en")
 pacman::p_load(rio, data.table, tidyverse, tidyr, purrr, magrittr, compare, 
-               ggplot2)
+               ggplot2, DiagrammeR)
 
 
-#################################
-#Import data and format callumns#
-#################################
+################################
+#Import data and format columns#
+################################
+amprion_2017 <- read.csv("EEG_StammBew_2017_Amprion-EAtlas.csv")
+amprion_2018 <- read.csv("EEG_StammBew_2018_Amprion-EAtlas.csv")
 amprion_2019 <- read.csv("EEG-StammBew_2019_Amprion-EAtlas.csv")
 names(amprion_2019)[1] <- "gem"
+names(amprion_2018)[1] <- "gem"
+names(amprion_2017)[1] <- "gem"
 
 
 ####################
 #Variable selection#
 ####################
-selection <- amprion_2019[,c(1:3,7,9,14:16,26)]
-attach(selection)
+selection_2017 <- amprion_2017[,c(1:3,8,10,15:17,27)]
+selection_2018 <- amprion_2018[,c(1:3,8,10,15:17,27)]
+selection_2019 <- amprion_2019[,c(1:3,7,9,14:16,26)]
 
 
 ###############################
 #formatting commissioning date#
 ###############################
-selection$inbetriebnahme <- as.Date(selection$inbetriebnahme, "%d/%m/%Y")
+selection_2017$inbetriebnahme <- as.Date(selection_2017$inbetriebnahme, "%d/%m/%Y")
+selection_2018$inbetriebnahme <- as.Date(selection_2018$inbetriebnahme, "%d/%m/%Y")
+selection_2019$inbetriebnahme <- as.Date(selection_2019$inbetriebnahme, "%d/%m/%Y")
+
+
+###############
+#Find outliers#
+###############
+
+selection_2017_without_outliers <- filter(selection_2017, leistung > 100 & leistung < 4500 & inbetriebnahme < "2017-02-15")
+selection_2018_without_outliers <- filter(selection_2018, leistung > 100 & leistung < 4500 & inbetriebnahme < "2017-02-15")
+selection_2019_without_outliers <- filter(selection_2019, leistung > 100 & leistung < 4500 & inbetriebnahme < "2017-02-15")
+
+#############
+#write files#
+#############
+write.csv(selection_2017_without_outliers, "results_of_preparation/amprion_2017_proccessed_and_without_outliers.csv")
+write.csv(selection_2018_without_outliers, "results_of_preparation/amprion_2018_proccessed_and_without_outliers.csv")
+write.csv(selection_2019_without_outliers, "results_of_preparation/amprion_2019_proccessed_and_without_outliers.csv")
 
 
 ################################################################################
 #creating groups of counties and calculate full load hours and change dimension#
 ################################################################################
-selection_counties <- selection %>%
-  mutate(lk_nr = sub("\\D*(\\d{4}).*", "\\1", selection$gem)) %>%
+selection_2019_counties <- selection_2019_without_outliers %>%
+  mutate(lk_nr = sub("\\D*(\\d{4}).*", "\\1", selection_2019_without_outliers$gem)) %>%
   mutate(lk_name = case_when(lk_nr == 7131 ~ 'Ahrweiler',
                              lk_nr == 7132 ~ 'Altenkirchen',
                              lk_nr == 7133 ~ 'Bad Kreuznach',
@@ -70,17 +93,18 @@ selection_counties <- selection %>%
                              lk_nr == 7340 ~ 'S?dwestpfalz')) %>%
   mutate(flh = menge_kwh/leistung) %>%
   mutate(menge_mwh = round(menge_kwh/1000))
+
+
 ##################
 #Formatting lk_nr#
 ##################
-selection_counties$lk_nr <- as.numeric(selection_counties$lk_nr)
-
+selection_2019_counties$lk_nr <- as.numeric(selection_2019_counties$lk_nr)
 
 ##############################################
 #Create groups of the association communities#
 ##############################################
-selection_counties_communities <- selection_counties %>%
-  mutate(vg_nr = sub("\\D*(\\d{6}).*", "\\1", selection_counties$gem))%>%
+selection_2019_counties_communities <- selection_2019_counties %>%
+  mutate(vg_nr = sub("\\D*(\\d{6}).*", "\\1", selection_2019_counties$gem))%>%
   mutate(vg_name = case_when(vg_nr == 713100 ~ 'vfr Ahrweiler',
                              vg_nr == 713101 ~ 'Adenau',
                              vg_nr == 713102 ~ 'Altenahr',
@@ -233,24 +257,12 @@ selection_counties_communities <- selection_counties %>%
 
 
 
-##################################################################################
-#Calculate linear model with electricity yield over time for Rhineland-Palatinate#
-##################################################################################
-###############
-#Find outliers#
-###############
-small_values <- subset(selection_counties_communities, leistung < 100)
-big_values <- subset(selection_counties_communities, leistung > 4500)
-small_electricity_yield <- subset(selection_counties_communities, menge_mwh < 500)
-
-
-#########################################
-#Create subset without outliers and file#
-#########################################
-selection_built_2019 <- subset(selection_counties_communities, inbetriebnahme > "2019-02-15")
-selection_without_outliers <- selection_counties_communities[-c(327, 329, 1025, 1026, 1030, 1033, 1530, 1592, 1620, 1623, 1409, 1591, 1662:1664, 1667:1677, 1679, 1683, 1684, 1688:1695, 1701),]
-
-write.csv(selection_without_outliers,"results_of_preparation/amprion_2019_processed_and_without_outliers.csv")
+######################
+#see outliers in 2019#
+######################
+#small_values <- subset(selection_2019, leistung < 100)
+#big_values <- subset(selection_2019, leistung > 4500)
+#small_electricity_yield <- subset(selection_counties_communities, menge_mwh < 500)
 
 
 #######################################################################################################################
@@ -262,13 +274,42 @@ comissioning_before2005 <- subset(selection_without_outliers, inbetriebnahme < "
 comissioning_2001_2005 <- subset(comissioning_before2005, inbetriebnahme > "2000-12-31")
 sum(comissioning_2001_2005$menge_kwh/10^6)
 
-write.csv(comissioning_before2001,"results_of_preparation/comissioning_before2001.csv")
-write.csv(comissioning_2001_2005,"results_of_preparation/comissioning_2001_2005.csv")
-write.csv(comissioning_before2005,"results_of_preparation/comissioning_before_2005.csv")
+write.csv(comissioning_before2001,"results_of_preparation/commissioning_before2001.csv")
+write.csv(comissioning_2001_2005,"results_of_preparation/commissioning_2001_2005.csv")
+write.csv(comissioning_before2005,"results_of_preparation/commissioning_before_2005.csv")
 
 
-
-
+#create flow chart of data preparation
+grViz(diagram = "digraph flowchart {
+  node [fontname = arial, shape = oval, fixedsize = FALSE]
+  tab1 [label = '@@1', fontsize=30]
+  tab2 [label = '@@2', fontsize=30]
+  tab3 [label = '@@3', fontsize=30]
+  tab4 [label = '@@4', fontsize=30]
+  tab5 [label = '@@5', fontsize=30]
+  tab6 [label = '@@6', fontsize=30]
+  tab7 [label = '@@7', fontsize=30]
+  tab8 [label = '@@8', fontsize=30]
+  tab9 [label = '@@9', fontsize=30]
+  
+  
+  tab1 -> tab2 -> tab3 -> tab4 -> tab5 -> tab6 -> tab7 -> tab8 -> tab9;
+  tab3 -> tab2;
+  tab6 -> tab2;
+  tab2 -> tab6;
+}
+  
+  [1]: 'Import data from 2017, 2018 and 2019'
+  [2]: 'Adjust variable formats and names'
+  [3]: 'Drop unnecessary variables' 
+  [4]: 'Detect outliers and remove from data'
+  [5]: 'Write files as: \\n amprion_2017_proccessed_and_without_outliers.csv \\n amprion_2018_proccessed_and_without_outliers.csv \\n amprion_2019_proccessed_and_without_outliers.csv'
+  [6]: 'Group data of 2019 by counties and municipalities \\n with the community key'
+  [7]: 'Add columns for full load hours and electricity yield in MWh'
+  [8]: 'Filter for different commissioning dates'
+  [9]: 'Write files as: \\n commissioning_before_2005.csv, \\n commissioning_before2001.csv \\n commissioning_2001_2005.csv'
+  
+  ")
 
 
 

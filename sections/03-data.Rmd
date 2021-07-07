@@ -8,7 +8,14 @@ For the preparation and the analysis of the data R version 4.0.5 (2021-03-31) --
 
 ## Methods
 
-### Preparation and Analysis of data from the transmission system operator Amprion
+### Preparation and Analysis of data from the transmission system operator Amprion from 2017 to 2019
+
+Hallo
+
+```{r preparation, echo=FALSE, fig.cap="Flow chart of the proccessing steps", out.width = "100%"}
+knitr::include_graphics("data/Amprion/results_of_preparation/flow.png")
+```
+
 
 ### Area consumption of WT'S in RLP
 
