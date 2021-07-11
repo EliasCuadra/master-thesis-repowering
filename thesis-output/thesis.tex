@@ -60,7 +60,7 @@
 % save thesis parameters for later
 \newcommand{\thesistype}{Master's Thesis}
 \newcommand{\thesisauthor}{Elias Cuadra Braatz}
-\newcommand{\thesisdate}{July 07, 2021}
+\newcommand{\thesisdate}{July 11, 2021}
 
 % define tightlist to work with newer versions of pandoc
 \providecommand{\tightlist}{%
@@ -158,7 +158,7 @@
   in partial fulfillment of the requirements \\
   for the degree of \\
   \textbf{Master of Environmental Sciences} \\\vspace{0.5cm}
-  July 07, 2021
+  July 11, 2021
   
 \end{center}
 
@@ -380,7 +380,7 @@ In order to calculate the electricity yield of future plants in RLP, the followi
 
 The Master and Movement data from the transmission system operator Amprion of the years 2017 to 2019 prepared by the energy agency of RLP is used to analyze the electricity yield mainly over the rated capacity and the commissioning date. Amprion lists 1,702 WT's in RLP in 2019. In comparison the Structure and Approval Directorate North registers 1,704 WT's with technical details and coordinate references that are connected to the public grid. In addition the Marked Master Data Register (MaStR) of the Federal Network Agency {[}\protect\hyperlink{ref-Marktstammdatenregister.2020}{23}{]}, in which all electricity and gas generation systems must be registered, is used. The MaStR contains technical details of the WT's and also the exact coordinate refernces of their location but not the electricity yield. The data from Amprion and the MaStR both contain a system key according to the Renewable Energy Law, by which they can be joined to a single data set which contains the electricity yield as well as the coordinates for the assessment of the area consumption per quantity of generated electricity.
 
-For the preparation and the analysis of the data R version 4.0.5 (2021-03-31) -- ``Shake and Throw'' and RStudio Version 1.4.1106 were used. Due to exhaustive code and iterative preparation steps the full documentation can not be displayed here but is to be found on \url{https://github.com/EliasCuadra/master-thesis-repowering} with explanatory README.md files that contain description of variables and proccessing steps. Nonetheless, important aspects or code chunks are directly included or can be found in the appendix.
+For the preparation and the analysis of the data R version 4.0.5 (2021-03-31) -- ``Shake and Throw'' and RStudio Version 1.4.1106 were used. Due to exhaustive code and iterative preparation steps the full documentation can not be displayed here but is to be found on \url{https://github.com/EliasCuadra/master-thesis-repowering} with explanatory README.md files that contain description of variables and processing steps. Nonetheless, important aspects or code chunks are directly included or can be found in the appendix.
 
 \hypertarget{methods}{%
 \subsection{Methods}\label{methods}}
@@ -388,7 +388,7 @@ For the preparation and the analysis of the data R version 4.0.5 (2021-03-31) --
 \hypertarget{preparation-and-analysis-of-data-from-the-transmission-system-operator-amprion-from-2017-to-2019}{%
 \subsubsection{Preparation and Analysis of data from the transmission system operator Amprion from 2017 to 2019}\label{preparation-and-analysis-of-data-from-the-transmission-system-operator-amprion-from-2017-to-2019}}
 
-Hallo
+The data from Amprion comes with 28 or rather 27 variables for the year 2019 of which only some are interesting for the further analysis. The kept variables are: Community key, post code, place, rated capacity, commissioning date, system key and electricity yield. For the analysis of the electricity yield not all the WT's are meaningful and some outliers are removed from the data. On the one hand WT's with a rated capacity under 100 kW are considered too small for a reasonable assessment of new commercially operated systems. On the other hand some WT's are listed with a rated capacity up to 12 MW which might be because several WT's are registered as one. It is therefore assumed that if the rated capacity is larger than 4,5 MW it also does not reflect the average conditions, even though systems of this size exist. Also WT's that are build in the same year after the 15th of February are excluded since they have less time to generate electricity and therefore deliver misleading data. The data from 2017 show 1,623 WT's in total of which 101 are outliers. The data from 2018 show 1,674 WT's of which 76 are outliers. The data from 2019 show 1,702 WT's of which 46 are outliers. An interim result are three csv files of the different years that only have relevant variables in the correct format and are free of outliers. Only the data from 2019 is further processed and variables for the county and municipality names as well as the electricity yield in MWh and the full load hours are added. The data from 2019 is then divided in three files according to the commissioning date to find the WT's that are build either before 2005, before 2001 or between 2001 and 2005 and are therefore potentially suitable for repowering. A flow chart of the individual processing steps that have been performed is presented in figure \ref{fig:preparation}.
 \begin{figure}
 
 {\centering \includegraphics[width=1\linewidth]{data/Amprion/results_of_preparation/flow} 
@@ -397,6 +397,8 @@ Hallo
 
 \caption{Flow chart of the proccessing steps}\label{fig:preparation}
 \end{figure}
+After the preparation, the data is firstly analyzed regarding the amount of electricity generated per WT and year. For this purpose, a linear and a 3rd order polynomial regression is carried out with the amount of electricity fed in, here referred to as the electricity yield, as the dependent variable and the commissioning date as the independent variable.
+
 \hypertarget{area-consumption-of-wts-in-rlp}{%
 \subsubsection{Area consumption of WT'S in RLP}\label{area-consumption-of-wts-in-rlp}}
 
@@ -405,55 +407,28 @@ Hallo
 
 \hypertarget{repowering-potential}{%
 \subsubsection{Repowering potential}\label{repowering-potential}}
-\begin{table}[H]
 
-\caption{\label{tab:table1}Detailed descriptive statistics of location and dispersion for 2100 observed swap rates for the period from February 15, 1999 to March 2, 2007. Swap rates measured as 3.12 (instead of 0.0312).}
-\centering
-\begin{tabular}[t]{lrrrrrrrrrr}
-\toprule
-  & 3m & 6m & 1yr & 2yr & 3yr & 5yr & 7yr & 10yr & 12yr & 15yr\\
-\midrule
-Mean & 3.138 & 3.191 & 3.307 & 3.544 & 3.756 & 4.093 & 4.354 & 4.621 & 4.741 & 4.878\\
-StD & 0.915 & 0.919 & 0.935 & 0.910 & 0.876 & 0.825 & 0.803 & 0.776 & 0.768 & 0.762\\
-\midrule
-\bottomrule
-\end{tabular}
-\end{table}
-\begin{itemize}
-\item
-  Allows the reader to judge whether the sample is biased or to evaluate
-  possible impacts of outliers, for example.
-\item
-  Here tables can be easily integrated using the \texttt{kable()} function in the
-  \texttt{knitr} package (with perhaps some additional help from the \texttt{kableExtra}
-  package). \texttt{kable()} will automatically generate a label for the table
-  environment. That way you don't have to manually enter in the table in LaTex,
-  you can embed tables from R code.
-\item
-  Tables can be referenced using \texttt{\textbackslash{}@ref(label)}, where \texttt{label} is \texttt{tab:\textless{}name\textgreater{}},
-  where \texttt{\textless{}name\textgreater{}} is the code chunk label.
-\item
-  The appearance may look different to tables directly typed with LaTex, due to
-  limitations in \texttt{kable()}. To compare:
-  \begin{table}[ht]
-    \begin{center}
-        {\footnotesize
-        \begin{tabular}{l|cccccccccc}
-            \hline \hline
-                      & 3m    & 6m    & 1yr   & 2yr   & 3yr   & 5yr   & 7yr   & 10yr  & 12yr  & 15yr   \\
-            \hline
-                Mean   & 3.138 & 3.191 & 3.307 & 3.544 & 3.756 & 4.093 & 4.354 & 4.621 & 4.741 & 4.878  \\
-                StD    & 0.915 & 0.919 & 0.935 & 0.910 & 0.876 & 0.825 & 0.803 & 0.776 & 0.768 & 0.762  \\
-            \hline \hline
-        \end{tabular}}
-    \end{center}
-    \caption{This table was handwritten with LaTeX.}
-    \label{tab:table2}
-    \end{table}
-\end{itemize}
 \hypertarget{results-and-discussion}{%
 \section{Results and discussion}\label{results-and-discussion}}
 
+The diagnostics of the electricity yield show in all linear and polynomial models the same characteristics even if slightly different the model assumptions are not fundamentally violated. In figure \ref{fig:diagnostic} the diagnostic plots of the electricity yield from the year 2019 are shown as an example. The residual vs fitted values plot show that the residuals become greater with increasing value for the electricity yield. This makes sense since the rated capacity for WT increases and therefore changes the magnitudes of electricity generation over time. The normal QQ plot shows that the residuals of average values are normally distributed but as the values become very great or small there is clear deviation from a normal distribution. This might be due to the non linear development of the WT technology. The scale location plots reveal that the residuals are more or less spread equally among the range of predictors with slightly increasing variance with increasing values, which must be like this since this was already indicated in the residuals vs fitted values plot. The residuals vs leverage plot shows that none of the observations is without Cook's distance and therefore there is no influential outlier.
+\begin{figure}[H]
+
+{\centering \includegraphics[width=1\linewidth]{data/Amprion/results_of_analysis/diagnostic} 
+
+}
+
+\caption{Diagnostic plots of electricity yield from 2019}\label{fig:diagnostic}
+\end{figure}
+All models are highly significant with p-values lower than 0.001 and the linear models have a R\textsuperscript{2} value of 0.68 - 0.70, which means that around 70 \% of the variation in the electricity yield can be explained by the commissioning date. By using a 3\textsuperscript{rd} order polynomial formula the value for R\textsuperscript{2} increases to up to 73 \%. This value could not significantly be increased by using a higher order. This means that the fit of the model can be slightly improved using the polynomial model but it might loose prediction power due to the bias variance trade-off. Intuitively an infinitely or exponentially growing electricity yield is of course not realistic from a physical or technical point of view. Therefore the prediction of the polynomial models of more than 15,000 MWh per WT on average in the year 2030 seems too high and the assumption of 10,000 MWh per WT of the linear trends more reliable. However, the DWG forecast shows a disproportionate increase in the average nominal power, which in turn means that at locations with optimal wind conditions and rapidly advancing technology, disproportionate growth in electricity yield per WT is possible. The plot of the data and all trends are shown in figure \ref{fig:electricityyield}. For the given reason and to obtain a conservative estimate the average electricity yield in 2021 of the three linear trends which amounts to 7,400 MWh per WT is used for further calculations.
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{data/Amprion/results_of_analysis/electricity_yield_2017-2019_rlp_over_comissioning_date2} 
+
+}
+
+\caption{Development and forecast of electricity yield in Rhineland-Palatinate using data from 2017 to 2019 and a linear an polynomial model}\label{fig:electricityyield}
+\end{figure}
 \hypertarget{conclusion}{%
 \section{Conclusion}\label{conclusion}}
 \begin{itemize}

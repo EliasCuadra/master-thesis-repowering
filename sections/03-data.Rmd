@@ -4,18 +4,19 @@
 
 The Master and Movement data from the transmission system operator Amprion of the years 2017 to 2019 prepared by the energy agency of RLP is used to analyze the electricity yield mainly over the rated capacity and the commissioning date. Amprion lists 1,702 WT's in RLP in 2019. In comparison the Structure and Approval Directorate North registers 1,704 WT's with technical details and coordinate references that are connected to the public grid. In addition the Marked Master Data Register (MaStR) of the Federal Network Agency @Marktstammdatenregister.2020, in which all electricity and gas generation systems must be registered, is used. The MaStR contains technical details of the WT's and also the exact coordinate refernces of their location but not the electricity yield. The data from Amprion and the MaStR both contain a system key according to the Renewable Energy Law, by which they can be joined to a single data set which contains the electricity yield as well as the coordinates for the assessment of the area consumption per quantity of generated electricity.
 
-For the preparation and the analysis of the data R version 4.0.5 (2021-03-31) -- "Shake and Throw" and RStudio Version 1.4.1106 were used. Due to exhaustive code and iterative preparation steps the full documentation can not be displayed here but is to be found on [https://github.com/EliasCuadra/master-thesis-repowering](https://github.com/EliasCuadra/master-thesis-repowering) with explanatory README.md files that contain description of variables and proccessing steps. Nonetheless, important aspects or code chunks are directly included or can be found in the appendix.
+For the preparation and the analysis of the data R version 4.0.5 (2021-03-31) -- "Shake and Throw" and RStudio Version 1.4.1106 were used. Due to exhaustive code and iterative preparation steps the full documentation can not be displayed here but is to be found on [https://github.com/EliasCuadra/master-thesis-repowering](https://github.com/EliasCuadra/master-thesis-repowering) with explanatory README.md files that contain description of variables and processing steps. Nonetheless, important aspects or code chunks are directly included or can be found in the appendix.
 
 ## Methods
 
 ### Preparation and Analysis of data from the transmission system operator Amprion from 2017 to 2019
 
-Hallo
+The data from Amprion comes with 28 or rather 27 variables for the year 2019 of which only some are interesting for the further analysis. The kept variables are: Community key, post code, place, rated capacity, commissioning date, system key and electricity yield. For the analysis of the electricity yield not all the WT's are meaningful and some outliers are removed from the data. On the one hand WT's with a rated capacity under 100 kW are considered too small for a reasonable assessment of new commercially operated systems. On the other hand some  WT's are listed with a rated capacity up to 12 MW which might be because several WT's are registered as one. It is therefore assumed that if the rated capacity is larger than 4,5 MW it also does not reflect the average conditions, even though systems of this size exist. Also WT's that are build in the same year after the 15th of February are excluded since they have less time to generate electricity and therefore deliver misleading data.  The data from 2017 show 1,623 WT's in total of which 101 are outliers. The data from 2018 show 1,674 WT's of which 76 are outliers. The data from 2019 show 1,702 WT's of which 46 are outliers. An interim result are three csv files of the different years that only have relevant variables in the correct format and are free of outliers. Only the data from 2019 is further processed and variables for the county and municipality names as well as the electricity yield in MWh and the full load hours are added. The data from 2019 is then divided in three files according to the commissioning date to find the WT's that are build either before 2005, before 2001 or between 2001 and 2005 and are therefore potentially suitable for repowering. A flow chart of the individual processing steps that have been performed is presented in figure \@ref(fig:preparation). 
 
 ```{r preparation, echo=FALSE, fig.cap="Flow chart of the proccessing steps", out.width = "100%"}
 knitr::include_graphics("data/Amprion/results_of_preparation/flow.png")
 ```
 
+After the preparation, the data is firstly analyzed regarding the amount of electricity generated per WT and year. For this purpose, a linear and a 3rd order polynomial regression is carried out with the amount of electricity fed in, here referred to as the electricity yield, as the dependent variable and the commissioning date as the independent variable. 
 
 ### Area consumption of WT'S in RLP
 
@@ -25,62 +26,3 @@ knitr::include_graphics("data/Amprion/results_of_preparation/flow.png")
 
 
 
-
-
-```{r table1, echo=FALSE}
-col_names <- c(
-  "3m", "6m", "1yr", "2yr", "3yr", "5yr", "7yr", "10yr", "12yr", "15yr"
-)
-means     <- c(
-  3.138, 3.191, 3.307, 3.544, 3.756, 4.093, 4.354, 4.621, 4.741, 4.878
-)
-stddev    <- c(
-  0.915, 0.919, 0.935, 0.910, 0.876, 0.825, 0.803, 0.776, 0.768, 0.762
-)
-row_names <- c("Mean", "StD")
-
-df <- matrix(data = c(means, stddev), nrow = 2, byrow = T)
-rownames(df) <- row_names
-colnames(df) <- col_names
-df <- data.frame(df)
-knitr::kable(
-  df,
-  booktabs = TRUE,
-  caption = "Detailed descriptive statistics of location and dispersion for 2100 observed swap rates for the period from February 15, 1999 to March 2, 2007. Swap rates measured as 3.12 (instead of 0.0312).",
-  col.names = col_names, 
-  escape = FALSE
-) %>%
-kable_styling(latex_options = c("HOLD_position")) %>%
-row_spec(2, hline_after = T)
-```
-
-* Allows the reader to judge whether the sample is biased or to evaluate 
-  possible impacts of outliers, for example.
-
-* Here tables can be easily integrated using the `kable()` function in the
-  `knitr` package (with perhaps some additional help from the `kableExtra`
-  package). `kable()` will automatically generate a label for the table
-  environment. That way you don't have to manually enter in the table in LaTex,
-  you can embed tables from R code. 
-
-* Tables can be referenced using `\@ref(label)`, where `label` is `tab:<name>`,
-  where `<name>` is the code chunk label.
-
-* The appearance may look different to tables directly typed with LaTex, due to
-  limitations in `kable()`. To compare:
-    \begin{table}[ht]
-
-    \begin{center}
-        {\footnotesize
-        \begin{tabular}{l|cccccccccc}
-            \hline \hline
-                      & 3m    & 6m    & 1yr   & 2yr   & 3yr   & 5yr   & 7yr   & 10yr  & 12yr  & 15yr   \\
-            \hline
-                Mean   & 3.138 & 3.191 & 3.307 & 3.544 & 3.756 & 4.093 & 4.354 & 4.621 & 4.741 & 4.878  \\
-                StD    & 0.915 & 0.919 & 0.935 & 0.910 & 0.876 & 0.825 & 0.803 & 0.776 & 0.768 & 0.762  \\
-            \hline \hline
-        \end{tabular}}
-    \end{center}
-    \caption{This table was handwritten with LaTeX.}
-    \label{tab:table2}
-    \end{table}

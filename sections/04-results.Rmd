@@ -1,2 +1,17 @@
 # Results and discussion
 
+The diagnostics of the electricity yield show in all linear and polynomial models the same characteristics even if slightly different the model assumptions are not fundamentally violated. In figure \@ref(fig:diagnostic) the diagnostic plots of the electricity yield from the year 2019 are shown as an example. The residual vs fitted values plot show that the residuals become greater with increasing value for the electricity yield. This makes sense since the rated capacity for WT increases and therefore changes the magnitudes of electricity generation over time. The normal QQ plot shows that the residuals of average values are normally distributed but as the values become very great or small there is clear deviation from a normal distribution. This might be due to the non linear development of the WT technology. The scale location plots reveal that the residuals are more or less spread equally among the range of predictors with slightly increasing variance with increasing values, which must be like this since this was already indicated in the residuals vs fitted values plot. The residuals vs leverage plot shows that none of the observations is without Cook's distance and therefore there is no influential outlier. 
+
+
+
+```{r diagnostic, echo=FALSE, fig.cap="Diagnostic plots of electricity yield from 2019", out.width = "100%", fig.pos="H"}
+knitr::include_graphics("data/Amprion/results_of_analysis/diagnostic.png")
+```
+
+
+All models are highly significant with p-values lower than 0.001 and the linear models have a R\textsuperscript{2} value of 0.68 - 0.70, which means that around 70 % of the variation in the electricity yield can be explained by the commissioning date. By using a 3\textsuperscript{rd} order polynomial formula the value for R\textsuperscript{2} increases to up to 73 %. This value could not significantly be increased by using a higher order. This means that the fit of the model can be slightly improved using the polynomial model but it might loose prediction power due to the bias variance trade-off. Intuitively an infinitely or exponentially growing electricity yield is of course not realistic from a physical or technical point of view. Therefore the prediction of the polynomial models of more than 15,000 MWh per WT on average in the year 2030 seems too high and the assumption of 10,000 MWh per WT of the linear trends more reliable. However, the DWG forecast shows a disproportionate increase in the average nominal power, which in turn means that at locations with optimal wind conditions and rapidly advancing technology, disproportionate growth in electricity yield per WT is possible. The plot of the data and all trends are shown in figure \@ref(fig:electricityyield). For the given reason and to obtain a conservative estimate the average electricity yield in 2021 of the three linear trends which amounts to 7,400 MWh per WT is used for further calculations.
+
+```{r electricityyield, echo=FALSE, fig.cap="Development and forecast of electricity yield in Rhineland-Palatinate using data from 2017 to 2019 and a linear an polynomial model", out.width = "100%"}
+knitr::include_graphics("data/Amprion/results_of_analysis/electricity_yield_2017-2019_rlp_over_comissioning_date2.png")
+```
+

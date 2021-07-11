@@ -22,9 +22,9 @@ names(amprion_2017)[1] <- "gem"
 ####################
 #Variable selection#
 ####################
-selection_2017 <- amprion_2017[,c(1:3,8,10,15:17,27)]
-selection_2018 <- amprion_2018[,c(1:3,8,10,15:17,27)]
-selection_2019 <- amprion_2019[,c(1:3,7,9,14:16,26)]
+selection_2017 <- amprion_2017[,c(1:3,8,10,17,27)]
+selection_2018 <- amprion_2018[,c(1:3,8,10,17,27)]
+selection_2019 <- amprion_2019[,c(1:3,7,9,16,26)]
 
 
 ###############################
@@ -36,19 +36,27 @@ selection_2019$inbetriebnahme <- as.Date(selection_2019$inbetriebnahme, "%d/%m/%
 
 
 ###############
-#Find outliers#
+#find outliers#
 ###############
+outliers_2017 <- filter(selection_2017, leistung < 100 | leistung > 4500 | inbetriebnahme > "2017-02-15")
+outliers_2018 <- filter(selection_2018, leistung < 100 | leistung > 4500 | inbetriebnahme > "2018-02-15")
+outliers_2019 <- filter(selection_2019, leistung < 100 | leistung > 4500 | inbetriebnahme > "2019-02-15")
 
-selection_2017_without_outliers <- filter(selection_2017, leistung > 100 & leistung < 4500 & inbetriebnahme < "2017-02-15")
-selection_2018_without_outliers <- filter(selection_2018, leistung > 100 & leistung < 4500 & inbetriebnahme < "2017-02-15")
-selection_2019_without_outliers <- filter(selection_2019, leistung > 100 & leistung < 4500 & inbetriebnahme < "2017-02-15")
+
+############################
+#create df without outliers#
+############################
+selection_2017_without_outliers <- setdiff(selection_2017, outliers_2017)
+selection_2018_without_outliers <- setdiff(selection_2018, outliers_2018)
+selection_2019_without_outliers <- setdiff(selection_2019, outliers_2019)
+
 
 #############
 #write files#
 #############
-write.csv(selection_2017_without_outliers, "results_of_preparation/amprion_2017_proccessed_and_without_outliers.csv")
-write.csv(selection_2018_without_outliers, "results_of_preparation/amprion_2018_proccessed_and_without_outliers.csv")
-write.csv(selection_2019_without_outliers, "results_of_preparation/amprion_2019_proccessed_and_without_outliers.csv")
+#write.csv(selection_2017_without_outliers, "results_of_preparation/amprion_2017_proccessed_and_without_outliers.csv")
+#write.csv(selection_2018_without_outliers, "results_of_preparation/amprion_2018_proccessed_and_without_outliers.csv")
+#write.csv(selection_2019_without_outliers, "results_of_preparation/amprion_2019_proccessed_and_without_outliers.csv")
 
 
 ################################################################################
@@ -256,13 +264,18 @@ selection_2019_counties_communities <- selection_2019_counties %>%
                              vg_nr == 732000 ~ 'Zweibr?cken'))
 
 
-
-######################
-#see outliers in 2019#
-######################
-#small_values <- subset(selection_2019, leistung < 100)
-#big_values <- subset(selection_2019, leistung > 4500)
-#small_electricity_yield <- subset(selection_counties_communities, menge_mwh < 500)
+#######################################################################################
+#add electricity yiel in MWh and full load hours in the selection_without_outlier df's#
+#######################################################################################
+selection_2017_without_outliers <- selection_2017_without_outliers %>% 
+  mutate(flh = menge_kwh/leistung) %>%
+  mutate(menge_mwh = round(menge_kwh/1000))
+selection_2018_without_outliers <- selection_2018_without_outliers %>% 
+  mutate(flh = menge_kwh/leistung) %>%
+  mutate(menge_mwh = round(menge_kwh/1000))
+selection_2019_without_outliers <- selection_2019_without_outliers %>% 
+  mutate(flh = menge_kwh/leistung) %>%
+  mutate(menge_mwh = round(menge_kwh/1000))
 
 
 #######################################################################################################################
@@ -274,12 +287,14 @@ comissioning_before2005 <- subset(selection_without_outliers, inbetriebnahme < "
 comissioning_2001_2005 <- subset(comissioning_before2005, inbetriebnahme > "2000-12-31")
 sum(comissioning_2001_2005$menge_kwh/10^6)
 
-write.csv(comissioning_before2001,"results_of_preparation/commissioning_before2001.csv")
-write.csv(comissioning_2001_2005,"results_of_preparation/commissioning_2001_2005.csv")
-write.csv(comissioning_before2005,"results_of_preparation/commissioning_before_2005.csv")
+#write.csv(comissioning_before2001,"results_of_preparation/commissioning_before2001.csv")
+#write.csv(comissioning_2001_2005,"results_of_preparation/commissioning_2001_2005.csv")
+#write.csv(comissioning_before2005,"results_of_preparation/commissioning_before_2005.csv")
 
 
-#create flow chart of data preparation
+#######################################
+#create flow chart of data preparation#
+#######################################
 grViz(diagram = "digraph flowchart {
   node [fontname = arial, shape = oval, fixedsize = FALSE]
   tab1 [label = '@@1', fontsize=30]
@@ -311,18 +326,150 @@ grViz(diagram = "digraph flowchart {
   
   ")
 
+----------------------------------------
+
+##################################
+#Statistical analysis of the data#
+##################################
+
+
+###########################################################################
+#Linear and polynomial models of electricity yield over commissioning date#
+###########################################################################
+#2017
+lm_electricity_yield_2017 <- lm(selection_2017_without_outliers$menge_mwh ~ selection_2017_without_outliers$inbetriebnahme)
+summary(lm_electricity_yield_2017)
+plot(lm_electricity_yield_2017)
+#2018
+lm_electricity_yield_2018 <- lm(selection_2018_without_outliers$menge_mwh ~ selection_2018_without_outliers$inbetriebnahme)
+summary(lm_electricity_yield_2018)
+plot(lm_electricity_yield_2018)
+#2019
+lm_electricity_yield_2019 <- lm(selection_2019_without_outliers$menge_mwh ~ selection_2019_without_outliers$inbetriebnahme)
+summary(lm_electricity_yield_2019)
+par(mfrow = c(2, 2))
+plot(lm_electricity_yield_2019)
+#check polynomial model for 2019
+pm_electricity_yield_2019 <- lm(selection_2019_without_outliers$menge_mwh ~ poly(selection_2019_without_outliers$inbetriebnahme, 3))
+summary(pm_electricity_yield_2019)
+plot(pm_electricity_yield_2019)
+#2018
+pm_electricity_yield_2018 <- lm(selection_2018_without_outliers$menge_mwh ~ poly(selection_2018_without_outliers$inbetriebnahme, 3))
+summary(pm_electricity_yield_2018)
+plot(pm_electricity_yield_2018)
+#2018
+pm_electricity_yield_2017 <- lm(selection_2017_without_outliers$menge_mwh ~ poly(selection_2017_without_outliers$inbetriebnahme, 3))
+summary(pm_electricity_yield_2017)
+plot(pm_electricity_yield_2017)
+
+
+############################################
+#Plot the values with linear trend for 2019#
+############################################
+pelectricity_yield_2019 <- ggplot() +
+  geom_point(data = selection_2017_without_outliers, aes(x=inbetriebnahme, y=menge_mwh), size = 0.4, colour = "blue") +
+  geom_point(data = selection_2018_without_outliers, aes(x=inbetriebnahme, y=menge_mwh), size = 0.4, colour = "red") +
+  geom_point(data = selection_2019_without_outliers, aes(x=inbetriebnahme, y=menge_mwh), size = 0.4, colour = "green") +
+  geom_smooth(data = selection_2017_without_outliers, aes(x=inbetriebnahme, y=menge_mwh, colour = "2017"), method=lm, se=TRUE, fullrange = TRUE)  +
+  geom_smooth(data = selection_2018_without_outliers, aes(x=inbetriebnahme, y=menge_mwh, colour = "2018"), method=lm, se=TRUE, fullrange = TRUE)  +
+  geom_smooth(data = selection_2019_without_outliers, aes(x=inbetriebnahme, y=menge_mwh, colour = "2019"), method=lm, se=TRUE, fullrange = TRUE)  +
+  theme_light() +
+  scale_x_date(limits = as.Date(c("1990-01-01","2030-12-31"))) +
+  ylim(-1000, 12000) +
+  xlab("Comissioning Date") +
+  ylab("Electricity yield [MWh]") +
+  ggtitle("Electricity yield of WT's in Rhineland-Palatinate from 2017 \nto 2019 over the comissioning date") +
+  theme( axis.text=element_text(size=12),
+         axis.title=element_text(size=13),
+         plot.title = element_text(size=16),
+         legend.position = c(0.85, 0.9),
+         legend.direction = "horizontal") +
+  geom_hline(yintercept = 7400, linetype = 'dashed') +
+  annotate(geom="text",x=as.Date("1997-01-01"),
+           y=6500,label="mean of ~ 7,400 MWh/a in 2021") +
+  annotate(geom="text",x=as.Date("2028-01-01"),
+           y=1000,label= "R² = 68 - 70 %") +
+  annotate(geom="text",x=as.Date("2028-01-01"),
+           y=400,label="p-value << 0.001") +
+  scale_colour_manual(name = "Year", values=c("blue", "red", "green")) 
+   
+
+
+############
+#print plot#
+############
+pelectricity_yield_2019 +  theme(legend.position = c(0.25,0.9))
+
+
+####################
+#save plot as image#
+####################
+ggsave("results_of_analysis/electricity_yield_2017-2019_rlp_over_comissioning_date.png",
+       plot = last_plot(),
+       dpi = 900,
+       width = 7,
+       height = 4)
+
+
+########################
+#use a polynomial model#
+########################
+############################################
+#Plot the values with linear trend for 2019#
+############################################
+pelectricity_yield_2019_poly <- ggplot() +
+  geom_point(data = selection_2017_without_outliers, aes(x=inbetriebnahme, y=menge_mwh), size = 0.4, colour = "#03a1fc") +
+  geom_point(data = selection_2018_without_outliers, aes(x=inbetriebnahme, y=menge_mwh), size = 0.4, colour = "#fc5a03") +
+  geom_point(data = selection_2019_without_outliers, aes(x=inbetriebnahme, y=menge_mwh), size = 0.4, colour = "#94fc03") +
+  geom_smooth(data = selection_2017_without_outliers, aes(x=inbetriebnahme, y=menge_mwh, colour = "2017"), method=lm, se=TRUE, fullrange = TRUE, size = 0.5)  +
+  geom_smooth(data = selection_2018_without_outliers, aes(x=inbetriebnahme, y=menge_mwh, colour = "2018"), method=lm, se=TRUE, fullrange = TRUE, size = 0.5)  +
+  geom_smooth(data = selection_2019_without_outliers, aes(x=inbetriebnahme, y=menge_mwh, colour = "2019"), method=lm, se=TRUE, fullrange = TRUE, size = 0.5)  +
+  geom_smooth(data = selection_2017_without_outliers, aes(x=inbetriebnahme, y=menge_mwh, colour = "2017"), method= "lm", formula = y ~ poly(x, 3), fullrange = TRUE, size = 0.5)  +
+  geom_smooth(data = selection_2018_without_outliers, aes(x=inbetriebnahme, y=menge_mwh, colour = "2018"), method= "lm", formula = y ~ poly(x, 3), fullrange = TRUE, size = 0.5)  +
+  geom_smooth(data = selection_2019_without_outliers, aes(x=inbetriebnahme, y=menge_mwh, colour = "2019"), method= "lm", formula = y ~ poly(x, 3), fullrange = TRUE, size = 0.5)  +
+  theme_light() +
+  scale_x_date(limits = as.Date(c("1990-01-01","2030-12-31"))) +
+  ylim(-1000, 20000) +
+  xlab("Comissioning Date") +
+  ylab("Electricity yield per WT and year [MWh]") +
+  theme( axis.text=element_text(size=11),
+         axis.title=element_text(size=12),
+         plot.title = element_text(size=14),
+         legend.position = c(0.85, 0.9),
+         legend.direction = "horizontal") +
+  geom_hline(yintercept = 7400, linetype = 'dashed', size = 0.25) +
+  annotate(geom="text",x=as.Date("1997-01-01"),
+           y=6500,label="mean of ~ 7,400 MWh/a in 2021 with linear trends", size = 2.5) +
+  geom_hline(yintercept = 10000, linetype = 'dashed', size = 0.25) +
+  annotate(geom="text",x=as.Date("2000-01-01"),
+           y=11000,label="mean of ~ 10,000 MWh/a in 2030 with linear trends", size = 2.5) +
+  geom_hline(yintercept = 15000, linetype = 'dashed', size = 0.25) +
+  annotate(geom="text",x=as.Date("2003-01-01"),
+           y=14200, label="> 15,000 MWh/a in 2030 with polynomial models", size = 2.5) +
+  annotate(geom="text",x=as.Date("2026-01-01"),
+           y=2000,label= "All adj. R² (3rd poly) ~ 72 %", size = 2.5) +
+  annotate(geom="text",x=as.Date("2026-01-01"),
+           y=3500,label= "All R² (linear) ~ 68 - 70 %", size = 2.5) +
+  annotate(geom="text",x=as.Date("2026-01-01"),
+           y=400,label="p-values all << 0.001", size = 2.5) +
+  scale_colour_manual(name = "Year", values=c("#03a1fc", "#fc5a03", "#94fc03")) 
 
 
 
+############
+#print plot#
+############
+pelectricity_yield_2019_poly +  theme(legend.position = c(0.25,0.9))
 
 
-
-
-
-
-
-
-
+####################
+#save plot as image#
+####################
+ggsave("results_of_analysis/electricity_yield_2017-2019_rlp_over_comissioning_date2.png",
+       plot = last_plot(),
+       dpi = 900,
+       width = 7,
+       height = 4)
 
 
 
