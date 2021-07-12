@@ -17,7 +17,7 @@
 \contentsline {subsubsection}{\numberline {3.2.4}Repowering potential}{14}{subsubsection.3.2.4}%
 \contentsline {section}{\numberline {4}Results and discussion}{14}{section.4}%
 \contentsline {section}{\numberline {5}Conclusion}{17}{section.5}%
-\contentsline {section}{References}{18}{section*.17}%
-\contentsline {section}{\numberline {A}Appendix}{20}{appendix.A}%
-\contentsline {subsection}{\numberline {A.1}Figures}{20}{subsection.A.1}%
-\contentsline {subsection}{\numberline {A.2}Tables}{20}{subsection.A.2}%
+\contentsline {section}{References}{19}{section*.18}%
+\contentsline {section}{\numberline {A}Appendix}{21}{appendix.A}%
+\contentsline {subsection}{\numberline {A.1}Figures}{21}{subsection.A.1}%
+\contentsline {subsection}{\numberline {A.2}Tables}{21}{subsection.A.2}%

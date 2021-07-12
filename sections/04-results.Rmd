@@ -15,14 +15,16 @@ All models are highly significant with p-values lower than 0.001 and the linear 
 knitr::include_graphics("data/Amprion/results_of_analysis/electricity_yield_2017-2019_rlp_over_comissioning_date2.png")
 ```
 
-For the following plots and trends the diagnostics and significance is not further discussed since there is no sign of abnormalities. The plot of the electricity over the rated capacity is shown in figure \@ref(fig:eratedcapacity). As expected the electricity increases with increasing rated capacity and therefore also more recent commissioning date because the size and generator technology advances continuously. It can also be seen that the rated capacity clusters around certain values which is due to the availability and performance of specific generator series. But not only the electricity yield increases also the variance increase. This is also logic since the different and fluctuating wind conditions lead to a greater magnitude of difference in electricity yield when using a larger generator. To generate the average electricity of 7,400 MWh/a that were presented before, as a minimum a 3.5 MW turbine must be used. Hence, this 3.5 MW are used for further calculations. 
+For the following plots and trends the diagnostics and significance is not further discussed since there is no sign of abnormalities apart from the patterns that occur due to the steps in which the rated capacity of generators increase and the assumed non linear technological development. The plot of the electricity over the rated capacity is shown in figure \@ref(fig:eratedcapacity). As expected the electricity increases with increasing rated capacity and therefore also more recent commissioning date because the size and generator technology advances continuously. It can also be seen that the rated capacity clusters around certain values which is due to the availability and performance of specific generator series. But not only the electricity yield increases also the variance increase. This is also logic since the different and fluctuating wind conditions lead to a greater magnitude of difference in electricity yield when using a larger generator. To generate the average electricity of 7,400 MWh/a that were presented before, as a minimum a 3.5 MW turbine must be used. Hence, this 3.5 MW are used for further calculations. The plot of the rated capacity over the commissioning date is shown in figure \@ref(fig:ratedcapacity). It shows again the characteristic pattern of specific rated capacity values and the mean of 3,500 kW installed power in 2021 per WT as well as an prediction for the year 2030 with 4,500 kW using a linear trend.
 
 
-```{r eratedcapacity, echo=FALSE, fig.cap="Electricity yield over rated capacity", out.width = "100%", fig.pos="H"}
+```{r eratedcapacity, echo=FALSE, fig.cap="Electricity yield over rated capacity", out.width = "100%"}
 knitr::include_graphics("data/Amprion/results_of_analysis/electricity_rated_capacity.png")
 ```
 
-
+```{r ratedcapacity, echo=FALSE, fig.cap="Rated capacity over commissioning date", out.width = "100%", fig.pos="H"}
+knitr::include_graphics("data/Amprion/results_of_analysis/rated_capacity_over_commissioning.png")
+```
 
 
 

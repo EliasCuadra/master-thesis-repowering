@@ -397,7 +397,7 @@ For the analysis only data from the years 2017 to 2019 is used because the WT te
 
 \caption{Flow chart of the proccessing steps}\label{fig:preparation}
 \end{figure}
-After the preparation, the data is firstly analyzed regarding the amount of electricity generated per WT and year. For this purpose, a linear and a 3rd order polynomial regression, that allow for a forecast until 2030, is carried out. The amount of electricity fed in, here referred to as the electricity yield, is the dependent variable and the commissioning date as the independent variable. Secondly the electricity yield is plotted over the rated capacity and henceforth only linear trends are applied to generate more conservative and appropriate estimation of the future values.
+After the preparation, the data is firstly analyzed regarding the amount of electricity generated per WT and year. For this purpose, a linear and a 3rd order polynomial regression, that allow for a forecast until 2030, is carried out. The amount of electricity fed in, here referred to as the electricity yield, is the dependent variable and the commissioning date as the independent variable. Secondly the electricity yield is plotted over the rated capacity and henceforth only linear trends are applied to generate more conservative and appropriate estimation of the future values. For the next analysis a plot of the rated capacity over the commissioning date is generated. For this only data from 2019 is used since the rated capacity of the already installed WT's do not change over time. Further the full load hours as a concept of the degree of utilization is analyzed in regard of the WT's commissioning date. The degree of utilization might be more dependent on the wind conditions than the technical development and is therefore specifically good for predictions and therefore data from the past 5 years is analyzed. In addition to the wind conditions the full load hours depend on the specific nominal output, which means the rotor diameter, and hence the technological development can not be disregarded. Which means concrete that old data might still deliver a wrong impression on future predictions but also might account for weak years in terms of wind conditions since 2019 might be a stronger wind year.
 
 \hypertarget{area-consumption-of-wts-in-rlp}{%
 \subsubsection{Area consumption of WT'S in RLP}\label{area-consumption-of-wts-in-rlp}}
@@ -429,14 +429,22 @@ All models are highly significant with p-values lower than 0.001 and the linear 
 
 \caption{Development and forecast of electricity yield in Rhineland-Palatinate using data from 2017 to 2019 and a linear an polynomial model}\label{fig:electricityyield}
 \end{figure}
-For the following plots and trends the diagnostics and significance is not further discussed since there is no sign of abnormalities. The plot of the electricity over the rated capacity is shown in figure \ref{fig:eratedcapacity}. As expected the electricity increases with increasing rated capacity and therefore also more recent commissioning date because the size and generator technology advances continuously. It can also be seen that the rated capacity clusters around certain values which is due to the availability and performance of specific generator series. But not only the electricity yield increases also the variance increase. This is also logic since the different and fluctuating wind conditions lead to a greater magnitude of difference in electricity yield when using a larger generator. To generate the average electricity of 7,400 MWh/a that were presented before, as a minimum a 3.5 MW turbine must be used. Hence, this 3.5 MW are used for further calculations.
-\begin{figure}[H]
+For the following plots and trends the diagnostics and significance is not further discussed since there is no sign of abnormalities apart from the patterns that occur due to the steps in which the rated capacity of generators increase and the assumed non linear technological development. The plot of the electricity over the rated capacity is shown in figure \ref{fig:eratedcapacity}. As expected the electricity increases with increasing rated capacity and therefore also more recent commissioning date because the size and generator technology advances continuously. It can also be seen that the rated capacity clusters around certain values which is due to the availability and performance of specific generator series. But not only the electricity yield increases also the variance increase. This is also logic since the different and fluctuating wind conditions lead to a greater magnitude of difference in electricity yield when using a larger generator. To generate the average electricity of 7,400 MWh/a that were presented before, as a minimum a 3.5 MW turbine must be used. Hence, this 3.5 MW are used for further calculations. The plot of the rated capacity over the commissioning date is shown in figure \ref{fig:ratedcapacity}. It shows again the characteristic pattern of specific rated capacity values and the mean of 3,500 kW installed power in 2021 per WT as well as an prediction for the year 2030 with 4,500 kW using a linear trend.
+\begin{figure}
 
 {\centering \includegraphics[width=1\linewidth]{data/Amprion/results_of_analysis/electricity_rated_capacity} 
 
 }
 
 \caption{Electricity yield over rated capacity}\label{fig:eratedcapacity}
+\end{figure}
+\begin{figure}[H]
+
+{\centering \includegraphics[width=1\linewidth]{data/Amprion/results_of_analysis/rated_capacity_over_commissioning} 
+
+}
+
+\caption{Rated capacity over commissioning date}\label{fig:ratedcapacity}
 \end{figure}
 \hypertarget{conclusion}{%
 \section{Conclusion}\label{conclusion}}
