@@ -9,9 +9,29 @@ knitr::include_graphics("data/Amprion/results_of_analysis/diagnostic.png")
 ```
 
 
-All models are highly significant with p-values lower than 0.001 and the linear models have a R\textsuperscript{2} value of 0.68 - 0.70, which means that around 70 % of the variation in the electricity yield can be explained by the commissioning date. By using a 3\textsuperscript{rd} order polynomial formula the value for R\textsuperscript{2} increases to up to 73 %. This value could not significantly be increased by using a higher order. This means that the fit of the model can be slightly improved using the polynomial model but it might loose prediction power due to the bias variance trade-off. Intuitively an infinitely or exponentially growing electricity yield is of course not realistic from a physical or technical point of view. Therefore the prediction of the polynomial models of more than 15,000 MWh per WT on average in the year 2030 seems too high and the assumption of 10,000 MWh per WT of the linear trends more reliable. However, the DWG forecast shows a disproportionate increase in the average nominal power, which in turn means that at locations with optimal wind conditions and rapidly advancing technology, disproportionate growth in electricity yield per WT is possible. The plot of the data and all trends are shown in figure \@ref(fig:electricityyield). For the given reason and to obtain a conservative estimate the average electricity yield in 2021 of the three linear trends which amounts to 7,400 MWh per WT is used for further calculations.
+All models are highly significant with p-values lower than 0.001 and the linear models have a R\textsuperscript{2} value of 0.68 - 0.70, which means that around 70 % of the variation in the electricity yield can be explained by the commissioning date. By using a 3\textsuperscript{rd} order polynomial formula the value for R\textsuperscript{2} increases to up to 73 %. This value could not significantly be increased by using a higher order. This means that the fit of the model can be slightly improved using the polynomial model but it might loose prediction power due to the bias variance trade-off. Intuitively an infinitely or exponentially growing electricity yield is of course not realistic from a physical or technical point of view. Therefore the prediction of the polynomial models of more than 15,000 MWh per WT on average in the year 2030 seems too high and the assumption of 10,000 MWh per WT of the linear trends more reliable. However, the DWG forecast shows a disproportionate increase in the average nominal power, which in turn means that at locations with optimal wind conditions and rapidly advancing technology, disproportionate growth in electricity yield per WT is possible. Nonetheless, only few locations have optimal conditions and a more conservative estimation is chosen in this context, which might be different in the assessment of single sites. The plot of the data and all trends are shown in figure \@ref(fig:electricityyield). For the given reason and to obtain a conservative estimate the average electricity yield in 2021 of the three linear trends which amounts to 7,400 MWh per WT is used for further calculations.
 
 ```{r electricityyield, echo=FALSE, fig.cap="Development and forecast of electricity yield in Rhineland-Palatinate using data from 2017 to 2019 and a linear an polynomial model", out.width = "100%"}
 knitr::include_graphics("data/Amprion/results_of_analysis/electricity_yield_2017-2019_rlp_over_comissioning_date2.png")
 ```
+
+For the following plots and trends the diagnostics and significance is not further discussed since there is no sign of abnormalities. The plot of the electricity over the rated capacity is shown in figure \@ref(fig:eratedcapacity). As expected the electricity increases with increasing rated capacity and therefore also more recent commissioning date because the size and generator technology advances continuously. It can also be seen that the rated capacity clusters around certain values which is due to the availability and performance of specific generator series. But not only the electricity yield increases also the variance increase. This is also logic since the different and fluctuating wind conditions lead to a greater magnitude of difference in electricity yield when using a larger generator. To generate the average electricity of 7,400 MWh/a that were presented before, as a minimum a 3.5 MW turbine must be used. Hence, this 3.5 MW are used for further calculations. 
+
+
+```{r eratedcapacity, echo=FALSE, fig.cap="Electricity yield over rated capacity", out.width = "100%", fig.pos="H"}
+knitr::include_graphics("data/Amprion/results_of_analysis/electricity_rated_capacity.png")
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
 

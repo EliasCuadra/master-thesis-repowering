@@ -50,7 +50,7 @@ pelectricity_yield_rlp <- ggplot(amprion, aes(x=inbetriebnahme, y=menge_mwh)) +
   annotate(geom="text",x=as.Date("1992-01-01"),
            y=6500,label="~ 7500 MWh") +
   annotate(geom="text",x=as.Date("2028-01-01"),
-           y=4000,label="R² = 64.9 %") +
+           y=4000,label="R? = 64.9 %") +
   annotate(geom="text",x=as.Date("2028-01-01"),
            y=400,label="p-value << 0.001") +
   scale_color_identity(name = "",
@@ -93,7 +93,7 @@ pelectricity2 <- ggplot(amprion, aes(x=leistung, y=menge_mwh)) +
   annotate(geom="text",x = 750 ,
            y=8000,label="~ 7330 MWh (3.4 MW)") +
   annotate(geom="text",x = 7000,
-           y=2500,label="R² = 79.6 %") +
+           y=2500,label="RÂ² = 79.6 %") +
   annotate(geom="text",x = 7000,
            y=400,label="p-value << 0.001") +
   scale_color_identity(name = "",
@@ -136,7 +136,7 @@ prated_capacity <- ggplot(amprion, aes(x=inbetriebnahme, y=leistung)) +
   annotate(geom="text",x=as.Date("1991-01-01"),
            y=4000,label="~ 3400 kW") +
   annotate(geom="text",x=as.Date("2028-01-01"),
-           y=2000,label="R² = 60 %") +
+           y=2000,label="R? = 60 %") +
   annotate(geom="text",x=as.Date("2028-01-01"),
            y=400,label="p-value << 0.001") +
   scale_color_identity(name = "",
@@ -179,7 +179,7 @@ pfull_load_hours <- ggplot(amprion, aes(x=inbetriebnahme, y=flh)) +
   annotate(geom="text",x=as.Date("1991-01-01"),
            y=2500,label="~ 2375 h") +
   annotate(geom="text",x=as.Date("2028-01-01"),
-           y=2000,label="R² = 48.3 %") +
+           y=2000,label="R? = 48.3 %") +
   annotate(geom="text",x=as.Date("2028-01-01"),
            y=400,label="p-value << 0.001") +
   scale_color_identity(name = "",

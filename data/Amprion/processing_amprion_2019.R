@@ -326,7 +326,7 @@ grViz(diagram = "digraph flowchart {
   
   ")
 
-----------------------------------------
+-------------------------------------------------------------------------------
 
 ##################################
 #Statistical analysis of the data#
@@ -363,60 +363,10 @@ summary(pm_electricity_yield_2017)
 plot(pm_electricity_yield_2017)
 
 
-############################################
-#Plot the values with linear trend for 2019#
-############################################
-pelectricity_yield_2019 <- ggplot() +
-  geom_point(data = selection_2017_without_outliers, aes(x=inbetriebnahme, y=menge_mwh), size = 0.4, colour = "blue") +
-  geom_point(data = selection_2018_without_outliers, aes(x=inbetriebnahme, y=menge_mwh), size = 0.4, colour = "red") +
-  geom_point(data = selection_2019_without_outliers, aes(x=inbetriebnahme, y=menge_mwh), size = 0.4, colour = "green") +
-  geom_smooth(data = selection_2017_without_outliers, aes(x=inbetriebnahme, y=menge_mwh, colour = "2017"), method=lm, se=TRUE, fullrange = TRUE)  +
-  geom_smooth(data = selection_2018_without_outliers, aes(x=inbetriebnahme, y=menge_mwh, colour = "2018"), method=lm, se=TRUE, fullrange = TRUE)  +
-  geom_smooth(data = selection_2019_without_outliers, aes(x=inbetriebnahme, y=menge_mwh, colour = "2019"), method=lm, se=TRUE, fullrange = TRUE)  +
-  theme_light() +
-  scale_x_date(limits = as.Date(c("1990-01-01","2030-12-31"))) +
-  ylim(-1000, 12000) +
-  xlab("Comissioning Date") +
-  ylab("Electricity yield [MWh]") +
-  ggtitle("Electricity yield of WT's in Rhineland-Palatinate from 2017 \nto 2019 over the comissioning date") +
-  theme( axis.text=element_text(size=12),
-         axis.title=element_text(size=13),
-         plot.title = element_text(size=16),
-         legend.position = c(0.85, 0.9),
-         legend.direction = "horizontal") +
-  geom_hline(yintercept = 7400, linetype = 'dashed') +
-  annotate(geom="text",x=as.Date("1997-01-01"),
-           y=6500,label="mean of ~ 7,400 MWh/a in 2021") +
-  annotate(geom="text",x=as.Date("2028-01-01"),
-           y=1000,label= "R² = 68 - 70 %") +
-  annotate(geom="text",x=as.Date("2028-01-01"),
-           y=400,label="p-value << 0.001") +
-  scale_colour_manual(name = "Year", values=c("blue", "red", "green")) 
-   
 
-
-############
-#print plot#
-############
-pelectricity_yield_2019 +  theme(legend.position = c(0.25,0.9))
-
-
-####################
-#save plot as image#
-####################
-ggsave("results_of_analysis/electricity_yield_2017-2019_rlp_over_comissioning_date.png",
-       plot = last_plot(),
-       dpi = 900,
-       width = 7,
-       height = 4)
-
-
-########################
-#use a polynomial model#
-########################
-############################################
-#Plot the values with linear trend for 2019#
-############################################
+###################################################################
+#Plot the values with linear and polynomial trends for 2017 - 2019#
+###################################################################
 pelectricity_yield_2019_poly <- ggplot() +
   geom_point(data = selection_2017_without_outliers, aes(x=inbetriebnahme, y=menge_mwh), size = 0.4, colour = "#03a1fc") +
   geom_point(data = selection_2018_without_outliers, aes(x=inbetriebnahme, y=menge_mwh), size = 0.4, colour = "#fc5a03") +
@@ -470,6 +420,62 @@ ggsave("results_of_analysis/electricity_yield_2017-2019_rlp_over_comissioning_da
        dpi = 900,
        width = 7,
        height = 4)
+
+-------------------------------------------------------------------------------
+
+####################################################
+#linear models with electricity over rated capacity#
+####################################################
+lm_e_over_rated_capacity_2019 <- lm(selection_2019_without_outliers$menge_mwh ~ selection_2019_without_outliers$leistung)
+summary(lm_e_over_rated_capacity_2019)
+plot(lm_e_over_rated_capacity_2019)
+##########################################################################
+#Plot electricity yield over rated capacity with linear trend 2017 - 2019#
+##########################################################################
+pe_over_ratedcapacity_2019 <- ggplot() +
+  geom_point(data = selection_2017_without_outliers, aes(x=leistung, y=menge_mwh), size = 0.4, colour = "#03a1fc") +
+  geom_point(data = selection_2018_without_outliers, aes(x=leistung, y=menge_mwh), size = 0.4, colour = "#fc5a03") +
+  geom_point(data = selection_2019_without_outliers, aes(x=leistung, y=menge_mwh), size = 0.4, colour = "#94fc03") +
+  geom_smooth(data = selection_2017_without_outliers, aes(x=leistung, y=menge_mwh, colour = "2017"), method=lm, se=TRUE, fullrange = TRUE)  +
+  geom_smooth(data = selection_2018_without_outliers, aes(x=leistung, y=menge_mwh, colour = "2018"), method=lm, se=TRUE, fullrange = TRUE)  +
+  geom_smooth(data = selection_2019_without_outliers, aes(x=leistung, y=menge_mwh, colour = "2019"), method=lm, se=TRUE, fullrange = TRUE)  +
+  theme_light() +
+  ylim(-1000, 12000) +
+  xlim(0,5000) +
+  xlab("Rated capacity (kW)") +
+  ylab("Electricity yield [MWh]") +
+  theme( axis.text=element_text(size=12),
+         axis.title=element_text(size=13),
+         plot.title = element_text(size=16),
+         legend.position = c(0.85, 0.9),
+         legend.direction = "horizontal") +
+  geom_hline(yintercept = 7400, linetype = 'dashed', size = 0.25) +
+  geom_vline(xintercept = 3500, linetype = 'dashed', size = 0.25) +
+  annotate(geom="text",x=1000,
+           y=7000,label="7,400 MWh/a in 2021 from plot above") +
+  annotate(geom="text",x=4000,
+           y=2000,label="min 3.5 MW") +
+  annotate(geom="text",x=4500,
+           y=11500,label= "R² = ~ 79 %") +
+  scale_colour_manual(name = "Year", values=c("#03a1fc", "#fc5a03", "#94fc03")) 
+
+
+
+############
+#print plot#
+############
+pe_over_ratedcapacity_2019 +  theme(legend.position = c(0.25,0.9))
+
+
+####################
+#save plot as image#
+####################
+ggsave("results_of_analysis/electricity_rated_capacity.png",
+       plot = last_plot(),
+       dpi = 900,
+       width = 7,
+       height = 4)
+
 
 
 
