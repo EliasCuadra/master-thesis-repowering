@@ -16,8 +16,9 @@
 \contentsline {subsubsection}{\numberline {3.2.3}CO\textsubscript {2} reduction potential}{14}{subsubsection.3.2.3}%
 \contentsline {subsubsection}{\numberline {3.2.4}Repowering potential}{14}{subsubsection.3.2.4}%
 \contentsline {section}{\numberline {4}Results and discussion}{14}{section.4}%
-\contentsline {section}{\numberline {5}Conclusion}{18}{section.5}%
-\contentsline {section}{References}{19}{section*.19}%
-\contentsline {section}{\numberline {A}Appendix}{21}{appendix.A}%
-\contentsline {subsection}{\numberline {A.1}Figures}{21}{subsection.A.1}%
-\contentsline {subsection}{\numberline {A.2}Tables}{21}{subsection.A.2}%
+\contentsline {subsection}{\numberline {4.1}Electricity yield, rated capacity and full load hours in Rhineland-Palatinate}{14}{subsection.4.1}%
+\contentsline {section}{\numberline {5}Conclusion}{19}{section.5}%
+\contentsline {section}{References}{20}{section*.19}%
+\contentsline {section}{\numberline {A}Appendix}{22}{appendix.A}%
+\contentsline {subsection}{\numberline {A.1}Figures}{22}{subsection.A.1}%
+\contentsline {subsection}{\numberline {A.2}Tables}{22}{subsection.A.2}%
