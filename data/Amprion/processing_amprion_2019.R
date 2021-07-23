@@ -64,9 +64,9 @@ selection_2019_without_outliers <- setdiff(selection_2019, outliers_2019)
 #############
 #write files#
 #############
-#write.csv(selection_2017_without_outliers, "results_of_preparation/amprion_2017_proccessed_and_without_outliers.csv")
-#write.csv(selection_2018_without_outliers, "results_of_preparation/amprion_2018_proccessed_and_without_outliers.csv")
-#write.csv(selection_2019_without_outliers, "results_of_preparation/amprion_2019_proccessed_and_without_outliers.csv")
+#write.csv(selection_2017_without_outliers, "results_of_preparation/amprion_2017_processed_and_without_outliers.csv")
+#write.csv(selection_2018_without_outliers, "results_of_preparation/amprion_2018_processed_and_without_outliers.csv")
+#write.csv(selection_2019_without_outliers, "results_of_preparation/amprion_2019_processed_and_without_outliers.csv")
 
 
 #######################################################################################
