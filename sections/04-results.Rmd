@@ -36,37 +36,38 @@ As expected the electricity yield increases with increasing rated capacity and t
 knitr::include_graphics("data/Amprion/results_of_analysis/rated_capacity_over_commissioning.png")
 ```
 
-The next plot shows the full load hours over the commissioning date in figure \@ref(fig:full). The linear trends for the year 2015 until 2019 have more or less the same slope and are not deviating strongly. This indicates relatively stable conditions. It also seems that the more recent the data the higher the estimates, which could be explained through increasing technology especially again the increasing rotor diameter and therefore the reduced specific nominal power is decisive. On the contrary the estimation of the data from 2015 is among the highest, even though the latest technology is not reflected here. The year 2017 also has higher full load hours than the year 2018. This nicely reflects the fluctuation in wind conditions and means that the years 2015 and 2017 might be better wind years than the years 2016 and 2018. The mean of all models for 2021 is around 2,300 h/a and is therefore used for further calculation. The prediction for 2030 is around 2,800 h/a on average. If this is compared to the study of the DWG it can be seen that the DWG similarly shows average full load hours for the south of Germany in 2000 of around 1,300 and in 2016 of around 2,000 and the prediction for 2021 lies equally at around 2,300 h. The estimation for 2030 of the study of DWG shows a lower value of less than 2,500 h. This might be because the study of the DWG uses more data from different sources, probably a more sophisticated model and also the prediction is done for the whole of southern Germany. But it seems as to calculate with the value of 2,300 full load hours does definitely not lead to an overestimation. Divided by the total number of hours per year that equals to a load factor of around 26 %, which is much more than the mentioned 19 % from the literature @DavidJCMacKay.2009 from 2009. This can, again, be well explained through the increasing rotor and decreasing specific nominal power which leads to a better utilization of weak winds. Lastly if we multiply the estimated full load hours by the average rated capacity for 2021 the result is 8,050 MWh/a, which is higher than the linear trends suggest. This is because the development of the rated capacity and the rotor diameter are actually not completely captured by a linear relationship. If compared to the polynomial models with estimations for the year 2021 of around 8,000 - 10,000 MWh/a this result seems more similar. In the end of this section it is to mention that this increasing development should not be misunderstood that the overall electricity of an area can be increased in the same way. Larger and therefore WT's with a higher electricity yield have to be spaced further apart which means the overall electricity yield per area might not increase in the same way. Although there might be strong economic reasons to build greater WT'S and also to harvest higher wind speeds at greater altitudes, the overall energy extraction per area has certain limits that can not be exceeded. The calculations of the respective area consumption are presented in subsections XV.
+The next plot shows the full load hours over the commissioning date in figure \@ref(fig:full). The linear trends for the year 2015 until 2019 have more or less the same slope and are not deviating strongly. This indicates relatively stable conditions. It also seems that the more recent the data the higher the estimates, which could be explained through increasing technology especially again the increasing rotor diameter and therefore the reduced specific nominal power is decisive. On the contrary the estimation of the data from 2015 is among the highest, even though the latest technology is not reflected here. The year 2017 also has higher full load hours than the year 2018. This nicely reflects the fluctuation in wind conditions and means that the years 2015 and 2017 might be better wind years than the years 2016 and 2018. The mean of all models for 2021 is around 2,300 h/a and is therefore used for further calculation. The prediction for 2030 is around 2,800 h/a on average. If this is compared to the study of the DWG it can be seen that the DWG similarly shows average full load hours for the south of Germany in 2000 of around 1,300 and in 2016 of around 2,000 and the prediction for 2021 lies equally at around 2,300 h. The estimation for 2030 of the study of DWG shows a lower value of less than 2,500 h. This might be because the study of the DWG uses more data from different sources, probably a more sophisticated model and also the prediction is done for the whole of southern Germany. But it seems as to calculate with the value of 2,300 full load hours does definitely not lead to an overestimation. Divided by the total number of hours per year that equals to a load factor of around 26 %, which is much more than the mentioned 19 % from the literature @DavidJCMacKay.2009 from 2009. This can, again, be well explained through the increasing rotor and decreasing specific nominal power which leads to a better utilization of weak winds. Lastly if we multiply the estimated full load hours by the average rated capacity for 2021 the result is 8,050 MWh/a, which is higher than the linear trends suggest. This is because the development of the rated capacity and the rotor diameter are actually not completely captured by a linear relationship. If compared to the polynomial models with estimations for the year 2021 of around 8,000 - 10,000 MWh/a this result seems more similar. If we assume an average electricity generation of 7,400 MWh/a the number of WT's needed to generate the demanded 20 TWh is around 2,700 WT's, if on average 8,050 MWh/a could be harvested then this would require around 2,484 WT's. It seems that if the average growth of the total number of WT's in RLP continues as predicted initially the goal of around 2,500 WT's in RLP is realistic. Of course, WT's with lower total electricity would have to be repowered additionally but it shows that is is not totally out of the scope. On the contrary the increase was slowed down sharply in the last years due to legal reasons and resistance of the citizens. In the end of this section it is to mention that this increasing development should not be misunderstood that the overall electricity yield of an area can be increased in the same way. Larger and therefore WT's with a higher electricity yield have to be spaced further apart which means the overall electricity yield per area might not increase in the same way. Although there might be strong economic reasons to build greater WT'S and also to harvest higher wind speeds at greater altitudes, the overall energy extraction per area has certain limits that can not be exceeded. The calculations of the respective area consumption are presented in subsections XV.
 
 
-```{r full, echo=FALSE, fig.cap="Full load hours over the commissioning date using data from 2015 - 2019", out.width = "100%"}
+```{r full, echo=FALSE, fig.cap="Full load hours over the commissioning date using data from 2015 - 2019", out.width = "100%", fig.pos="H"}
 knitr::include_graphics("data/Amprion/results_of_analysis/flh.png")
 ```
 
 ## Repowering potential
 
-The potentially suitable WT's in RLP for repowering within the next 10 years are relatively arbitrary divided into three categories and are shown in table \@ref(tab:table1). The number of WT's that are available for repowering according to the same categories for the counties is shown in table 
+The potentially suitable WT's in RLP for repowering within the next 10 years are older systems which are relatively arbitrary divided into the two categories; Commission before 2001 and between 2001 and 2005 and are shown in table \@ref(tab:table1). These values are theoretical ones and represent a repowering rate of 100 \%. The electricity yield would be more than 7 times greater if all systems with a commissioning date before 2001 would be repowered and around 3.7 times as much as if additionally all systems with a commissioning date between 2001 and 2005 are repowered. This means a total replacement of 514 WT's with accordingly larger area consumption. It is also highly questionable if all of the old systems can be replaced due to the explained resons. In this context repowering is a missleading term since it suggests that a system is technically enhanced, but in this case it means the deconstruction of old systems and new building of another system, which might even be in a different location. Therefore, from a technical assessment of the windenergy potential in RLP, the respective electricity yield per WT and especially per area is decisive. Hence, the calculation of the area consumption follows next.
+
+
 
 ```{r table1, echo=FALSE}
 col_names <- c(
-  "3m", "6m", "1yr", "2yr", "3yr", "5yr", "7yr", "10yr", "12yr", "15yr"
+  "Commission", "Number of WT's", "Electricity [GWh]", "Potential [GWh]", "Increase [\\%]"
 )
 means     <- c(
-  3.138, 3.191, 3.307, 3.544, 3.756, 4.093, 4.354, 4.621, 4.741, 4.878
+  "before 2001", 186, 186, 1376, 740
 )
 stddev    <- c(
-  0.915, 0.919, 0.935, 0.910, 0.876, 0.825, 0.803, 0.776, 0.768, 0.762
+  "2001 to 2005", 328, 655, 2427, 371
 )
-row_names <- c("Mean", "StD")
 
 df <- matrix(data = c(means, stddev), nrow = 2, byrow = T)
-rownames(df) <- row_names
 colnames(df) <- col_names
 df <- data.frame(df)
 knitr::kable(
   df,
   booktabs = TRUE,
-  caption = "Detailed descriptive statistics of location and dispersion for 2100 observed swap rates for the period from February 15, 1999 to March 2, 2007. Swap rates measured as 3.12 (instead of 0.0312).",
+  caption = "Repowering potential with replacement rate of 100 \\% percent by 
+  commissioning date",
   col.names = col_names, 
   escape = FALSE
 ) %>%
@@ -74,11 +75,10 @@ kable_styling(latex_options = c("HOLD_position")) %>%
 row_spec(2, hline_after = T)
 ```
 
-## CO\textsubscript{2} reduction potential
 
-## Area consumption of WT'S in RLP
+## Area Consumption
 
-
+## Summary
 
 
 

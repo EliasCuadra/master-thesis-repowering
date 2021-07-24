@@ -477,47 +477,6 @@ write.csv(commissioning_before2005,"results_of_preparation/commissioning_before_
 
 
 
-################################################################################
-#creating groups of counties and calculate full load hours and change dimension#
-################################################################################
-selection_2019_counties <- selection_2019_without_outliers %>%
-  mutate(lk_nr = sub("\\D*(\\d{4}).*", "\\1", selection_2019_without_outliers$gem)) %>%
-  mutate(lk_name = case_when(lk_nr == 7131 ~ 'Ahrweiler',
-                             lk_nr == 7132 ~ 'Altenkirchen',
-                             lk_nr == 7133 ~ 'Bad Kreuznach',
-                             lk_nr == 7134 ~ 'Birkenfeld',
-                             lk_nr == 7135 ~ 'Cochem-Zell',
-                             lk_nr == 7137 ~ 'Mayen-Koblenz',
-                             lk_nr == 7138 ~ 'Neuwied',
-                             lk_nr == 7140 ~ 'Rhein-Hundsrück',
-                             lk_nr == 7141 ~ 'Rhein-Lahn',
-                             lk_nr == 7143 ~ 'Westerwald',
-                             lk_nr == 7211 ~ 'Trier',
-                             lk_nr == 7231 ~ 'Bernkastel-Wittlich',
-                             lk_nr == 7232 ~ 'Eifelkreis Bitburg-Prüm',
-                             lk_nr == 7233 ~ 'Vulkaneifel',
-                             lk_nr == 7235 ~ 'Trier-Saarburg',
-                             lk_nr == 7311 ~ 'Frankenthal',
-                             lk_nr == 7312 ~ 'Kaiserslautern',
-                             lk_nr == 7313 ~ 'Landau',
-                             lk_nr == 7314 ~ 'Ludwigshafen',
-                             lk_nr == 7315 ~ 'Mainz',
-                             lk_nr == 7316 ~ 'Neustadt',
-                             lk_nr == 7317 ~ 'Pirmasens',
-                             lk_nr == 7318 ~ 'Speyer',
-                             lk_nr == 7319 ~ 'Worms',
-                             lk_nr == 7320 ~ 'Zweibrücken',
-                             lk_nr == 7331 ~ 'Alzey-Worms',
-                             lk_nr == 7332 ~ 'Bad Dürkheim',
-                             lk_nr == 7333 ~ 'Donnersbergkreis',
-                             lk_nr == 7334 ~ 'Germersheim',
-                             lk_nr == 7335 ~ 'Kaiserslautern',
-                             lk_nr == 7336 ~ 'Kusel',
-                             lk_nr == 7337 ~ 'Südliche Weinstraße',
-                             lk_nr == 7338 ~ 'Rhein-Pfalz',
-                             lk_nr == 7339 ~ 'Mainz-Bingen',
-                             lk_nr == 7340 ~ 'Südwestpfalz')) 
-
 
 
 

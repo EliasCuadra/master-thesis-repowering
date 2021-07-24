@@ -15,11 +15,7 @@
 \contentsline {subsubsection}{\numberline {3.2.2}Data from the market master data register (MaStR)}{14}{subsubsection.3.2.2}%
 \contentsline {section}{\numberline {4}Results and discussion}{15}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Electricity yield, rated capacity and full load hours in Rhineland-Palatinate}{15}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Repowering potential}{19}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}CO\textsubscript {2} reduction potential}{20}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}Area consumption of WT'S in RLP}{20}{subsection.4.4}%
-\contentsline {section}{\numberline {5}Conclusion}{20}{section.5}%
-\contentsline {section}{References}{21}{section*.21}%
-\contentsline {section}{\numberline {A}Appendix}{23}{appendix.A}%
-\contentsline {subsection}{\numberline {A.1}Figures}{23}{subsection.A.1}%
-\contentsline {subsection}{\numberline {A.2}Tables}{23}{subsection.A.2}%
+\contentsline {subsection}{\numberline {4.2}Repowering potential}{20}{subsection.4.2}%
+\contentsline {section}{\numberline {5}Conclusion}{21}{section.5}%
+\contentsline {section}{References}{22}{section*.21}%
+\contentsline {section}{\numberline {A}Appendix}{24}{appendix.A}%
