@@ -60,13 +60,17 @@ selection_2017_without_outliers <- setdiff(selection_2017, outliers_2017)
 selection_2018_without_outliers <- setdiff(selection_2018, outliers_2018)
 selection_2019_without_outliers <- setdiff(selection_2019, outliers_2019)
 
+#delete some
+rm(selection_2015, selection_2016, selection_2017, selection_2018,selection_2019)
 
 #############
 #write files#
 #############
-#write.csv(selection_2017_without_outliers, "results_of_preparation/amprion_2017_processed_and_without_outliers.csv")
-#write.csv(selection_2018_without_outliers, "results_of_preparation/amprion_2018_processed_and_without_outliers.csv")
-#write.csv(selection_2019_without_outliers, "results_of_preparation/amprion_2019_processed_and_without_outliers.csv")
+write.csv(selection_2015_without_outliers, "results_of_preparation/amprion_2015_processed_and_without_outliers.csv")
+write.csv(selection_2016_without_outliers, "results_of_preparation/amprion_2016_processed_and_without_outliers.csv")
+write.csv(selection_2017_without_outliers, "results_of_preparation/amprion_2017_processed_and_without_outliers.csv")
+write.csv(selection_2018_without_outliers, "results_of_preparation/amprion_2018_processed_and_without_outliers.csv")
+write.csv(selection_2019_without_outliers, "results_of_preparation/amprion_2019_processed_and_without_outliers.csv")
 
 
 #######################################################################################
@@ -89,18 +93,6 @@ selection_2019_without_outliers <- selection_2019_without_outliers %>%
   mutate(menge_mwh = round(menge_kwh/1000))
 
 
-#######################################################################################################################
-#count plants for different comissioning periods for Rhineland-Palatinate and their electricity yield and create files#
-#######################################################################################################################
-comissioning_before2001 <- subset(selection_without_outliers, inbetriebnahme < "2000-12-31")
-sum(comissioning_before2001$menge_kwh/10^6)
-comissioning_before2005 <- subset(selection_without_outliers, inbetriebnahme < "2005-12-31")
-comissioning_2001_2005 <- subset(comissioning_before2005, inbetriebnahme > "2000-12-31")
-sum(comissioning_2001_2005$menge_kwh/10^6)
-
-#write.csv(comissioning_before2001,"results_of_preparation/commissioning_before2001.csv")
-#write.csv(comissioning_2001_2005,"results_of_preparation/commissioning_2001_2005.csv")
-#write.csv(comissioning_before2005,"results_of_preparation/commissioning_before_2005.csv")
 
 
 #######################################
@@ -138,8 +130,6 @@ grViz(diagram = "digraph flowchart {
   ")
 
 
-
-################################################################################
 
 
 ##################################
@@ -238,9 +228,6 @@ ggsave("results_of_analysis/electricity_yield_2017-2019_rlp_over_comissioning_da
 
 
 
-###############################################################################
-
-
 
 ####################################################
 #linear models with electricity over rated capacity#
@@ -297,9 +284,6 @@ ggsave("results_of_analysis/electricity_rated_capacity.png",
 
 
 
-###############################################################################
-
-
 
 ############################################################
 #linear models with rated capacity over commissioning date #
@@ -349,11 +333,6 @@ ggsave("results_of_analysis/rated_capacity_over_commissioning.png",
        dpi = 900,
        width = 7,
        height = 4)
-
-
-
-
-###############################################################################
 
 
 
@@ -477,8 +456,67 @@ ggsave("results_of_analysis/year_wts.png",
        height = 4)
 
 
+#clean environment
+rm(outliers_2015, outliers_2016, outliers_2017, outliers_2018, outliers_2019, amprion_2015, 
+   amprion_2016, amprion_2017, amprion_2018, amprion_2019)
 
 
+###################################################################################
+#Count plants and electricity yield for different commissioning dates and counties#
+###################################################################################
+commissioning_before2001 <- subset(selection_2019_without_outliers, inbetriebnahme < "2000-12-31")
+sum(commissioning_before2001$menge_mwh)
+commissioning_before2005 <- subset(selection_2019_without_outliers, inbetriebnahme < "2005-12-31")
+commissioning_2001_2005 <- subset(commissioning_before2005, inbetriebnahme > "2000-12-31")
+sum(commissioning_2001_2005$menge_mwh)
+
+write.csv(commissioning_before2001,"results_of_preparation/commissioning_before2001.csv")
+write.csv(commissioning_2001_2005,"results_of_preparation/commissioning_2001_2005.csv")
+write.csv(commissioning_before2005,"results_of_preparation/commissioning_before_2005.csv")
+
+
+
+
+################################################################################
+#creating groups of counties and calculate full load hours and change dimension#
+################################################################################
+selection_2019_counties <- selection_2019_without_outliers %>%
+  mutate(lk_nr = sub("\\D*(\\d{4}).*", "\\1", selection_2019_without_outliers$gem)) %>%
+  mutate(lk_name = case_when(lk_nr == 7131 ~ 'Ahrweiler',
+                             lk_nr == 7132 ~ 'Altenkirchen',
+                             lk_nr == 7133 ~ 'Bad Kreuznach',
+                             lk_nr == 7134 ~ 'Birkenfeld',
+                             lk_nr == 7135 ~ 'Cochem-Zell',
+                             lk_nr == 7137 ~ 'Mayen-Koblenz',
+                             lk_nr == 7138 ~ 'Neuwied',
+                             lk_nr == 7140 ~ 'Rhein-Hundsrück',
+                             lk_nr == 7141 ~ 'Rhein-Lahn',
+                             lk_nr == 7143 ~ 'Westerwald',
+                             lk_nr == 7211 ~ 'Trier',
+                             lk_nr == 7231 ~ 'Bernkastel-Wittlich',
+                             lk_nr == 7232 ~ 'Eifelkreis Bitburg-Prüm',
+                             lk_nr == 7233 ~ 'Vulkaneifel',
+                             lk_nr == 7235 ~ 'Trier-Saarburg',
+                             lk_nr == 7311 ~ 'Frankenthal',
+                             lk_nr == 7312 ~ 'Kaiserslautern',
+                             lk_nr == 7313 ~ 'Landau',
+                             lk_nr == 7314 ~ 'Ludwigshafen',
+                             lk_nr == 7315 ~ 'Mainz',
+                             lk_nr == 7316 ~ 'Neustadt',
+                             lk_nr == 7317 ~ 'Pirmasens',
+                             lk_nr == 7318 ~ 'Speyer',
+                             lk_nr == 7319 ~ 'Worms',
+                             lk_nr == 7320 ~ 'Zweibrücken',
+                             lk_nr == 7331 ~ 'Alzey-Worms',
+                             lk_nr == 7332 ~ 'Bad Dürkheim',
+                             lk_nr == 7333 ~ 'Donnersbergkreis',
+                             lk_nr == 7334 ~ 'Germersheim',
+                             lk_nr == 7335 ~ 'Kaiserslautern',
+                             lk_nr == 7336 ~ 'Kusel',
+                             lk_nr == 7337 ~ 'Südliche Weinstraße',
+                             lk_nr == 7338 ~ 'Rhein-Pfalz',
+                             lk_nr == 7339 ~ 'Mainz-Bingen',
+                             lk_nr == 7340 ~ 'Südwestpfalz')) 
 
 
 
