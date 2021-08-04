@@ -62,7 +62,7 @@
 % save thesis parameters for later
 \newcommand{\thesistype}{Master's Thesis}
 \newcommand{\thesisauthor}{Elias Cuadra Braatz}
-\newcommand{\thesisdate}{August 03, 2021}
+\newcommand{\thesisdate}{August 04, 2021}
 
 % define tightlist to work with newer versions of pandoc
 \providecommand{\tightlist}{%
@@ -202,7 +202,7 @@
   in partial fulfillment of the requirements \\
   for the degree of \\
   \textbf{Master of Environmental Sciences} \\\vspace{0.5cm}
-  August 03, 2021
+  August 04, 2021
   
 \end{center}
 
@@ -322,7 +322,10 @@ P_{wind}=\hat{E}=\frac{1}{2}\hat{m}v^2=\frac{1}{2} \rho \pi r^2 v^3
 
 In Formula 3 it becomes clear that the wind speed is the decisive factor for the performance of a WT. Because WT's are build to perform at lower wind speeds most of the time they can not operate at very high wind speeds an have to be taken out of the wind at a certain speed to avoid fatigue and destruction through peak loads. A typical load profile of a WT is shown in figure \ref{fig:powerofwind}. If the density of air is 1.3 kg per m³ and there is an average windspeed of 6 m/s, which could be realistic for many sites in RLP in 140 m above ground, as seen in figure \ref{fig:wind}, then the typical power of the wind per square meter hoop is:
 \begin{equation}
-\frac{1}{2} \rho v^3=\frac{1}{2}1.3 kg/m^3 * (6 m/s)^3=140 W/m^2
+\begin{split}
+\frac{1}{2} \rho v^3=\frac{1}{2}1.3 kg/m^3 * (6 m/s)^3=140 W/m^2 \\
+with 1 \frac{kg m^2}{s^3} = 1 W
+\end{split}
 \end{equation}
 The curve of power per m\textsuperscript{2} in relation to the wind speed is also shown in figure \ref{fig:powerofwind}.
 \begin{figure}
@@ -532,11 +535,9 @@ before 2001 & 186 & 186 & 1376 & 740\\
 \hypertarget{area-consumption}{%
 \subsection{Area Consumption}\label{area-consumption}}
 
-After taking WT's out of the data that would distort the results 1195 WT's remained for analysis. It is to mention that almost 400 WT's had to be taken out of the data set and also the R\textsuperscript{2}-value is not very high so the overall prediction power of the model might be low.
+After taking WT's out of the data that would distort the results 1195 WT's remained for analysis. It is to mention that almost 400 WT's had to be taken out of the data set and also the R\textsuperscript{2}-value is not very high, thus the overall prediction power of the model might be low.
 
-Nonetheless, the average distance to the nearest WT of all WT's is a reasonable 417 m which equals to an area consumption per WT of about 174,168 m\textsuperscript{2} or 0.174 km\textsuperscript{2}. This means that the total area covered with currently 1702 WT's is about 296.4 km\textsuperscript{2}, this equals to around 1.5 \% of the total area of RLP which is 19,847 km\textsuperscript{2}. With an electricity yield of 6.7 TWh in 2019 this means that the average electricity yield per area and year equals to around 22.6 kWh/m\textsuperscript{2}a which is a constant power output of about 2.6 W/m\textsuperscript{2}. Compared to the literature value of 2.2 W/m\textsuperscript{2} with an average wind speed of 6 m/s this value is for an area with lower wind speeds such as RLP relatively high but still in the range of the 1 to 7 W/m\textsuperscript{2} mentioned by Linow {[}\protect\hyperlink{ref-SvenLinow.2020}{22}{]}, but definitely indicates higher wind speeds and therefore a technical development towards greater hub heights. The average distance to the next WT in relation to the rotor diameter is 4.9 which is relatively close to the five times the rotor diameter mentioned earlier and in the literature {[}\protect\hyperlink{ref-DavidJCMacKay.2009}{18}{]}.
-
-For future predictions it makes more sense to take the results of more recent years. Thus, only these results of the WT's with a commissioning date after 2010 are analyzed. The distance to the nearest neighboring WT increases up to 474 m but decreases in relation to the rotor diameter to 4.7 times the diameter. The average area consumption of a WT built after 2010 is around 243,285 m\textsuperscript{2} which is 0.243 km\textsuperscript{2}. The average electricity yield per m\textsuperscript{2} is about 27.4 kWh/m\textsuperscript{2} which relates to a constant power output of 3.1 W/m\textsuperscript{2}.
+Nonetheless, the average distance to the nearest WT of all WT's is a reasonable 417 m which equals to an area consumption per WT of about 174,168 m\textsuperscript{2} or 0.174 km\textsuperscript{2}. This means that the total area covered with currently 1702 WT's is about 296.4 km\textsuperscript{2}, this equals to around 1.5 \% instead of the 1.9 \% that were theoretically derived in chapter 2.1 of the total area of RLP which is 19,847 km\textsuperscript{2}. With an electricity yield of 6.782 TWh in 2019 this means that the average electricity yield per area and year equals to around 22.88 kWh/m\textsuperscript{2}a which is a constant power output of about 2.61 W/m\textsuperscript{2}. This exceeds the value of 2.2 W/m\textsuperscript{2} if compared to the literature value from 2009 with an assumed average wind speed of 6 m/s that was introduced in chapter 2.1 and calculated in formula 4 and 6. The actual average wind speed must be 6.3 m/s to reach a power output of about 2.61 W/m\textsuperscript{2}. Hence, this is defiantly an indicator for the utilization of higher wind speeds in greater altitude with the technical development towards greater hub heights. The increase in rotor diameter cannot explain this development as seen in formula 6. The average distance to the next WT in relation to the rotor diameter is 4.9 which is relatively close to the five times the rotor diameter mentioned earlier and in the literature {[}\protect\hyperlink{ref-DavidJCMacKay.2009}{18}{]}.
 
 The plot that shows the electricity yield per m\textsuperscript{2} and year over the commissioning date of the whole joined data set that originated from the MaStR and the master and movement data from amprion of 2019 is show in \ref{fig:eyarea}. Although the model is highly significant only 11 \% of the variation in the depended variable is explained by the commissioning date. Therefore it is not clear if this model is enough to make clear predictions. Therefore two scenarios are introduced in table X for the calculation of a future area consumption with an electricity demand of 22 TWh per year.
 \begin{figure}
@@ -547,18 +548,22 @@ The plot that shows the electricity yield per m\textsuperscript{2} and year over
 
 \caption{Electricity yield per m² and year over the commissioning date}\label{fig:eyarea}
 \end{figure}
+Due to the constant technical development it makes sense to take more recent years for future predictions. Thus, only the results of the WT's with a commissioning date after 2010 are analyzed. The distance to the nearest neighboring WT increases here up to 474 m, but decreases in relation to the rotor diameter to 4.7 times the diameter. This might be due to increasing rotor diameter but limited space. This leads to an interesting trade off between greater and more efficient WT's and the occurring shadowing effect that reduces the efficiency of a wind park. The average area consumption of a WT built after 2010 is around 243,285 m\textsuperscript{2} which is 0.243 km\textsuperscript{2}. The average electricity yield per m\textsuperscript{2} is about 27.4 kWh/m\textsuperscript{2} which relates to a constant power output of 3.1 W/m\textsuperscript{2}. Hence, the electricity yield per area is increasing over time and the reduced distance between WT's in relation to their rotor diameter and with it possible shadowing effects are surpassed by the effect of utilizing greater wind speeds at higher altitudes. If the increase in efficiency can be kept with increasing rotor diameter and a reduced or similar area consumption, the rotor diameter of has indeed again a big impact on the overall electricity yield. This trade off between the possibility of energy extraction with rotors and the respective demand in space should therefore examined in further studies, that an exact threshold of this trade off can be defined.
+
+the 1 to 7 W/m\textsuperscript{2} mentioned by Linow {[}\protect\hyperlink{ref-SvenLinow.2020}{22}{]},
 \begin{table}[H]
 
-\caption{\label{tab:table2}Two scenarios of electricity yield per area and year and their respective area consumption 
+\caption{\label{tab:table2}Three scenarios of electricity yield per area and year and their respective area consumption 
   if an electricity of 22 TWh should be generated with WT's in 2030}
 \centering
 \begin{tabular}[t]{>{\raggedleft\arraybackslash}p{2.7cm}>{\raggedleft\arraybackslash}p{2.7cm}>{\raggedleft\arraybackslash}p{2.7cm}>{\raggedleft\arraybackslash}p{2.7cm}>{\raggedleft\arraybackslash}p{2.7cm}}
 \toprule
 Electricity yield per area [kWh/m²a] & Power output per area [W/m²] & Area Consumption [km²] & Share of the area of RLP [\%] & req. av. wind speed\\
 \midrule
-27.4 & 3.1 & 802.3 & 4.0 & 6.7\\
-33.5 & 3.8 & 656.7 & 3.3 & 7.1\\
+27.4 & 3.1 & 802.3 & 4.0 & 6.68\\
+33.5 & 3.8 & 656.7 & 3.3 & 7.15\\
 \midrule
+40.5 & 4.6 & 543.2 & 2.7 & 7.62\\
 \bottomrule
 \end{tabular}
 \end{table}

@@ -17,7 +17,7 @@
 \contentsline {subsection}{\numberline {4.1}Electricity yield, rated capacity and full load hours in Rhineland-Palatinate}{15}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Repowering potential}{20}{subsection.4.2}%
 \contentsline {subsection}{\numberline {4.3}Area Consumption}{21}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}Summary}{22}{subsection.4.4}%
-\contentsline {section}{\numberline {5}Conclusion}{22}{section.5}%
-\contentsline {section}{References}{23}{section*.23}%
-\contentsline {section}{\numberline {A}Appendix}{25}{appendix.A}%
+\contentsline {subsection}{\numberline {4.4}Summary}{23}{subsection.4.4}%
+\contentsline {section}{\numberline {5}Conclusion}{23}{section.5}%
+\contentsline {section}{References}{24}{section*.23}%
+\contentsline {section}{\numberline {A}Appendix}{26}{appendix.A}%
