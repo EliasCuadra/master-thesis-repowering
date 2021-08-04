@@ -51,7 +51,7 @@ The potentially suitable WT's in RLP for repowering within the next 10 years are
 
 ```{r table1, echo=FALSE}
 col_names <- c(
-  "Commission", "Number of WT's", "Electricity [GWh]", "Potential [GWh]", "Increase [\\%]"
+  "Commission", "Number of WT's", "Electricity yield [GWh]", "Potential [GWh]", "Increase [\\%]"
 )
 means     <- c(
   "before 2001", 186, 186, 1376, 740
@@ -77,6 +77,46 @@ row_spec(2, hline_after = T)
 
 
 ## Area Consumption
+
+After taking WT's out of the data that would distort the results 1195 WT's remained for analysis. It is to mention that almost 400 WT's had to be taken out of the data set and also the R\textsuperscript{2}-value is not very high so the overall prediction power of the model might be low.
+
+Nonetheless, the average distance to the nearest WT of all WT's is a reasonable 417 m which equals to an area consumption per WT of about 174,168 m\textsuperscript{2} or 0.174 km\textsuperscript{2}. This means that the total area covered with currently 1702 WT's is about 296.4 km\textsuperscript{2}, this equals to around 1.5 % of the total area of RLP which is 19,847 km\textsuperscript{2}. With an electricity yield of 6.7 TWh in 2019 this means that the average electricity yield per area and year equals to around 22.6 kWh/m\textsuperscript{2}a which is a constant power output of about 2.6 W/m\textsuperscript{2}. Compared to the literature value of 2.2 W/m\textsuperscript{2} with an average wind speed of 6 m/s this value is for an area with lower wind speeds such as RLP relatively high but still in the range of the 1 to 7 W/m\textsuperscript{2} mentioned by Linow @SvenLinow.2020, but definitely indicates higher wind speeds and therefore a technical development towards greater hub heights. The average distance to the next WT in relation to the rotor diameter is 4.9 which is relatively close to the five times the rotor diameter mentioned earlier and in the literature @DavidJCMacKay.2009.
+
+For future predictions it makes more sense to take the results of more recent years. Thus, only these results of the WT's with a commissioning date after 2010 are analyzed. The distance to the nearest neighboring WT increases up to 474 m but decreases in relation to the rotor diameter to 4.7 times the diameter. The average area consumption of a WT built after 2010 is around 243,285 m\textsuperscript{2} which is 0.243 km\textsuperscript{2}. The average electricity yield per m\textsuperscript{2} is about 27.4 kWh/m\textsuperscript{2} which relates to a constant power output of 3.1 W/m\textsuperscript{2}. 
+
+The plot that shows the electricity yield per m\textsuperscript{2} and year over the commissioning date of the whole joined data set that originated from the MaStR and the master and movement data from amprion of 2019 is show in \@ref(fig:eyarea). Although the model is highly significant only 11 % of the variation in the depended variable is explained by the commissioning date. Therefore it is not clear if this model is enough to make clear predictions. Therefore two scenarios are introduced in table X for the calculation of a future area consumption with an electricity demand of 22 TWh per year.
+
+```{r eyarea, echo=FALSE, fig.cap="Electricity yield per m² and year over the commissioning date", out.width = "100%"}
+knitr::include_graphics("data/Area_consumption_of_wind_turbines/e_yield_per_m2_over_commissioning_date.png")
+```
+
+```{r table2, echo=FALSE}
+col_names <- c(
+  "Electricity yield per area [kWh/m²a]", "Power output per area [W/m²]", "Area Consumption [km²]", "Share of the area of RLP [\\%]", "req. av. wind speed"
+)
+means     <- c(
+  27.4, 3.1, 802.3, 4, 6.7
+)
+stddev    <- c(
+  33.5, 3.8, 656.7, 3.3, 7.1
+)
+
+df <- matrix(data = c(means, stddev), nrow = 2, byrow = T)
+colnames(df) <- col_names
+df <- data.frame(df)
+knitr::kable(
+  df,
+  booktabs = TRUE,
+  caption = "Two scenarios of electricity yield per area and year and their respective area consumption 
+  if an electricity of 22 TWh should be generated with WT's in 2030",
+  col.names = col_names, 
+  escape = FALSE
+) %>%
+kable_styling(latex_options = c("HOLD_position")) %>%
+row_spec(2, hline_after = T) %>% 
+column_spec(1:5, width = "2.7cm")
+```
+
 
 ## Summary
 
