@@ -146,7 +146,9 @@ mean(wts_rlp_filtered$nearest)
 #area of RLP 19847
 #total are consumption with 1702 WT's is about 296434447m2 and 296.4344km2
 #that is 1.493598 % of RLP
-#with a total electricity yield of 6,7 TWh that means 22.60196kWh/m? 
+#with a total electricity yield of 6,782 TWh that means 22.87858kWh/m? 
+#constant power output of 2.61022 W/m2
+#wind speed with 6.307671
 
 
 #calculate total mean electricity yield per m2
@@ -155,7 +157,7 @@ mean(wts_rlp_filtered$kwh_m2)
 #~2.6 W/m2
 x <- 298.0769
 x^(1/3)
-#wind speed of 6.7 m/s
+#wind speed of 6.679995 m/s
 
 #calculate area consumption of 22 TWh with ~23.3 kWh/m2
 #22*(1e+09kwh/23.3 kwh/m2) = 943422522m2 = 943.4225km2 = 4.753477 % = 3.168985 times the current area
@@ -220,7 +222,7 @@ ggsave("e_yield_per_m2_over_commissioning_date.png",
 #3.822019 W/m2
 y <- 365.3846
 y^(1/3)
-#wind speed of 7.1 m/s
+#wind speed of 7.149079 m/s
 ##calculate area consumption of 22 TWh
 #This requires an area of 656716418 m2 = 656.7164 km2 = 3.308895 % = 2.20593 times as much WT's
 
