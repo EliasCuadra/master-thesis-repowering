@@ -62,7 +62,7 @@
 % save thesis parameters for later
 \newcommand{\thesistype}{Master's Thesis}
 \newcommand{\thesisauthor}{Elias Cuadra Braatz}
-\newcommand{\thesisdate}{August 05, 2021}
+\newcommand{\thesisdate}{August 06, 2021}
 
 % define tightlist to work with newer versions of pandoc
 \providecommand{\tightlist}{%
@@ -202,7 +202,7 @@
   in partial fulfillment of the requirements \\
   for the degree of \\
   \textbf{Master of Environmental Sciences} \\\vspace{0.5cm}
-  August 05, 2021
+  August 06, 2021
   
 \end{center}
 
@@ -246,10 +246,12 @@ busy reader to obtain quickly a clear idea of the thesis content.
     WT      & &  Wind turbine                 & & MWh     & &  Mega Watt hours \\
     kWh     & &  Kilo Watt hours              & & GIS     & &  Geographic Information System \\
     MaStR   & &  Market master data register  & & EEG     & &  Renewable Energy Act \\
-    kg      & &  Kilogramm                    & & m       & &  Meter \\
+    kg      & &  Kilogram                     & & m       & &  Meter \\
     s       & &  Second                       & & W       & &  Watt \\
     d       & &  Diameter                     & & mÂ²      & &  Square meter \\
-    mÂ³      & &  Qubic meter                  & &    
+    mÂ³      & &  Cubic meter                  & & DWG     & &  German Wind Guard \\
+    CRS     & &  Coordinate Reference System  & & WGS84   & &  World Geodetic System 1984 \\    
+    
 \end{tabular}
 % ----------------------------------------------------
 % --- frontmatter: List of Figures (not mandatory) ---
@@ -280,7 +282,7 @@ This work was executed and written in scientific recognition of the importance o
 
 This study was also carried out on behalf of the state-owned energy agency {[}\protect\hyperlink{ref-EnergieagenturRheinlandPfalz.2021}{1}{]} within the project ``municipal greenhouse gas accounting and regional climate protection portals in Rhineland-Palatinate'' {[}\protect\hyperlink{ref-KomBiReK.2021}{2}{]}, which is funded by the ``European Regional Development Fund'' {[}\protect\hyperlink{ref-EuropeanRegionalDevelopmentFund.2021}{3}{]} and the state of Rhineland-Palatinate (RLP). This project supports the creation of municipal climate protection measures in order to achieve the climate protection goals of the municipalities and the state and thereby increases regional added value, ensures sustainability and thus improves the quality of life of all citizens. When developing municipal climate protection, a sound strategy is required regarding the legally anchored striving for climate neutrality of the state of RLP {[}\protect\hyperlink{ref-RheinlandPfalz.19.08.2014}{4}{]}. Even more pressure comes from the recent press release No.~31/2021 of April 29 in 2021 {[}\protect\hyperlink{ref-Bundesverfassungsgericht.24.03.2021}{5}{]}, in which the first Senate of the Federal Constitutional Court decided that the regulations of the Climate Protection Act of December 12 in 2019 {[}\protect\hyperlink{ref-BundesamtfurJustiz.2019}{6}{]} on the national climate protection targets and the annual emission quantities permitted up to 2030 are incompatible with fundamental rights, as there are no sufficient criteria for further emission reductions from 2031 onward. It is stated that the legal requirements are not sufficient to bring about a timely transition to climate neutrality. The German legislature has therefore published an adjusted edition of this act that strives for a faster development of renewable energies and the energy transition in general {[}\protect\hyperlink{ref-BundesministeriumfurUmweltNaturschutzundnukleareSicherheit.12.05.2021}{7}{]}. This shows that this study is highly embedded in a socio-economic context. The energy transition is a cornerstone of a decent strategy to climate neutrality and RLP wants to play a pioneering role in the implementation of the energy transition. The state government publishes on its website that RLP will cover 100 \% of its electricity needs from renewable energies by 2030 {[}\protect\hyperlink{ref-LandesregierungRheinlandPfalz.2021}{8}{]}. In addition to energy from the sun, water and biomass, two thirds of the electricity generated in 2030 should come from wind power and is therefore the subject of this master thesis. The study area and the modeled wind speeds taken from the Windatlas RLP {[}\protect\hyperlink{ref-MinisteriumfurWirtschaftKlimaschutzEnergieundLandesplanung.2013}{9}{]} are seen in figure \ref{fig:wind}.
 
-The gross electricity generation in RLP from wind power rose in 2017 with 5.9 TWh to 29 \% of the total 20.7 TWh generated electricity. The total consumption in the same year was 29.1 TWh {[}\protect\hyperlink{ref-Lehnert.2020}{10}{]}. In the year 2019 the electricity generation from wind turbines (WT's) was already more than 6.7 TWh. It can be assumed that, on the one hand, electricity consumption will increase in the future due to the electrification of transport and domestic heating, and on the other hand, efficiency measures can also lead to a lower energy consumption. Whereas some past studies and scenarios estimated a slight increase and some a slight decrease but on average a relatively unchanged electricity consumption in Germany {[}\protect\hyperlink{ref-NormanGerhardt.2015}{11}{]}, the newest press release of the Federal Ministry for Economic Affairs and Energy makes it clear that an increase of about 12 \% is expected {[}\protect\hyperlink{ref-AndreasMertens.13.07.2021}{12}{]}, and further studies will follow in the autumn of 2021. In order to achieve the self-set goals of using two thirds of the electricity demand from wind power with an estimated electricity demand of 33 TWh in 2030 in RLP, electricity supply from WT's must be about 22 TWh per year if RLP wants to become independent of electricity imports. There are two ways of increasing the amount of electricity generated by wind energy. On the one hand, areas that are still available can be identified and built on with new WT's. On the other hand, existing old systems, whose absolute electricity feed-in quantity is low, can be replaced by new, higher and more efficient systems through the so-called ``repowering.''
+The gross electricity generation in RLP from wind power rose in 2017 with 5.9 TWh to 29 \% of the total 20.7 TWh generated electricity. The total consumption in the same year was 29.1 TWh {[}\protect\hyperlink{ref-Lehnert.2020}{10}{]}. In the year 2019 the electricity generation from wind turbines (WT's) was already more than 6.7 TWh. It can be assumed that, on the one hand, electricity consumption will increase in the future due to the electrification of transport and domestic heating, and on the other hand, efficiency measures can also lead to a lower energy consumption. Whereas some past studies and scenarios estimated a slight increase and some a slight decrease but on average a relatively unchanged electricity consumption in Germany which is currently about 560 TWh {[}\protect\hyperlink{ref-NormanGerhardt.2015}{11}{]}, the newest press release of the Federal Ministry for Economic Affairs and Energy makes it clear that an increase of the previous predictions of about 12 \% from 580 to 655 TWh is expected {[}\protect\hyperlink{ref-AndreasMertens.13.07.2021}{12}{]}, and further studies will follow in the autumn of 2021. In order to achieve the self-set goals of using two thirds of the electricity demand from wind power with an estimated electricity demand of 33 TWh in 2030 in RLP, electricity supply from WT's must be about 22 TWh per year if RLP wants to become independent of electricity imports. There are two ways of increasing the amount of electricity generated by wind energy. On the one hand, areas that are still available can be identified and built on with new WT's. On the other hand, existing old systems, whose absolute electricity feed-in quantity is low, can be replaced by new, higher and more efficient systems through the so-called ``repowering.''
 The aim of this work is to develop a methodology for calculating the wind energy potential and its related area consumption at a state level. With this results an evaluation of the desired expansion targets should be assessed. The central three questions of this work are therefore:
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -339,7 +341,7 @@ The curve of power per m\textsuperscript{2} in relation to the wind speed is als
 
 \caption{Left: Power of the wind per rotor area over wind speed; Right: Typical load profile of a WT}\label{fig:powerofwind}
 \end{figure}
-Of course, not all the wind's power can be converted and there are further losses when converting kinetic energy into electrical energy in the generator. The efficiency using the winds energy in theory after Alber Betz is a maximum of 59 \% also called the Betz limit {[}\protect\hyperlink{ref-A.Betz.1920}{20}{]}, but in practice it is often around 40 \% to a maximum of 50 \% {[}\protect\hyperlink{ref-WindwartsEnergieausdemNorden.2021}{21}{]}. If the average rotor diameter installed in RLP in 2020 was 130 m (figure \ref{fig:rotor}) with an efficiency of 50 \%, then the average power of one WT is\footnote{\(P_{WT}=Power\; of\; a\; WT\; with\; 50\; \%\; efficiency,\; P_{WT130}=Power\; of\; the\; same\; WT\; with\; rotor\; diameter\; of\; 130\; m\)}:
+Of course, not all the wind's power can be converted and there are further losses when converting kinetic energy into electrical energy in the generator. The efficiency using the winds energy in theory after Alber Betz is a maximum of 59 \% also called the Betz limit {[}\protect\hyperlink{ref-A.Betz.1920}{20}{]}, but in practice it is often around 40 \% to a maximum of 50 \% {[}\protect\hyperlink{ref-WindwartsEnergieausdemNorden.2021}{21}{]}. If the average rotor diameter installed in RLP in 2020 was 130 m (figure \ref{fig:rotor}) with an efficiency of 50 \%, then the average power of one WT is\footnote{\(P_{WT}=Power\; of\; a\; WT\; with\; 50\; \%\; efficiency,\;\\ P_{WT130}=Power\; of\; the\; same\; WT\; with\; rotor\; diameter\; of\; 130\; m\)}:
 \begin{equation}
 \begin{split}
 P_{WT}\; & =\; 0.5\; *\; \frac{1}{2}\; \rho v^3\; *\; \frac{\pi}{4}d^2 \\
@@ -355,18 +357,17 @@ The amount of energy also increases proportionally with increasing rotor diamete
  & =\; 2.2\; W/m^2
 \end{split}
 \end{equation}
-This means that independently of the rotor size, there is a limit of around 2.2 W/m\textsuperscript{2} of electrical energy that can be delivered in Rhineland-Palatinate assuming an average wind speed of about 6 m/s. In the literature values for the electric power per area vary from 1 to 7 W/m\textsuperscript{2} land mass depending on the site conditions {[}\protect\hyperlink{ref-SvenLinow.2020}{22}{]}. Nonetheless, building higher WT's can be beneficial due to higher and more constant wind speeds with increasing height and other economic factors. As a rough estimate it can be said that doubling the height increases wind-speed by 10 \% and thus increase the power of the wind by 30 \% and therefore the hub heights also tend to increase (figure \ref{fig:nabe}). The actual way that wind speed increases with heigth is much more complicated and depends on the roughness of the surrounding area and time and is beyond of the scope of this study. Usually WT's are design to start operating at wind speeds around 3 to 5 m/s and stop at around 25 m/s. A WT has a so-called ``capacity'' or ``peak power'' which is the maximum power that the WT can generate in optimal conditions. The actual average power that is delivered can be expressed by the capacity multiplied by a factor that describes the fraction of the time that wind conditions are near optimal. This factor can be called the ``load factor'' and a typical load factor in Germany is around 19 \%, 22 \% in the Netherlands and 30 \% in the United Kingdom {[}\protect\hyperlink{ref-DavidJCMacKay.2009}{18}{]}. Lastly it can be estimated how much area is needed when we assume a rounded and constant electricity yield of 2 W/m\textsuperscript{2} and an electricity demand of 20 TWh per year in RLP:
+This means that independently of the rotor size, there is a limit of around 2.2 W/m\textsuperscript{2} of electrical energy that can be delivered in Rhineland-Palatinate assuming an average wind speed of about 6 m/s. In the literature values for the electric power per area vary from 1 to 7 W/m\textsuperscript{2} land mass depending on the site conditions {[}\protect\hyperlink{ref-SvenLinow.2020}{22}{]}. Nonetheless, building higher WT's can be beneficial due to higher and more constant wind speeds with increasing height and other economic factors. As a rough estimate it can be said that doubling the height increases wind-speed by 10 \% and thus increase the power of the wind by 30 \% and therefore the hub heights also tend to increase (figure \ref{fig:nabe}). The actual way that wind speed increases with heigth is much more complicated and depends on the roughness of the surrounding area and time and is beyond of the scope of this study. Usually WT's are design to start operating at wind speeds of around 3 to 5 m/s and stop at around 25 m/s. A WT has a so-called ``capacity'' or ``peak power'' which is the maximum power that the WT can generate in optimal conditions. The actual average power that is delivered can be expressed by the capacity multiplied by a factor that describes the fraction of the time that wind conditions are near optimal. This factor can be called the ``load factor'' and a typical load factor in Germany was around 19 \%, 22 \% in the Netherlands and 30 \% in the United Kingdom in 2009 {[}\protect\hyperlink{ref-DavidJCMacKay.2009}{18}{]}. Lastly it can be estimated how much area is needed when we assume a rounded and constant electricity yield of 2.2 W/m\textsuperscript{2} and an electricity demand of 22 TWh per year in RLP:
 \begin{equation}
-A_{20TWh}\;=\;\frac{20 * 10^{12} Wh}{2W/m^2 * 8760h * 10^6}\;=\;1141.5\;km^2
+A_{22TWh}\;=\;\frac{22 * 10^{12}\; Wh}{2.2\;W/m^2\; *\; 8765h\; *\; 10^6}\;=\;1140.9\;km^2
 \end{equation}
-The total area of RLP is 19,847 km\textsuperscript{2}, which means that the desired amount of electricity coming from wind energy would be equivalent with covering roughly 5.8 \% of the area with WT's. The actual 6.7 TWh of electrical energy generated in RLP would demand 382.4 km\textsuperscript{2} which equals to about 1.9 \% of the area of RLP. If the same calculation for the hole of germany is done the demanded 600 TWh would need an area of about 34,246 km\textsuperscript{2} which is rounded 9.5 \% of the area. Whereas the area consumption for RLP is still somehow imaginable it is clear that covering nearly 10 \% of Germany with WT's is very uncertain. It should also be noted, that the assumption of an average wind speed of 6 m/s could be an overestimate and the area consumption becomes greater. In chapter 3 the actual numbers for RLP are presented and therefore allow for an evaluation of this theoretical approximation.
-
+The total area of RLP is 19,847 km\textsuperscript{2}, which means that the desired amount of electricity coming from wind energy would be equivalent with covering roughly 5.8 \% of the area with WT's. The actual 6.782 TWh of electrical energy generated in RLP would relate to 351.7 km\textsuperscript{2} which means that currently about 1.8 \% of the area of RLP are covered with WT's given the prefixed assumtion are true. If the same calculation for the whole of Germany is done the demanded 655 TWh in 2030 would need an area of about 33,968 km\textsuperscript{2} which is about 9.5 \% of the area. Whereas the area consumption for RLP is still somehow imaginable it is clear that covering nearly 10 \% of Germany with WT's is very uncertain. It should also be noted, that the assumption of an average wind speed of 6 m/s could be an under- or overestimate and the area consumption is different in practice. In chapter 3 the actual numbers for RLP are presented and therefore allow for an evaluation of this theoretical approximation.
 For further explanation to the technical development and the calculation method, the study of the German Wind Guard (DWG) ``Full load hours of wind turbines on land - development, influences, effects'' from October 5th, 2020 {[}\protect\hyperlink{ref-RasmusBorrmannDr.KnudRehfeldtDr.DennisKruse.2020}{23}{]}, is used as a guide and its results are presented in the next subsection.
 
 \hypertarget{technical-concepts-and-development}{%
 \subsection{Technical concepts and development}\label{technical-concepts-and-development}}
 
-The study of DWG examines the development of full load hours and thus the wind energy potential in Germany and is divided into the sub-areas Schleswig-Holstein (SH), north (Norden), centre (Mitte) and south (Süden). RLP is part of the southern region. The development of the rotor diameter and hub hight is shown in figure \ref{fig:rotor} and \ref{fig:nabe}. The study of DWG suggests that the wind energy potential, i.e.~the theoretical electricity yield of a wind turbine for future systems, can and will be calculated in this work using the following formula:
+The study of DWG examines the development of full load hours and thus the wind energy potential in Germany and is divided into the sub-areas Schleswig-Holstein (SH), north (Norden), centre (Mitte) and south (Süden). RLP is part of the southern region. The development of the rotor diameter and hub height is shown in figure \ref{fig:rotor} and \ref{fig:nabe}. The study of DWG suggests that the wind energy potential, i.e.~the theoretical electricity yield of a wind turbine for future systems, can and will be calculated in this work using the following formula:
 \[
 Electricity\;yield\; =\; Full\;load\;hours\; *\; Capacity
 \]\\
@@ -395,7 +396,7 @@ The capacity is the installed nominal output, also called \textbf{rated capacity
 
 \caption{Development and forecast of the mean rated capacity according to Deutsche WindGuard, 2020}\label{fig:capacity}
 \end{figure}
-The full load hours number the hours that the system would have to be operated under nominal load in order to deliver the amount of electricity generated and do not reflect the actual operating time below nominal load. Since the full load hours result from the electricity yield and the installed nominal power, there is a dependency and the gain in information is limited. However, the full load hours are a useful concept in order to be able to draw conclusions about the electricity yield and, therefore, analysis of the full load hours of RLP are presented in Section 3.2.3. The development of full load hours in Germany can be seen in figure \ref{fig:flh}.
+The full load hours number the hours that the system would have to be operated under nominal load in order to deliver the amount of electricity generated and do not reflect the actual operating time below nominal load. Since the full load hours result from the electricity yield and the installed nominal power, there is a dependency and the gain in information is limited. However, the full load hours are a useful concept in order to be able to draw conclusions about the electricity yield and, therefore, analysis of the full load hours of RLP are presented in section 3.2.3. The development of full load hours in Germany can be seen in figure \ref{fig:flh}.
 \begin{figure}
 
 {\centering \includegraphics[width=1\linewidth]{figures/DWG/DWG_Volllaststunden} 
@@ -428,35 +429,109 @@ In order to calculate the electricity yield of future plants in RLP, the followi
 \hypertarget{data}{%
 \subsection{Data}\label{data}}
 
+For the preparation and the analysis of the data R version 4.0.5 (2021-03-31) -- ``Shake and Throw'' and RStudio Version 1.4.1106 were used. Due to exhaustive code and iterative preparation steps the full documentation can not be displayed here but is to be found on \url{https://github.com/EliasCuadra/master-thesis-repowering} with explanatory README.md files that contain description of variables and processing steps. Nonetheless, important aspects or code chunks are directly included or can be found in the appendix. Packages in use are: rio, data.table, tidyverse, magrittr, compare, leaflet, sp, raster, rgdal, htmltools, htmlwidgets, tmaptools, maptools, raster, sf, tmap, spatstat, rgeos and DiagrammR. The data handling is mostly done with base R and deplyr from the tidyverse package collection. Deplyr is a grammar of data manipulation, providing a consistent set of verbs that help performing common data manipulation challenges {[}\protect\hyperlink{ref-HadleyWickham.2021}{24}{]}. The different sources of data are introduced subsequently.
+
 \hypertarget{master-and-movement-data-from-amprion}{%
-\subsubsection{Master and Movement data from amprion}\label{master-and-movement-data-from-amprion}}
+\subsubsection{Master and Movement data from Amprion}\label{master-and-movement-data-from-amprion}}
 
-The so called master and movement data from the transmission system operator amprion of the years 2012 to 2019 was available and used for analysis. The originally two data sets were already joined and prepared by the energy agency of RLP. The master data contains information about the location, commissioning and decommissioning date and EEG system key of all EEG systems that were reported by the distribution network operator as part of the annual EEG report. The files also contain the systems connected directly or indirectly to the networks of the transmission system operator. The transmission system operators are obliged to publish the so called movement data that contains information about the quantity of electricity fed-in and the amount of funded tariffs that have been payed {[}\protect\hyperlink{ref-AmprionGmbH.2019}{24}{]}.
+The so-called master and movement data from the transmission system operator amprion of the years 2012 to 2019 was available and used for analysis. Despite the availability of older data sets in some cases only more recent years are used since it is assumed, that the usage of older data would, due to fast technical development, only distort the results in regards to future prediction. The originally two data sets were already joined and prepared by the energy agency of RLP. The master data contains information about the location, commissioning and decommissioning date and the EEG system key of all EEG systems that were reported by the distribution network operator as part of the annual EEG report. The files also contain the systems connected directly or indirectly to the networks of the transmission system operator. Additionally, the transmission system operators are obliged to publish the so-called movement data that contains information about the quantity of electricity fed-in and the amount of funded tariffs that have been payed {[}\protect\hyperlink{ref-AmprionGmbH.2019}{25}{]}. The pre-processed data sets from the years 2015 to 2019 are stored within this project in data/amprion as EEG\_StammBew\_2015( - 2019)\_Amprion-EAtlas.csv.
 
-The main goal was to analyze the the master and movement data regarding the electricity yield, rated capacity, full load hours in relation to the commissioning date. Amprion lists 1,702 WT's in RLP in 2019. In comparison the Structure and Approval Directorate North registers 1,704 WT's with technical details and coordinate references that are connected to the public grid. This data set is not further used since it misses the EEG system key and can therefore not be joined with the other data sets.
-
-\hypertarget{data-from-the-market-master-data-register-mastr---marktstammdatenregister}{%
-\subsubsection{Data from the market master data register (MaStR - Marktstammdatenregister)}\label{data-from-the-market-master-data-register-mastr---marktstammdatenregister}}
-
-The MaStR contains data about all electricity and gas power generation units and can be freely accessed here: \url{https://www.marktstammdatenregister.de/MaStR/Einheit/Einheiten/OeffentlicheEinheitenuebersicht}. The electricity units with the generation type ``wind'' for Rhineland-Palatinate that are in operation are extracted on the 23th of July 2021 as a CSV file, which counts 1,752 WT's with 50 variables of which only 8 are kept; The rated capacity, the commissioning date, the community key, the coordinates (WGS84), hub height, rotor diameter and EEG system key. It does not contain the amount of electricity fed into the public grid. Thus, to calculate the electricity generation per area the data of the MaStR and amprion needs to be joined together according to the EEG system key. The process of preparing the MaStR data and joining it with the data from amprion of 2019 is shown as a flow chart in figure and the R code is stored as MaStR\_amprion.R in the MaStR\_amprion folder. The result are 1,620 WT's that could be correctly assigned and are ready for further analysis.
-
-\hypertarget{methods}{%
-\subsection{Methods}\label{methods}}
-
-For the preparation and the analysis of the data R version 4.0.5 (2021-03-31) -- ``Shake and Throw'' and RStudio Version 1.4.1106 were used. Due to exhaustive code and iterative preparation steps the full documentation can not be displayed here but is to be found on \url{https://github.com/EliasCuadra/master-thesis-repowering} with explanatory README.md files that contain description of variables and processing steps. Nonetheless, important aspects or code chunks are directly included or can be found in the appendix. Packages in use are: rio, data.table, tidyverse, tidyr, purrr, magrittr, compare, ggplot2, leaflet, sp, raster, rgdal, htmltools, htmlwidgets, tmaptools, maptools, raster, sf, tmap, spatstat, rgeos and DiagrammR.
-
-\hypertarget{regression-analysis}{%
-\subsubsection{Regression analysis}\label{regression-analysis}}
-
-For the data analysis the years 2012 to 2019 are considered but in most cases only more recent years are investigated because the WT technology is constantly improving and old data would not contain these new developments and therefore lead to an underestimation of future values. The data from Amprion comes with 28 or rather 27 variables for the year 2019 of which only some are interesting for the further analysis. Thus, a preparation process must initially be carried out to clean and prepare the data. The kept variables are: Community key, post code, place, rated capacity, commissioning date, system key and electricity yield. For the prediction of the electricity yield not all the WT's are meaningful and some outliers are removed from the data. On the one hand WT's with a rated capacity under 100 kW are considered too small for a reasonable assessment of new commercially operated systems. On the other hand some WT's are listed with a rated capacity up to 12 MW which might be because several WT's are registered as one. It is therefore assumed that a rated capacity larger than 4,5 MW does not reflect the average conditions, even though systems of this size exist. Also WT's that are build in the same year after the 15th of February are excluded since they have less time to generate electricity and therefore deliver misleading data. The data from 2017 shows 1,623 WT's in total of which 101 are outliers. The data from 2018 shows 1,674 WT's of which 76 are outliers. The data from 2019 shows 1,702 WT's of which 46 are outliers. The same is done for the years 2015 and 2016. An interim result are five csv files of the different years that only have relevant variables in the correct format and are free of outliers. Only the data from 2019 is further processed and variables for the county and municipality names as well as the electricity yield in MWh and the full load hours are added. The data from 2019 is then divided in three files according to the commissioning date to find the WT's that are build either before 2005, before 2001 or between 2001 and 2005 and are therefore potentially suitable for a repowering process. A flow chart of the individual processing steps that have been performed is presented in figure \ref{fig:preparation}.
+Further, The data from Amprion comes with 28 or rather 27 variables for the year 2019 of which only some are interesting for the analysis, some variable formats are not suitable and distorting data points are included. Thus, a preparation process must initially be carried out to clean and prepare the data. The kept variables are: Community key, post code, place, rated capacity, commissioning date, system key and electricity yield. For the prediction of the electricity yield not all the WT's are meaningful and some outliers are removed from the data. On the one hand WT's with a rated capacity under 100 kW are considered too small for a reasonable assessment of new commercially operated systems. On the other hand some WT's are listed with a rated capacity up to 12 MW which might be because several WT's are registered as one. It is therefore assumed that a rated capacity larger than 4,5 MW does not reflect the average conditions, even though systems of this size exist. Also WT's that are build in the same year after the 15th of February are excluded since they have less time to generate electricity and therefore deliver misleading data. An interim result are five CSV files of the different years that only have relevant variables in the correct format and are free of outliers. As an insight the data from 2017 shows 1,623 WT's of which 101 are outliers, the data from 2018 shows 1,674 WT's of which 76 are outliers ans the data from 2019 shows 1,702 WT's of which 46 are outliers. A plot that shows the total number of WT's from 2012 to 2019 is shown in figure \ref{fig:yearswts}, which contains, as a foresight on the results section, a linear trend, that shows an estimated number of around 2,500 WT's in the year 2030.
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{data/Amprion/results_of_preparation/flow} 
+{\centering \includegraphics[width=1\linewidth]{data/Amprion/results_of_analysis/year_wts} 
+
+}
+
+\caption{Number of Wt's over time}\label{fig:yearswts}
+\end{figure}
+Only the data from 2019 is further processed and variables for the county and municipality names as well as the electricity yield in MWh and the full load hours, resulting from the division of electricity yield and rated capacity, are added. The data from 2019 is then divided in three files according to the commissioning date to find the WT's that are build either before 2005, before 2001 or between 2001 and 2005 and are therefore potentially suitable for a repowering process. A flow chart of the individual processing steps that have been performed is presented in figure \ref{fig:preparation}. The preparation was done to fulfill the main goal of analyzing the the master and movement data regarding the electricity yield, rated capacity and the full load hours mainly in relation to the commissioning date. The full code can be seen in the Appendix A.1 as \protect\hyperlink{code-chunk-1}{Code chunk 1}. Amprion lists 1,702 WT's in RLP in 2019. In comparison to that, the Structure and Approval Directorate North registers 1,704 WT's with technical details and coordinate references that are connected to the public grid. This data set is not further used since it misses the EEG system key and can therefore not be joined with the other data sets.The other data set that is used is presented next.
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{data/Amprion/results_of_preparation/prepflow} 
 
 }
 
 \caption{Flow chart of the proccessing steps}\label{fig:preparation}
 \end{figure}
+\hypertarget{data-from-the-market-master-data-register-mastr---marktstammdatenregister}{%
+\subsubsection{Data from the market master data register (MaStR - Marktstammdatenregister)}\label{data-from-the-market-master-data-register-mastr---marktstammdatenregister}}
+
+The MaStR contains data about all electricity and gas power generation units and can be freely accessed here: \href{https://www.marktstammdatenregister.de/MaStR/Einheit/Einheiten/OeffentlicheEinheitenuebersicht}{https://www.marktstammdatenregister.de/MaStR}. The electricity units with the generation type ``wind'' for Rhineland-Palatinate that are in operation are extracted on the 23th of July 2021 as MaStR.csv and stored in this project in data/MaStR\_amprion. This data set counts 1,752 WT's with 50 variables of which only 8 are kept; The rated capacity, the commissioning date, the community key, the coordinates (CRS: WGS84), hub height, rotor diameter and EEG system key. It does not contain the amount of electricity fed into the public grid. Thus, to calculate the electricity generation per area the data of the MaStR and amprion needs to be joined together according to the EEG system key. The process of preparing the MaStR data and joining it with the data from amprion of 2019 is shown as a flow chart in figure \ref{fig:merge}. The R code is stored as MaStR\_amprion.R in the MaStR\_amprion folder and can be seen below. The result are 1,620 WT's that could be correctly assigned and are ready for further analysis and stored as MaStR\_amprion2019.csv in the same source location.
+\begin{figure}
+
+{\centering \includegraphics[width=0.8\linewidth]{data/MaStR_amprion/mergeflow} 
+
+}
+
+\caption{Flow chart of merging process}\label{fig:merge}
+\end{figure}
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#}
+\CommentTok{\#Code Chunk 2: Merging of the data from the MaStR and from amprion 2019\#}
+\DocumentationTok{\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#}
+
+\CommentTok{\#packages}
+\FunctionTok{Sys.setenv}\NormalTok{(}\AttributeTok{LANG =} \StringTok{"en"}\NormalTok{)}
+\NormalTok{pacman}\SpecialCharTok{::}\FunctionTok{p\_load}\NormalTok{(rio, data.table, tidyverse, magrittr, compare, DiagrammeR)}
+
+\CommentTok{\#import data}
+\NormalTok{MaStR }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"MaStR.csv"}\NormalTok{, }\AttributeTok{sep =} \StringTok{";"}\NormalTok{, }\AttributeTok{na.strings=}\FunctionTok{c}\NormalTok{(}\StringTok{""}\NormalTok{,}\StringTok{"NA"}\NormalTok{))}
+\NormalTok{amprion2019 }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"amprion\_2019\_processed\_and\_without\_outliers.csv"}\NormalTok{, }
+                        \AttributeTok{na.strings=}\FunctionTok{c}\NormalTok{(}\StringTok{""}\NormalTok{,}\StringTok{"NA"}\NormalTok{))}
+
+\CommentTok{\#choose variables}
+\NormalTok{amprion2019 }\OtherTok{\textless{}{-}}\NormalTok{ amprion2019[,}\FunctionTok{c}\NormalTok{(}\DecValTok{2}\SpecialCharTok{:}\DecValTok{8}\NormalTok{)]}
+\NormalTok{MaStR }\OtherTok{\textless{}{-}}\NormalTok{ MaStR[,}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{7}\NormalTok{, }\DecValTok{16}\NormalTok{, }\DecValTok{17}\NormalTok{, }\DecValTok{18}\NormalTok{, }\DecValTok{21}\NormalTok{, }\DecValTok{22}\NormalTok{, }\DecValTok{23}\NormalTok{, }\DecValTok{24}\NormalTok{, }\DecValTok{43}\NormalTok{)]}
+\NormalTok{MaStR }\OtherTok{\textless{}{-}}\NormalTok{ MaStR[,}\FunctionTok{c}\NormalTok{(}\DecValTok{2}\SpecialCharTok{:}\DecValTok{6}\NormalTok{,}\DecValTok{8}\NormalTok{,}\DecValTok{9}\NormalTok{,}\DecValTok{11}\NormalTok{)]}
+
+\CommentTok{\#change column names}
+\FunctionTok{names}\NormalTok{(MaStR)[}\DecValTok{1}\NormalTok{] }\OtherTok{\textless{}{-}} \StringTok{"leistung\_m"}
+\FunctionTok{names}\NormalTok{(MaStR)[}\DecValTok{2}\NormalTok{] }\OtherTok{\textless{}{-}} \StringTok{"inbetrieb\_m"}
+\FunctionTok{names}\NormalTok{(MaStR)[}\DecValTok{3}\NormalTok{] }\OtherTok{\textless{}{-}} \StringTok{"gem\_m"}
+\FunctionTok{names}\NormalTok{(MaStR)[}\DecValTok{4}\NormalTok{] }\OtherTok{\textless{}{-}} \StringTok{"b\_wgs84"}
+\FunctionTok{names}\NormalTok{(MaStR)[}\DecValTok{5}\NormalTok{] }\OtherTok{\textless{}{-}} \StringTok{"l\_wgs84"}
+\FunctionTok{names}\NormalTok{(MaStR)[}\DecValTok{6}\NormalTok{] }\OtherTok{\textless{}{-}} \StringTok{"nabe\_m"}
+\FunctionTok{names}\NormalTok{(MaStR)[}\DecValTok{7}\NormalTok{] }\OtherTok{\textless{}{-}} \StringTok{"rotor\_m"}
+\FunctionTok{names}\NormalTok{(MaStR)[}\DecValTok{8}\NormalTok{] }\OtherTok{\textless{}{-}} \StringTok{"eeg\_nr"}
+
+\FunctionTok{names}\NormalTok{(amprion2019)[}\DecValTok{6}\NormalTok{] }\OtherTok{\textless{}{-}} \StringTok{"eeg\_nr"}
+
+\CommentTok{\#check for Na\textquotesingle{}s in coordinates}
+\FunctionTok{sum}\NormalTok{(}\FunctionTok{is.na}\NormalTok{(MaStR}\SpecialCharTok{$}\NormalTok{b\_wgs84))}
+\FunctionTok{sum}\NormalTok{(}\FunctionTok{is.na}\NormalTok{(MaStR}\SpecialCharTok{$}\NormalTok{l\_wgs84))}
+\FunctionTok{sum}\NormalTok{(}\FunctionTok{is.na}\NormalTok{(MaStR}\SpecialCharTok{$}\NormalTok{eeg\_nr))}
+\NormalTok{MaStR\_without\_na }\OtherTok{\textless{}{-}} \FunctionTok{filter}\NormalTok{(MaStR, }\SpecialCharTok{!} \FunctionTok{is.na}\NormalTok{(MaStR}\SpecialCharTok{$}\NormalTok{eeg\_nr) }\SpecialCharTok{\&} 
+                             \SpecialCharTok{!} \FunctionTok{is.na}\NormalTok{(MaStR}\SpecialCharTok{$}\NormalTok{b\_wgs84))}
+
+\CommentTok{\#merge data sets}
+\NormalTok{MaStR\_amprion2019 }\OtherTok{\textless{}{-}} \FunctionTok{merge}\NormalTok{(}\FunctionTok{data.frame}\NormalTok{(MaStR\_without\_na), }
+                           \FunctionTok{data.frame}\NormalTok{(amprion2019), }
+                           \AttributeTok{by =} \StringTok{"eeg\_nr"}\NormalTok{, }
+                           \AttributeTok{all =} \ConstantTok{TRUE}\NormalTok{)}
+
+
+\CommentTok{\#filter out NAs coordinates and remove duplicates}
+\FunctionTok{sum}\NormalTok{(}\FunctionTok{is.na}\NormalTok{(MaStR\_amprion2019}\SpecialCharTok{$}\NormalTok{eeg\_nr))}
+\FunctionTok{sum}\NormalTok{(}\FunctionTok{is.na}\NormalTok{(MaStR\_amprion2019}\SpecialCharTok{$}\NormalTok{b\_wgs84))}
+\NormalTok{MaStR\_amprion2019\_without\_na }\OtherTok{\textless{}{-}} \FunctionTok{filter}\NormalTok{(MaStR\_amprion2019, }\SpecialCharTok{!} 
+                                         \FunctionTok{is.na}\NormalTok{(MaStR\_amprion2019}\SpecialCharTok{$}\NormalTok{b\_wgs84))}
+
+\FunctionTok{sum}\NormalTok{(}\FunctionTok{duplicated}\NormalTok{(MaStR\_amprion2019\_without\_na}\SpecialCharTok{$}\NormalTok{eeg\_nr))}
+\NormalTok{MaStR\_amprion2019\_without\_dup }\OtherTok{\textless{}{-}} \FunctionTok{distinct}\NormalTok{(MaStR\_amprion2019\_without\_na)}
+
+
+\CommentTok{\#write csv}
+\FunctionTok{write.csv}\NormalTok{(MaStR\_amprion2019\_without\_dup,}\StringTok{"MaStR\_amprion2019.csv"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+\hypertarget{methods}{%
+\subsection{Methods}\label{methods}}
+
+\hypertarget{regression-analysis}{%
+\subsubsection{Regression analysis}\label{regression-analysis}}
+
 After the preparation, the data is firstly analyzed regarding the amount of electricity generated per WT and year. For this purpose, a linear and a 3rd order polynomial regression, that allow for a forecast until 2030, is carried out. The amount of electricity fed in, here referred to as the electricity yield, is the dependent variable and the commissioning date as the independent variable. Secondly the electricity yield is plotted over the rated capacity and henceforth only linear trends are applied to generate more conservative and appropriate estimation of the future values. For the next analysis a plot of the rated capacity over the commissioning date is generated. For this only data from 2019 is used since the rated capacity of the already installed WT's do not change over time. Further the full load hours as a concept of the degree of utilization is analyzed in regard of the WT's commissioning date. The degree of utilization might be more dependent on the wind conditions than the technical development and is therefore specifically good for predictions and therefore data from the past 5 years is analyzed. In addition to the wind conditions the full load hours depend on the specific nominal output, which means the rotor diameter, and hence the technological development can not be disregarded. Which means concrete that old data might still deliver a wrong impression on future predictions but also might account for weak years in terms of wind conditions since 2019 might be a stronger wind year.
 
 Since it is crucial not only to know the electricity yield per WT but also the electricity yield per area to estimate how much of the area of Rhineland-Palatinate must actually be covered with WT's in order to achieve the target of 20 TWh of wind energy in 2030. Therefore data from the master data register that contains geographic information about the WT's is used to calculate their area consumption and the according process is described next.
@@ -467,15 +542,6 @@ Since it is crucial not only to know the electricity yield per WT but also the e
 \hypertarget{electricity-yield-rated-capacity-and-full-load-hours-in-rhineland-palatinate}{%
 \subsection{Electricity yield, rated capacity and full load hours in Rhineland-Palatinate}\label{electricity-yield-rated-capacity-and-full-load-hours-in-rhineland-palatinate}}
 
-The overall development of the number of WT's in RLP is shown in figure \ref{fig:yearswts}, which shows an estimated number of WT's of around 2,500 in the years 2030.
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{data/Amprion/results_of_analysis/year_wts} 
-
-}
-
-\caption{Number of Wt's over time}\label{fig:yearswts}
-\end{figure}
 The diagnostics of the electricity yield show in all linear and polynomial models the same characteristics. Even if they slightly differ from each other and the model assumptions might not be 100 \% optimal for regression analysis they are also not fundamentally violated. In figure \ref{fig:diagnostic} the diagnostic plots of the electricity yield over the commissioning date from the year 2019 are shown as an example. The residual vs fitted values plot show that the residuals become greater with increasing value for the electricity yield. This makes sense since the rated capacity for WT's increases and therefore changes the magnitudes of electricity generation over time. The normal QQ plot shows that the residuals of average values are normally distributed but as the values become great or small there is clear deviation from a normal distribution. This might be due to the non linear development of the WT technology. The scale location plots reveal that the residuals are more or less spread equally among the range of predictors with slightly increasing variance with increasing values, which must be like this since this was already indicated in the residuals vs fitted values plot. The residuals vs leverage plot shows that none of the observations is without Cook's distance and therefore there is no influential outlier.
 \begin{figure}
 
@@ -699,8 +765,12 @@ Scenario & Electricity yield per area [kWh/m²a] & Power output per area [W/m²]
 \CSLLeftMargin{23. }
 \CSLRightInline{Rasmus Borrmann, Dr. Knud Rehfeldt, Dr. Dennis Kruse: Volllaststunden von windenergieanlagen an land - entwicklung, einfl{ü}sse, auswirkungen: Volllaststunden von windenergieanlagen an land, \url{https://www.windguard.de/veroeffentlichungen.html?file=files/cto_layout/img/unternehmen/veroeffentlichungen/2020/Volllaststunden\%20von\%20Windenergieanlagen\%20an\%20Land\%202020.pdf}, (2020)}
 
-\leavevmode\hypertarget{ref-AmprionGmbH.2019}{}%
+\leavevmode\hypertarget{ref-HadleyWickham.2021}{}%
 \CSLLeftMargin{24. }
+\CSLRightInline{Hadley Wickham: Deplyr, \url{https://dplyr.tidyverse.org/}, (2021)}
+
+\leavevmode\hypertarget{ref-AmprionGmbH.2019}{}%
+\CSLLeftMargin{25. }
 \CSLRightInline{Amprion GmbH: EEG-einspeisung, \url{https://www.amprion.net/Strommarkt/Abgaben-und-Umlagen/EEG-Jahresabrechnung/2019.html}, (2019)}
 
 \end{CSLReferences}
@@ -715,17 +785,20 @@ Scenario & Electricity yield per area [kWh/m²a] & Power output per area [W/m²]
 
 \hypertarget{appendix}{%
 \section{Appendix}\label{appendix}}
+
+\hypertarget{code-chunk-1}{%
+\subsection{Code chunk 1}\label{code-chunk-1}}
 \begin{Shaded}
 \begin{Highlighting}[]
-\DocumentationTok{\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#}
-\CommentTok{\#Preparation of master and movement data of amprion from 2015 {-} 2019\#}
-\DocumentationTok{\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#}
+\DocumentationTok{\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#}
+\CommentTok{\#Preparation of the master and movement data of the transmission system\# }
+\CommentTok{\#operator Amprion from 2015 {-} 2019                                     \#}
+\DocumentationTok{\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#}
 
 \CommentTok{\#packages}
 \FunctionTok{Sys.setenv}\NormalTok{(}\AttributeTok{LANG =} \StringTok{"en"}\NormalTok{)}
 \NormalTok{pacman}\SpecialCharTok{::}\FunctionTok{p\_load}\NormalTok{(rio, data.table, tidyverse, tidyr, purrr, magrittr, compare, }
 \NormalTok{               ggplot2, DiagrammeR)}
-
 
 \CommentTok{\#Import data and format columns}
 \NormalTok{amprion\_2015 }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"EEG\_StammBew\_2015\_Amprion{-}EAtlas.csv"}\NormalTok{)}
@@ -736,6 +809,46 @@ Scenario & Electricity yield per area [kWh/m²a] & Power output per area [W/m²]
 \FunctionTok{names}\NormalTok{(amprion\_2019)[}\DecValTok{1}\NormalTok{] }\OtherTok{\textless{}{-}} \StringTok{"gem"}
 \FunctionTok{names}\NormalTok{(amprion\_2018)[}\DecValTok{1}\NormalTok{] }\OtherTok{\textless{}{-}} \StringTok{"gem"}
 \FunctionTok{names}\NormalTok{(amprion\_2017)[}\DecValTok{1}\NormalTok{] }\OtherTok{\textless{}{-}} \StringTok{"gem"}
+
+\CommentTok{\#calculate and plot trend of total WT\textquotesingle{}s}
+\NormalTok{year }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{2012}\SpecialCharTok{:}\DecValTok{2019}\NormalTok{)}
+\NormalTok{wts }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{1207}\NormalTok{, }\DecValTok{1322}\NormalTok{, }\DecValTok{1420}\NormalTok{, }\DecValTok{1478}\NormalTok{, }\DecValTok{1532}\NormalTok{, }\DecValTok{1624}\NormalTok{, }\DecValTok{1675}\NormalTok{, }\DecValTok{1702}\NormalTok{)}
+\NormalTok{year\_wts }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(year, wts)}
+
+\NormalTok{lm\_year\_wts }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(year\_wts}\SpecialCharTok{$}\NormalTok{wts }\SpecialCharTok{\textasciitilde{}}\NormalTok{ year\_wts}\SpecialCharTok{$}\NormalTok{year)}
+\FunctionTok{summary}\NormalTok{(lm\_year\_wts)}
+
+
+\NormalTok{pyear\_wts }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{data =}\NormalTok{ year\_wts, }
+             \FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{ year, }\AttributeTok{y=}\NormalTok{wts), }
+             \AttributeTok{size =} \DecValTok{2}\NormalTok{, }\AttributeTok{colour =} \StringTok{"\#8600fd"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{data =}\NormalTok{ year\_wts, }
+              \FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{year, }\AttributeTok{y=}\NormalTok{wts), }
+              \AttributeTok{method=}\NormalTok{lm, }\AttributeTok{se=}\ConstantTok{TRUE}\NormalTok{, }\AttributeTok{fullrange =} \ConstantTok{TRUE}\NormalTok{, }
+              \AttributeTok{size =} \FloatTok{0.5}\NormalTok{, }\AttributeTok{colour =} \StringTok{"\#8600fd"}\NormalTok{)  }\SpecialCharTok{+}
+  \FunctionTok{theme\_light}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{ylim}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{3000}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{xlim}\NormalTok{(}\DecValTok{2010}\NormalTok{, }\DecValTok{2030}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{xlab}\NormalTok{(}\StringTok{"Year"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{ylab}\NormalTok{(}\StringTok{"Number of WT\textquotesingle{}s"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{theme}\NormalTok{( }\AttributeTok{axis.text=}\FunctionTok{element\_text}\NormalTok{(}\AttributeTok{size=}\DecValTok{11}\NormalTok{),}
+         \AttributeTok{axis.title=}\FunctionTok{element\_text}\NormalTok{(}\AttributeTok{size=}\DecValTok{12}\NormalTok{),}
+         \AttributeTok{plot.title =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{size=}\DecValTok{14}\NormalTok{),}
+         \AttributeTok{legend.position =} \FunctionTok{c}\NormalTok{(}\FloatTok{0.85}\NormalTok{, }\FloatTok{0.9}\NormalTok{),}
+         \AttributeTok{legend.direction =} \StringTok{"horizontal"}\NormalTok{) }
+
+
+\CommentTok{\#print plot}
+\NormalTok{pyear\_wts }\SpecialCharTok{+} \FunctionTok{theme}\NormalTok{(}\AttributeTok{legend.position =} \FunctionTok{c}\NormalTok{(}\FloatTok{0.25}\NormalTok{,}\FloatTok{0.9}\NormalTok{))}
+
+
+\CommentTok{\#save plot}
+\FunctionTok{ggsave}\NormalTok{(}\StringTok{"results\_of\_analysis/year\_wts.png"}\NormalTok{,}
+       \AttributeTok{plot =} \FunctionTok{last\_plot}\NormalTok{(),}
+       \AttributeTok{dpi =} \DecValTok{900}\NormalTok{,}
+       \AttributeTok{width =} \DecValTok{7}\NormalTok{,}
+       \AttributeTok{height =} \DecValTok{4}\NormalTok{)}
 
 \CommentTok{\#Variable selection}
 \NormalTok{selection\_2015 }\OtherTok{\textless{}{-}}\NormalTok{ amprion\_2015[,}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{3}\NormalTok{,}\DecValTok{8}\NormalTok{,}\DecValTok{10}\NormalTok{,}\DecValTok{17}\NormalTok{,}\DecValTok{27}\NormalTok{)]}
@@ -755,6 +868,7 @@ Scenario & Electricity yield per area [kWh/m²a] & Power output per area [W/m²]
                                          \StringTok{"\%d/\%m/\%Y"}\NormalTok{)}
 \NormalTok{selection\_2019}\SpecialCharTok{$}\NormalTok{inbetriebnahme }\OtherTok{\textless{}{-}} \FunctionTok{as.Date}\NormalTok{(selection\_2019}\SpecialCharTok{$}\NormalTok{inbetriebnahme, }
                                          \StringTok{"\%d/\%m/\%Y"}\NormalTok{)}
+
 \CommentTok{\#find outliers}
 \NormalTok{outliers\_2015 }\OtherTok{\textless{}{-}} \FunctionTok{filter}\NormalTok{(selection\_2015, leistung }\SpecialCharTok{\textless{}} \DecValTok{100} \SpecialCharTok{|}\NormalTok{ leistung }\SpecialCharTok{\textgreater{}} \DecValTok{4500} \SpecialCharTok{|} 
 \NormalTok{                          inbetriebnahme }\SpecialCharTok{\textgreater{}} \StringTok{"2015{-}02{-}15"}\NormalTok{)}
@@ -778,24 +892,7 @@ Scenario & Electricity yield per area [kWh/m²a] & Power output per area [W/m²]
 \FunctionTok{rm}\NormalTok{(selection\_2015, selection\_2016, selection\_2017, selection\_2018,}
 \NormalTok{   selection\_2019)}
 
-\CommentTok{\#write files}
-\FunctionTok{write.csv}\NormalTok{(}
-\NormalTok{  selection\_2015\_without\_outliers, }
-  \StringTok{"results\_of\_preparation/amprion\_2015\_processed\_and\_without\_outliers.csv"}\NormalTok{)}
-\FunctionTok{write.csv}\NormalTok{(}
-\NormalTok{  selection\_2016\_without\_outliers, }
-  \StringTok{"results\_of\_preparation/amprion\_2016\_processed\_and\_without\_outliers.csv"}\NormalTok{)}
-\FunctionTok{write.csv}\NormalTok{(}
-\NormalTok{  selection\_2017\_without\_outliers, }
-  \StringTok{"results\_of\_preparation/amprion\_2017\_processed\_and\_without\_outliers.csv"}\NormalTok{)}
-\FunctionTok{write.csv}\NormalTok{(}
-\NormalTok{  selection\_2018\_without\_outliers, }
-  \StringTok{"results\_of\_preparation/amprion\_2018\_processed\_and\_without\_outliers.csv"}\NormalTok{)}
-\FunctionTok{write.csv}\NormalTok{(}
-\NormalTok{  selection\_2019\_without\_outliers, }
-  \StringTok{"results\_of\_preparation/amprion\_2019\_processed\_and\_without\_outliers.csv"}\NormalTok{)}
-
-\CommentTok{\#add electricity yiel in MWh and full load hours}
+\CommentTok{\#add electricity yiel in MWh and full load hours }
 \NormalTok{selection\_2015\_without\_outliers }\OtherTok{\textless{}{-}}\NormalTok{ selection\_2015\_without\_outliers }\SpecialCharTok{\%\textgreater{}\%} 
   \FunctionTok{mutate}\NormalTok{(}\AttributeTok{flh =}\NormalTok{ menge\_kwh}\SpecialCharTok{/}\NormalTok{leistung) }\SpecialCharTok{\%\textgreater{}\%}
   \FunctionTok{mutate}\NormalTok{(}\AttributeTok{menge\_mwh =} \FunctionTok{round}\NormalTok{(menge\_kwh}\SpecialCharTok{/}\DecValTok{1000}\NormalTok{))}
@@ -812,6 +909,41 @@ Scenario & Electricity yield per area [kWh/m²a] & Power output per area [W/m²]
   \FunctionTok{mutate}\NormalTok{(}\AttributeTok{flh =}\NormalTok{ menge\_kwh}\SpecialCharTok{/}\NormalTok{leistung) }\SpecialCharTok{\%\textgreater{}\%}
   \FunctionTok{mutate}\NormalTok{(}\AttributeTok{menge\_mwh =} \FunctionTok{round}\NormalTok{(menge\_kwh}\SpecialCharTok{/}\DecValTok{1000}\NormalTok{))}
 
+\CommentTok{\#write files}
+\FunctionTok{write.csv}\NormalTok{(}
+\NormalTok{  selection\_2015\_without\_outliers, }
+  \StringTok{"results\_of\_preparation/amprion\_2015\_processed.csv"}\NormalTok{)}
+\FunctionTok{write.csv}\NormalTok{(}
+\NormalTok{  selection\_2016\_without\_outliers, }
+  \StringTok{"results\_of\_preparation/amprion\_2016\_processed.csv"}\NormalTok{)}
+\FunctionTok{write.csv}\NormalTok{(}
+\NormalTok{  selection\_2017\_without\_outliers, }
+  \StringTok{"results\_of\_preparation/amprion\_2017\_processed.csv"}\NormalTok{)}
+\FunctionTok{write.csv}\NormalTok{(}
+\NormalTok{  selection\_2018\_without\_outliers, }
+  \StringTok{"results\_of\_preparation/amprion\_2018\_processed.csv"}\NormalTok{)}
+\FunctionTok{write.csv}\NormalTok{(}
+\NormalTok{  selection\_2019\_without\_outliers, }
+  \StringTok{"results\_of\_preparation/amprion\_2019\_processed.csv"}\NormalTok{)}
+
+\CommentTok{\#find different commissioning dates}
+\NormalTok{commissioning\_before2001 }\OtherTok{\textless{}{-}} \FunctionTok{subset}\NormalTok{(selection\_2019\_without\_outliers, }
+\NormalTok{                                   inbetriebnahme }\SpecialCharTok{\textless{}} \StringTok{"2000{-}12{-}31"}\NormalTok{)}
+\FunctionTok{sum}\NormalTok{(commissioning\_before2001}\SpecialCharTok{$}\NormalTok{menge\_mwh)}
+\NormalTok{commissioning\_before2005 }\OtherTok{\textless{}{-}} \FunctionTok{subset}\NormalTok{(selection\_2019\_without\_outliers, }
+\NormalTok{                                   inbetriebnahme }\SpecialCharTok{\textless{}} \StringTok{"2005{-}12{-}31"}\NormalTok{)}
+\NormalTok{commissioning\_2001\_2005 }\OtherTok{\textless{}{-}} \FunctionTok{subset}\NormalTok{(commissioning\_before2005, }
+\NormalTok{                                  inbetriebnahme }\SpecialCharTok{\textgreater{}} \StringTok{"2000{-}12{-}31"}\NormalTok{)}
+\FunctionTok{sum}\NormalTok{(commissioning\_2001\_2005}\SpecialCharTok{$}\NormalTok{menge\_mwh)}
+
+\CommentTok{\#write csv}
+\FunctionTok{write.csv}\NormalTok{(commissioning\_before2001,}
+          \StringTok{"results\_of\_preparation/commissioning\_before\_2001.csv"}\NormalTok{)}
+\FunctionTok{write.csv}\NormalTok{(commissioning\_2001\_2005,}
+          \StringTok{"results\_of\_preparation/commissioning\_2001\_2005.csv"}\NormalTok{)}
+\FunctionTok{write.csv}\NormalTok{(commissioning\_before2005,}
+          \StringTok{"results\_of\_preparation/commissioning\_before\_2005.csv"}\NormalTok{)}
+
 \CommentTok{\#create flow chart of data preparation}
 \FunctionTok{grViz}\NormalTok{(}\AttributeTok{diagram =} \StringTok{"digraph flowchart \{}
 \StringTok{  node [fontname = arial, shape = oval, fixedsize = FALSE]}
@@ -824,396 +956,27 @@ Scenario & Electricity yield per area [kWh/m²a] & Power output per area [W/m²]
 \StringTok{  tab7 [label = \textquotesingle{}@@7\textquotesingle{}, fontsize=30]}
 \StringTok{  tab8 [label = \textquotesingle{}@@8\textquotesingle{}, fontsize=30]}
 \StringTok{  tab9 [label = \textquotesingle{}@@9\textquotesingle{}, fontsize=30]}
+\StringTok{  tab10 [label = \textquotesingle{}@@10\textquotesingle{}, fontsize=30]}
 \StringTok{  }
 \StringTok{  }
-\StringTok{  tab1 {-}\textgreater{} tab2 {-}\textgreater{} tab3 {-}\textgreater{} tab4 {-}\textgreater{} tab5 {-}\textgreater{} tab6 {-}\textgreater{} tab7 {-}\textgreater{} tab8 {-}\textgreater{} tab9;}
-\StringTok{  tab3 {-}\textgreater{} tab2;}
-\StringTok{  tab6 {-}\textgreater{} tab2;}
-\StringTok{  tab2 {-}\textgreater{} tab6;}
+\StringTok{  tab1 {-}\textgreater{} tab2 {-}\textgreater{} tab3 {-}\textgreater{} tab4 {-}\textgreater{} tab5 {-}\textgreater{} tab6 {-}\textgreater{} tab7;}
+\StringTok{  tab1 {-}\textgreater{} tab8;}
+\StringTok{  tab5 {-}\textgreater{} tab9;}
+\StringTok{  tab6 {-}\textgreater{} tab10;}
 \StringTok{\}}
 \StringTok{  }
-\StringTok{  [1]: \textquotesingle{}Import data from 2017, 2018 and 2019\textquotesingle{}}
-\StringTok{  [2]: \textquotesingle{}Adjust variable formats and names\textquotesingle{}}
-\StringTok{  [3]: \textquotesingle{}Drop unnecessary variables\textquotesingle{} }
+\StringTok{  [1]: \textquotesingle{}Import data from 2015 to 2019\textquotesingle{}}
+\StringTok{  [2]: \textquotesingle{}Drop unnecessary variables\textquotesingle{} }
+\StringTok{  [3]: \textquotesingle{}Adjust variable formats and names\textquotesingle{}}
 \StringTok{  [4]: \textquotesingle{}Detect outliers and remove from data\textquotesingle{}}
-\StringTok{  [5]: \textquotesingle{}Write files as: }\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{n amprion\_2017\_proccessed\_and\_without\_outliers.csv }
-\StringTok{  }\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{n amprion\_2018\_proccessed\_and\_without\_outliers.csv }\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{n }
-\StringTok{  amprion\_2019\_proccessed\_and\_without\_outliers.csv\textquotesingle{}}
-\StringTok{  [6]: \textquotesingle{}Group data of 2019 by counties and municipalities }\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{n }
-\StringTok{  with the community key\textquotesingle{}}
-\StringTok{  [7]: \textquotesingle{}Add columns for full load hours and electricity yield in MWh\textquotesingle{}}
-\StringTok{  [8]: \textquotesingle{}Filter for different commissioning dates\textquotesingle{}}
-\StringTok{  [9]: \textquotesingle{}Write files as: }\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{n commissioning\_before\_2005.csv, }\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{n }
-\StringTok{  commissioning\_before2001.csv }\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{n commissioning\_2001\_2005.csv\textquotesingle{}}
+\StringTok{  [5]: \textquotesingle{}Add columns for full load hours and electricity yield in MWh\textquotesingle{}}
+\StringTok{  [6]: \textquotesingle{}Filter only data from 2019 }\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{nfor different commissioning dates\textquotesingle{}}
+\StringTok{  [7]: \textquotesingle{}Write files as: }\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{n commissioning\_before\_2005.csv }\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{n commissioning\_before\_2001.csv }\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{n commissioning\_2001\_2005.csv\textquotesingle{}}
+\StringTok{  [8]: \textquotesingle{}Calculate and plot }\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{ntotal number of WTs over time\textquotesingle{}}
+\StringTok{  [9]: \textquotesingle{}Write files as: }\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{namprion\_2015\_processed.csv, }\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{namprion\_2016\_processed.csv, }\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{namprion\_2017\_processed.csv, }\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{namprion\_2018\_processed.csv, }\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{namprion\_2019\_processed.csv\textquotesingle{}}
+\StringTok{  [10]: \textquotesingle{}Calculate sum of electricity yield }\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{nfor different commissioning dates\textquotesingle{}}
 \StringTok{  }
 \StringTok{  "}\NormalTok{)}
-
-
-
-\DocumentationTok{\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#}
-\CommentTok{\#Statistical analysis of the data\#}
-\DocumentationTok{\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#}
-
-\CommentTok{\#Linear and polynomial models of electricity yield over commissioning date}
-\CommentTok{\#2017}
-\NormalTok{lm\_electricity\_yield\_2017 }\OtherTok{\textless{}{-}} 
-  \FunctionTok{lm}\NormalTok{(selection\_2017\_without\_outliers}\SpecialCharTok{$}\NormalTok{menge\_mwh }
-     \SpecialCharTok{\textasciitilde{}}\NormalTok{ selection\_2017\_without\_outliers}\SpecialCharTok{$}\NormalTok{inbetriebnahme)}
-\FunctionTok{summary}\NormalTok{(lm\_electricity\_yield\_2017)}
-\FunctionTok{plot}\NormalTok{(lm\_electricity\_yield\_2017)}
-\CommentTok{\#2018}
-\NormalTok{lm\_electricity\_yield\_2018 }\OtherTok{\textless{}{-}} 
-  \FunctionTok{lm}\NormalTok{(selection\_2018\_without\_outliers}\SpecialCharTok{$}\NormalTok{menge\_mwh }
-     \SpecialCharTok{\textasciitilde{}}\NormalTok{ selection\_2018\_without\_outliers}\SpecialCharTok{$}\NormalTok{inbetriebnahme)}
-\FunctionTok{summary}\NormalTok{(lm\_electricity\_yield\_2018)}
-\FunctionTok{plot}\NormalTok{(lm\_electricity\_yield\_2018)}
-\CommentTok{\#2019}
-\NormalTok{lm\_electricity\_yield\_2019 }\OtherTok{\textless{}{-}} 
-  \FunctionTok{lm}\NormalTok{(selection\_2019\_without\_outliers}\SpecialCharTok{$}\NormalTok{menge\_mwh }
-     \SpecialCharTok{\textasciitilde{}}\NormalTok{ selection\_2019\_without\_outliers}\SpecialCharTok{$}\NormalTok{inbetriebnahme)}
-\FunctionTok{summary}\NormalTok{(lm\_electricity\_yield\_2019)}
-\FunctionTok{par}\NormalTok{(}\AttributeTok{mfrow =} \FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DecValTok{2}\NormalTok{))}
-\FunctionTok{plot}\NormalTok{(lm\_electricity\_yield\_2019)}
-\CommentTok{\#check polynomial model for 2019}
-\NormalTok{pm\_electricity\_yield\_2019 }\OtherTok{\textless{}{-}} 
-  \FunctionTok{lm}\NormalTok{(selection\_2019\_without\_outliers}\SpecialCharTok{$}\NormalTok{menge\_mwh }
-     \SpecialCharTok{\textasciitilde{}} \FunctionTok{poly}\NormalTok{(selection\_2019\_without\_outliers}\SpecialCharTok{$}\NormalTok{inbetriebnahme, }\DecValTok{3}\NormalTok{))}
-\FunctionTok{summary}\NormalTok{(pm\_electricity\_yield\_2019)}
-\FunctionTok{plot}\NormalTok{(pm\_electricity\_yield\_2019)}
-\CommentTok{\#2018}
-\NormalTok{pm\_electricity\_yield\_2018 }\OtherTok{\textless{}{-}} 
-  \FunctionTok{lm}\NormalTok{(selection\_2018\_without\_outliers}\SpecialCharTok{$}\NormalTok{menge\_mwh }
-     \SpecialCharTok{\textasciitilde{}} \FunctionTok{poly}\NormalTok{(selection\_2018\_without\_outliers}\SpecialCharTok{$}\NormalTok{inbetriebnahme, }\DecValTok{3}\NormalTok{))}
-\FunctionTok{summary}\NormalTok{(pm\_electricity\_yield\_2018)}
-\FunctionTok{plot}\NormalTok{(pm\_electricity\_yield\_2018)}
-\CommentTok{\#2017}
-\NormalTok{pm\_electricity\_yield\_2017 }\OtherTok{\textless{}{-}} 
-  \FunctionTok{lm}\NormalTok{(selection\_2017\_without\_outliers}\SpecialCharTok{$}\NormalTok{menge\_mwh }
-     \SpecialCharTok{\textasciitilde{}} \FunctionTok{poly}\NormalTok{(selection\_2017\_without\_outliers}\SpecialCharTok{$}\NormalTok{inbetriebnahme, }\DecValTok{3}\NormalTok{))}
-\FunctionTok{summary}\NormalTok{(pm\_electricity\_yield\_2017)}
-\FunctionTok{plot}\NormalTok{(pm\_electricity\_yield\_2017)}
-
-\CommentTok{\#Plot the values with linear and polynomial trends for 2017 {-} 2019}
-\NormalTok{pelectricity\_yield\_2019\_poly }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{() }\SpecialCharTok{+}
-  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{data =}\NormalTok{ selection\_2017\_without\_outliers, }
-             \FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{inbetriebnahme, }\AttributeTok{y=}\NormalTok{menge\_mwh), }
-             \AttributeTok{size =} \FloatTok{0.4}\NormalTok{, }\AttributeTok{colour =} \StringTok{"\#03a1fc"}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{data =}\NormalTok{ selection\_2018\_without\_outliers, }
-             \FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{inbetriebnahme, }\AttributeTok{y=}\NormalTok{menge\_mwh), }
-             \AttributeTok{size =} \FloatTok{0.4}\NormalTok{, }\AttributeTok{colour =} \StringTok{"\#fc5a03"}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{data =}\NormalTok{ selection\_2019\_without\_outliers, }
-             \FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{inbetriebnahme, }\AttributeTok{y=}\NormalTok{menge\_mwh), }
-             \AttributeTok{size =} \FloatTok{0.4}\NormalTok{, }\AttributeTok{colour =} \StringTok{"\#94fc03"}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{data =}\NormalTok{ selection\_2017\_without\_outliers, }
-              \FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{inbetriebnahme, }\AttributeTok{y=}\NormalTok{menge\_mwh, }\AttributeTok{colour =} \StringTok{"2017"}\NormalTok{), }
-              \AttributeTok{method=}\NormalTok{lm, }\AttributeTok{se=}\ConstantTok{TRUE}\NormalTok{, }\AttributeTok{fullrange =} \ConstantTok{TRUE}\NormalTok{, }\AttributeTok{size =} \FloatTok{0.5}\NormalTok{)  }\SpecialCharTok{+}
-  \FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{data =}\NormalTok{ selection\_2018\_without\_outliers, }
-              \FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{inbetriebnahme, }\AttributeTok{y=}\NormalTok{menge\_mwh, }\AttributeTok{colour =} \StringTok{"2018"}\NormalTok{), }
-              \AttributeTok{method=}\NormalTok{lm, }\AttributeTok{se=}\ConstantTok{TRUE}\NormalTok{, }\AttributeTok{fullrange =} \ConstantTok{TRUE}\NormalTok{, }\AttributeTok{size =} \FloatTok{0.5}\NormalTok{)  }\SpecialCharTok{+}
-  \FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{data =}\NormalTok{ selection\_2019\_without\_outliers, }
-              \FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{inbetriebnahme, }\AttributeTok{y=}\NormalTok{menge\_mwh, }\AttributeTok{colour =} \StringTok{"2019"}\NormalTok{), }
-              \AttributeTok{method=}\NormalTok{lm, }\AttributeTok{se=}\ConstantTok{TRUE}\NormalTok{, }\AttributeTok{fullrange =} \ConstantTok{TRUE}\NormalTok{, }\AttributeTok{size =} \FloatTok{0.5}\NormalTok{)  }\SpecialCharTok{+}
-  \FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{data =}\NormalTok{ selection\_2017\_without\_outliers, }
-              \FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{inbetriebnahme, }\AttributeTok{y=}\NormalTok{menge\_mwh, }\AttributeTok{colour =} \StringTok{"2017"}\NormalTok{), }
-              \AttributeTok{method=} \StringTok{"lm"}\NormalTok{, }\AttributeTok{formula =}\NormalTok{ y }\SpecialCharTok{\textasciitilde{}} \FunctionTok{poly}\NormalTok{(x, }\DecValTok{3}\NormalTok{), }
-              \AttributeTok{fullrange =} \ConstantTok{TRUE}\NormalTok{, }\AttributeTok{size =} \FloatTok{0.5}\NormalTok{)  }\SpecialCharTok{+}
-  \FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{data =}\NormalTok{ selection\_2018\_without\_outliers, }
-              \FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{inbetriebnahme, }\AttributeTok{y=}\NormalTok{menge\_mwh, }\AttributeTok{colour =} \StringTok{"2018"}\NormalTok{),}
-              \AttributeTok{method=} \StringTok{"lm"}\NormalTok{, }\AttributeTok{formula =}\NormalTok{ y }\SpecialCharTok{\textasciitilde{}} \FunctionTok{poly}\NormalTok{(x, }\DecValTok{3}\NormalTok{), }
-              \AttributeTok{fullrange =} \ConstantTok{TRUE}\NormalTok{, }\AttributeTok{size =} \FloatTok{0.5}\NormalTok{)  }\SpecialCharTok{+}
-  \FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{data =}\NormalTok{ selection\_2019\_without\_outliers, }
-              \FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{inbetriebnahme, }\AttributeTok{y=}\NormalTok{menge\_mwh, }\AttributeTok{colour =} \StringTok{"2019"}\NormalTok{), }
-              \AttributeTok{method=} \StringTok{"lm"}\NormalTok{, }\AttributeTok{formula =}\NormalTok{ y }\SpecialCharTok{\textasciitilde{}} \FunctionTok{poly}\NormalTok{(x, }\DecValTok{3}\NormalTok{), }
-              \AttributeTok{fullrange =} \ConstantTok{TRUE}\NormalTok{, }\AttributeTok{size =} \FloatTok{0.5}\NormalTok{)  }\SpecialCharTok{+}
-  \FunctionTok{theme\_light}\NormalTok{() }\SpecialCharTok{+}
-  \FunctionTok{scale\_x\_date}\NormalTok{(}\AttributeTok{limits =} \FunctionTok{as.Date}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"1990{-}01{-}01"}\NormalTok{,}\StringTok{"2030{-}12{-}31"}\NormalTok{))) }\SpecialCharTok{+}
-  \FunctionTok{ylim}\NormalTok{(}\SpecialCharTok{{-}}\DecValTok{1000}\NormalTok{, }\DecValTok{20000}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{xlab}\NormalTok{(}\StringTok{"Commissioning Date"}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{ylab}\NormalTok{(}\StringTok{"Electricity yield per WT and year [MWh]"}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{theme}\NormalTok{( }\AttributeTok{axis.text=}\FunctionTok{element\_text}\NormalTok{(}\AttributeTok{size=}\DecValTok{11}\NormalTok{),}
-         \AttributeTok{axis.title=}\FunctionTok{element\_text}\NormalTok{(}\AttributeTok{size=}\DecValTok{12}\NormalTok{),}
-         \AttributeTok{plot.title =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{size=}\DecValTok{14}\NormalTok{),}
-         \AttributeTok{legend.position =} \FunctionTok{c}\NormalTok{(}\FloatTok{0.85}\NormalTok{, }\FloatTok{0.9}\NormalTok{),}
-         \AttributeTok{legend.direction =} \StringTok{"horizontal"}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{geom\_hline}\NormalTok{(}\AttributeTok{yintercept =} \DecValTok{7400}\NormalTok{, }\AttributeTok{linetype =} \StringTok{\textquotesingle{}dashed\textquotesingle{}}\NormalTok{, }\AttributeTok{size =} \FloatTok{0.25}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{annotate}\NormalTok{(}\AttributeTok{geom=}\StringTok{"text"}\NormalTok{,}\AttributeTok{x=}\FunctionTok{as.Date}\NormalTok{(}\StringTok{"1997{-}01{-}01"}\NormalTok{), }
-           \AttributeTok{y=}\DecValTok{6500}\NormalTok{, }\AttributeTok{label=}\StringTok{"mean of \textasciitilde{} 7,400 MWh/a in 2021 with linear trends"}\NormalTok{, }
-           \AttributeTok{size =} \FloatTok{2.5}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{geom\_hline}\NormalTok{(}\AttributeTok{yintercept =} \DecValTok{10000}\NormalTok{, }\AttributeTok{linetype =} \StringTok{\textquotesingle{}dashed\textquotesingle{}}\NormalTok{, }\AttributeTok{size =} \FloatTok{0.25}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{annotate}\NormalTok{(}\AttributeTok{geom=}\StringTok{"text"}\NormalTok{,}\AttributeTok{x=}\FunctionTok{as.Date}\NormalTok{(}\StringTok{"2000{-}01{-}01"}\NormalTok{),}
-           \AttributeTok{y=}\DecValTok{11000}\NormalTok{,}\AttributeTok{label=}\StringTok{"mean of \textasciitilde{} 10,000 MWh/a in 2030 with linear trends"}\NormalTok{, }
-           \AttributeTok{size =} \FloatTok{2.5}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{geom\_hline}\NormalTok{(}\AttributeTok{yintercept =} \DecValTok{15000}\NormalTok{, }\AttributeTok{linetype =} \StringTok{\textquotesingle{}dashed\textquotesingle{}}\NormalTok{, }\AttributeTok{size =} \FloatTok{0.25}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{annotate}\NormalTok{(}\AttributeTok{geom=}\StringTok{"text"}\NormalTok{,}\AttributeTok{x=}\FunctionTok{as.Date}\NormalTok{(}\StringTok{"2003{-}01{-}01"}\NormalTok{),}
-           \AttributeTok{y=}\DecValTok{14200}\NormalTok{, }\AttributeTok{label=}\StringTok{"\textgreater{} 15,000 MWh/a in 2030 with polynomial models"}\NormalTok{, }
-           \AttributeTok{size =} \FloatTok{2.5}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{annotate}\NormalTok{(}\AttributeTok{geom=}\StringTok{"text"}\NormalTok{,}\AttributeTok{x=}\FunctionTok{as.Date}\NormalTok{(}\StringTok{"2026{-}01{-}01"}\NormalTok{),}
-           \AttributeTok{y=}\DecValTok{2000}\NormalTok{,}\AttributeTok{label=} \StringTok{"All adj. R² (3rd poly) \textasciitilde{} 72 \%"}\NormalTok{, }\AttributeTok{size =} \FloatTok{2.5}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{annotate}\NormalTok{(}\AttributeTok{geom=}\StringTok{"text"}\NormalTok{,}\AttributeTok{x=}\FunctionTok{as.Date}\NormalTok{(}\StringTok{"2026{-}01{-}01"}\NormalTok{),}
-           \AttributeTok{y=}\DecValTok{3500}\NormalTok{,}\AttributeTok{label=} \StringTok{"All R² (linear) \textasciitilde{} 68 {-} 70 \%"}\NormalTok{, }\AttributeTok{size =} \FloatTok{2.5}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{annotate}\NormalTok{(}\AttributeTok{geom=}\StringTok{"text"}\NormalTok{,}\AttributeTok{x=}\FunctionTok{as.Date}\NormalTok{(}\StringTok{"2026{-}01{-}01"}\NormalTok{),}
-           \AttributeTok{y=}\DecValTok{400}\NormalTok{,}\AttributeTok{label=}\StringTok{"p{-}values all \textless{}\textless{} 0.001"}\NormalTok{, }\AttributeTok{size =} \FloatTok{2.5}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{scale\_colour\_manual}\NormalTok{(}\AttributeTok{name =} \StringTok{"Year"}\NormalTok{, }\AttributeTok{values=}\FunctionTok{c}\NormalTok{(}\StringTok{"\#03a1fc"}\NormalTok{, }\StringTok{"\#fc5a03"}\NormalTok{, }\StringTok{"\#94fc03"}\NormalTok{)) }
-
-\CommentTok{\#print plot}
-\NormalTok{pelectricity\_yield\_2019\_poly }\SpecialCharTok{+}  \FunctionTok{theme}\NormalTok{(}\AttributeTok{legend.position =} \FunctionTok{c}\NormalTok{(}\FloatTok{0.25}\NormalTok{,}\FloatTok{0.9}\NormalTok{))}
-
-\CommentTok{\#save plot as image}
-\FunctionTok{ggsave}\NormalTok{(}
-  \StringTok{"results\_of\_analysis/electricity\_yield\_2017{-}2019\_over\_comissioning\_date2.png"}\NormalTok{,}
-       \AttributeTok{plot =} \FunctionTok{last\_plot}\NormalTok{(),}
-       \AttributeTok{dpi =} \DecValTok{900}\NormalTok{,}
-       \AttributeTok{width =} \DecValTok{7}\NormalTok{,}
-       \AttributeTok{height =} \DecValTok{4}\NormalTok{)}
-
-\CommentTok{\#linear models with electricity over rated capacity}
-\NormalTok{lm\_e\_over\_rated\_capacity\_2019 }\OtherTok{\textless{}{-}} 
-  \FunctionTok{lm}\NormalTok{(selection\_2019\_without\_outliers}\SpecialCharTok{$}\NormalTok{menge\_mwh }
-     \SpecialCharTok{\textasciitilde{}}\NormalTok{ selection\_2019\_without\_outliers}\SpecialCharTok{$}\NormalTok{leistung)}
-\FunctionTok{summary}\NormalTok{(lm\_e\_over\_rated\_capacity\_2019)}
-\FunctionTok{plot}\NormalTok{(lm\_e\_over\_rated\_capacity\_2019)}
-
-\CommentTok{\#Plot electricity yield over rated capacity with linear trend 2017 {-} 2019}
-\NormalTok{pe\_over\_ratedcapacity\_2019 }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{() }\SpecialCharTok{+}
-  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{data =}\NormalTok{ selection\_2017\_without\_outliers, }
-             \FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{leistung, }\AttributeTok{y=}\NormalTok{menge\_mwh), }\AttributeTok{size =} \FloatTok{0.4}\NormalTok{, }\AttributeTok{colour =} \StringTok{"\#03a1fc"}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{data =}\NormalTok{ selection\_2018\_without\_outliers, }
-             \FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{leistung, }\AttributeTok{y=}\NormalTok{menge\_mwh), }\AttributeTok{size =} \FloatTok{0.4}\NormalTok{, }\AttributeTok{colour =} \StringTok{"\#fc5a03"}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{data =}\NormalTok{ selection\_2019\_without\_outliers, }
-             \FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{leistung, }\AttributeTok{y=}\NormalTok{menge\_mwh), }\AttributeTok{size =} \FloatTok{0.4}\NormalTok{, }\AttributeTok{colour =} \StringTok{"\#94fc03"}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{data =}\NormalTok{ selection\_2017\_without\_outliers, }
-              \FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{leistung, }\AttributeTok{y=}\NormalTok{menge\_mwh, }\AttributeTok{colour =} \StringTok{"2017"}\NormalTok{), }
-              \AttributeTok{method=}\NormalTok{lm, }\AttributeTok{se=}\ConstantTok{TRUE}\NormalTok{, }\AttributeTok{fullrange =} \ConstantTok{TRUE}\NormalTok{)  }\SpecialCharTok{+}
-  \FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{data =}\NormalTok{ selection\_2018\_without\_outliers, }
-              \FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{leistung, }\AttributeTok{y=}\NormalTok{menge\_mwh, }\AttributeTok{colour =} \StringTok{"2018"}\NormalTok{), }
-              \AttributeTok{method=}\NormalTok{lm, }\AttributeTok{se=}\ConstantTok{TRUE}\NormalTok{, }\AttributeTok{fullrange =} \ConstantTok{TRUE}\NormalTok{)  }\SpecialCharTok{+}
-  \FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{data =}\NormalTok{ selection\_2019\_without\_outliers, }
-              \FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{leistung, }\AttributeTok{y=}\NormalTok{menge\_mwh, }\AttributeTok{colour =} \StringTok{"2019"}\NormalTok{),}
-              \AttributeTok{method=}\NormalTok{lm, }\AttributeTok{se=}\ConstantTok{TRUE}\NormalTok{, }\AttributeTok{fullrange =} \ConstantTok{TRUE}\NormalTok{)  }\SpecialCharTok{+}
-  \FunctionTok{theme\_light}\NormalTok{() }\SpecialCharTok{+}
-  \FunctionTok{ylim}\NormalTok{(}\SpecialCharTok{{-}}\DecValTok{1000}\NormalTok{, }\DecValTok{12000}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{xlim}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{5000}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{xlab}\NormalTok{(}\StringTok{"Rated capacity (kW)"}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{ylab}\NormalTok{(}\StringTok{"Electricity yield [MWh]"}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{theme}\NormalTok{( }\AttributeTok{axis.text=}\FunctionTok{element\_text}\NormalTok{(}\AttributeTok{size=}\DecValTok{12}\NormalTok{),}
-         \AttributeTok{axis.title=}\FunctionTok{element\_text}\NormalTok{(}\AttributeTok{size=}\DecValTok{13}\NormalTok{),}
-         \AttributeTok{plot.title =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{size=}\DecValTok{16}\NormalTok{),}
-         \AttributeTok{legend.position =} \FunctionTok{c}\NormalTok{(}\FloatTok{0.85}\NormalTok{, }\FloatTok{0.9}\NormalTok{),}
-         \AttributeTok{legend.direction =} \StringTok{"horizontal"}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{geom\_hline}\NormalTok{(}\AttributeTok{yintercept =} \DecValTok{7400}\NormalTok{, }\AttributeTok{linetype =} \StringTok{\textquotesingle{}dashed\textquotesingle{}}\NormalTok{, }\AttributeTok{size =} \FloatTok{0.25}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{geom\_vline}\NormalTok{(}\AttributeTok{xintercept =} \DecValTok{3500}\NormalTok{, }\AttributeTok{linetype =} \StringTok{\textquotesingle{}dashed\textquotesingle{}}\NormalTok{, }\AttributeTok{size =} \FloatTok{0.25}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{annotate}\NormalTok{(}\AttributeTok{geom=}\StringTok{"text"}\NormalTok{,}\AttributeTok{x=}\DecValTok{1000}\NormalTok{,}
-           \AttributeTok{y=}\DecValTok{7000}\NormalTok{,}\AttributeTok{label=}\StringTok{"7,400 MWh/a in 2021 from plot above"}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{annotate}\NormalTok{(}\AttributeTok{geom=}\StringTok{"text"}\NormalTok{,}\AttributeTok{x=}\DecValTok{4000}\NormalTok{,}
-           \AttributeTok{y=}\DecValTok{2000}\NormalTok{,}\AttributeTok{label=}\StringTok{"min 3.5 MW"}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{annotate}\NormalTok{(}\AttributeTok{geom=}\StringTok{"text"}\NormalTok{,}\AttributeTok{x=}\DecValTok{4500}\NormalTok{,}
-           \AttributeTok{y=}\DecValTok{11500}\NormalTok{,}\AttributeTok{label=} \StringTok{"R² = \textasciitilde{} 79 \%"}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{scale\_colour\_manual}\NormalTok{(}\AttributeTok{name =} \StringTok{"Year"}\NormalTok{, }\AttributeTok{values=}\FunctionTok{c}\NormalTok{(}\StringTok{"\#03a1fc"}\NormalTok{, }\StringTok{"\#fc5a03"}\NormalTok{, }\StringTok{"\#94fc03"}\NormalTok{)) }
-
-\CommentTok{\#print plot}
-\NormalTok{pe\_over\_ratedcapacity\_2019 }\SpecialCharTok{+}  \FunctionTok{theme}\NormalTok{(}\AttributeTok{legend.position =} \FunctionTok{c}\NormalTok{(}\FloatTok{0.25}\NormalTok{,}\FloatTok{0.9}\NormalTok{))}
-
-\CommentTok{\#save plot as image}
-\FunctionTok{ggsave}\NormalTok{(}\StringTok{"results\_of\_analysis/electricity\_rated\_capacity.png"}\NormalTok{,}
-       \AttributeTok{plot =} \FunctionTok{last\_plot}\NormalTok{(),}
-       \AttributeTok{dpi =} \DecValTok{900}\NormalTok{,}
-       \AttributeTok{width =} \DecValTok{7}\NormalTok{,}
-       \AttributeTok{height =} \DecValTok{4}\NormalTok{)}
-
-\CommentTok{\#linear models with rated capacity over commissioning date}
-\NormalTok{lm\_rated\_capacity\_over\_time\_2019 }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(}
-\NormalTok{  selection\_2019\_without\_outliers}\SpecialCharTok{$}\NormalTok{leistung }\SpecialCharTok{\textasciitilde{}} 
-\NormalTok{    selection\_2019\_without\_outliers}\SpecialCharTok{$}\NormalTok{inbetriebnahme)}
-\FunctionTok{summary}\NormalTok{(lm\_rated\_capacity\_over\_time\_2019)}
-\FunctionTok{plot}\NormalTok{(lm\_rated\_capacity\_over\_time\_2019)}
-
-\CommentTok{\#Plot rated capacity over commissioning date with linear trend 2017 {-} 2019}
-\NormalTok{prated\_capacity\_over\_commission }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{() }\SpecialCharTok{+}
-  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{data =}\NormalTok{ selection\_2019\_without\_outliers, }
-             \FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{inbetriebnahme, }\AttributeTok{y=}\NormalTok{leistung), }
-             \AttributeTok{size =} \FloatTok{0.4}\NormalTok{, }\AttributeTok{colour =} \StringTok{"\#94fc03"}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{data =}\NormalTok{ selection\_2019\_without\_outliers, }
-              \FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{inbetriebnahme, }\AttributeTok{y=}\NormalTok{leistung, }\AttributeTok{colour =} \StringTok{"2019"}\NormalTok{),}
-              \AttributeTok{method=}\NormalTok{lm, }\AttributeTok{se=}\ConstantTok{TRUE}\NormalTok{, }\AttributeTok{fullrange =} \ConstantTok{TRUE}\NormalTok{, }\AttributeTok{size =} \FloatTok{0.5}\NormalTok{)  }\SpecialCharTok{+}
-  \FunctionTok{theme\_light}\NormalTok{() }\SpecialCharTok{+}
-  \FunctionTok{scale\_x\_date}\NormalTok{(}\AttributeTok{limits =} \FunctionTok{as.Date}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"1990{-}01{-}01"}\NormalTok{,}\StringTok{"2030{-}12{-}31"}\NormalTok{))) }\SpecialCharTok{+}
-  \FunctionTok{ylim}\NormalTok{(}\SpecialCharTok{{-}}\DecValTok{1000}\NormalTok{, }\DecValTok{6000}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{xlab}\NormalTok{(}\StringTok{"Commissioning Date"}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{ylab}\NormalTok{(}\StringTok{"Rated capacity [kW]"}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{theme}\NormalTok{( }\AttributeTok{axis.text=}\FunctionTok{element\_text}\NormalTok{(}\AttributeTok{size=}\DecValTok{11}\NormalTok{),}
-         \AttributeTok{axis.title=}\FunctionTok{element\_text}\NormalTok{(}\AttributeTok{size=}\DecValTok{12}\NormalTok{),}
-         \AttributeTok{plot.title =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{size=}\DecValTok{14}\NormalTok{),}
-         \AttributeTok{legend.position =} \FunctionTok{c}\NormalTok{(}\FloatTok{0.85}\NormalTok{, }\FloatTok{0.9}\NormalTok{),}
-         \AttributeTok{legend.direction =} \StringTok{"horizontal"}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{geom\_hline}\NormalTok{(}\AttributeTok{yintercept =} \DecValTok{3500}\NormalTok{, }\AttributeTok{linetype =} \StringTok{\textquotesingle{}dashed\textquotesingle{}}\NormalTok{, }\AttributeTok{size =} \FloatTok{0.25}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{annotate}\NormalTok{(}\AttributeTok{geom=}\StringTok{"text"}\NormalTok{,}\AttributeTok{x=}\FunctionTok{as.Date}\NormalTok{(}\StringTok{"1997{-}01{-}01"}\NormalTok{),}
-           \AttributeTok{y=}\DecValTok{3300}\NormalTok{,}\AttributeTok{label=}\StringTok{"mean of \textasciitilde{} 3,500 kW in 2021"}\NormalTok{, }\AttributeTok{size =} \FloatTok{2.5}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{geom\_hline}\NormalTok{(}\AttributeTok{yintercept =} \DecValTok{4500}\NormalTok{, }\AttributeTok{linetype =} \StringTok{\textquotesingle{}dashed\textquotesingle{}}\NormalTok{, }\AttributeTok{size =} \FloatTok{0.25}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{annotate}\NormalTok{(}\AttributeTok{geom=}\StringTok{"text"}\NormalTok{,}\AttributeTok{x=}\FunctionTok{as.Date}\NormalTok{(}\StringTok{"1997{-}01{-}01"}\NormalTok{),}
-           \AttributeTok{y=}\DecValTok{4700}\NormalTok{,}\AttributeTok{label=}\StringTok{"Predicted mean of \textasciitilde{} 4,500 kW in 2030"}\NormalTok{, }\AttributeTok{size =} \FloatTok{2.5}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{annotate}\NormalTok{(}\AttributeTok{geom=}\StringTok{"text"}\NormalTok{,}\AttributeTok{x=}\FunctionTok{as.Date}\NormalTok{(}\StringTok{"2025{-}01{-}01"}\NormalTok{),}
-           \AttributeTok{y=}\DecValTok{0}\NormalTok{,}\AttributeTok{label=} \StringTok{"R² = \textasciitilde{} 70 \%"}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{scale\_colour\_manual}\NormalTok{(}\AttributeTok{name =} \StringTok{"Year"}\NormalTok{, }\AttributeTok{values=}\StringTok{"\#94fc03"}\NormalTok{) }
-
-\CommentTok{\#print plot}
-\NormalTok{prated\_capacity\_over\_commission }\SpecialCharTok{+}  \FunctionTok{theme}\NormalTok{(}\AttributeTok{legend.position =} \FunctionTok{c}\NormalTok{(}\FloatTok{0.25}\NormalTok{,}\FloatTok{0.9}\NormalTok{))}
-
-\CommentTok{\#save plot as image}
-\FunctionTok{ggsave}\NormalTok{(}\StringTok{"results\_of\_analysis/rated\_capacity\_over\_commissioning.png"}\NormalTok{,}
-       \AttributeTok{plot =} \FunctionTok{last\_plot}\NormalTok{(),}
-       \AttributeTok{dpi =} \DecValTok{900}\NormalTok{,}
-       \AttributeTok{width =} \DecValTok{7}\NormalTok{,}
-       \AttributeTok{height =} \DecValTok{4}\NormalTok{)}
-
-\CommentTok{\#linear models with full load hours  over the commissioning date 2015 {-} 2019}
-\CommentTok{\#2015}
-\NormalTok{lm\_flh\_2015 }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(selection\_2015\_without\_outliers}\SpecialCharTok{$}\NormalTok{flh }\SpecialCharTok{\textasciitilde{}} 
-\NormalTok{                    selection\_2015\_without\_outliers}\SpecialCharTok{$}\NormalTok{inbetriebnahme)}
-\FunctionTok{summary}\NormalTok{(lm\_flh\_2015)}
-\FunctionTok{plot}\NormalTok{(lm\_flh\_2015)}
-\CommentTok{\#2016}
-\NormalTok{lm\_flh\_2016 }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(selection\_2016\_without\_outliers}\SpecialCharTok{$}\NormalTok{flh }\SpecialCharTok{\textasciitilde{}} 
-\NormalTok{                    selection\_2016\_without\_outliers}\SpecialCharTok{$}\NormalTok{inbetriebnahme)}
-\FunctionTok{summary}\NormalTok{(lm\_flh\_2016)}
-\FunctionTok{plot}\NormalTok{(lm\_flh\_2016)}
-\CommentTok{\#2017}
-\NormalTok{lm\_flh\_2017 }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(selection\_2017\_without\_outliers}\SpecialCharTok{$}\NormalTok{flh }\SpecialCharTok{\textasciitilde{}} 
-\NormalTok{                    selection\_2017\_without\_outliers}\SpecialCharTok{$}\NormalTok{inbetriebnahme)}
-\FunctionTok{summary}\NormalTok{(lm\_flh\_2017)}
-\FunctionTok{plot}\NormalTok{(lm\_flh\_2017)}
-\CommentTok{\#2018}
-\NormalTok{lm\_flh\_2018 }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(selection\_2018\_without\_outliers}\SpecialCharTok{$}\NormalTok{flh }\SpecialCharTok{\textasciitilde{}} 
-\NormalTok{                    selection\_2018\_without\_outliers}\SpecialCharTok{$}\NormalTok{inbetriebnahme)}
-\FunctionTok{summary}\NormalTok{(lm\_flh\_2018)}
-\FunctionTok{plot}\NormalTok{(lm\_flh\_2018)}
-\CommentTok{\#2019}
-\NormalTok{lm\_flh\_2019 }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(selection\_2019\_without\_outliers}\SpecialCharTok{$}\NormalTok{flh }\SpecialCharTok{\textasciitilde{}} 
-\NormalTok{                    selection\_2019\_without\_outliers}\SpecialCharTok{$}\NormalTok{inbetriebnahme)}
-\FunctionTok{summary}\NormalTok{(lm\_flh\_2019)}
-\FunctionTok{plot}\NormalTok{(lm\_flh\_2019)}
-
-\CommentTok{\#plot full load hours over commissioning date with trend}
-\NormalTok{pflh }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{() }\SpecialCharTok{+}
-  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{data =}\NormalTok{ selection\_2015\_without\_outliers, }
-             \FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{inbetriebnahme, }\AttributeTok{y=}\NormalTok{flh), }\AttributeTok{size =} \FloatTok{0.4}\NormalTok{, }\AttributeTok{colour =} \StringTok{"\#fd00e2"}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{data =}\NormalTok{ selection\_2016\_without\_outliers, }
-             \FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{inbetriebnahme, }\AttributeTok{y=}\NormalTok{flh), }\AttributeTok{size =} \FloatTok{0.4}\NormalTok{, }\AttributeTok{colour =} \StringTok{"\#fde600"}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{data =}\NormalTok{ selection\_2017\_without\_outliers, }
-             \FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{inbetriebnahme, }\AttributeTok{y=}\NormalTok{flh), }\AttributeTok{size =} \FloatTok{0.4}\NormalTok{, }\AttributeTok{colour =} \StringTok{"\#03a1fc"}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{data =}\NormalTok{ selection\_2018\_without\_outliers, }
-             \FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{inbetriebnahme, }\AttributeTok{y=}\NormalTok{flh), }\AttributeTok{size =} \FloatTok{0.4}\NormalTok{, }\AttributeTok{colour =} \StringTok{"\#fc5a03"}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{data =}\NormalTok{ selection\_2019\_without\_outliers,}
-             \FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{inbetriebnahme, }\AttributeTok{y=}\NormalTok{flh), }\AttributeTok{size =} \FloatTok{0.4}\NormalTok{, }\AttributeTok{colour =} \StringTok{"\#94fc03"}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{data =}\NormalTok{ selection\_2015\_without\_outliers, }
-              \FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{inbetriebnahme, }\AttributeTok{y=}\NormalTok{flh, }\AttributeTok{colour =} \StringTok{"2015"}\NormalTok{), }
-              \AttributeTok{method=}\NormalTok{lm, }\AttributeTok{se=}\ConstantTok{TRUE}\NormalTok{, }\AttributeTok{fullrange =} \ConstantTok{TRUE}\NormalTok{, }\AttributeTok{size =} \FloatTok{0.5}\NormalTok{)  }\SpecialCharTok{+}
-  \FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{data =}\NormalTok{ selection\_2016\_without\_outliers, }
-              \FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{inbetriebnahme, }\AttributeTok{y=}\NormalTok{flh, }\AttributeTok{colour =} \StringTok{"2016"}\NormalTok{), }
-              \AttributeTok{method=}\NormalTok{lm, }\AttributeTok{se=}\ConstantTok{TRUE}\NormalTok{, }\AttributeTok{fullrange =} \ConstantTok{TRUE}\NormalTok{, }\AttributeTok{size =} \FloatTok{0.5}\NormalTok{)  }\SpecialCharTok{+}
-  \FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{data =}\NormalTok{ selection\_2017\_without\_outliers, }
-              \FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{inbetriebnahme, }\AttributeTok{y=}\NormalTok{flh, }\AttributeTok{colour =} \StringTok{"2017"}\NormalTok{), }
-              \AttributeTok{method=}\NormalTok{lm, }\AttributeTok{se=}\ConstantTok{TRUE}\NormalTok{, }\AttributeTok{fullrange =} \ConstantTok{TRUE}\NormalTok{, }\AttributeTok{size =} \FloatTok{0.5}\NormalTok{)  }\SpecialCharTok{+}
-  \FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{data =}\NormalTok{ selection\_2018\_without\_outliers, }
-              \FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{inbetriebnahme, }\AttributeTok{y=}\NormalTok{flh, }\AttributeTok{colour =} \StringTok{"2018"}\NormalTok{),}
-              \AttributeTok{method=}\NormalTok{lm, }\AttributeTok{se=}\ConstantTok{TRUE}\NormalTok{, }\AttributeTok{fullrange =} \ConstantTok{TRUE}\NormalTok{, }\AttributeTok{size =} \FloatTok{0.5}\NormalTok{)  }\SpecialCharTok{+}
-  \FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{data =}\NormalTok{ selection\_2019\_without\_outliers, }
-              \FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{inbetriebnahme, }\AttributeTok{y=}\NormalTok{flh, }\AttributeTok{colour =} \StringTok{"2019"}\NormalTok{), }
-              \AttributeTok{method=}\NormalTok{lm, }\AttributeTok{se=}\ConstantTok{TRUE}\NormalTok{, }\AttributeTok{fullrange =} \ConstantTok{TRUE}\NormalTok{, }\AttributeTok{size =} \FloatTok{0.5}\NormalTok{)  }\SpecialCharTok{+}
-  \FunctionTok{theme\_light}\NormalTok{() }\SpecialCharTok{+}
-  \FunctionTok{scale\_x\_date}\NormalTok{(}\AttributeTok{limits =} \FunctionTok{as.Date}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"1990{-}01{-}01"}\NormalTok{,}\StringTok{"2030{-}12{-}31"}\NormalTok{))) }\SpecialCharTok{+}
-  \FunctionTok{ylim}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{4000}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{xlab}\NormalTok{(}\StringTok{"Commissioning Date"}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{ylab}\NormalTok{(}\StringTok{"Full load hours [h/a]"}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{theme}\NormalTok{( }\AttributeTok{axis.text=}\FunctionTok{element\_text}\NormalTok{(}\AttributeTok{size=}\DecValTok{11}\NormalTok{),}
-         \AttributeTok{axis.title=}\FunctionTok{element\_text}\NormalTok{(}\AttributeTok{size=}\DecValTok{12}\NormalTok{),}
-         \AttributeTok{plot.title =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{size=}\DecValTok{14}\NormalTok{),}
-         \AttributeTok{legend.position =} \FunctionTok{c}\NormalTok{(}\FloatTok{0.85}\NormalTok{, }\FloatTok{0.9}\NormalTok{),}
-         \AttributeTok{legend.direction =} \StringTok{"horizontal"}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{geom\_hline}\NormalTok{(}\AttributeTok{yintercept =} \DecValTok{2300}\NormalTok{, }\AttributeTok{linetype =} \StringTok{\textquotesingle{}dashed\textquotesingle{}}\NormalTok{, }\AttributeTok{size =} \FloatTok{0.25}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{annotate}\NormalTok{(}\AttributeTok{geom=}\StringTok{"text"}\NormalTok{,}\AttributeTok{x=}\FunctionTok{as.Date}\NormalTok{(}\StringTok{"1997{-}01{-}01"}\NormalTok{),}
-           \AttributeTok{y=}\DecValTok{2200}\NormalTok{,}\AttributeTok{label=}\StringTok{"mean of \textasciitilde{} 2,300 h/a in 2021 with linear trends"}\NormalTok{,}
-           \AttributeTok{size =} \FloatTok{2.5}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{geom\_hline}\NormalTok{(}\AttributeTok{yintercept =} \DecValTok{2800}\NormalTok{, }\AttributeTok{linetype =} \StringTok{\textquotesingle{}dashed\textquotesingle{}}\NormalTok{, }\AttributeTok{size =} \FloatTok{0.25}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{annotate}\NormalTok{(}\AttributeTok{geom=}\StringTok{"text"}\NormalTok{,}\AttributeTok{x=}\FunctionTok{as.Date}\NormalTok{(}\StringTok{"2000{-}01{-}01"}\NormalTok{),}
-           \AttributeTok{y=}\DecValTok{2900}\NormalTok{,}\AttributeTok{label=}\StringTok{"mean of \textasciitilde{} 2,800 h/a in 2030 with linear trends"}\NormalTok{,}
-           \AttributeTok{size =} \FloatTok{2.5}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{geom\_hline}\NormalTok{(}\AttributeTok{yintercept =} \DecValTok{15000}\NormalTok{, }\AttributeTok{linetype =} \StringTok{\textquotesingle{}dashed\textquotesingle{}}\NormalTok{, }\AttributeTok{size =} \FloatTok{0.25}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{annotate}\NormalTok{(}\AttributeTok{geom=}\StringTok{"text"}\NormalTok{,}\AttributeTok{x=}\FunctionTok{as.Date}\NormalTok{(}\StringTok{"2003{-}01{-}01"}\NormalTok{),}
-           \AttributeTok{y=}\DecValTok{14200}\NormalTok{, }\AttributeTok{label=}\StringTok{"\textgreater{} 15,000 MWh/a in 2030 with polynomial models"}\NormalTok{, }
-           \AttributeTok{size =} \FloatTok{2.5}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{annotate}\NormalTok{(}\AttributeTok{geom=}\StringTok{"text"}\NormalTok{,}\AttributeTok{x=}\FunctionTok{as.Date}\NormalTok{(}\StringTok{"2026{-}01{-}01"}\NormalTok{),}
-           \AttributeTok{y=}\DecValTok{800}\NormalTok{,}\AttributeTok{label=} \StringTok{"All R²  \textasciitilde{} 46 {-} 51 \%"}\NormalTok{, }\AttributeTok{size =} \FloatTok{2.5}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{annotate}\NormalTok{(}\AttributeTok{geom=}\StringTok{"text"}\NormalTok{,}\AttributeTok{x=}\FunctionTok{as.Date}\NormalTok{(}\StringTok{"2026{-}01{-}01"}\NormalTok{),}
-           \AttributeTok{y=}\DecValTok{400}\NormalTok{,}\AttributeTok{label=}\StringTok{"p{-}values all \textless{}\textless{} 0.001"}\NormalTok{, }\AttributeTok{size =} \FloatTok{2.5}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{scale\_colour\_manual}\NormalTok{(}\AttributeTok{name =} \StringTok{"Year"}\NormalTok{, }
-                      \AttributeTok{values=}\FunctionTok{c}\NormalTok{(}\StringTok{"\#fd00e2"}\NormalTok{, }\StringTok{"\#fde600"}\NormalTok{, }\StringTok{"\#03a1fc"}\NormalTok{, }
-                               \StringTok{"\#fc5a03"}\NormalTok{, }\StringTok{"\#94fc03"}\NormalTok{)) }
-
-\CommentTok{\#print plot}
-\NormalTok{pflh }\SpecialCharTok{+}  \FunctionTok{theme}\NormalTok{(}\AttributeTok{legend.position =} \FunctionTok{c}\NormalTok{(}\FloatTok{0.35}\NormalTok{,}\FloatTok{0.93}\NormalTok{))}
-
-\CommentTok{\#save plot as image}
-\FunctionTok{ggsave}\NormalTok{(}\StringTok{"results\_of\_analysis/flh.png"}\NormalTok{,}
-       \AttributeTok{plot =} \FunctionTok{last\_plot}\NormalTok{(),}
-       \AttributeTok{dpi =} \DecValTok{900}\NormalTok{,}
-       \AttributeTok{width =} \DecValTok{7}\NormalTok{,}
-       \AttributeTok{height =} \DecValTok{4}\NormalTok{)}
-
-\CommentTok{\#calculate and plot trend of total WT\textquotesingle{}s}
-\NormalTok{year }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{2012}\SpecialCharTok{:}\DecValTok{2019}\NormalTok{)}
-\NormalTok{wts }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{1207}\NormalTok{, }\DecValTok{1322}\NormalTok{, }\DecValTok{1420}\NormalTok{, }\DecValTok{1478}\NormalTok{, }\DecValTok{1532}\NormalTok{, }\DecValTok{1624}\NormalTok{, }\DecValTok{1675}\NormalTok{, }\DecValTok{1702}\NormalTok{)}
-\NormalTok{year\_wts }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(year, wts)}
-
-\NormalTok{lm\_year\_wts }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(year\_wts}\SpecialCharTok{$}\NormalTok{wts }\SpecialCharTok{\textasciitilde{}}\NormalTok{ year\_wts}\SpecialCharTok{$}\NormalTok{year)}
-\FunctionTok{summary}\NormalTok{(lm\_year\_wts)}
-
-\NormalTok{pyear\_wts }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{() }\SpecialCharTok{+}
-  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{data =}\NormalTok{ year\_wts, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{ year, }\AttributeTok{y=}\NormalTok{wts), }
-             \AttributeTok{size =} \DecValTok{2}\NormalTok{, }\AttributeTok{colour =} \StringTok{"\#8600fd"}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{data =}\NormalTok{ year\_wts, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{year, }\AttributeTok{y=}\NormalTok{wts), }
-              \AttributeTok{method=}\NormalTok{lm, }\AttributeTok{se=}\ConstantTok{TRUE}\NormalTok{, }\AttributeTok{fullrange =} \ConstantTok{TRUE}\NormalTok{, }
-              \AttributeTok{size =} \FloatTok{0.5}\NormalTok{, }\AttributeTok{colour =} \StringTok{"\#8600fd"}\NormalTok{)  }\SpecialCharTok{+}
-  \FunctionTok{theme\_light}\NormalTok{() }\SpecialCharTok{+}
-  \FunctionTok{ylim}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{3000}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{xlim}\NormalTok{(}\DecValTok{2010}\NormalTok{, }\DecValTok{2030}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{xlab}\NormalTok{(}\StringTok{"Year"}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{ylab}\NormalTok{(}\StringTok{"Number of WT\textquotesingle{}s"}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{theme}\NormalTok{( }\AttributeTok{axis.text=}\FunctionTok{element\_text}\NormalTok{(}\AttributeTok{size=}\DecValTok{11}\NormalTok{),}
-         \AttributeTok{axis.title=}\FunctionTok{element\_text}\NormalTok{(}\AttributeTok{size=}\DecValTok{12}\NormalTok{),}
-         \AttributeTok{plot.title =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{size=}\DecValTok{14}\NormalTok{),}
-         \AttributeTok{legend.position =} \FunctionTok{c}\NormalTok{(}\FloatTok{0.85}\NormalTok{, }\FloatTok{0.9}\NormalTok{),}
-         \AttributeTok{legend.direction =} \StringTok{"horizontal"}\NormalTok{) }
-
-\CommentTok{\#print plot}
-\NormalTok{pyear\_wts }\SpecialCharTok{+} \FunctionTok{theme}\NormalTok{(}\AttributeTok{legend.position =} \FunctionTok{c}\NormalTok{(}\FloatTok{0.25}\NormalTok{,}\FloatTok{0.9}\NormalTok{))}
-
-\CommentTok{\#save plot}
-\FunctionTok{ggsave}\NormalTok{(}\StringTok{"results\_of\_analysis/year\_wts.png"}\NormalTok{,}
-       \AttributeTok{plot =} \FunctionTok{last\_plot}\NormalTok{(),}
-       \AttributeTok{dpi =} \DecValTok{900}\NormalTok{,}
-       \AttributeTok{width =} \DecValTok{7}\NormalTok{,}
-       \AttributeTok{height =} \DecValTok{4}\NormalTok{)}
-
-\CommentTok{\#clean environment}
-\FunctionTok{rm}\NormalTok{(outliers\_2015, outliers\_2016, outliers\_2017, outliers\_2018, outliers\_2019,}
-\NormalTok{   amprion\_2015, amprion\_2016, amprion\_2017, amprion\_2018, amprion\_2019)}
-
-\CommentTok{\#Count plants and electricity yield for different commissioning dates}
-\NormalTok{commissioning\_before2001 }\OtherTok{\textless{}{-}} \FunctionTok{subset}\NormalTok{(selection\_2019\_without\_outliers, }
-\NormalTok{                                   inbetriebnahme }\SpecialCharTok{\textless{}} \StringTok{"2000{-}12{-}31"}\NormalTok{)}
-\FunctionTok{sum}\NormalTok{(commissioning\_before2001}\SpecialCharTok{$}\NormalTok{menge\_mwh)}
-\NormalTok{commissioning\_before2005 }\OtherTok{\textless{}{-}} \FunctionTok{subset}\NormalTok{(selection\_2019\_without\_outliers, }
-\NormalTok{                                   inbetriebnahme }\SpecialCharTok{\textless{}} \StringTok{"2005{-}12{-}31"}\NormalTok{)}
-\NormalTok{commissioning\_2001\_2005 }\OtherTok{\textless{}{-}} \FunctionTok{subset}\NormalTok{(commissioning\_before2005, }
-\NormalTok{                                  inbetriebnahme }\SpecialCharTok{\textgreater{}} \StringTok{"2000{-}12{-}31"}\NormalTok{)}
-\FunctionTok{sum}\NormalTok{(commissioning\_2001\_2005}\SpecialCharTok{$}\NormalTok{menge\_mwh)}
-
-\FunctionTok{write.csv}\NormalTok{(commissioning\_before2001,}
-          \StringTok{"results\_of\_preparation/commissioning\_before2001.csv"}\NormalTok{)}
-\FunctionTok{write.csv}\NormalTok{(commissioning\_2001\_2005,}
-          \StringTok{"results\_of\_preparation/commissioning\_2001\_2005.csv"}\NormalTok{)}
-\FunctionTok{write.csv}\NormalTok{(commissioning\_before2005,}
-          \StringTok{"results\_of\_preparation/commissioning\_before\_2005.csv"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 

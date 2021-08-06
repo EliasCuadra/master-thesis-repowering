@@ -10,14 +10,15 @@
 \contentsline {subsection}{\numberline {2.4}Résumé}{11}{subsection.2.4}%
 \contentsline {section}{\numberline {3}Materials and Methodology}{12}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Data}{12}{subsection.3.1}%
-\contentsline {subsubsection}{\numberline {3.1.1}Master and Movement data from amprion}{12}{subsubsection.3.1.1}%
-\contentsline {subsubsection}{\numberline {3.1.2}Data from the market master data register (MaStR - Marktstammdatenregister)}{12}{subsubsection.3.1.2}%
-\contentsline {subsection}{\numberline {3.2}Methods}{13}{subsection.3.2}%
-\contentsline {subsubsection}{\numberline {3.2.1}Regression analysis}{13}{subsubsection.3.2.1}%
-\contentsline {section}{\numberline {4}Results and discussion}{15}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Electricity yield, rated capacity and full load hours in Rhineland-Palatinate}{15}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Repowering potential}{20}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Area Consumption}{21}{subsection.4.3}%
-\contentsline {section}{\numberline {5}Conclusion}{23}{section.5}%
-\contentsline {section}{References}{25}{section*.23}%
-\contentsline {section}{\numberline {A}Appendix}{27}{appendix.A}%
+\contentsline {subsubsection}{\numberline {3.1.1}Master and Movement data from Amprion}{12}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}Data from the market master data register (MaStR - Marktstammdatenregister)}{14}{subsubsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.2}Methods}{17}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Regression analysis}{17}{subsubsection.3.2.1}%
+\contentsline {section}{\numberline {4}Results and discussion}{18}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Electricity yield, rated capacity and full load hours in Rhineland-Palatinate}{18}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Repowering potential}{22}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Area Consumption}{23}{subsection.4.3}%
+\contentsline {section}{\numberline {5}Conclusion}{25}{section.5}%
+\contentsline {section}{References}{27}{section*.24}%
+\contentsline {section}{\numberline {A}Appendix}{29}{appendix.A}%
+\contentsline {subsection}{\numberline {A.1}Code chunk 1}{29}{subsection.A.1}%

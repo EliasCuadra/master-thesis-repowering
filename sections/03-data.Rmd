@@ -2,28 +2,100 @@
 
 ## Data
 
-### Master and Movement data from amprion
+For the preparation and the analysis of the data R version 4.0.5 (2021-03-31) -- "Shake and Throw" and RStudio Version 1.4.1106 were used. Due to exhaustive code and iterative preparation steps the full documentation can not be displayed here but is to be found on [https://github.com/EliasCuadra/master-thesis-repowering](https://github.com/EliasCuadra/master-thesis-repowering) with explanatory README.md files that contain description of variables and processing steps. Nonetheless, important aspects or code chunks are directly included or can be found in the appendix. Packages in use are: rio, data.table, tidyverse, magrittr, compare, leaflet, sp, raster, rgdal, htmltools, htmlwidgets, tmaptools, maptools, raster, sf, tmap, spatstat, rgeos and DiagrammR. The data handling is mostly done with base R and deplyr from the tidyverse package collection. Deplyr is a grammar of data manipulation, providing a consistent set of verbs that help performing common data manipulation challenges @HadleyWickham.2021. The different sources of data are introduced subsequently.
 
-The so called master and movement data from the transmission system operator amprion of the years 2012 to 2019 was available and used for analysis. The originally two data sets were already joined and prepared by the energy agency of RLP. The master data contains information about the location, commissioning and decommissioning date and EEG system key of all EEG systems that were reported by the distribution network operator as part of the annual EEG report. The files also contain the systems connected directly or indirectly to the networks of the transmission system operator. The transmission system operators are obliged to publish the so called movement data that contains information about the quantity of electricity fed-in and the amount of funded tariffs that have been payed @AmprionGmbH.2019. 
+### Master and Movement data from Amprion
 
-The main goal was to analyze the the master and movement data regarding the electricity yield, rated capacity, full load hours in relation to the commissioning date. Amprion lists 1,702 WT's in RLP in 2019. In comparison the Structure and Approval Directorate North registers 1,704 WT's with technical details and coordinate references that are connected to the public grid. This data set is not further used since it misses the EEG system key and can therefore not be joined with the other data sets.
+The so-called master and movement data from the transmission system operator amprion of the years 2012 to 2019 was available and used for analysis. Despite the availability of older data sets in some cases only more recent years are used since it is assumed, that the usage of older data would, due to fast technical development, only distort the results in regards to future prediction. The originally two data sets were already joined and prepared by the energy agency of RLP. The master data contains information about the location, commissioning and decommissioning date and the EEG system key of all EEG systems that were reported by the distribution network operator as part of the annual EEG report. The files also contain the systems connected directly or indirectly to the networks of the transmission system operator. Additionally, the transmission system operators are obliged to publish the so-called movement data that contains information about the quantity of electricity fed-in and the amount of funded tariffs that have been payed @AmprionGmbH.2019. The pre-processed data sets from the years 2015 to 2019 are stored within this project in data/amprion as EEG_StammBew_2015( - 2019)_Amprion-EAtlas.csv.
+
+Further, The data from Amprion comes with 28 or rather 27 variables for the year 2019 of which only some are interesting for the analysis, some variable formats are not suitable and distorting data points are included. Thus, a preparation process must initially be carried out to clean and prepare the data. The kept variables are: Community key, post code, place, rated capacity, commissioning date, system key and electricity yield. For the prediction  of the electricity yield not all the WT's are meaningful and some outliers are removed from the data. On the one hand WT's with a rated capacity under 100 kW are considered too small for a reasonable assessment of new commercially operated systems. On the other hand some WT's are listed with a rated capacity up to 12 MW which might be because several WT's are registered as one. It is therefore assumed that a rated capacity larger than 4,5 MW does not reflect the average conditions, even though systems of this size exist. Also WT's that are build in the same year after the 15th of February are excluded since they have less time to generate electricity and therefore deliver misleading data. An interim result are five CSV files of the different years that only have relevant variables in the correct format and are free of outliers. As an insight the data from 2017 shows 1,623 WT's of which 101 are outliers, the data from 2018 shows 1,674 WT's of which 76 are outliers ans the data from 2019 shows 1,702 WT's of which 46 are outliers. A plot that shows the total number of WT's from 2012 to 2019 is shown in figure \@ref(fig:yearswts), which contains, as a foresight on the results section, a linear trend, that shows an estimated number of around 2,500 WT's in the year 2030.
+
+```{r yearswts, echo=FALSE, fig.cap="Number of Wt's over time", out.width = "100%"}
+knitr::include_graphics("data/Amprion/results_of_analysis/year_wts.png")
+```
+
+
+Only the data from 2019 is further processed and variables for the county and municipality names as well as the electricity yield in MWh and the full load hours, resulting from the division of electricity yield and rated capacity, are added. The data from 2019 is then divided in three files according to the commissioning date to find the WT's that are build either before 2005, before 2001 or between 2001 and 2005 and are therefore potentially suitable for a repowering process. A flow chart of the individual processing steps that have been performed is presented in figure \@ref(fig:preparation). The preparation was done to fulfill the main goal of analyzing the the master and movement data regarding the electricity yield, rated capacity and the full load hours mainly in relation to the commissioning date. The full code can be seen in the Appendix A.1 as [Code chunk 1]. Amprion lists 1,702 WT's in RLP in 2019. In comparison to that, the Structure and Approval Directorate North registers 1,704 WT's with technical details and coordinate references that are connected to the public grid. This data set is not further used since it misses the EEG system key and can therefore not be joined with the other data sets.The other data set that is used is presented next.
+
+```{r preparation, echo=FALSE, fig.cap="Flow chart of the proccessing steps", out.width = "100%"}
+knitr::include_graphics("data/Amprion/results_of_preparation/prepflow.png")
+```
 
 ### Data from the market master data register (MaStR - Marktstammdatenregister)
 
-The MaStR contains data about all electricity and gas power generation units and can be freely accessed here: [https://www.marktstammdatenregister.de/MaStR/Einheit/Einheiten/OeffentlicheEinheitenuebersicht](https://www.marktstammdatenregister.de/MaStR/Einheit/Einheiten/OeffentlicheEinheitenuebersicht). The electricity units with the generation type "wind" for Rhineland-Palatinate that are in operation are extracted on the 23th of July 2021 as a CSV file, which counts 1,752 WT's with 50 variables of which only 8 are kept; The rated capacity, the commissioning date, the community key, the coordinates (WGS84), hub height, rotor diameter and EEG system key. It does not contain the amount of electricity fed into the public grid. Thus, to calculate the electricity generation per area the data of the MaStR and amprion needs to be joined together according to the EEG system key. The process of preparing the MaStR data and joining it with the data from amprion of 2019 is shown as a flow chart in figure  and the R code is stored as MaStR_amprion.R in the MaStR_amprion folder. The result are 1,620 WT's that could be correctly assigned and are ready for further analysis.
+The MaStR contains data about all electricity and gas power generation units and can be freely accessed here: [https://www.marktstammdatenregister.de/MaStR](https://www.marktstammdatenregister.de/MaStR/Einheit/Einheiten/OeffentlicheEinheitenuebersicht). The electricity units with the generation type "wind" for Rhineland-Palatinate that are in operation are extracted on the 23th of July 2021 as MaStR.csv and stored in this project in data/MaStR_amprion. This data set counts 1,752 WT's with 50 variables of which only 8 are kept; The rated capacity, the commissioning date, the community key, the coordinates (CRS: WGS84), hub height, rotor diameter and EEG system key. It does not contain the amount of electricity fed into the public grid. Thus, to calculate the electricity generation per area the data of the MaStR and amprion needs to be joined together according to the EEG system key. The process of preparing the MaStR data and joining it with the data from amprion of 2019 is shown as a flow chart in figure \@ref(fig:merge). The R code is stored as MaStR_amprion.R in the MaStR_amprion folder and can be seen below. The result are 1,620 WT's that could be correctly assigned and are ready for further analysis and stored as MaStR_amprion2019.csv in the same source location.
+
+```{r merge, echo=FALSE, fig.cap="Flow chart of merging process", out.width = "80%"}
+knitr::include_graphics("data/MaStR_amprion/mergeflow.png")
+```
+
+```{r, eval=FALSE}
+########################################################################
+#Code Chunk 2: Merging of the data from the MaStR and from amprion 2019#
+########################################################################
+
+#packages
+Sys.setenv(LANG = "en")
+pacman::p_load(rio, data.table, tidyverse, magrittr, compare, DiagrammeR)
+
+#import data
+MaStR <- read.csv("MaStR.csv", sep = ";", na.strings=c("","NA"))
+amprion2019 <- read.csv("amprion_2019_processed_and_without_outliers.csv", 
+                        na.strings=c("","NA"))
+
+#choose variables
+amprion2019 <- amprion2019[,c(2:8)]
+MaStR <- MaStR[,c(1, 5, 7, 16, 17, 18, 21, 22, 23, 24, 43)]
+MaStR <- MaStR[,c(2:6,8,9,11)]
+
+#change column names
+names(MaStR)[1] <- "leistung_m"
+names(MaStR)[2] <- "inbetrieb_m"
+names(MaStR)[3] <- "gem_m"
+names(MaStR)[4] <- "b_wgs84"
+names(MaStR)[5] <- "l_wgs84"
+names(MaStR)[6] <- "nabe_m"
+names(MaStR)[7] <- "rotor_m"
+names(MaStR)[8] <- "eeg_nr"
+
+names(amprion2019)[6] <- "eeg_nr"
+
+#check for Na's in coordinates
+sum(is.na(MaStR$b_wgs84))
+sum(is.na(MaStR$l_wgs84))
+sum(is.na(MaStR$eeg_nr))
+MaStR_without_na <- filter(MaStR, ! is.na(MaStR$eeg_nr) & 
+                             ! is.na(MaStR$b_wgs84))
+
+#merge data sets
+MaStR_amprion2019 <- merge(data.frame(MaStR_without_na), 
+                           data.frame(amprion2019), 
+                           by = "eeg_nr", 
+                           all = TRUE)
+
+
+#filter out NAs coordinates and remove duplicates
+sum(is.na(MaStR_amprion2019$eeg_nr))
+sum(is.na(MaStR_amprion2019$b_wgs84))
+MaStR_amprion2019_without_na <- filter(MaStR_amprion2019, ! 
+                                         is.na(MaStR_amprion2019$b_wgs84))
+
+sum(duplicated(MaStR_amprion2019_without_na$eeg_nr))
+MaStR_amprion2019_without_dup <- distinct(MaStR_amprion2019_without_na)
+
+
+#write csv
+write.csv(MaStR_amprion2019_without_dup,"MaStR_amprion2019.csv")
+
+```
 
 
 ## Methods
 
-For the preparation and the analysis of the data R version 4.0.5 (2021-03-31) -- "Shake and Throw" and RStudio Version 1.4.1106 were used. Due to exhaustive code and iterative preparation steps the full documentation can not be displayed here but is to be found on [https://github.com/EliasCuadra/master-thesis-repowering](https://github.com/EliasCuadra/master-thesis-repowering) with explanatory README.md files that contain description of variables and processing steps. Nonetheless, important aspects or code chunks are directly included or can be found in the appendix. Packages in use are: rio, data.table, tidyverse, tidyr, purrr, magrittr, compare, ggplot2, leaflet, sp, raster, rgdal, htmltools, htmlwidgets, tmaptools, maptools, raster, sf, tmap, spatstat, rgeos and DiagrammR.
 
 ### Regression analysis
 
-For the data analysis the years 2012 to 2019 are considered but in most cases only more recent years are investigated because the WT technology is constantly improving and old data would not contain these new developments and therefore lead to an underestimation of future values. The data from Amprion comes with 28 or rather 27 variables for the year 2019 of which only some are interesting for the further analysis. Thus, a preparation process must initially be carried out to clean and prepare the data. The kept variables are: Community key, post code, place, rated capacity, commissioning date, system key and electricity yield. For the prediction  of the electricity yield not all the WT's are meaningful and some outliers are removed from the data. On the one hand WT's with a rated capacity under 100 kW are considered too small for a reasonable assessment of new commercially operated systems. On the other hand some  WT's are listed with a rated capacity up to 12 MW which might be because several WT's are registered as one. It is therefore assumed that a rated capacity larger than 4,5 MW does not reflect the average conditions, even though systems of this size exist. Also WT's that are build in the same year after the 15th of February are excluded since they have less time to generate electricity and therefore deliver misleading data. The data from 2017 shows 1,623 WT's in total of which 101 are outliers. The data from 2018 shows 1,674 WT's of which 76 are outliers. The data from 2019 shows 1,702 WT's of which 46 are outliers. The same is done for the years 2015 and 2016. An interim result are five csv files of the different years that only have relevant variables in the correct format and are free of outliers. Only the data from 2019 is further processed and variables for the county and municipality names as well as the electricity yield in MWh and the full load hours are added. The data from 2019 is then divided in three files according to the commissioning date to find the WT's that are build either before 2005, before 2001 or between 2001 and 2005 and are therefore potentially suitable for a repowering process. A flow chart of the individual processing steps that have been performed is presented in figure \@ref(fig:preparation). 
 
-```{r preparation, echo=FALSE, fig.cap="Flow chart of the proccessing steps", out.width = "100%"}
-knitr::include_graphics("data/Amprion/results_of_preparation/flow.png")
-```
 
 After the preparation, the data is firstly analyzed regarding the amount of electricity generated per WT and year. For this purpose, a linear and a 3rd order polynomial regression, that allow for a forecast until 2030, is carried out. The amount of electricity fed in, here referred to as the electricity yield, is the dependent variable and the commissioning date as the independent variable. Secondly the electricity yield is plotted over the rated capacity and henceforth only linear trends are applied to generate more conservative and appropriate estimation of the future values. For the next analysis a plot of the rated capacity over the commissioning date is generated. For this only data from 2019 is used since the rated capacity of the already installed WT's do not change over time. Further the full load hours as a concept of the degree of utilization is analyzed in regard of the WT's commissioning date. The degree of utilization might be more dependent on the wind conditions than the technical development and is therefore specifically good for predictions and therefore data from the past 5 years is analyzed. In addition to the wind conditions the full load hours depend on the specific nominal output, which means the rotor diameter, and hence the technological development can not be disregarded. Which means concrete that old data might still deliver a wrong impression on future predictions but also might account for weak years in terms of wind conditions since 2019 might be a stronger wind year.
 

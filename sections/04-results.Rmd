@@ -2,14 +2,6 @@
 
 ## Electricity yield, rated capacity and full load hours in Rhineland-Palatinate 
 
-The overall development of the number of WT's in RLP is shown in figure \@ref(fig:yearswts), which shows an estimated number of WT's of around 2,500 in the years 2030.
-
-
-```{r yearswts, echo=FALSE, fig.cap="Number of Wt's over time", out.width = "100%"}
-knitr::include_graphics("data/Amprion/results_of_analysis/year_wts.png")
-```
-
-
 The diagnostics of the electricity yield show in all linear and polynomial models the same characteristics. Even if they slightly differ from each other and the model assumptions might not be 100 % optimal for regression analysis they are also not fundamentally violated. In figure \@ref(fig:diagnostic) the diagnostic plots of the electricity yield over the commissioning date from the year 2019 are shown as an example. The residual vs fitted values plot show that the residuals become greater with increasing value for the electricity yield. This makes sense since the rated capacity for WT's increases and therefore changes the magnitudes of electricity generation over time. The normal QQ plot shows that the residuals of average values are normally distributed but as the values become great or small there is clear deviation from a normal distribution. This might be due to the non linear development of the WT technology. The scale location plots reveal that the residuals are more or less spread equally among the range of predictors with slightly increasing variance with increasing values, which must be like this since this was already indicated in the residuals vs fitted values plot. The residuals vs leverage plot shows that none of the observations is without Cook's distance and therefore there is no influential outlier. 
 
 
