@@ -4,9 +4,9 @@
 \contentsline {section}{List of Tables}{6}{section*.5}%
 \contentsline {section}{\numberline {1}Introduction}{1}{section.1}%
 \contentsline {section}{\numberline {2}State of the art}{4}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Physical basics}{4}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Technical concepts and development}{7}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Onshore WT's and Repowering}{11}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.1}Onshore wind turbines and Repowering}{4}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Physical basics}{4}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Technical concepts and development}{7}{subsection.2.3}%
 \contentsline {subsection}{\numberline {2.4}Résumé}{11}{subsection.2.4}%
 \contentsline {section}{\numberline {3}Materials and Methodology}{12}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Data}{12}{subsection.3.1}%

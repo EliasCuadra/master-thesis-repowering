@@ -23,7 +23,7 @@ knitr::include_graphics("data/Amprion/results_of_preparation/prepflow.png")
 
 ### Data from the market master data register (MaStR - Marktstammdatenregister)
 
-The MaStR contains data about all electricity and gas power generation units and can be freely accessed here: [https://www.marktstammdatenregister.de/MaStR](https://www.marktstammdatenregister.de/MaStR/Einheit/Einheiten/OeffentlicheEinheitenuebersicht). The electricity units with the generation type "wind" for Rhineland-Palatinate that are in operation are extracted on the 23th of July 2021 as MaStR.csv and stored in this project in data/MaStR_amprion. This data set counts 1,752 WT's with 50 variables of which only 8 are kept; The rated capacity, the commissioning date, the community key, the coordinates (CRS: WGS84), hub height, rotor diameter and EEG system key. It does not contain the amount of electricity fed into the public grid. Thus, to calculate the electricity generation per area the data of the MaStR and amprion needs to be joined together according to the EEG system key. The process of preparing the MaStR data and joining it with the data from amprion of 2019 is shown as a flow chart in figure \@ref(fig:merge). The R code is stored as MaStR_amprion.R in the MaStR_amprion folder and can be seen below. The result are 1,620 WT's that could be correctly assigned and are ready for further analysis and stored as MaStR_amprion2019.csv in the same source location.
+The MaStR contains data about all electricity and gas power generation units and can be freely accessed here: [https://www.marktstammdatenregister.de/MaStR](https://www.marktstammdatenregister.de/MaStR/Einheit/Einheiten/OeffentlicheEinheitenuebersicht). The electricity units with the generation type "wind" for Rhineland-Palatinate that are in operation are extracted on the 23th of July 2021 as MaStR.csv and stored in this project in data/MaStR_amprion. This data set counts 1,752 WT's with 50 variables of which only 8 are kept; The rated capacity, the commissioning date, the community key, the coordinates (CRS: WGS84), hub height, rotor diameter and EEG system key. It does not contain the amount of electricity fed into the public grid. Thus, to calculate the electricity generation per area the data of the MaStR and amprion needs to be joined together according to the EEG system key. The process of preparing the MaStR data and joining it with the data from amprion of 2019 is shown as a flow chart in figure \@ref(fig:merge). The R code is stored as MaStR_amprion.R in the MaStR_amprion folder and can be seen below. The result are 1,620 WT's that could be correctly assigned and are ready for further analysis and stored as MaStR_amprion2019.csv in the same source location. The analysis methods are presented in the two following subsections.
 
 ```{r merge, echo=FALSE, fig.cap="Flow chart of merging process", out.width = "80%"}
 knitr::include_graphics("data/MaStR_amprion/mergeflow.png")
@@ -102,7 +102,7 @@ After the preparation, the data is firstly analyzed regarding the amount of elec
 Since it is crucial not only to know the electricity yield per WT but also the electricity yield per area to estimate how much of the area of Rhineland-Palatinate must actually be covered with WT's in order to achieve the target of 20 TWh of wind energy in 2030. Therefore data from the master data register that contains geographic information about the WT's is used to calculate their area consumption and the according process is described next.
 
 
-
+### Geospatial analysis
 
 
 

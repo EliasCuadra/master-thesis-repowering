@@ -62,7 +62,7 @@
 % save thesis parameters for later
 \newcommand{\thesistype}{Master's Thesis}
 \newcommand{\thesisauthor}{Elias Cuadra Braatz}
-\newcommand{\thesisdate}{August 06, 2021}
+\newcommand{\thesisdate}{August 09, 2021}
 
 % define tightlist to work with newer versions of pandoc
 \providecommand{\tightlist}{%
@@ -202,7 +202,7 @@
   in partial fulfillment of the requirements \\
   for the degree of \\
   \textbf{Master of Environmental Sciences} \\\vspace{0.5cm}
-  August 06, 2021
+  August 09, 2021
   
 \end{center}
 
@@ -306,6 +306,9 @@ In order to answer these questions, the technical fundamentals of the electricit
 \end{figure}
 \hypertarget{state-of-the-art}{%
 \section{State of the art}\label{state-of-the-art}}
+
+\hypertarget{onshore-wind-turbines-and-repowering}{%
+\subsection{Onshore wind turbines and Repowering}\label{onshore-wind-turbines-and-repowering}}
 
 \hypertarget{physical-basics}{%
 \subsection{Physical basics}\label{physical-basics}}
@@ -414,9 +417,6 @@ If two plants have the same hub height and the same rotor diameter, but a differ
 
 \caption{Development and forecast of the mean specific rated capacity according to Deutsche WindGuard, 2020}\label{fig:spec}
 \end{figure}
-\hypertarget{onshore-wts-and-repowering}{%
-\subsection{Onshore WT's and Repowering}\label{onshore-wts-and-repowering}}
-
 \hypertarget{ruxe9sumuxe9}{%
 \subsection{Résumé}\label{ruxe9sumuxe9}}
 
@@ -943,40 +943,6 @@ Scenario & Electricity yield per area [kWh/m²a] & Power output per area [W/m²]
           \StringTok{"results\_of\_preparation/commissioning\_2001\_2005.csv"}\NormalTok{)}
 \FunctionTok{write.csv}\NormalTok{(commissioning\_before2005,}
           \StringTok{"results\_of\_preparation/commissioning\_before\_2005.csv"}\NormalTok{)}
-
-\CommentTok{\#create flow chart of data preparation}
-\FunctionTok{grViz}\NormalTok{(}\AttributeTok{diagram =} \StringTok{"digraph flowchart \{}
-\StringTok{  node [fontname = arial, shape = oval, fixedsize = FALSE]}
-\StringTok{  tab1 [label = \textquotesingle{}@@1\textquotesingle{}, fontsize=30]}
-\StringTok{  tab2 [label = \textquotesingle{}@@2\textquotesingle{}, fontsize=30]}
-\StringTok{  tab3 [label = \textquotesingle{}@@3\textquotesingle{}, fontsize=30]}
-\StringTok{  tab4 [label = \textquotesingle{}@@4\textquotesingle{}, fontsize=30]}
-\StringTok{  tab5 [label = \textquotesingle{}@@5\textquotesingle{}, fontsize=30]}
-\StringTok{  tab6 [label = \textquotesingle{}@@6\textquotesingle{}, fontsize=30]}
-\StringTok{  tab7 [label = \textquotesingle{}@@7\textquotesingle{}, fontsize=30]}
-\StringTok{  tab8 [label = \textquotesingle{}@@8\textquotesingle{}, fontsize=30]}
-\StringTok{  tab9 [label = \textquotesingle{}@@9\textquotesingle{}, fontsize=30]}
-\StringTok{  tab10 [label = \textquotesingle{}@@10\textquotesingle{}, fontsize=30]}
-\StringTok{  }
-\StringTok{  }
-\StringTok{  tab1 {-}\textgreater{} tab2 {-}\textgreater{} tab3 {-}\textgreater{} tab4 {-}\textgreater{} tab5 {-}\textgreater{} tab6 {-}\textgreater{} tab7;}
-\StringTok{  tab1 {-}\textgreater{} tab8;}
-\StringTok{  tab5 {-}\textgreater{} tab9;}
-\StringTok{  tab6 {-}\textgreater{} tab10;}
-\StringTok{\}}
-\StringTok{  }
-\StringTok{  [1]: \textquotesingle{}Import data from 2015 to 2019\textquotesingle{}}
-\StringTok{  [2]: \textquotesingle{}Drop unnecessary variables\textquotesingle{} }
-\StringTok{  [3]: \textquotesingle{}Adjust variable formats and names\textquotesingle{}}
-\StringTok{  [4]: \textquotesingle{}Detect outliers and remove from data\textquotesingle{}}
-\StringTok{  [5]: \textquotesingle{}Add columns for full load hours and electricity yield in MWh\textquotesingle{}}
-\StringTok{  [6]: \textquotesingle{}Filter only data from 2019 }\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{nfor different commissioning dates\textquotesingle{}}
-\StringTok{  [7]: \textquotesingle{}Write files as: }\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{n commissioning\_before\_2005.csv }\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{n commissioning\_before\_2001.csv }\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{n commissioning\_2001\_2005.csv\textquotesingle{}}
-\StringTok{  [8]: \textquotesingle{}Calculate and plot }\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{ntotal number of WTs over time\textquotesingle{}}
-\StringTok{  [9]: \textquotesingle{}Write files as: }\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{namprion\_2015\_processed.csv, }\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{namprion\_2016\_processed.csv, }\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{namprion\_2017\_processed.csv, }\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{namprion\_2018\_processed.csv, }\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{namprion\_2019\_processed.csv\textquotesingle{}}
-\StringTok{  [10]: \textquotesingle{}Calculate sum of electricity yield }\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{nfor different commissioning dates\textquotesingle{}}
-\StringTok{  }
-\StringTok{  "}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
