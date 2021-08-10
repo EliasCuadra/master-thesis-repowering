@@ -1,13 +1,9 @@
-# Results and discussion
+# Results
 
 ## Electricity yield, rated capacity and full load hours in Rhineland-Palatinate 
 
-The diagnostics of the electricity yield show in all linear and polynomial models the same characteristics. Even if they slightly differ from each other and the model assumptions might not be 100 % optimal for regression analysis they are also not fundamentally violated. In figure \@ref(fig:diagnostic) the diagnostic plots of the electricity yield over the commissioning date from the year 2019 are shown as an example. The residual vs fitted values plot show that the residuals become greater with increasing value for the electricity yield. This makes sense since the rated capacity for WT's increases and therefore changes the magnitudes of electricity generation over time. The normal QQ plot shows that the residuals of average values are normally distributed but as the values become great or small there is clear deviation from a normal distribution. This might be due to the non linear development of the WT technology. The scale location plots reveal that the residuals are more or less spread equally among the range of predictors with slightly increasing variance with increasing values, which must be like this since this was already indicated in the residuals vs fitted values plot. The residuals vs leverage plot shows that none of the observations is without Cook's distance and therefore there is no influential outlier. 
+The diagnostics of the electricity yield show in all linear and polynomial models the same characteristics. Even if they slightly differ from each other and the model assumptions might not be 100 % optimal for regression analysis they are also not fundamentally violated. In Appendix YYY the diagnostic plots of the electricity yield over the commissioning date from the year 2019 are shown as an example. The residual vs fitted values plot show that the residuals become greater with increasing value for the electricity yield. This makes sense since the rated capacity for WT's increases and therefore changes the magnitudes of electricity generation over time. The normal QQ plot shows that the residuals of average values are normally distributed but as the values become great or small there is clear deviation from a normal distribution. This might be due to the non linear development of the WT technology. The scale location plots reveal that the residuals are more or less spread equally among the range of predictors with slightly increasing variance with increasing values, which must be like this since this was already indicated in the residuals vs fitted values plot. The residuals vs leverage plot shows that none of the observations is without Cook's distance and therefore there is no influential outlier. 
 
-
-```{r diagnostic, echo=FALSE, fig.cap="Diagnostic plots of electricity yield from 2019", out.width = "100%"}
-knitr::include_graphics("data/Amprion/results_of_analysis/diagnostic.png")
-```
 
 
 All models are highly significant with p-values lower than 0.001 and the linear models have R\textsuperscript{2}-values of 0.68 - 0.70, which means that around 70 % of the variation in the electricity yield can be explained by the commissioning date. By using a 3\textsuperscript{rd} order polynomial formula the value for R\textsuperscript{2} increases to up to 73 %. This value could not significantly be increased by using a higher order. This means that the fit of the model can be slightly improved using the polynomial model but it might loose prediction power due to the bias variance trade-off. Intuitively an infinitely or exponentially growing electricity yield is of course not realistic from a physical or technical point of view. Therefore, the prediction of the polynomial models of more than 15,000 MWh per WT on average in the year 2030 seems too high and the assumption of 10,000 MWh per WT of the linear trends more reliable. However, the DWG forecast in figure \@ref(fig:capacity) shows a disproportionate increase in the average nominal power, which in turn means that at locations with optimal wind conditions and rapidly advancing technology, disproportionate growth in electricity yield per WT is possible. Nonetheless, only few locations have optimal conditions and a more conservative estimation is chosen in this context, which might be different in the assessment of single sites. The plot of the data and all trends are shown in figure \@ref(fig:electricityyield). For the given reason the average electricity yield of the three linear trends in 2021, which amounts to 7,400 MWh per WT, together with the upcoming results from the rated capacity and full load hours is used for further calculations.
@@ -37,7 +33,7 @@ knitr::include_graphics("data/Amprion/results_of_analysis/flh.png")
 
 ## Repowering potential
 
-The potentially suitable WT's in RLP for repowering within the next 10 years are older systems which are relatively arbitrary divided into the two categories; Commission before 2001 and between 2001 and 2005 and are shown in table \@ref(tab:table1). These values are theoretical ones and represent a repowering rate of 100 \%. The electricity yield would be more than 7 times greater if all systems with a commissioning date before 2001 would be repowered and around 3.7 times as much as if additionally all systems with a commissioning date between 2001 and 2005 are repowered. This means a total replacement of 514 WT's with accordingly larger area consumption. It is also highly questionable if all of the old systems can be replaced due to the explained resons. In this context repowering is a missleading term since it suggests that a system is technically enhanced, but in this case it means the deconstruction of old systems and new building of another system, which might even be in a different location. Therefore, from a technical assessment of the windenergy potential in RLP, the respective electricity yield per WT and especially per area is decisive. Hence, the calculation of the area consumption follows next.
+The potentially suitable WT's in RLP for repowering within the next 10 years are older systems which are relatively arbitrary divided into the two categories; Commission before 2001 and between 2001 and 2005 and are shown in table \@ref(tab:table1). These values are theoretical ones and represent a repowering rate of 100 \%. The electricity yield would be more than 7 times greater if all systems with a commissioning date before 2001 would be repowered and around 3.7 times as much as if additionally all systems with a commissioning date between 2001 and 2005 are repowered. This means a total replacement of 514 WT's with accordingly larger area consumption. It is also highly questionable if all of the old systems can be replaced due to the explained reasons. In this context repowering is a misleading term since it suggests that a system is technically enhanced, but in this case it means the deconstruction of old systems and new building of another system, which might even be in a different location. Therefore, from a technical assessment of the wind energy potential in RLP, the respective electricity yield per WT and especially per area is decisive. Hence, the calculation of the area consumption follows next.
 
 
 
@@ -68,7 +64,7 @@ row_spec(2, hline_after = T)
 ```
 
 
-## Rotor diameter, hub height and area Consumption
+## Rotor diameter, hub height and area consumption
 
 After taking WT's out of the data that would distort the results 1195 WT's remained for analysis. It is to mention that almost 400 WT's had to be taken out of the data set and also the R\textsuperscript{2}-value is not very high, thus the overall prediction power of the model might be low.
 
@@ -77,7 +73,7 @@ Nonetheless, the average distance to the nearest WT of all WT's is a reasonable 
 The plot that shows the electricity yield per m\textsuperscript{2} and year over the commissioning date of the whole joined data set that originated from the MaStR and the master and movement data from amprion of 2019 is show in  figure \@ref(fig:eyarea). Although the model is highly significant only 11 % of the variation in the depended variable is explained by the commissioning date. Therefore it is not clear if this model is enough to make clear predictions. 
 
 ```{r eyarea, echo=FALSE, fig.cap="Electricity yield per m² and year over the commissioning date", out.width = "100%"}
-knitr::include_graphics("data/Area_consumption_of_wind_turbines/e_yield_per_m2_over_commissioning_date.png")
+knitr::include_graphics("data/MaStR_amprion_analysis/results_of_analysis/e_yield_per_m2_over_commissioning_date.png")
 ```
 
 
@@ -93,13 +89,13 @@ col_names <- c(
   "Area Consumption [km²]", "Share of the area of RLP [\\%]", "req. av. wind speed [m/s]"
 )
 means     <- c(
-  "mean > 2010", 27.4, 3.1, 802.3 , 4.0, 6.68
+  "mean > 2010", 27.4, 3.1, 802.3 , 4.0, 6.70
 )
 stddev    <- c(
-  "mean 2021", 33.5, 3.8, 656.7, 3.3, 7.15
+  "mean 2021", 33.5, 3.8, 656.7, 3.3, 7.17
 )
 x    <- c(
-  "mean 2030", 40.5, 4.6, 543.2, 2.7, 7.62
+  "mean 2030", 40.5, 4.6, 543.2, 2.7, 7.63
 )
 
 df <- matrix(data = c(means, stddev, x), nrow = 3, byrow = T)

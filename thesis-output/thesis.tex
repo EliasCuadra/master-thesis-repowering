@@ -62,7 +62,7 @@
 % save thesis parameters for later
 \newcommand{\thesistype}{Master's Thesis}
 \newcommand{\thesisauthor}{Elias Cuadra Braatz}
-\newcommand{\thesisdate}{August 09, 2021}
+\newcommand{\thesisdate}{August 10, 2021}
 
 % define tightlist to work with newer versions of pandoc
 \providecommand{\tightlist}{%
@@ -202,7 +202,7 @@
   in partial fulfillment of the requirements \\
   for the degree of \\
   \textbf{Master of Environmental Sciences} \\\vspace{0.5cm}
-  August 09, 2021
+  August 10, 2021
   
 \end{center}
 
@@ -457,10 +457,10 @@ Only the data from 2019 is further processed and variables for the county and mu
 \hypertarget{data-from-the-market-master-data-register-mastr---marktstammdatenregister}{%
 \subsubsection{Data from the market master data register (MaStR - Marktstammdatenregister)}\label{data-from-the-market-master-data-register-mastr---marktstammdatenregister}}
 
-The MaStR contains data about all electricity and gas power generation units and can be freely accessed here: \href{https://www.marktstammdatenregister.de/MaStR/Einheit/Einheiten/OeffentlicheEinheitenuebersicht}{https://www.marktstammdatenregister.de/MaStR}. The electricity units with the generation type ``wind'' for Rhineland-Palatinate that are in operation are extracted on the 23th of July 2021 as MaStR.csv and stored in this project in data/MaStR\_amprion. This data set counts 1,752 WT's with 50 variables of which only 8 are kept; The rated capacity, the commissioning date, the community key, the coordinates (CRS: WGS84), hub height, rotor diameter and EEG system key. It does not contain the amount of electricity fed into the public grid. Thus, to calculate the electricity generation per area the data of the MaStR and amprion needs to be joined together according to the EEG system key. The process of preparing the MaStR data and joining it with the data from amprion of 2019 is shown as a flow chart in figure \ref{fig:merge}. The R code is stored as MaStR\_amprion.R in the MaStR\_amprion folder and can be seen below. The result are 1,620 WT's that could be correctly assigned and are ready for further analysis and stored as MaStR\_amprion2019.csv in the same source location.
+The MaStR contains data about all electricity and gas power generation units and can be freely accessed here: \href{https://www.marktstammdatenregister.de/MaStR/Einheit/Einheiten/OeffentlicheEinheitenuebersicht}{https://www.marktstammdatenregister.de/MaStR}. The electricity units with the generation type ``wind'' for Rhineland-Palatinate that are in operation are extracted on the 23th of July 2021 as MaStR.csv and stored in this project in data/MaStR\_amprion. This data set counts 1,752 WT's with 50 variables of which only 8 are kept; The rated capacity, the commissioning date, the community key, the coordinates (CRS: WGS84), hub height, rotor diameter and EEG system key. It does not contain the amount of electricity fed into the public grid. Thus, to calculate the electricity generation per area the data of the MaStR and amprion needs to be joined together according to the EEG system key. The process of preparing the MaStR data and joining it with the data from amprion of 2019 is shown as a flow chart in figure \ref{fig:merge}. The R code is stored as MaStR\_amprion.R in the MaStR\_amprion folder and can be seen below. The result are 1,620 WT's that could be correctly assigned and are ready for further analysis and stored as MaStR\_amprion2019.csv in the same source location. The analysis methods are presented in the two following subsections.
 \begin{figure}
 
-{\centering \includegraphics[width=0.8\linewidth]{data/MaStR_amprion/mergeflow} 
+{\centering \includegraphics[width=0.8\linewidth]{data/MaStR_amprion_join/mergeflow} 
 
 }
 
@@ -536,8 +536,11 @@ After the preparation, the data is firstly analyzed regarding the amount of elec
 
 Since it is crucial not only to know the electricity yield per WT but also the electricity yield per area to estimate how much of the area of Rhineland-Palatinate must actually be covered with WT's in order to achieve the target of 20 TWh of wind energy in 2030. Therefore data from the master data register that contains geographic information about the WT's is used to calculate their area consumption and the according process is described next.
 
-\hypertarget{results-and-discussion}{%
-\section{Results and discussion}\label{results-and-discussion}}
+\hypertarget{geospatial-analysis}{%
+\subsubsection{Geospatial analysis}\label{geospatial-analysis}}
+
+\hypertarget{results}{%
+\section{Results}\label{results}}
 
 \hypertarget{electricity-yield-rated-capacity-and-full-load-hours-in-rhineland-palatinate}{%
 \subsection{Electricity yield, rated capacity and full load hours in Rhineland-Palatinate}\label{electricity-yield-rated-capacity-and-full-load-hours-in-rhineland-palatinate}}
@@ -554,7 +557,7 @@ The diagnostics of the electricity yield show in all linear and polynomial model
 All models are highly significant with p-values lower than 0.001 and the linear models have R\textsuperscript{2}-values of 0.68 - 0.70, which means that around 70 \% of the variation in the electricity yield can be explained by the commissioning date. By using a 3\textsuperscript{rd} order polynomial formula the value for R\textsuperscript{2} increases to up to 73 \%. This value could not significantly be increased by using a higher order. This means that the fit of the model can be slightly improved using the polynomial model but it might loose prediction power due to the bias variance trade-off. Intuitively an infinitely or exponentially growing electricity yield is of course not realistic from a physical or technical point of view. Therefore, the prediction of the polynomial models of more than 15,000 MWh per WT on average in the year 2030 seems too high and the assumption of 10,000 MWh per WT of the linear trends more reliable. However, the DWG forecast in figure \ref{fig:capacity} shows a disproportionate increase in the average nominal power, which in turn means that at locations with optimal wind conditions and rapidly advancing technology, disproportionate growth in electricity yield per WT is possible. Nonetheless, only few locations have optimal conditions and a more conservative estimation is chosen in this context, which might be different in the assessment of single sites. The plot of the data and all trends are shown in figure \ref{fig:electricityyield}. For the given reason the average electricity yield of the three linear trends in 2021, which amounts to 7,400 MWh per WT, together with the upcoming results from the rated capacity and full load hours is used for further calculations.
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{data/Amprion/results_of_analysis/electricity_yield_2017-2019_rlp_over_comissioning_date2} 
+{\centering \includegraphics[width=1\linewidth]{data/Amprion/results_of_analysis/electricity_yield_2017-2019} 
 
 }
 
@@ -569,7 +572,7 @@ For the following plots and trends the diagnostics and significance is not furth
 
 \caption{Electricity yield over rated capacity}\label{fig:eratedcapacity}
 \end{figure}
-As expected the electricity yield increases with increasing rated capacity and therefore also more recent commissioning date because the size and generator technology advances continuously. It can also be seen that the rated capacity clusters around certain values which is due to the availability and performance of specific generator series. But not only the electricity yield increases also the variance increase. This is also logic since the different and fluctuating wind conditions lead to a greater magnitude of difference in electricity yield when using a larger generator. To generate the average electricity of 7,400 MWh/a that were presented before, as a minimum, a 3.5 MW turbine must be used on average. The plot of the rated capacity over the commissioning date with data from 2019 is shown in figure \ref{fig:ratedcapacity}. It displays again the characteristic pattern of specific rated capacity values and the mean of 3,500 kW installed power in 2021 per WT as well as a prediction for the year 2030 with 4,500 kW using a linear trend. Similarly the study of the DWG shows a predicted rated capacity of around 3.5 MW in 2021 and an even higher rated capacity of around 5.5 MW in 2030. Hence, this 3.5 MW are used for further calculations.
+As expected the electricity yield increases with increasing rated capacity and therefore also more recent commissioning date because the size and generator technology advances continuously. But since the year 2017 suggests a steeper increase over the year 2018 this is not the only reason and the annual wind conditions might influence this trend significantly. It can also be seen that the rated capacity clusters around certain values which is due to the availability and performance of specific generator series. But not only the electricity yield increases also the variance increase. This is also logic since the different and fluctuating wind conditions lead to a greater magnitude of difference in electricity yield when using a larger generator. To generate the average electricity of 7,400 MWh/a that were presented before, as a minimum, a 3.5 MW turbine must be used on average. The plot of the rated capacity over the commissioning date with data from 2019 is shown in figure \ref{fig:ratedcapacity}. It displays again the characteristic pattern of specific rated capacity values and the mean of 3,500 kW installed power in 2021 per WT as well as a prediction for the year 2030 with 4,500 kW using a linear trend. Similarly the study of the DWG shows a predicted rated capacity of around 3.5 MW in 2021 and an even higher rated capacity of around 5.5 MW in 2030. Hence, this 3.5 MW are used for further calculations.
 \begin{figure}
 
 {\centering \includegraphics[width=1\linewidth]{data/Amprion/results_of_analysis/rated_capacity_over_commissioning} 
@@ -590,7 +593,7 @@ The next plot shows the full load hours over the commissioning date in figure \r
 \hypertarget{repowering-potential}{%
 \subsection{Repowering potential}\label{repowering-potential}}
 
-The potentially suitable WT's in RLP for repowering within the next 10 years are older systems which are relatively arbitrary divided into the two categories; Commission before 2001 and between 2001 and 2005 and are shown in table \ref{tab:table1}. These values are theoretical ones and represent a repowering rate of 100 \%. The electricity yield would be more than 7 times greater if all systems with a commissioning date before 2001 would be repowered and around 3.7 times as much as if additionally all systems with a commissioning date between 2001 and 2005 are repowered. This means a total replacement of 514 WT's with accordingly larger area consumption. It is also highly questionable if all of the old systems can be replaced due to the explained resons. In this context repowering is a missleading term since it suggests that a system is technically enhanced, but in this case it means the deconstruction of old systems and new building of another system, which might even be in a different location. Therefore, from a technical assessment of the windenergy potential in RLP, the respective electricity yield per WT and especially per area is decisive. Hence, the calculation of the area consumption follows next.
+The potentially suitable WT's in RLP for repowering within the next 10 years are older systems which are relatively arbitrary divided into the two categories; Commission before 2001 and between 2001 and 2005 and are shown in table \ref{tab:table1}. These values are theoretical ones and represent a repowering rate of 100 \%. The electricity yield would be more than 7 times greater if all systems with a commissioning date before 2001 would be repowered and around 3.7 times as much as if additionally all systems with a commissioning date between 2001 and 2005 are repowered. This means a total replacement of 514 WT's with accordingly larger area consumption. It is also highly questionable if all of the old systems can be replaced due to the explained reasons. In this context repowering is a misleading term since it suggests that a system is technically enhanced, but in this case it means the deconstruction of old systems and new building of another system, which might even be in a different location. Therefore, from a technical assessment of the wind energy potential in RLP, the respective electricity yield per WT and especially per area is decisive. Hence, the calculation of the area consumption follows next.
 \begin{table}[H]
 
 \caption{\label{tab:table1}Repowering potential with replacement rate of 100 \% percent by 
@@ -606,8 +609,8 @@ before 2001 & 186 & 186 & 1376 & 740\\
 \bottomrule
 \end{tabular}
 \end{table}
-\hypertarget{area-consumption}{%
-\subsection{Area Consumption}\label{area-consumption}}
+\hypertarget{rotor-diameter-hub-height-and-area-consumption}{%
+\subsection{Rotor diameter, hub height and area consumption}\label{rotor-diameter-hub-height-and-area-consumption}}
 
 After taking WT's out of the data that would distort the results 1195 WT's remained for analysis. It is to mention that almost 400 WT's had to be taken out of the data set and also the R\textsuperscript{2}-value is not very high, thus the overall prediction power of the model might be low.
 
@@ -616,7 +619,7 @@ Nonetheless, the average distance to the nearest WT of all WT's is a reasonable 
 The plot that shows the electricity yield per m\textsuperscript{2} and year over the commissioning date of the whole joined data set that originated from the MaStR and the master and movement data from amprion of 2019 is show in figure \ref{fig:eyarea}. Although the model is highly significant only 11 \% of the variation in the depended variable is explained by the commissioning date. Therefore it is not clear if this model is enough to make clear predictions.
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{data/Area_consumption_of_wind_turbines/e_yield_per_m2_over_commissioning_date} 
+{\centering \includegraphics[width=1\linewidth]{data/MaStR_amprion_analysis/results_of_analysis/e_yield_per_m2_over_commissioning_date} 
 
 }
 
@@ -634,15 +637,18 @@ According to figure \ref{fig:eyarea} three possible scenarios using the mean of 
 \toprule
 Scenario & Electricity yield per area [kWh/m²a] & Power output per area [W/m²] & Area Consumption [km²] & Share of the area of RLP [\%] & req. av. wind speed [m/s]\\
 \midrule
-\textbf{mean > 2010} & \textbf{27.4} & \textbf{3.1} & \textbf{802.3} & \textbf{4} & \textbf{6.68}\\
+\textbf{mean > 2010} & \textbf{27.4} & \textbf{3.1} & \textbf{802.3} & \textbf{4} & \textbf{6.7}\\
 \midrule
-\textbf{mean 2021} & \textbf{33.5} & \textbf{3.8} & \textbf{656.7} & \textbf{3.3} & \textbf{7.15}\\
+\textbf{mean 2021} & \textbf{33.5} & \textbf{3.8} & \textbf{656.7} & \textbf{3.3} & \textbf{7.17}\\
 \midrule
-\textbf{mean 2030} & \textbf{40.5} & \textbf{4.6} & \textbf{543.2} & \textbf{2.7} & \textbf{7.62}\\
+\textbf{mean 2030} & \textbf{40.5} & \textbf{4.6} & \textbf{543.2} & \textbf{2.7} & \textbf{7.63}\\
 \midrule
 \bottomrule
 \end{tabular}
 \end{table}
+\hypertarget{discussion}{%
+\section{Discussion}\label{discussion}}
+
 \hypertarget{conclusion}{%
 \section{Conclusion}\label{conclusion}}
 \begin{itemize}
