@@ -1,26 +1,29 @@
-\contentsline {section}{Abstract}{3}{section*.2}%
-\contentsline {section}{List of Abbreviations}{4}{section*.3}%
-\contentsline {section}{List of Figures}{5}{section*.4}%
-\contentsline {section}{List of Tables}{6}{section*.5}%
+\contentsline {section}{Abstract}{4}{section*.2}%
+\contentsline {section}{List of Abbreviations}{5}{section*.3}%
+\contentsline {section}{List of Figures}{6}{section*.4}%
+\contentsline {section}{List of Tables}{7}{section*.5}%
 \contentsline {section}{\numberline {1}Introduction}{1}{section.1}%
-\contentsline {section}{\numberline {2}State of the art}{4}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Onshore wind turbines and Repowering}{4}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Physical basics}{4}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Technical concepts and development}{7}{subsection.2.3}%
-\contentsline {subsection}{\numberline {2.4}Résumé}{11}{subsection.2.4}%
-\contentsline {section}{\numberline {3}Materials and Methodology}{12}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Data}{12}{subsection.3.1}%
-\contentsline {subsubsection}{\numberline {3.1.1}Master and Movement data from Amprion}{12}{subsubsection.3.1.1}%
-\contentsline {subsubsection}{\numberline {3.1.2}Data from the market master data register (MaStR - Marktstammdatenregister)}{14}{subsubsection.3.1.2}%
+\contentsline {section}{\numberline {2}State of the art}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Region of interest}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Onshore wind turbines and Repowering}{6}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Physical basics}{6}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Technical concepts and development}{9}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Résumé}{13}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Regression analysis}{14}{subsection.2.6}%
+\contentsline {subsection}{\numberline {2.7}Geospatial analysis}{14}{subsection.2.7}%
+\contentsline {section}{\numberline {3}Materials and Methodology}{14}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Data}{14}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Master and Movement data from Amprion}{14}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}Data from the market master data register (MaStR - Marktstammdatenregister)}{16}{subsubsection.3.1.2}%
 \contentsline {subsection}{\numberline {3.2}Methods}{17}{subsection.3.2}%
 \contentsline {subsubsection}{\numberline {3.2.1}Regression analysis}{17}{subsubsection.3.2.1}%
 \contentsline {subsubsection}{\numberline {3.2.2}Geospatial analysis}{18}{subsubsection.3.2.2}%
 \contentsline {section}{\numberline {4}Results}{18}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Electricity yield, rated capacity and full load hours in Rhineland-Palatinate}{18}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Repowering potential}{23}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.2}Repowering potential}{22}{subsection.4.2}%
 \contentsline {subsection}{\numberline {4.3}Rotor diameter, hub height and area consumption}{23}{subsection.4.3}%
-\contentsline {section}{\numberline {5}Discussion}{26}{section.5}%
-\contentsline {section}{\numberline {6}Conclusion}{26}{section.6}%
+\contentsline {section}{\numberline {5}Discussion}{25}{section.5}%
+\contentsline {section}{\numberline {6}Conclusion}{25}{section.6}%
 \contentsline {section}{References}{27}{section*.24}%
-\contentsline {section}{\numberline {A}Appendix}{29}{appendix.A}%
-\contentsline {subsection}{\numberline {A.1}Code chunk 1}{29}{subsection.A.1}%
+\contentsline {section}{\numberline {A}Appendix}{30}{appendix.A}%
+\contentsline {subsection}{\numberline {A.1}Code chunk 1}{30}{subsection.A.1}%

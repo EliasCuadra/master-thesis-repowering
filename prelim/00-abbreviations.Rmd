@@ -1,6 +1,7 @@
 # List of Abbreviations {-}
 
 \begin{tabular}{rp{0.2cm}lp{1cm}rp{0.2cm}l}
+    ROI     & &  Region of interest           & & mm      & &  Million \\   
     RLP     & &  Rhineland-Palatinate         & & TWh     & &  Tera Watt hours  \\
     WT      & &  Wind turbine                 & & MWh     & &  Mega Watt hours \\
     kWh     & &  Kilo Watt hours              & & GIS     & &  Geographic Information System \\
@@ -9,6 +10,6 @@
     s       & &  Second                       & & W       & &  Watt \\
     d       & &  Diameter                     & & m²      & &  Square meter \\
     m³      & &  Cubic meter                  & & DWG     & &  German Wind Guard \\
-    CRS     & &  Coordinate Reference System  & & WGS84   & &  World Geodetic System 1984 \\    
+    CRS     & &  Coordinate Reference System  & & WGS84   & &  World Geodetic System 1984 \\ 
     
 \end{tabular}

@@ -237,7 +237,7 @@ ggsave("results_of_analysis/e_yield_per_m2_over_commissioning_date.png",
 #4.62065 W/m2
 #4.62065/0.0104 = 444.2933
 #444.2933^(1/3) = 7.630563 m/s wind speed required
-#area consumtion with demand of 22 TWh
+#area consumption with demand of 22 TWh
 # 543209877 m2 = 543.2099 km2 = 2.736987 % = 1.824658 times as much
 
 

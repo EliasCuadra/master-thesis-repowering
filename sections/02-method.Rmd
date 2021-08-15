@@ -1,5 +1,72 @@
 # State of the art
 
+## Region of interest
+
+First of all, the region of interest (ROI) in this case Rhineland-Palatinate in south-west Germany is presented for it is important to know the site conditions and the statistical parameters of the past to assess the wind energy potential for future years. RLP has diverse geographic structures such as many low mountain ranges and forests namely the Rhenish Slate Mountains, Hunsrück, Eifel, Taunus, Westerwald, North Palatinate Uplands and further south the Palatinate Forest but also plain areas such as the Upper Rhine Plain, Mainz Basin and West Palatinate moorlands to only name a few. It borders North Rhine-Westphalia in the north, Hesse and Baden-Wuerttemberg in the east, the French region of Grand Est and Saarland in the south, and Luxembourg and the province of Liège in the Belgian region of Wallonia in the west. Rhineland-Palatinate is the federal state with the largest area on the left bank of the river Rhine. The climate in Rhineland-Palatinate is characterized by a moderate, humid climate with warm summers and mild to cool winters which makes it a typical Western European climate. The average annual temperature is 10.4 $^\circ$C which is 1.8 $^\circ$C above the long-term average. Settlement areas occupy around 8,6 % and transport infrastructure around 6.1 % of the area @StateStatisticalOfficeofRhinelandPalatinate.2020. 
+
+Rhineland-Palatinate is one of the most densely forested countries in Germany, as the forests here cover around 42 percent of the country's area @HansenandLamour.2021.
+
+Especially the electricity generation and data from existing WT's is important but also information about different types of land cover and the occurrence of wind  are crucial for this work. An overview of important parameters regarding the estimation of the wind energy potential up to the year 2030 are shown in table \@ref(tab:table0).
+
+(ref:stats)  @StateStatisticalOfficeofRhinelandPalatinate.2020. 
+
+```{r table0, echo=FALSE}
+col_names <- c(
+  "", ""
+)
+row1     <- c(
+  "Area", "19,858 km²"
+)
+row2     <- c(
+  "Inhabitants", "4.1 mm"
+)
+row3     <- c(
+  "Electricity demand 2021", "30 TWh"
+)
+row4     <- c(
+  "Electricity demand 2030", "33 TWh"
+)
+row5     <- c(
+  "Electricity generation 2017", "20.7 TWh"
+)
+row6     <- c(
+  "Electricity generation from WT's 2019", "6.78 TWh"
+)
+row7     <- c(
+  "Required generation from WT's in 2030", "22 TWh"
+)
+row8     <- c(
+  "Total number of WT's", "1,702"
+)
+df <- matrix(data = c(row1, row2, row3, row4, row5, row6, row7), nrow = 7, byrow = T)
+colnames(df) <- col_names
+df <- data.frame(df)
+knitr::kable(
+  df,
+  booktabs = TRUE,
+  caption = "Important information of Rhineland-Palatinate regarding the assessment of the wind energy potential up to 2030 (ref:stats) (rounded)",
+  col.names = NULL, 
+  escape = FALSE
+) %>%
+kable_styling(latex_options = c("HOLD_position")) %>%
+row_spec(1:7, hline_after = T, bold = T) %>%
+add_header_above(header = "Basic information on Rhineland-Palatinate", bold = T, align = "c") %>% 
+column_spec(1, width = "9cm") %>% 
+column_spec(2, width = "3cm")
+```
+
+
+
+
+
+The study area and the modeled wind speeds taken from the Windatlas RLP @MinisteriumfurWirtschaftKlimaschutzEnergieundLandesplanung.2013 are seen in figure \@ref(fig:wind).
+
+(ref:foo) Wind speeds in RLP 140 m above Ground @MinisteriumfurWirtschaftKlimaschutzEnergieundLandesplanung.2013. 
+
+
+```{r wind, echo=FALSE, fig.cap="(ref:foo)", out.width = "100%", fig.pos="H"}
+knitr::include_graphics("figures/wind_140m.pdf")
+```
 ## Onshore wind turbines and Repowering
 
 ## Physical basics
@@ -109,6 +176,11 @@ knitr::include_graphics("figures/DWG/DWG_Spezifische_Nennleistung.png")
 ## Résumé
 The study of DWG shows how the technology of onshore wind turbines has developed further since 2000. A clear trend for an increase in the average rated capacity and the average rotor diameter of the newly commissioned systems can be seen. The mean total height of the turbines is also increasing, although this increase has been due to the increase in the mean rotor diameter for some years while the height of the lower blade tip remains the same. This also leads to an increase in the mean hub height. It is assumed that these trends will continue over the next ten years. A look at the configuration of the latest system models from different manufacturers supports this thesis (Enercon and Vestas, 2021). The development of offshore wind turbines suggests that even with a rotor diameter of 170 m and a nominal output of 6.6 MW no end of the system scaling is to be expected, where significantly larger systems are already available. However, the requirements regarding the construction are clearly different and the wind speeds at sea and thus the rotor diameter are of course not easy to transfer. –Source about other technical limitations-
 In order to calculate the electricity yield of future plants in RLP, the following section analyses the master and movement data from 2019 for electricity yield, nominal output and full load hours. Additionally the area consumption of WT's in RLP is being assessed using the market master data register. 
+
+## Regression analysis
+
+## Geospatial analysis
+
 
 
 [^1]: $E_{kin}= kinetic\; energy,\; m=mass\; of\; air,\; v= wind\;speed$

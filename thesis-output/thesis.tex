@@ -22,6 +22,7 @@
 \usepackage{float}
 \usepackage{ragged2e}
 \usepackage{tabularx}
+\usepackage{caption}
 
 % -------------------------------
 % --- some layout definitions ---
@@ -62,7 +63,7 @@
 % save thesis parameters for later
 \newcommand{\thesistype}{Master's Thesis}
 \newcommand{\thesisauthor}{Elias Cuadra Braatz}
-\newcommand{\thesisdate}{August 10, 2021}
+\newcommand{\thesisdate}{August 15, 2021}
 
 % define tightlist to work with newer versions of pandoc
 \providecommand{\tightlist}{%
@@ -202,7 +203,7 @@
   in partial fulfillment of the requirements \\
   for the degree of \\
   \textbf{Master of Environmental Sciences} \\\vspace{0.5cm}
-  August 10, 2021
+  August 15, 2021
   
 \end{center}
 
@@ -242,6 +243,7 @@ busy reader to obtain quickly a clear idea of the thesis content.
 \section*{List of Abbreviations}\label{list-of-abbreviations}}
 \addcontentsline{toc}{section}{List of Abbreviations}
 \begin{tabular}{rp{0.2cm}lp{1cm}rp{0.2cm}l}
+    ROI     & &  Region of interest           & & mm      & &  Million \\   
     RLP     & &  Rhineland-Palatinate         & & TWh     & &  Tera Watt hours  \\
     WT      & &  Wind turbine                 & & MWh     & &  Mega Watt hours \\
     kWh     & &  Kilo Watt hours              & & GIS     & &  Geographic Information System \\
@@ -250,7 +252,7 @@ busy reader to obtain quickly a clear idea of the thesis content.
     s       & &  Second                       & & W       & &  Watt \\
     d       & &  Diameter                     & & mÂ²      & &  Square meter \\
     mÂ³      & &  Cubic meter                  & & DWG     & &  German Wind Guard \\
-    CRS     & &  Coordinate Reference System  & & WGS84   & &  World Geodetic System 1984 \\    
+    CRS     & &  Coordinate Reference System  & & WGS84   & &  World Geodetic System 1984 \\ 
     
 \end{tabular}
 % ----------------------------------------------------
@@ -280,10 +282,10 @@ busy reader to obtain quickly a clear idea of the thesis content.
 
 This work was executed and written in scientific recognition of the importance of reducing greenhouse gas emissions and expanding renewable energies to mitigate the effects of climate change.
 
-This study was also carried out on behalf of the state-owned energy agency {[}\protect\hyperlink{ref-EnergieagenturRheinlandPfalz.2021}{1}{]} within the project ``municipal greenhouse gas accounting and regional climate protection portals in Rhineland-Palatinate'' {[}\protect\hyperlink{ref-KomBiReK.2021}{2}{]}, which is funded by the ``European Regional Development Fund'' {[}\protect\hyperlink{ref-EuropeanRegionalDevelopmentFund.2021}{3}{]} and the state of Rhineland-Palatinate (RLP). This project supports the creation of municipal climate protection measures in order to achieve the climate protection goals of the municipalities and the state and thereby increases regional added value, ensures sustainability and thus improves the quality of life of all citizens. When developing municipal climate protection, a sound strategy is required regarding the legally anchored striving for climate neutrality of the state of RLP {[}\protect\hyperlink{ref-RheinlandPfalz.19.08.2014}{4}{]}. Even more pressure comes from the recent press release No.~31/2021 of April 29 in 2021 {[}\protect\hyperlink{ref-Bundesverfassungsgericht.24.03.2021}{5}{]}, in which the first Senate of the Federal Constitutional Court decided that the regulations of the Climate Protection Act of December 12 in 2019 {[}\protect\hyperlink{ref-BundesamtfurJustiz.2019}{6}{]} on the national climate protection targets and the annual emission quantities permitted up to 2030 are incompatible with fundamental rights, as there are no sufficient criteria for further emission reductions from 2031 onward. It is stated that the legal requirements are not sufficient to bring about a timely transition to climate neutrality. The German legislature has therefore published an adjusted edition of this act that strives for a faster development of renewable energies and the energy transition in general {[}\protect\hyperlink{ref-BundesministeriumfurUmweltNaturschutzundnukleareSicherheit.12.05.2021}{7}{]}. This shows that this study is highly embedded in a socio-economic context. The energy transition is a cornerstone of a decent strategy to climate neutrality and RLP wants to play a pioneering role in the implementation of the energy transition. The state government publishes on its website that RLP will cover 100 \% of its electricity needs from renewable energies by 2030 {[}\protect\hyperlink{ref-LandesregierungRheinlandPfalz.2021}{8}{]}. In addition to energy from the sun, water and biomass, two thirds of the electricity generated in 2030 should come from wind power and is therefore the subject of this master thesis. The study area and the modeled wind speeds taken from the Windatlas RLP {[}\protect\hyperlink{ref-MinisteriumfurWirtschaftKlimaschutzEnergieundLandesplanung.2013}{9}{]} are seen in figure \ref{fig:wind}.
+This study was also carried out on behalf of the state-owned energy agency {[}\protect\hyperlink{ref-EnergieagenturRheinlandPfalz.2021}{1}{]} within the project ``municipal greenhouse gas accounting and regional climate protection portals in Rhineland-Palatinate'' {[}\protect\hyperlink{ref-KomBiReK.2021}{2}{]}, which is funded by the ``European Regional Development Fund'' {[}\protect\hyperlink{ref-EuropeanRegionalDevelopmentFund.2021}{3}{]} and the state of Rhineland-Palatinate (RLP). This project supports the creation of municipal climate protection measures in order to mitigate CO\textsubscript{2} emissions and achieve the climate protection goals of the municipalities and the state and thereby increases regional added value, ensures sustainability and thus improves the quality of life of all citizens. When developing municipal climate protection, a sound strategy is required regarding the legally anchored striving for climate neutrality of the state of RLP {[}\protect\hyperlink{ref-RheinlandPfalz.19.08.2014}{4}{]}. Even more pressure comes from the recent press release No.~31/2021 of April 29 in 2021 {[}\protect\hyperlink{ref-Bundesverfassungsgericht.24.03.2021}{5}{]}, in which the first Senate of the Federal Constitutional Court decided that the regulations of the Climate Protection Act of December 12 in 2019 {[}\protect\hyperlink{ref-BundesamtfurJustiz.2019}{6}{]} on the national climate protection targets and the annual emission quantities permitted up to 2030 are incompatible with fundamental rights, as there are no sufficient criteria for further emission reductions from 2031 onward. It is stated that the legal requirements are not sufficient to bring about a timely transition to climate neutrality. The German legislature has therefore published an adjusted edition of this act that strives for a faster development of renewable energies and the energy transition in general {[}\protect\hyperlink{ref-BundesministeriumfurUmweltNaturschutzundnukleareSicherheit.12.05.2021}{7}{]}. This shows that this study is highly embedded in a socio-economic context. The energy transition is a cornerstone of a decent strategy to climate neutrality and RLP wants to play a pioneering role in the implementation of the energy transition. The state government publishes on its website that RLP will cover 100 \% of its electricity needs from renewable energies by 2030 {[}\protect\hyperlink{ref-LandesregierungRheinlandPfalz.2021}{8}{]}. In addition to energy from the sun, water and biomass, two thirds of the electricity generated in 2030 should come from wind power and is therefore the subject of this master thesis.
 
-The gross electricity generation in RLP from wind power rose in 2017 with 5.9 TWh to 29 \% of the total 20.7 TWh generated electricity. The total consumption in the same year was 29.1 TWh {[}\protect\hyperlink{ref-Lehnert.2020}{10}{]}. In the year 2019 the electricity generation from wind turbines (WT's) was already more than 6.7 TWh. It can be assumed that, on the one hand, electricity consumption will increase in the future due to the electrification of transport and domestic heating, and on the other hand, efficiency measures can also lead to a lower energy consumption. Whereas some past studies and scenarios estimated a slight increase and some a slight decrease but on average a relatively unchanged electricity consumption in Germany which is currently about 560 TWh {[}\protect\hyperlink{ref-NormanGerhardt.2015}{11}{]}, the newest press release of the Federal Ministry for Economic Affairs and Energy makes it clear that an increase of the previous predictions of about 12 \% from 580 to 655 TWh is expected {[}\protect\hyperlink{ref-AndreasMertens.13.07.2021}{12}{]}, and further studies will follow in the autumn of 2021. In order to achieve the self-set goals of using two thirds of the electricity demand from wind power with an estimated electricity demand of 33 TWh in 2030 in RLP, electricity supply from WT's must be about 22 TWh per year if RLP wants to become independent of electricity imports. There are two ways of increasing the amount of electricity generated by wind energy. On the one hand, areas that are still available can be identified and built on with new WT's. On the other hand, existing old systems, whose absolute electricity feed-in quantity is low, can be replaced by new, higher and more efficient systems through the so-called ``repowering.''
-The aim of this work is to develop a methodology for calculating the wind energy potential and its related area consumption at a state level. With this results an evaluation of the desired expansion targets should be assessed. The central three questions of this work are therefore:
+The gross electricity generation in RLP from wind power rose in 2017 with 5.9 TWh to 29 \% of the total 20.7 TWh generated electricity. The total consumption in the same year was 29.1 TWh {[}\protect\hyperlink{ref-Lehnert.2020}{9}{]}. In the year 2019 the electricity generation from wind turbines (WT's) was already more than 6.7 TWh. It can be assumed that, on the one hand, electricity consumption will increase in the future due to the electrification of transport and domestic heating, and on the other hand, efficiency measures can also lead to a lower energy consumption. Whereas some past studies and scenarios estimated a slight increase and some a slight decrease but on average a relatively unchanged electricity consumption in Germany which is currently about 560 TWh {[}\protect\hyperlink{ref-NormanGerhardt.2015}{10}{]}, the newest press release of the Federal Ministry for Economic Affairs and Energy makes it clear that an increase of the previous predictions of about 12 \% from 580 to 655 TWh is expected {[}\protect\hyperlink{ref-AndreasMertens.13.07.2021}{11}{]}, and further studies will follow in the autumn of 2021. In order to achieve the self-set goals of using two thirds of the electricity demand from wind power with an estimated electricity demand of 33 TWh in 2030 in RLP, electricity supply from WT's must be about 22 TWh per year if RLP wants to become independent of electricity imports. There are two ways of increasing the amount of electricity generated by wind energy. On the one hand, areas that are still available can be identified and built on with new WT's. On the other hand, existing old systems, whose absolute electricity feed-in quantity is low, can be replaced by new, higher and more efficient systems through the so-called ``repowering.''
+The aim of this work is to develop a method for calculating the wind energy potential and its related area consumption at a state level. With this results an evaluation of the desired expansion targets should be assessed. Thus, The central three questions of this work are:
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
@@ -293,7 +295,48 @@ The aim of this work is to develop a methodology for calculating the wind energy
 \item
   How much area is needed to generate the target amount of 22 TWh out of wind energy?
 \end{enumerate}
-In order to answer these questions, the technical fundamentals of the electricity yield from WT's are explained first. Subsequently, the master and movement data provided by the transmission system operator Amprion, which contains all electricity fed into the public grid by WT's and other technical information, is analyzed and forecasted up to the year 2030. The respective area consumption to generate that electricity is calculated using a GIS based approach and data from the market master data register (Marktstammdatenregister - MaStR). As a by-product the greenhouse gas reduction potential can be derived from the potential for electricity generation. Knowing the electricity potential per area, the required area for the generation targets can be calculated and an assessment of the given expectations can be made subsequently.
+In order to answer these questions, the scientific and technical fundamentals that are used to assess the electricity yield from onshore WT's in RLp are explained first. Subsequently, the master and movement data provided by the transmission system operator Amprion, which contains all electricity fed into the public grid by WT's and other technical information, is analyzed and forecasted up to the year 2030. The respective area consumption to generate that electricity is calculated using a GIS based approach and data from the market master data register (Marktstammdatenregister - MaStR). Additionally the rotor diameter and hub heights are inspected. As a by-product the greenhouse gas reduction potential can be derived from the potential for electricity generation. Knowing the electricity potential per area, the required area for the generation targets can be calculated and an assessment of the given expectations can be made subsequently.
+
+\hypertarget{state-of-the-art}{%
+\section{State of the art}\label{state-of-the-art}}
+
+\hypertarget{region-of-interest}{%
+\subsection{Region of interest}\label{region-of-interest}}
+
+First of all, the region of interest (ROI) in this case Rhineland-Palatinate in south-west Germany is presented for it is important to know the site conditions and the statistical parameters of the past to assess the wind energy potential for future years. RLP has diverse geographic structures such as many low mountain ranges and forests namely the Rhenish Slate Mountains, Hunsrück, Eifel, Taunus, Westerwald, North Palatinate Uplands and further south the Palatinate Forest but also plain areas such as the Upper Rhine Plain, Mainz Basin and West Palatinate moorlands to only name a few. It borders North Rhine-Westphalia in the north, Hesse and Baden-Wuerttemberg in the east, the French region of Grand Est and Saarland in the south, and Luxembourg and the province of Liège in the Belgian region of Wallonia in the west. Rhineland-Palatinate is the federal state with the largest area on the left bank of the river Rhine. The climate in Rhineland-Palatinate is characterized by a moderate, humid climate with warm summers and mild to cool winters which makes it a typical Western European climate. The average annual temperature is 10.4 \(^\circ\)C which is 1.8 \(^\circ\)C above the long-term average. Settlement areas occupy around 8,6 \% and transport infrastructure around 6.1 \% of the area {[}\protect\hyperlink{ref-StateStatisticalOfficeofRhinelandPalatinate.2020}{12}{]}.
+
+Rhineland-Palatinate is one of the most densely forested countries in Germany, as the forests here cover around 42 percent of the country's area {[}\protect\hyperlink{ref-HansenandLamour.2021}{13}{]}.
+
+Especially the electricity generation and data from existing WT's is important but also information about different types of land cover and the occurrence of wind are crucial for this work. An overview of important parameters regarding the estimation of the wind energy potential up to the year 2030 are shown in table \ref{tab:table0}.
+
+
+\begin{table}[H]
+
+\caption{\label{tab:table0}Important information of Rhineland-Palatinate regarding the assessment of the wind energy potential up to 2030 {[}\protect\hyperlink{ref-StateStatisticalOfficeofRhinelandPalatinate.2020}{12}{]}.}
+\centering
+\begin{tabular}[t]{>{\raggedright\arraybackslash}p{9cm}>{\raggedright\arraybackslash}p{3cm}}
+\toprule
+\multicolumn{1}{c}{\textbf{Basic information on Rhineland-Palatinate}} \\
+\cmidrule(l{3pt}r{3pt}){1-1}
+\textbf{Area} & \textbf{19,858 km²}\\
+\midrule
+\textbf{Inhabitants} & \textbf{4.1 mm}\\
+\midrule
+\textbf{Electricity demand 2021} & \textbf{30 TWh}\\
+\midrule
+\textbf{Electricity demand 2030} & \textbf{33 TWh}\\
+\midrule
+\textbf{Electricity generation 2017} & \textbf{20.7 TWh}\\
+\midrule
+\addlinespace
+\textbf{Electricity generation from WT's 2019} & \textbf{6.78 TWh}\\
+\midrule
+\textbf{Required generation from WT's in 2030} & \textbf{22 TWh}\\
+\midrule
+\bottomrule
+\end{tabular}
+\end{table}
+The study area and the modeled wind speeds taken from the Windatlas RLP {[}\protect\hyperlink{ref-MinisteriumfurWirtschaftKlimaschutzEnergieundLandesplanung.2013}{14}{]} are seen in figure \ref{fig:wind}.
 
 
 \begin{figure}[H]
@@ -302,20 +345,17 @@ In order to answer these questions, the technical fundamentals of the electricit
 
 }
 
-\caption{Wind speeds in RLP 140 m above Ground {[}\protect\hyperlink{ref-MinisteriumfurWirtschaftKlimaschutzEnergieundLandesplanung.2013}{9}{]}.}\label{fig:wind}
+\caption{Wind speeds in RLP 140 m above Ground {[}\protect\hyperlink{ref-MinisteriumfurWirtschaftKlimaschutzEnergieundLandesplanung.2013}{14}{]}.}\label{fig:wind}
 \end{figure}
-\hypertarget{state-of-the-art}{%
-\section{State of the art}\label{state-of-the-art}}
-
 \hypertarget{onshore-wind-turbines-and-repowering}{%
 \subsection{Onshore wind turbines and Repowering}\label{onshore-wind-turbines-and-repowering}}
 
 \hypertarget{physical-basics}{%
 \subsection{Physical basics}\label{physical-basics}}
 
-Wind energy has been used by humans for thousands of years, but the generation of electrical power has only been possible since the 19th century with the beginning of industrialization and is now the subject of constant research and development in the context of the energy transition {[}\protect\hyperlink{ref-Wikipedia.2021}{13}{]}. A wind turbine usually consists of the three main components; rotor blades, nacelle and tower. Besides other elements the nacelle contains; the gearbox, the generator, the transformer and the control system {[}\protect\hyperlink{ref-MladenBosnjakovic.2013}{14}{]}. The mostly three rotor blades are attached to the rotor hub and absorb the kinetic energy of the wind and convert it into a rotary motion. If the winds are too strong, the rotor blades can be ``taken out of the wind'' by adjusting the blades, thus protecting the system from damage. Mainly the gearbox and the generator convert the kinetic energy into electricity. However, there are also systems with direct drive and without gear. The nacelle can be rotated to an optimal position when the wind conditions change, and an electromagnetic brake helps to shut down the system when the winds are too strong or during maintenance work. In addition to its load-bearing function, the tower also contains the power lines that conduct electricity to the grid connection of the distribution network {[}\protect\hyperlink{ref-NetzKonstrukteur.16.11.2020}{15}{]}.
+Wind energy has been used by humans for thousands of years, but the generation of electrical power has only been possible since the 19th century with the beginning of industrialization and is now the subject of constant research and development in the context of the energy transition {[}\protect\hyperlink{ref-Wikipedia.2021}{15}{]}. A wind turbine usually consists of the three main components; rotor blades, nacelle and tower. Besides other elements the nacelle contains; the gearbox, the generator, the transformer and the control system {[}\protect\hyperlink{ref-MladenBosnjakovic.2013}{16}{]}. The mostly three rotor blades are attached to the rotor hub and absorb the kinetic energy of the wind and convert it into a rotary motion. If the winds are too strong, the rotor blades can be ``taken out of the wind'' by adjusting the blades, thus protecting the system from damage. Mainly the gearbox and the generator convert the kinetic energy into electricity. However, there are also systems with direct drive and without gear. The nacelle can be rotated to an optimal position when the wind conditions change, and an electromagnetic brake helps to shut down the system when the winds are too strong or during maintenance work. In addition to its load-bearing function, the tower also contains the power lines that conduct electricity to the grid connection of the distribution network {[}\protect\hyperlink{ref-NetzKonstrukteur.16.11.2020}{17}{]}.
 
-The transmission system operators, in this case Amprion, are obliged to publish so-called master and movement data for the amount of electricity fed-in with remuneration for each calendar year in accordance with section 77 Renewable Energy Act (EEG) 2017 {[}\protect\hyperlink{ref-Bundesgestzblatt.2017}{16}{]}. These master and movement data includes information about the annual electricity generation and the EEG system key. The data for RLP is currently available until 2019. The total amount of electricity fed-in with remuneration in 2019 from wind turbines in RLP is 6,782,180,753 kWh, i.e.~approximately 6.782 TWh {[}\protect\hyperlink{ref-EnergieagenturRheinlandPfalz.2019}{17}{]}.
+The transmission system operators, in this case Amprion, are obliged to publish so-called master and movement data for the amount of electricity fed-in with remuneration for each calendar year in accordance with section 77 Renewable Energy Act (EEG) 2017 {[}\protect\hyperlink{ref-Bundesgestzblatt.2017}{18}{]}. These master and movement data includes information about the annual electricity generation and the EEG system key. The data for RLP is currently available until 2019. The total amount of electricity fed-in with remuneration in 2019 from wind turbines in RLP is 6,782,180,753 kWh, i.e.~approximately 6.782 TWh {[}\protect\hyperlink{ref-EnergieagenturRheinlandPfalz.2019}{19}{]}.
 
 The amount of electricity generated by a wind turbine, the electricity yield, can be derived from the physical relationship between the kinetic energy and the power of the wind. Without claiming to be exhaustive, the following applies\footnote{\(E_{kin}= kinetic\; energy,\; m=mass\; of\; air,\; v= wind\;speed\)}:
 \begin{equation}
@@ -329,7 +369,7 @@ The power P is equal to the energy per unit of time \(\hat{E}\). This results in
 \begin{equation}
 P_{wind}\;=\;\hat{E}\;=\;\frac{1}{2}\;\hat{m}v^2\;=\;\frac{1}{2}\; \rho \pi r^2 v^3
 \end{equation}
-(Mac Kay {[}\protect\hyperlink{ref-DavidJCMacKay.2009}{18}{]} and BWE {[}\protect\hyperlink{ref-BWE.2021}{19}{]})
+(Mac Kay {[}\protect\hyperlink{ref-DavidJCMacKay.2009}{20}{]} and BWE {[}\protect\hyperlink{ref-BWE.2021}{21}{]})
 
 In Formula 3 it becomes clear that the wind speed is the decisive factor for the performance of a WT. Because WT's are build to perform at lower wind speeds most of the time they can not operate at very high wind speeds and have to be taken out of the wind at a certain speed to avoid fatigue and destruction through peak loads. A typical load profile of a WT is shown in figure \ref{fig:powerofwind}. If the density of air is 1.3 kg per m³ and there is an average windspeed of 6 m/s, which could be realistic for many sites in RLP in 140 m above ground, as seen in figure \ref{fig:wind}, then the typical power of the wind per square meter hoop is\footnote{\(W= Watt\)}:
 \begin{equation}
@@ -344,14 +384,14 @@ The curve of power per m\textsuperscript{2} in relation to the wind speed is als
 
 \caption{Left: Power of the wind per rotor area over wind speed; Right: Typical load profile of a WT}\label{fig:powerofwind}
 \end{figure}
-Of course, not all the wind's power can be converted and there are further losses when converting kinetic energy into electrical energy in the generator. The efficiency using the winds energy in theory after Alber Betz is a maximum of 59 \% also called the Betz limit {[}\protect\hyperlink{ref-A.Betz.1920}{20}{]}, but in practice it is often around 40 \% to a maximum of 50 \% {[}\protect\hyperlink{ref-WindwartsEnergieausdemNorden.2021}{21}{]}. If the average rotor diameter installed in RLP in 2020 was 130 m (figure \ref{fig:rotor}) with an efficiency of 50 \%, then the average power of one WT is\footnote{\(P_{WT}=Power\; of\; a\; WT\; with\; 50\; \%\; efficiency,\;\\ P_{WT130}=Power\; of\; the\; same\; WT\; with\; rotor\; diameter\; of\; 130\; m\)}:
+Of course, not all the wind's power can be converted and there are further losses when converting kinetic energy into electrical energy in the generator. The efficiency using the winds energy in theory after Alber Betz is a maximum of 59 \% also called the Betz limit {[}\protect\hyperlink{ref-A.Betz.1920}{22}{]}, but in practice it is often around 40 \% to a maximum of 50 \% {[}\protect\hyperlink{ref-WindwartsEnergieausdemNorden.2021}{23}{]}. If the average rotor diameter installed in RLP in 2020 was 130 m (figure \ref{fig:rotor}) with an efficiency of 50 \%, then the average power of one WT is\footnote{\(P_{WT}=Power\; of\; a\; WT\; with\; 50\; \%\; efficiency,\;\\ P_{WT130}=Power\; of\; the\; same\; WT\; with\; rotor\; diameter\; of\; 130\; m\)}:
 \begin{equation}
 \begin{split}
 P_{WT}\; & =\; 0.5\; *\; \frac{1}{2}\; \rho v^3\; *\; \frac{\pi}{4}d^2 \\
 P_{WT130}\; & =\; 70\; W/m^2\; *\; \frac{\pi}{4}(130 m)^2\; =\; 929\; kW
 \end{split}
 \end{equation}
-The amount of energy also increases proportionally with increasing rotor diameter. This explains why the rotor diameters become larger in practice (figure \ref{fig:rotor}). But WT's with larger rotors have to be spaced further appart. In the literature values from 3 to 8 times the rotor diameter depending on the main direction of the wind can be found {[}\protect\hyperlink{ref-DavidJCMacKay.2009}{18}{]}. If we assume further that windmills in RLP are spaced on average 5 times their diameter apart from each other, from equation 5 follows that the energy per area land mass is:
+The amount of energy also increases proportionally with increasing rotor diameter. This explains why the rotor diameters become larger in practice (figure \ref{fig:rotor}). But WT's with larger rotors have to be spaced further appart. In the literature values from 3 to 8 times the rotor diameter depending on the main direction of the wind can be found {[}\protect\hyperlink{ref-DavidJCMacKay.2009}{20}{]}. If we assume further that windmills in RLP are spaced on average 5 times their diameter apart from each other, from equation 5 follows that the energy per area land mass is:
 \begin{equation}
 \begin{split}
 \frac{P_{WT}}{m^2}\; & =\; \frac{\frac{1}{2} \rho v^3\; \frac{\pi}{8}d^2}{(5d)^2} \\
@@ -360,12 +400,12 @@ The amount of energy also increases proportionally with increasing rotor diamete
  & =\; 2.2\; W/m^2
 \end{split}
 \end{equation}
-This means that independently of the rotor size, there is a limit of around 2.2 W/m\textsuperscript{2} of electrical energy that can be delivered in Rhineland-Palatinate assuming an average wind speed of about 6 m/s. In the literature values for the electric power per area vary from 1 to 7 W/m\textsuperscript{2} land mass depending on the site conditions {[}\protect\hyperlink{ref-SvenLinow.2020}{22}{]}. Nonetheless, building higher WT's can be beneficial due to higher and more constant wind speeds with increasing height and other economic factors. As a rough estimate it can be said that doubling the height increases wind-speed by 10 \% and thus increase the power of the wind by 30 \% and therefore the hub heights also tend to increase (figure \ref{fig:nabe}). The actual way that wind speed increases with heigth is much more complicated and depends on the roughness of the surrounding area and time and is beyond of the scope of this study. Usually WT's are design to start operating at wind speeds of around 3 to 5 m/s and stop at around 25 m/s. A WT has a so-called ``capacity'' or ``peak power'' which is the maximum power that the WT can generate in optimal conditions. The actual average power that is delivered can be expressed by the capacity multiplied by a factor that describes the fraction of the time that wind conditions are near optimal. This factor can be called the ``load factor'' and a typical load factor in Germany was around 19 \%, 22 \% in the Netherlands and 30 \% in the United Kingdom in 2009 {[}\protect\hyperlink{ref-DavidJCMacKay.2009}{18}{]}. Lastly it can be estimated how much area is needed when we assume a rounded and constant electricity yield of 2.2 W/m\textsuperscript{2} and an electricity demand of 22 TWh per year in RLP:
+This means that independently of the rotor size, there is a limit of around 2.2 W/m\textsuperscript{2} of electrical energy that can be delivered in Rhineland-Palatinate assuming an average wind speed of about 6 m/s. In the literature values for the electric power per area vary from 1 to 7 W/m\textsuperscript{2} land mass depending on the site conditions {[}\protect\hyperlink{ref-SvenLinow.2020}{24}{]}. Nonetheless, building higher WT's can be beneficial due to higher and more constant wind speeds with increasing height and other economic factors. As a rough estimate it can be said that doubling the height increases wind-speed by 10 \% and thus increase the power of the wind by 30 \% and therefore the hub heights also tend to increase (figure \ref{fig:nabe}). The actual way that wind speed increases with heigth is much more complicated and depends on the roughness of the surrounding area and time and is beyond of the scope of this study. Usually WT's are design to start operating at wind speeds of around 3 to 5 m/s and stop at around 25 m/s. A WT has a so-called ``capacity'' or ``peak power'' which is the maximum power that the WT can generate in optimal conditions. The actual average power that is delivered can be expressed by the capacity multiplied by a factor that describes the fraction of the time that wind conditions are near optimal. This factor can be called the ``load factor'' and a typical load factor in Germany was around 19 \%, 22 \% in the Netherlands and 30 \% in the United Kingdom in 2009 {[}\protect\hyperlink{ref-DavidJCMacKay.2009}{20}{]}. Lastly it can be estimated how much area is needed when we assume a rounded and constant electricity yield of 2.2 W/m\textsuperscript{2} and an electricity demand of 22 TWh per year in RLP:
 \begin{equation}
 A_{22TWh}\;=\;\frac{22 * 10^{12}\; Wh}{2.2\;W/m^2\; *\; 8765h\; *\; 10^6}\;=\;1140.9\;km^2
 \end{equation}
 The total area of RLP is 19,847 km\textsuperscript{2}, which means that the desired amount of electricity coming from wind energy would be equivalent with covering roughly 5.8 \% of the area with WT's. The actual 6.782 TWh of electrical energy generated in RLP would relate to 351.7 km\textsuperscript{2} which means that currently about 1.8 \% of the area of RLP are covered with WT's given the prefixed assumtion are true. If the same calculation for the whole of Germany is done the demanded 655 TWh in 2030 would need an area of about 33,968 km\textsuperscript{2} which is about 9.5 \% of the area. Whereas the area consumption for RLP is still somehow imaginable it is clear that covering nearly 10 \% of Germany with WT's is very uncertain. It should also be noted, that the assumption of an average wind speed of 6 m/s could be an under- or overestimate and the area consumption is different in practice. In chapter 3 the actual numbers for RLP are presented and therefore allow for an evaluation of this theoretical approximation.
-For further explanation to the technical development and the calculation method, the study of the German Wind Guard (DWG) ``Full load hours of wind turbines on land - development, influences, effects'' from October 5th, 2020 {[}\protect\hyperlink{ref-RasmusBorrmannDr.KnudRehfeldtDr.DennisKruse.2020}{23}{]}, is used as a guide and its results are presented in the next subsection.
+For further explanation to the technical development and the calculation method, the study of the German Wind Guard (DWG) ``Full load hours of wind turbines on land - development, influences, effects'' from October 5th, 2020 {[}\protect\hyperlink{ref-RasmusBorrmannDr.KnudRehfeldtDr.DennisKruse.2020}{25}{]}, is used as a guide and its results are presented in the next subsection.
 
 \hypertarget{technical-concepts-and-development}{%
 \subsection{Technical concepts and development}\label{technical-concepts-and-development}}
@@ -423,18 +463,24 @@ If two plants have the same hub height and the same rotor diameter, but a differ
 The study of DWG shows how the technology of onshore wind turbines has developed further since 2000. A clear trend for an increase in the average rated capacity and the average rotor diameter of the newly commissioned systems can be seen. The mean total height of the turbines is also increasing, although this increase has been due to the increase in the mean rotor diameter for some years while the height of the lower blade tip remains the same. This also leads to an increase in the mean hub height. It is assumed that these trends will continue over the next ten years. A look at the configuration of the latest system models from different manufacturers supports this thesis (Enercon and Vestas, 2021). The development of offshore wind turbines suggests that even with a rotor diameter of 170 m and a nominal output of 6.6 MW no end of the system scaling is to be expected, where significantly larger systems are already available. However, the requirements regarding the construction are clearly different and the wind speeds at sea and thus the rotor diameter are of course not easy to transfer. --Source about other technical limitations-
 In order to calculate the electricity yield of future plants in RLP, the following section analyses the master and movement data from 2019 for electricity yield, nominal output and full load hours. Additionally the area consumption of WT's in RLP is being assessed using the market master data register.
 
+\hypertarget{regression-analysis}{%
+\subsection{Regression analysis}\label{regression-analysis}}
+
+\hypertarget{geospatial-analysis}{%
+\subsection{Geospatial analysis}\label{geospatial-analysis}}
+
 \hypertarget{materials-and-methodology}{%
 \section{Materials and Methodology}\label{materials-and-methodology}}
 
 \hypertarget{data}{%
 \subsection{Data}\label{data}}
 
-For the preparation and the analysis of the data R version 4.0.5 (2021-03-31) -- ``Shake and Throw'' and RStudio Version 1.4.1106 were used. Due to exhaustive code and iterative preparation steps the full documentation can not be displayed here but is to be found on \url{https://github.com/EliasCuadra/master-thesis-repowering} with explanatory README.md files that contain description of variables and processing steps. Nonetheless, important aspects or code chunks are directly included or can be found in the appendix. Packages in use are: rio, data.table, tidyverse, magrittr, compare, leaflet, sp, raster, rgdal, htmltools, htmlwidgets, tmaptools, maptools, raster, sf, tmap, spatstat, rgeos and DiagrammR. The data handling is mostly done with base R and deplyr from the tidyverse package collection. Deplyr is a grammar of data manipulation, providing a consistent set of verbs that help performing common data manipulation challenges {[}\protect\hyperlink{ref-HadleyWickham.2021}{24}{]}. The different sources of data are introduced subsequently.
+For the preparation and the analysis of the data R version 4.0.5 (2021-03-31) -- ``Shake and Throw'' and RStudio Version 1.4.1106 were used. Due to exhaustive code and iterative preparation steps the full documentation can not be displayed here but is to be found on \url{https://github.com/EliasCuadra/master-thesis-repowering} with explanatory README.md files that contain description of variables and processing steps. Nonetheless, important aspects or code chunks are directly included or can be found in the appendix. Packages in use are: rio, data.table, tidyverse, magrittr, compare, leaflet, sp, raster, rgdal, htmltools, htmlwidgets, tmaptools, maptools, raster, sf, tmap, spatstat, rgeos and DiagrammR. The data handling is mostly done with base R and deplyr from the tidyverse package collection. Deplyr is a grammar of data manipulation, providing a consistent set of verbs that help performing common data manipulation challenges {[}\protect\hyperlink{ref-HadleyWickham.2021}{26}{]}. The different sources of data are introduced subsequently.
 
 \hypertarget{master-and-movement-data-from-amprion}{%
 \subsubsection{Master and Movement data from Amprion}\label{master-and-movement-data-from-amprion}}
 
-The so-called master and movement data from the transmission system operator amprion of the years 2012 to 2019 was available and used for analysis. Despite the availability of older data sets in some cases only more recent years are used since it is assumed, that the usage of older data would, due to fast technical development, only distort the results in regards to future prediction. The originally two data sets were already joined and prepared by the energy agency of RLP. The master data contains information about the location, commissioning and decommissioning date and the EEG system key of all EEG systems that were reported by the distribution network operator as part of the annual EEG report. The files also contain the systems connected directly or indirectly to the networks of the transmission system operator. Additionally, the transmission system operators are obliged to publish the so-called movement data that contains information about the quantity of electricity fed-in and the amount of funded tariffs that have been payed {[}\protect\hyperlink{ref-AmprionGmbH.2019}{25}{]}. The pre-processed data sets from the years 2015 to 2019 are stored within this project in data/amprion as EEG\_StammBew\_2015( - 2019)\_Amprion-EAtlas.csv.
+The so-called master and movement data from the transmission system operator amprion of the years 2012 to 2019 was available and used for analysis. Despite the availability of older data sets in some cases only more recent years are used since it is assumed, that the usage of older data would, due to fast technical development, only distort the results in regards to future prediction. The originally two data sets were already joined and prepared by the energy agency of RLP. The master data contains information about the location, commissioning and decommissioning date and the EEG system key of all EEG systems that were reported by the distribution network operator as part of the annual EEG report. The files also contain the systems connected directly or indirectly to the networks of the transmission system operator. Additionally, the transmission system operators are obliged to publish the so-called movement data that contains information about the quantity of electricity fed-in and the amount of funded tariffs that have been payed {[}\protect\hyperlink{ref-AmprionGmbH.2019}{27}{]}. The pre-processed data sets from the years 2015 to 2019 are stored within this project in data/amprion as EEG\_StammBew\_2015( - 2019)\_Amprion-EAtlas.csv.
 
 Further, The data from Amprion comes with 28 or rather 27 variables for the year 2019 of which only some are interesting for the analysis, some variable formats are not suitable and distorting data points are included. Thus, a preparation process must initially be carried out to clean and prepare the data. The kept variables are: Community key, post code, place, rated capacity, commissioning date, system key and electricity yield. For the prediction of the electricity yield not all the WT's are meaningful and some outliers are removed from the data. On the one hand WT's with a rated capacity under 100 kW are considered too small for a reasonable assessment of new commercially operated systems. On the other hand some WT's are listed with a rated capacity up to 12 MW which might be because several WT's are registered as one. It is therefore assumed that a rated capacity larger than 4,5 MW does not reflect the average conditions, even though systems of this size exist. Also WT's that are build in the same year after the 15th of February are excluded since they have less time to generate electricity and therefore deliver misleading data. An interim result are five CSV files of the different years that only have relevant variables in the correct format and are free of outliers. As an insight the data from 2017 shows 1,623 WT's of which 101 are outliers, the data from 2018 shows 1,674 WT's of which 76 are outliers ans the data from 2019 shows 1,702 WT's of which 46 are outliers. A plot that shows the total number of WT's from 2012 to 2019 is shown in figure \ref{fig:yearswts}, which contains, as a foresight on the results section, a linear trend, that shows an estimated number of around 2,500 WT's in the year 2030.
 \begin{figure}
@@ -457,7 +503,7 @@ Only the data from 2019 is further processed and variables for the county and mu
 \hypertarget{data-from-the-market-master-data-register-mastr---marktstammdatenregister}{%
 \subsubsection{Data from the market master data register (MaStR - Marktstammdatenregister)}\label{data-from-the-market-master-data-register-mastr---marktstammdatenregister}}
 
-The MaStR contains data about all electricity and gas power generation units and can be freely accessed here: \href{https://www.marktstammdatenregister.de/MaStR/Einheit/Einheiten/OeffentlicheEinheitenuebersicht}{https://www.marktstammdatenregister.de/MaStR}. The electricity units with the generation type ``wind'' for Rhineland-Palatinate that are in operation are extracted on the 23th of July 2021 as MaStR.csv and stored in this project in data/MaStR\_amprion. This data set counts 1,752 WT's with 50 variables of which only 8 are kept; The rated capacity, the commissioning date, the community key, the coordinates (CRS: WGS84), hub height, rotor diameter and EEG system key. It does not contain the amount of electricity fed into the public grid. Thus, to calculate the electricity generation per area the data of the MaStR and amprion needs to be joined together according to the EEG system key. The process of preparing the MaStR data and joining it with the data from amprion of 2019 is shown as a flow chart in figure \ref{fig:merge}. The R code is stored as MaStR\_amprion.R in the MaStR\_amprion folder and can be seen below. The result are 1,620 WT's that could be correctly assigned and are ready for further analysis and stored as MaStR\_amprion2019.csv in the same source location. The analysis methods are presented in the two following subsections.
+The MaStR contains data about all electricity and gas power generation units and can be freely accessed here: \href{https://www.marktstammdatenregister.de/MaStR/Einheit/Einheiten/OeffentlicheEinheitenuebersicht}{https://www.marktstammdatenregister.de/MaStR}. The electricity units with the generation type ``wind'' for Rhineland-Palatinate that are in operation are extracted on the 23th of July 2021 as MaStR.csv and stored in this project in data/MaStR\_amprion. This data set counts 1,752 WT's with 50 variables of which only 8 are kept; The rated capacity, the commissioning date, the community key, the coordinates (CRS: WGS84), hub height, rotor diameter and EEG system key. It does not contain the amount of electricity fed into the public grid. Thus, to calculate the electricity generation per area the data of the MaStR and amprion needs to be joined together according to the EEG system key. The process of preparing the MaStR data and joining it with the data from amprion of 2019 is shown as a flow chart in figure \ref{fig:merge}. The R code is stored as MaStR\_amprion.R in the MaStR\_amprion folder and can be seen in the Appendix as XXX. The result are 1,620 WT's that could be correctly assigned and are ready for further analysis and stored as MaStR\_amprion2019.csv in the same source location. The analysis methods are presented in the two following subsections.
 \begin{figure}
 
 {\centering \includegraphics[width=0.8\linewidth]{data/MaStR_amprion_join/mergeflow} 
@@ -466,78 +512,18 @@ The MaStR contains data about all electricity and gas power generation units and
 
 \caption{Flow chart of merging process}\label{fig:merge}
 \end{figure}
-\begin{Shaded}
-\begin{Highlighting}[]
-\DocumentationTok{\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#}
-\CommentTok{\#Code Chunk 2: Merging of the data from the MaStR and from amprion 2019\#}
-\DocumentationTok{\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#}
-
-\CommentTok{\#packages}
-\FunctionTok{Sys.setenv}\NormalTok{(}\AttributeTok{LANG =} \StringTok{"en"}\NormalTok{)}
-\NormalTok{pacman}\SpecialCharTok{::}\FunctionTok{p\_load}\NormalTok{(rio, data.table, tidyverse, magrittr, compare, DiagrammeR)}
-
-\CommentTok{\#import data}
-\NormalTok{MaStR }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"MaStR.csv"}\NormalTok{, }\AttributeTok{sep =} \StringTok{";"}\NormalTok{, }\AttributeTok{na.strings=}\FunctionTok{c}\NormalTok{(}\StringTok{""}\NormalTok{,}\StringTok{"NA"}\NormalTok{))}
-\NormalTok{amprion2019 }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"amprion\_2019\_processed\_and\_without\_outliers.csv"}\NormalTok{, }
-                        \AttributeTok{na.strings=}\FunctionTok{c}\NormalTok{(}\StringTok{""}\NormalTok{,}\StringTok{"NA"}\NormalTok{))}
-
-\CommentTok{\#choose variables}
-\NormalTok{amprion2019 }\OtherTok{\textless{}{-}}\NormalTok{ amprion2019[,}\FunctionTok{c}\NormalTok{(}\DecValTok{2}\SpecialCharTok{:}\DecValTok{8}\NormalTok{)]}
-\NormalTok{MaStR }\OtherTok{\textless{}{-}}\NormalTok{ MaStR[,}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{7}\NormalTok{, }\DecValTok{16}\NormalTok{, }\DecValTok{17}\NormalTok{, }\DecValTok{18}\NormalTok{, }\DecValTok{21}\NormalTok{, }\DecValTok{22}\NormalTok{, }\DecValTok{23}\NormalTok{, }\DecValTok{24}\NormalTok{, }\DecValTok{43}\NormalTok{)]}
-\NormalTok{MaStR }\OtherTok{\textless{}{-}}\NormalTok{ MaStR[,}\FunctionTok{c}\NormalTok{(}\DecValTok{2}\SpecialCharTok{:}\DecValTok{6}\NormalTok{,}\DecValTok{8}\NormalTok{,}\DecValTok{9}\NormalTok{,}\DecValTok{11}\NormalTok{)]}
-
-\CommentTok{\#change column names}
-\FunctionTok{names}\NormalTok{(MaStR)[}\DecValTok{1}\NormalTok{] }\OtherTok{\textless{}{-}} \StringTok{"leistung\_m"}
-\FunctionTok{names}\NormalTok{(MaStR)[}\DecValTok{2}\NormalTok{] }\OtherTok{\textless{}{-}} \StringTok{"inbetrieb\_m"}
-\FunctionTok{names}\NormalTok{(MaStR)[}\DecValTok{3}\NormalTok{] }\OtherTok{\textless{}{-}} \StringTok{"gem\_m"}
-\FunctionTok{names}\NormalTok{(MaStR)[}\DecValTok{4}\NormalTok{] }\OtherTok{\textless{}{-}} \StringTok{"b\_wgs84"}
-\FunctionTok{names}\NormalTok{(MaStR)[}\DecValTok{5}\NormalTok{] }\OtherTok{\textless{}{-}} \StringTok{"l\_wgs84"}
-\FunctionTok{names}\NormalTok{(MaStR)[}\DecValTok{6}\NormalTok{] }\OtherTok{\textless{}{-}} \StringTok{"nabe\_m"}
-\FunctionTok{names}\NormalTok{(MaStR)[}\DecValTok{7}\NormalTok{] }\OtherTok{\textless{}{-}} \StringTok{"rotor\_m"}
-\FunctionTok{names}\NormalTok{(MaStR)[}\DecValTok{8}\NormalTok{] }\OtherTok{\textless{}{-}} \StringTok{"eeg\_nr"}
-
-\FunctionTok{names}\NormalTok{(amprion2019)[}\DecValTok{6}\NormalTok{] }\OtherTok{\textless{}{-}} \StringTok{"eeg\_nr"}
-
-\CommentTok{\#check for Na\textquotesingle{}s in coordinates}
-\FunctionTok{sum}\NormalTok{(}\FunctionTok{is.na}\NormalTok{(MaStR}\SpecialCharTok{$}\NormalTok{b\_wgs84))}
-\FunctionTok{sum}\NormalTok{(}\FunctionTok{is.na}\NormalTok{(MaStR}\SpecialCharTok{$}\NormalTok{l\_wgs84))}
-\FunctionTok{sum}\NormalTok{(}\FunctionTok{is.na}\NormalTok{(MaStR}\SpecialCharTok{$}\NormalTok{eeg\_nr))}
-\NormalTok{MaStR\_without\_na }\OtherTok{\textless{}{-}} \FunctionTok{filter}\NormalTok{(MaStR, }\SpecialCharTok{!} \FunctionTok{is.na}\NormalTok{(MaStR}\SpecialCharTok{$}\NormalTok{eeg\_nr) }\SpecialCharTok{\&} 
-                             \SpecialCharTok{!} \FunctionTok{is.na}\NormalTok{(MaStR}\SpecialCharTok{$}\NormalTok{b\_wgs84))}
-
-\CommentTok{\#merge data sets}
-\NormalTok{MaStR\_amprion2019 }\OtherTok{\textless{}{-}} \FunctionTok{merge}\NormalTok{(}\FunctionTok{data.frame}\NormalTok{(MaStR\_without\_na), }
-                           \FunctionTok{data.frame}\NormalTok{(amprion2019), }
-                           \AttributeTok{by =} \StringTok{"eeg\_nr"}\NormalTok{, }
-                           \AttributeTok{all =} \ConstantTok{TRUE}\NormalTok{)}
-
-
-\CommentTok{\#filter out NAs coordinates and remove duplicates}
-\FunctionTok{sum}\NormalTok{(}\FunctionTok{is.na}\NormalTok{(MaStR\_amprion2019}\SpecialCharTok{$}\NormalTok{eeg\_nr))}
-\FunctionTok{sum}\NormalTok{(}\FunctionTok{is.na}\NormalTok{(MaStR\_amprion2019}\SpecialCharTok{$}\NormalTok{b\_wgs84))}
-\NormalTok{MaStR\_amprion2019\_without\_na }\OtherTok{\textless{}{-}} \FunctionTok{filter}\NormalTok{(MaStR\_amprion2019, }\SpecialCharTok{!} 
-                                         \FunctionTok{is.na}\NormalTok{(MaStR\_amprion2019}\SpecialCharTok{$}\NormalTok{b\_wgs84))}
-
-\FunctionTok{sum}\NormalTok{(}\FunctionTok{duplicated}\NormalTok{(MaStR\_amprion2019\_without\_na}\SpecialCharTok{$}\NormalTok{eeg\_nr))}
-\NormalTok{MaStR\_amprion2019\_without\_dup }\OtherTok{\textless{}{-}} \FunctionTok{distinct}\NormalTok{(MaStR\_amprion2019\_without\_na)}
-
-
-\CommentTok{\#write csv}
-\FunctionTok{write.csv}\NormalTok{(MaStR\_amprion2019\_without\_dup,}\StringTok{"MaStR\_amprion2019.csv"}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
 \hypertarget{methods}{%
 \subsection{Methods}\label{methods}}
 
-\hypertarget{regression-analysis}{%
-\subsubsection{Regression analysis}\label{regression-analysis}}
+\hypertarget{regression-analysis-1}{%
+\subsubsection{Regression analysis}\label{regression-analysis-1}}
 
 After the preparation, the data is firstly analyzed regarding the amount of electricity generated per WT and year. For this purpose, a linear and a 3rd order polynomial regression, that allow for a forecast until 2030, is carried out. The amount of electricity fed in, here referred to as the electricity yield, is the dependent variable and the commissioning date as the independent variable. Secondly the electricity yield is plotted over the rated capacity and henceforth only linear trends are applied to generate more conservative and appropriate estimation of the future values. For the next analysis a plot of the rated capacity over the commissioning date is generated. For this only data from 2019 is used since the rated capacity of the already installed WT's do not change over time. Further the full load hours as a concept of the degree of utilization is analyzed in regard of the WT's commissioning date. The degree of utilization might be more dependent on the wind conditions than the technical development and is therefore specifically good for predictions and therefore data from the past 5 years is analyzed. In addition to the wind conditions the full load hours depend on the specific nominal output, which means the rotor diameter, and hence the technological development can not be disregarded. Which means concrete that old data might still deliver a wrong impression on future predictions but also might account for weak years in terms of wind conditions since 2019 might be a stronger wind year.
 
 Since it is crucial not only to know the electricity yield per WT but also the electricity yield per area to estimate how much of the area of Rhineland-Palatinate must actually be covered with WT's in order to achieve the target of 20 TWh of wind energy in 2030. Therefore data from the master data register that contains geographic information about the WT's is used to calculate their area consumption and the according process is described next.
 
-\hypertarget{geospatial-analysis}{%
-\subsubsection{Geospatial analysis}\label{geospatial-analysis}}
+\hypertarget{geospatial-analysis-1}{%
+\subsubsection{Geospatial analysis}\label{geospatial-analysis-1}}
 
 \hypertarget{results}{%
 \section{Results}\label{results}}
@@ -545,15 +531,8 @@ Since it is crucial not only to know the electricity yield per WT but also the e
 \hypertarget{electricity-yield-rated-capacity-and-full-load-hours-in-rhineland-palatinate}{%
 \subsection{Electricity yield, rated capacity and full load hours in Rhineland-Palatinate}\label{electricity-yield-rated-capacity-and-full-load-hours-in-rhineland-palatinate}}
 
-The diagnostics of the electricity yield show in all linear and polynomial models the same characteristics. Even if they slightly differ from each other and the model assumptions might not be 100 \% optimal for regression analysis they are also not fundamentally violated. In figure \ref{fig:diagnostic} the diagnostic plots of the electricity yield over the commissioning date from the year 2019 are shown as an example. The residual vs fitted values plot show that the residuals become greater with increasing value for the electricity yield. This makes sense since the rated capacity for WT's increases and therefore changes the magnitudes of electricity generation over time. The normal QQ plot shows that the residuals of average values are normally distributed but as the values become great or small there is clear deviation from a normal distribution. This might be due to the non linear development of the WT technology. The scale location plots reveal that the residuals are more or less spread equally among the range of predictors with slightly increasing variance with increasing values, which must be like this since this was already indicated in the residuals vs fitted values plot. The residuals vs leverage plot shows that none of the observations is without Cook's distance and therefore there is no influential outlier.
-\begin{figure}
+The diagnostics of the electricity yield show in all linear and polynomial models the same characteristics. Even if they slightly differ from each other and the model assumptions might not be 100 \% optimal for regression analysis they are also not fundamentally violated. In Appendix YYY the diagnostic plots of the electricity yield over the commissioning date from the year 2019 are shown as an example. The residual vs fitted values plot show that the residuals become greater with increasing value for the electricity yield. This makes sense since the rated capacity for WT's increases and therefore changes the magnitudes of electricity generation over time. The normal QQ plot shows that the residuals of average values are normally distributed but as the values become great or small there is clear deviation from a normal distribution. This might be due to the non linear development of the WT technology. The scale location plots reveal that the residuals are more or less spread equally among the range of predictors with slightly increasing variance with increasing values, which must be like this since this was already indicated in the residuals vs fitted values plot. The residuals vs leverage plot shows that none of the observations is without Cook's distance and therefore there is no influential outlier.
 
-{\centering \includegraphics[width=1\linewidth]{data/Amprion/results_of_analysis/diagnostic} 
-
-}
-
-\caption{Diagnostic plots of electricity yield from 2019}\label{fig:diagnostic}
-\end{figure}
 All models are highly significant with p-values lower than 0.001 and the linear models have R\textsuperscript{2}-values of 0.68 - 0.70, which means that around 70 \% of the variation in the electricity yield can be explained by the commissioning date. By using a 3\textsuperscript{rd} order polynomial formula the value for R\textsuperscript{2} increases to up to 73 \%. This value could not significantly be increased by using a higher order. This means that the fit of the model can be slightly improved using the polynomial model but it might loose prediction power due to the bias variance trade-off. Intuitively an infinitely or exponentially growing electricity yield is of course not realistic from a physical or technical point of view. Therefore, the prediction of the polynomial models of more than 15,000 MWh per WT on average in the year 2030 seems too high and the assumption of 10,000 MWh per WT of the linear trends more reliable. However, the DWG forecast in figure \ref{fig:capacity} shows a disproportionate increase in the average nominal power, which in turn means that at locations with optimal wind conditions and rapidly advancing technology, disproportionate growth in electricity yield per WT is possible. Nonetheless, only few locations have optimal conditions and a more conservative estimation is chosen in this context, which might be different in the assessment of single sites. The plot of the data and all trends are shown in figure \ref{fig:electricityyield}. For the given reason the average electricity yield of the three linear trends in 2021, which amounts to 7,400 MWh per WT, together with the upcoming results from the rated capacity and full load hours is used for further calculations.
 \begin{figure}
 
@@ -581,7 +560,7 @@ As expected the electricity yield increases with increasing rated capacity and t
 
 \caption{Rated capacity over commissioning date}\label{fig:ratedcapacity}
 \end{figure}
-The next plot shows the full load hours over the commissioning date in figure \ref{fig:full}. The linear trends for the year 2015 until 2019 have more or less the same slope and are not deviating strongly. This indicates relatively stable conditions. It also seems that the more recent the data the higher the estimates, which could be explained through increasing technology especially again the increasing rotor diameter and therefore the reduced specific nominal power is decisive. On the contrary the estimation of the data from 2015 is among the highest, even though the latest technology is not reflected here. The year 2017 also has higher full load hours than the year 2018. This nicely reflects the fluctuation in wind conditions and means that the years 2015 and 2017 might be better wind years than the years 2016 and 2018. The mean of all models for 2021 is around 2,300 h/a and is therefore used for further calculation. The prediction for 2030 is around 2,800 h/a on average. If this is compared to the study of the DWG it can be seen that the DWG similarly shows average full load hours for the south of Germany in 2000 of around 1,300 and in 2016 of around 2,000 and the prediction for 2021 lies equally at around 2,300 h. The estimation for 2030 of the study of DWG shows a lower value of less than 2,500 h. This might be because the study of the DWG uses more data from different sources, probably a more sophisticated model and also the prediction is done for the whole of southern Germany. But it seems as to calculate with the value of 2,300 full load hours does definitely not lead to an overestimation. Divided by the total number of hours per year that equals to a load factor of around 26 \%, which is much more than the mentioned 19 \% from the literature {[}\protect\hyperlink{ref-DavidJCMacKay.2009}{18}{]} from 2009. This can, again, be well explained through the increasing rotor and decreasing specific nominal power which leads to a better utilization of weak winds. Lastly if we multiply the estimated full load hours by the average rated capacity for 2021 the result is 8,050 MWh/a, which is higher than the linear trends suggest. This is because the development of the rated capacity and the rotor diameter are actually not completely captured by a linear relationship. If compared to the polynomial models with estimations for the year 2021 of around 8,000 - 10,000 MWh/a this result seems more similar. If we assume an average electricity generation of 7,400 MWh/a the number of WT's needed to generate the demanded 20 TWh is around 2,700 WT's, if on average 8,050 MWh/a could be harvested then this would require around 2,484 WT's. It seems that if the average growth of the total number of WT's in RLP continues as predicted initially the goal of around 2,500 WT's in RLP is realistic. Of course, WT's with lower total electricity would have to be repowered additionally but it shows that is is not totally out of the scope. On the contrary the increase was slowed down sharply in the last years due to legal reasons and resistance of the citizens. In the end of this section it is to mention that this increasing development should not be misunderstood that the overall electricity yield of an area can be increased in the same way. Larger and therefore WT's with a higher electricity yield have to be spaced further apart which means the overall electricity yield per area might not increase in the same way. Although there might be strong economic reasons to build greater WT'S and also to harvest higher wind speeds at greater altitudes, the overall energy extraction per area has certain limits that can not be exceeded. The calculations of the respective area consumption are presented in subsections XV.
+The next plot shows the full load hours over the commissioning date in figure \ref{fig:full}. The linear trends for the year 2015 until 2019 have more or less the same slope and are not deviating strongly. This indicates relatively stable conditions. It also seems that the more recent the data the higher the estimates, which could be explained through increasing technology especially again the increasing rotor diameter and therefore the reduced specific nominal power is decisive. On the contrary the estimation of the data from 2015 is among the highest, even though the latest technology is not reflected here. The year 2017 also has higher full load hours than the year 2018. This nicely reflects the fluctuation in wind conditions and means that the years 2015 and 2017 might be better wind years than the years 2016 and 2018. The mean of all models for 2021 is around 2,300 h/a and is therefore used for further calculation. The prediction for 2030 is around 2,800 h/a on average. If this is compared to the study of the DWG it can be seen that the DWG similarly shows average full load hours for the south of Germany in 2000 of around 1,300 and in 2016 of around 2,000 and the prediction for 2021 lies equally at around 2,300 h. The estimation for 2030 of the study of DWG shows a lower value of less than 2,500 h. This might be because the study of the DWG uses more data from different sources, probably a more sophisticated model and also the prediction is done for the whole of southern Germany. But it seems as to calculate with the value of 2,300 full load hours does definitely not lead to an overestimation. Divided by the total number of hours per year that equals to a load factor of around 26 \%, which is much more than the mentioned 19 \% from the literature {[}\protect\hyperlink{ref-DavidJCMacKay.2009}{20}{]} from 2009. This can, again, be well explained through the increasing rotor and decreasing specific nominal power which leads to a better utilization of weak winds. Lastly if we multiply the estimated full load hours by the average rated capacity for 2021 the result is 8,050 MWh/a, which is higher than the linear trends suggest. This is because the development of the rated capacity and the rotor diameter are actually not completely captured by a linear relationship. If compared to the polynomial models with estimations for the year 2021 of around 8,000 - 10,000 MWh/a this result seems more similar. If we assume an average electricity generation of 7,400 MWh/a the number of WT's needed to generate the demanded 20 TWh is around 2,700 WT's, if on average 8,050 MWh/a could be harvested then this would require around 2,484 WT's. It seems that if the average growth of the total number of WT's in RLP continues as predicted initially the goal of around 2,500 WT's in RLP is realistic. Of course, WT's with lower total electricity would have to be repowered additionally but it shows that is is not totally out of the scope. On the contrary the increase was slowed down sharply in the last years due to legal reasons and resistance of the citizens. In the end of this section it is to mention that this increasing development should not be misunderstood that the overall electricity yield of an area can be increased in the same way. Larger and therefore WT's with a higher electricity yield have to be spaced further apart which means the overall electricity yield per area might not increase in the same way. Although there might be strong economic reasons to build greater WT'S and also to harvest higher wind speeds at greater altitudes, the overall energy extraction per area has certain limits that can not be exceeded. The calculations of the respective area consumption are presented in subsections XV.
 \begin{figure}[H]
 
 {\centering \includegraphics[width=1\linewidth]{data/Amprion/results_of_analysis/flh} 
@@ -614,7 +593,7 @@ before 2001 & 186 & 186 & 1376 & 740\\
 
 After taking WT's out of the data that would distort the results 1195 WT's remained for analysis. It is to mention that almost 400 WT's had to be taken out of the data set and also the R\textsuperscript{2}-value is not very high, thus the overall prediction power of the model might be low.
 
-Nonetheless, the average distance to the nearest WT of all WT's is a reasonable 417 m which equals to an area consumption per WT of about 174,168 m\textsuperscript{2} or 0.174 km\textsuperscript{2}. This means that the total area covered with currently 1702 WT's is about 296.4 km\textsuperscript{2}, this equals to around 1.5 \% instead of the 1.9 \% that were theoretically derived in chapter 2.1 of the total area of RLP which is 19,847 km\textsuperscript{2}. With an electricity yield of 6.782 TWh in 2019 this means that the average electricity yield per area and year equals to around 22.88 kWh/m\textsuperscript{2}a which is a constant power output of about 2.61 W/m\textsuperscript{2}. This exceeds the value of 2.2 W/m\textsuperscript{2} if compared to the literature value from 2009 with an assumed average wind speed of 6 m/s that was introduced in chapter 2.1 and calculated in formula 4 and 6. The actual average wind speed must be 6.3 m/s to reach a power output of about 2.61 W/m\textsuperscript{2}. Hence, this is definitely an indicator for the utilization of higher wind speeds in greater altitude with the technical development towards greater hub heights. The increase in rotor diameter cannot explain this development if the WT's have to be spaced further apart as seen in formula 6. The average distance to the next WT in relation to the rotor diameter is 4.9 which is relatively close to the five times the rotor diameter mentioned earlier and in the literature {[}\protect\hyperlink{ref-DavidJCMacKay.2009}{18}{]}.
+Nonetheless, the average distance to the nearest WT of all WT's is a reasonable 417 m which equals to an area consumption per WT of about 174,168 m\textsuperscript{2} or 0.174 km\textsuperscript{2}. This means that the total area covered with currently 1702 WT's is about 296.4 km\textsuperscript{2}, this equals to around 1.5 \% instead of the 1.9 \% that were theoretically derived in chapter 2.1 of the total area of RLP which is 19,847 km\textsuperscript{2}. With an electricity yield of 6.782 TWh in 2019 this means that the average electricity yield per area and year equals to around 22.88 kWh/m\textsuperscript{2}a which is a constant power output of about 2.61 W/m\textsuperscript{2}. This exceeds the value of 2.2 W/m\textsuperscript{2} if compared to the literature value from 2009 with an assumed average wind speed of 6 m/s that was introduced in chapter 2.1 and calculated in formula 4 and 6. The actual average wind speed must be 6.3 m/s to reach a power output of about 2.61 W/m\textsuperscript{2}. Hence, this is definitely an indicator for the utilization of higher wind speeds in greater altitude with the technical development towards greater hub heights. The increase in rotor diameter cannot explain this development if the WT's have to be spaced further apart as seen in formula 6. The average distance to the next WT in relation to the rotor diameter is 4.9 which is relatively close to the five times the rotor diameter mentioned earlier and in the literature {[}\protect\hyperlink{ref-DavidJCMacKay.2009}{20}{]}.
 
 The plot that shows the electricity yield per m\textsuperscript{2} and year over the commissioning date of the whole joined data set that originated from the MaStR and the master and movement data from amprion of 2019 is show in figure \ref{fig:eyarea}. Although the model is highly significant only 11 \% of the variation in the depended variable is explained by the commissioning date. Therefore it is not clear if this model is enough to make clear predictions.
 \begin{figure}
@@ -627,7 +606,7 @@ The plot that shows the electricity yield per m\textsuperscript{2} and year over
 \end{figure}
 Due to the constant technical development it makes sense to take more recent years for future predictions. Thus, only the results of the WT's with a commissioning date after 2010 are used for further analysis. The distance to the nearest neighboring WT increases then up to 474 m, but decreases in relation to the rotor diameter to 4.7 times the diameter. This might be due to increasing rotor diameter but limited space. This leads to an interesting trade off between greater and more efficient WT's and the occurring shadowing effect that reduces the efficiency of a wind park. The average area consumption of a WT built after 2010 is around 243,285 m\textsuperscript{2} which is 0.243 km\textsuperscript{2}. The average electricity yield is about 27.4 kWh/m\textsuperscript{2} which relates to a constant power output of 3.1 W/m\textsuperscript{2}. Hence, the electricity yield per area is increasing over time and the reduced distance between WT's in relation to their rotor diameter and with it possible shadowing effects are surpassed by the effect of utilizing greater wind speeds at higher altitudes. If the increase in efficiency can be kept with increasing rotor diameter and a reduced or similar area consumption, the rotor diameter has indeed again a big impact on the overall electricity yield. This trade off between the possibility of energy extraction with rotors and the respective demand in space should therefore be examined in further studies, that an exact threshold of this trade off can be defined.
 
-According to figure \ref{fig:eyarea} three possible scenarios using the mean of WT's with a commissioning date after 2010 and values of the linear trend for 2021 and 2030 are introduced in table \ref{tab:table2} for the calculation of a future area consumption with an electricity demand of 22 TWh per year. It remains unclear, if a constant power output of 4.6 W/m\textsuperscript{2} predicted for 2030 with a required average wind speed of 7.62 m/s, as presented as the third scenario, is reasonable for RLP. Although, it seems possible regarding the literature values of 1 to 7 W/m\textsuperscript{2} mentioned by Linow {[}\protect\hyperlink{ref-SvenLinow.2020}{22}{]}, if compared with the occurrence of this wind speed shown in figure \ref{fig:wind} at 140 m above ground, it seems rather unlikely. Nevertheless, despite some problems regarding regulations and approval processes it is definitely clear that the average hub height is steadily increasing and to be expected above the mentioned 140 m (figure \ref{fig:nabe}). \textbf{\emph{own calculations}}. Nevertheless it becomes clear that even in this best case Scenario 2.7 \% of the area of RLP has to be covered with WT's which is 1.8 times as much as today, if a scenario with the average predicted electricity yield of 33.5 kWh/m\textsuperscript{2} is true than 2.2 times the current area need to be covered and finally if the electricity yield per area can not significantly increased over time the area that has to be covered with WT's to generate a demand of 22 TWh in 2030 is around 4 \% which is 2.7 times the area that is currently covered with WT's. Additionally after the year 2030 a further increase in electricity demands through electrification is expected and covering more than 4 \% of the area with WT's will of course also increase people's concerns and resistance. Therefore, it is still questionable if the state of RLP will succeed in fulfilling their self set goals on supplying two thrirds of their electricity demand from own wind power. Nonetheless, This work showed that the potential is certainly given.
+According to figure \ref{fig:eyarea} three possible scenarios using the mean of WT's with a commissioning date after 2010 and values of the linear trend for 2021 and 2030 are introduced in table \ref{tab:table2} for the calculation of a future area consumption with an electricity demand of 22 TWh per year. It remains unclear, if a constant power output of 4.6 W/m\textsuperscript{2} predicted for 2030 with a required average wind speed of 7.62 m/s, as presented as the third scenario, is reasonable for RLP. Although, it seems possible regarding the literature values of 1 to 7 W/m\textsuperscript{2} mentioned by Linow {[}\protect\hyperlink{ref-SvenLinow.2020}{24}{]}, if compared with the occurrence of this wind speed shown in figure \ref{fig:wind} at 140 m above ground, it seems rather unlikely. Nevertheless, despite some problems regarding regulations and approval processes it is definitely clear that the average hub height is steadily increasing and to be expected above the mentioned 140 m (figure \ref{fig:nabe}). \textbf{\emph{own calculations}}. Nevertheless it becomes clear that even in this best case Scenario 2.7 \% of the area of RLP has to be covered with WT's which is 1.8 times as much as today, if a scenario with the average predicted electricity yield of 33.5 kWh/m\textsuperscript{2} is true than 2.2 times the current area need to be covered and finally if the electricity yield per area can not significantly increased over time the area that has to be covered with WT's to generate a demand of 22 TWh in 2030 is around 4 \% which is 2.7 times the area that is currently covered with WT's. Additionally after the year 2030 a further increase in electricity demands through electrification is expected and covering more than 4 \% of the area with WT's will of course also increase people's concerns and resistance. Therefore, it is still questionable if the state of RLP will succeed in fulfilling their self set goals on supplying two thrirds of their electricity demand from own wind power. Nonetheless, This work showed that the potential is certainly given.
 \begin{table}[H]
 
 \caption{\label{tab:table2}Three scenarios of electricity yield per area and year and their respective area consumption 
@@ -711,72 +690,80 @@ Scenario & Electricity yield per area [kWh/m²a] & Power output per area [W/m²]
 \CSLLeftMargin{8. }
 \CSLRightInline{Landesregierung Rheinland-Pfalz: Wind, sonne, wasser: Ausbau der erneuerbaren energien in der stromerzeugung, \url{https://www.rlp.de/de/regierung/schwerpunkte/energiewende/\#:~:text=Rheinland\%2DPfalz\%20wird\%20bis\%20zum,einem\%20Viertel\%20entfallen}, (2021)}
 
-\leavevmode\hypertarget{ref-MinisteriumfurWirtschaftKlimaschutzEnergieundLandesplanung.2013}{}%
-\CSLLeftMargin{9. }
-\CSLRightInline{Ministerium für Wirtschaft, Klimaschutz, Energie und Landesplanung: Windatlas rheinland-pfalz, \url{https://mkuem.rlp.de/fileadmin/mulewf/Themen/Energie_und_Strahlenschutz/Energie/1_rlp_windatlas_stand_24072013.pdf}, (2013)}
-
 \leavevmode\hypertarget{ref-Lehnert.2020}{}%
-\CSLLeftMargin{10. }
+\CSLLeftMargin{9. }
 \CSLRightInline{Dr. N. M. Lehnert und M. Herzig: Statistische monatshefte rheinland-pfalz: Strommix und energieverbrauch in rheinland-pfalz, \url{https://www.statistik.rlp.de/fileadmin/dokumente/monatshefte/2020/April/04-2020-225.pdf}, (2020)}
 
 \leavevmode\hypertarget{ref-NormanGerhardt.2015}{}%
-\CSLLeftMargin{11. }
+\CSLLeftMargin{10. }
 \CSLRightInline{Norman Gerhardt, F.S.: Fraunhofer IWES (2015): Wie hoch ist der stromverbrauch in der energiewende? Energiepolitische zielszenarien 2050 -- r{ü}ckwirkungen auf den ausbaubedarf von windenergie und photovoltaik: Studie im auftrag von agora energiewende. 086/19-S-2015/DE, (2015)}
 
 \leavevmode\hypertarget{ref-AndreasMertens.13.07.2021}{}%
-\CSLLeftMargin{12. }
+\CSLLeftMargin{11. }
 \CSLRightInline{Andreas Mertens: Altmaier legt erste absch{ä}tzung des stromverbrauchs 2030 vor, \url{https://www.bmwi.de/Redaktion/DE/Pressemitteilungen/2021/07/20210713-erste-abschaetzungen-stromverbrauch-2030.html}, 13.07.2021}
 
-\leavevmode\hypertarget{ref-Wikipedia.2021}{}%
+\leavevmode\hypertarget{ref-StateStatisticalOfficeofRhinelandPalatinate.2020}{}%
+\CSLLeftMargin{12. }
+\CSLRightInline{State Statistical Office of Rhineland-Palatinate: Statistisches jahrbuch 2020, (2020)}
+
+\leavevmode\hypertarget{ref-HansenandLamour.2021}{}%
 \CSLLeftMargin{13. }
+\CSLRightInline{Hansen and Lamour: Rheinland-pfalz ist das relativ waldreichste bundesland in deutschland, \url{https://www.wald-rlp.de/de/wald/}, (2021)}
+
+\leavevmode\hypertarget{ref-MinisteriumfurWirtschaftKlimaschutzEnergieundLandesplanung.2013}{}%
+\CSLLeftMargin{14. }
+\CSLRightInline{Ministerium für Wirtschaft, Klimaschutz, Energie und Landesplanung: Windatlas rheinland-pfalz, \url{https://mkuem.rlp.de/fileadmin/mulewf/Themen/Energie_und_Strahlenschutz/Energie/1_rlp_windatlas_stand_24072013.pdf}, (2013)}
+
+\leavevmode\hypertarget{ref-Wikipedia.2021}{}%
+\CSLLeftMargin{15. }
 \CSLRightInline{Wikipedia: Geschichte der windenergie, \url{https://de.wikipedia.org/wiki/Geschichte_der_Windenergienutzung}, (2021)}
 
 \leavevmode\hypertarget{ref-MladenBosnjakovic.2013}{}%
-\CSLLeftMargin{14. }
+\CSLLeftMargin{16. }
 \CSLRightInline{Mladen Bošnjaković: Wind energy technology trends: Conference paper, \url{https://www.researchgate.net/publication/310766589_WIND_ENERGY_TECHNOLOGY_TRENDS}, (2013)}
 
 \leavevmode\hypertarget{ref-NetzKonstrukteur.16.11.2020}{}%
-\CSLLeftMargin{15. }
+\CSLLeftMargin{17. }
 \CSLRightInline{NetzKonstrukteur: Wie funktioniert eine windkraftanlage? Aufbau einer windkraftanlage, \url{https://netzkonstrukteur.de/wie-funktioniert-eine-windkraftanlage/}, 16.11.2020}
 
 \leavevmode\hypertarget{ref-Bundesgestzblatt.2017}{}%
-\CSLLeftMargin{16. }
+\CSLLeftMargin{18. }
 \CSLRightInline{Bundesgestzblatt: EEG 2017 - erneuerbare energien gesetz, \url{https://www.bgbl.de/xaver/bgbl/start.xav?startbk=Bundesanzeiger_BGBl\#__bgbl__\%2F\%2F*\%5B\%40attr_id\%3D\%27bgbl116s2258.pdf\%27\%5D__1625223566574}, (2017)}
 
 \leavevmode\hypertarget{ref-EnergieagenturRheinlandPfalz.2019}{}%
-\CSLLeftMargin{17. }
+\CSLLeftMargin{19. }
 \CSLRightInline{EEG-StammBew{\_}2019{\_}amprion-EAtlas.xlsx /master and movement data from amprion of the year 2019 preprocessed through the energy agency of rhineland-palatinate - the file and the code with which the data was further processed comes with this document., (2019)}
 
 \leavevmode\hypertarget{ref-DavidJCMacKay.2009}{}%
-\CSLLeftMargin{18. }
+\CSLLeftMargin{20. }
 \CSLRightInline{David JC MacKay: Sudtainable energy - without the hot air. {UIT Cambridge Ltd.}, Cambridge (2009)}
 
 \leavevmode\hypertarget{ref-BWE.2021}{}%
-\CSLLeftMargin{19. }
+\CSLLeftMargin{21. }
 \CSLRightInline{BWE - Bundesverband Windenergie e.V.: Energieumwandlung, \url{https://www.wind-energie.de/themen/anlagentechnik/funktionsweise/energiewandlung/}, (2021)}
 
 \leavevmode\hypertarget{ref-A.Betz.1920}{}%
-\CSLLeftMargin{20. }
+\CSLLeftMargin{22. }
 \CSLRightInline{A. Betz: Das maximum der theoretisch m{ö}glichen ausn{ü}tzung des windes durch windmotoren. Zeitschrift f{ü}r das gesamte turbinenwesen. 307--309 (1920)}
 
 \leavevmode\hypertarget{ref-WindwartsEnergieausdemNorden.2021}{}%
-\CSLLeftMargin{21. }
+\CSLLeftMargin{23. }
 \CSLRightInline{Windwärts - Energie aus dem Norden: : Wie funktioniert eine windenergieanlage?, \url{https://www.windwaerts.de/de/infothek/know-how/funktion-windenergieanlage}, (2021)}
 
 \leavevmode\hypertarget{ref-SvenLinow.2020}{}%
-\CSLLeftMargin{22. }
+\CSLLeftMargin{24. }
 \CSLRightInline{Sven Linow: Energie - klima - ressourcen: Quantitative methoden zur l{ö}sungsbewertung von energiesystemen. {Carl Hanser Verlag M{ü}chen} (2020)}
 
 \leavevmode\hypertarget{ref-RasmusBorrmannDr.KnudRehfeldtDr.DennisKruse.2020}{}%
-\CSLLeftMargin{23. }
+\CSLLeftMargin{25. }
 \CSLRightInline{Rasmus Borrmann, Dr. Knud Rehfeldt, Dr. Dennis Kruse: Volllaststunden von windenergieanlagen an land - entwicklung, einfl{ü}sse, auswirkungen: Volllaststunden von windenergieanlagen an land, \url{https://www.windguard.de/veroeffentlichungen.html?file=files/cto_layout/img/unternehmen/veroeffentlichungen/2020/Volllaststunden\%20von\%20Windenergieanlagen\%20an\%20Land\%202020.pdf}, (2020)}
 
 \leavevmode\hypertarget{ref-HadleyWickham.2021}{}%
-\CSLLeftMargin{24. }
+\CSLLeftMargin{26. }
 \CSLRightInline{Hadley Wickham: Deplyr, \url{https://dplyr.tidyverse.org/}, (2021)}
 
 \leavevmode\hypertarget{ref-AmprionGmbH.2019}{}%
-\CSLLeftMargin{25. }
+\CSLLeftMargin{27. }
 \CSLRightInline{Amprion GmbH: EEG-einspeisung, \url{https://www.amprion.net/Strommarkt/Abgaben-und-Umlagen/EEG-Jahresabrechnung/2019.html}, (2019)}
 
 \end{CSLReferences}
