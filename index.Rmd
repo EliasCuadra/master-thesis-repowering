@@ -2,7 +2,7 @@
 #
 # Required Information --------------------------------------------------------
 # change lines 5 - 15
-title: "Windenergy and Repowering potential in Rhineland-Palatinate from 2021 to 2030"
+title: "Wind Energy and Repowering Potential in Rhineland-Palatinate from 2021 to 2030"
 type: "Master's Thesis"
 author: "Elias Cuadra Braatz"
 matriculation_number: "219202265"
