@@ -6,7 +6,7 @@ First of all, the region of interest (ROI) in this case Rhineland-Palatinate in 
 
 Rhineland-Palatinate is one of the most densely forested countries in Germany, as the forests here cover around 42 percent of the country's area @HansenandLamour.2021.
 
-Especially the electricity generation and data from existing WT's is important but also information about different types of land cover and the occurrence of wind  are crucial for this work. An overview of important parameters regarding the estimation of the wind energy potential up to the year 2030 are shown in table \@ref(tab:table0).
+Especially the electricity generation and data from existing WTs is important but also information about different types of land cover and the occurrence of wind  are crucial for this work. An overview of important parameters regarding the estimation of the wind energy potential up to the year 2030 are shown in table \@ref(tab:table0).
 
 (ref:stats)  @StateStatisticalOfficeofRhinelandPalatinate.2020. 
 
@@ -30,13 +30,13 @@ row5     <- c(
   "Electricity generation 2017", "20.7 TWh"
 )
 row6     <- c(
-  "Electricity generation from WT's 2019", "6.78 TWh"
+  "Electricity generation from WTs 2019", "6.78 TWh"
 )
 row7     <- c(
-  "Required generation from WT's in 2030", "22 TWh"
+  "Required generation from WTs in 2030", "22 TWh"
 )
 row8     <- c(
-  "Total number of WT's", "1,702"
+  "Total number of WTs", "1,702"
 )
 df <- matrix(data = c(row1, row2, row3, row4, row5, row6, row7), nrow = 7, byrow = T)
 colnames(df) <- col_names
@@ -59,7 +59,7 @@ column_spec(2, width = "3cm")
 
 
 
-The study area and the modeled wind speeds taken from the Windatlas RLP @MinisteriumfurWirtschaftKlimaschutzEnergieundLandesplanung.2013 are seen in figure \@ref(fig:wind).
+The study area and the modeled wind speeds taken from the Windatlas RLP @MinisteriumfurWirtschaftKlimaschutzEnergieundLandesplanung.2013 are seen in Figure \@ref(fig:wind).
 
 (ref:foo) Wind speeds in RLP 140 m above Ground @MinisteriumfurWirtschaftKlimaschutzEnergieundLandesplanung.2013. 
 
@@ -67,28 +67,32 @@ The study area and the modeled wind speeds taken from the Windatlas RLP @Ministe
 ```{r wind, echo=FALSE, fig.cap="(ref:foo)", out.width = "100%", fig.pos="H"}
 knitr::include_graphics("figures/wind_140m.pdf")
 ```
-## Onshore wind turbines and Repowering
+
+## Onshore wind turbines and repowering
+
+Wind energy has been used by humans for thousands of years, but the generation of electrical power has only been possible since the 19th century with the beginning of industrialization and is now the subject of constant research and development in the context of the energy transition @Wikipedia.2021. A wind turbine usually consists of the three main components: rotor blades, nacelle and tower. In addition to other elements, the nacelle contains: the gearbox, generator, transformer and control system @MladenBosnjakovic.2013. Most commonly WTs have three rotor blades that are attached to the rotor hub and absorb the kinetic energy of the wind and convert it into a rotary motion. If the winds are too strong, the rotor blades can be “taken out of the wind” by adjusting the blades, thus protecting the system from damage. The gearbox changes the speed of the rotary motion and the generator converts the kinetic energy into electricity. However, there are also systems with direct drive and without gear. The nacelle can be rotated to an optimal position when the wind conditions change, and an electromagnetic brake helps to shut down the system when the winds are too strong or during maintenance work. In addition to its load-bearing function, the tower also contains the power lines that conduct electricity to the grid connection of the distribution network @NetzKonstrukteur.16.11.2020.
+
+
+
+
+The transmission system operators, in this case Amprion, are obliged to publish so-called master and movement data for the amount of electricity fed-in with remuneration for each calendar year in accordance with section 77 of the 2017 Renewable Energy Act (EEG) @Bundesgestzblatt.2017. This master and movement data includes information about the annual electricity generation and the EEG system key. The data for RLP is currently available until 2019. The total amount of electricity fed in with remuneration in 2019 from wind turbines in RLP is 6,782,180,753 kWh, i.e. approximately 6.782 TWh @EnergieagenturRheinlandPfalz.2019.
 
 ## Physical basics
 
-Wind energy has been used by humans for thousands of years, but the generation of electrical power has only been possible since the 19th century with the beginning of industrialization and is now the subject of constant research and development in the context of the energy transition @Wikipedia.2021. A wind turbine usually consists of the three main components; rotor blades, nacelle and tower. Besides other elements the nacelle contains; the gearbox, the generator, the transformer and the control system @MladenBosnjakovic.2013. The mostly three rotor blades are attached to the rotor hub and absorb the kinetic energy of the wind and convert it into a rotary motion. If the winds are too strong, the rotor blades can be “taken out of the wind” by adjusting the blades, thus protecting the system from damage. Mainly the gearbox and the generator convert the kinetic energy into electricity. However, there are also systems with direct drive and without gear. The nacelle can be rotated to an optimal position when the wind conditions change, and an electromagnetic brake helps to shut down the system when the winds are too strong or during maintenance work. In addition to its load-bearing function, the tower also contains the power lines that conduct electricity to the grid connection of the distribution network @NetzKonstrukteur.16.11.2020.
-
-The transmission system operators, in this case Amprion, are obliged to publish so-called master and movement data for the amount of electricity fed-in with remuneration for each calendar year in accordance with section 77 Renewable Energy Act (EEG) 2017 @Bundesgestzblatt.2017. These master and movement data includes information about the annual electricity generation and the EEG system key. The data for RLP is currently available until 2019. The total amount of electricity fed-in with remuneration in 2019 from wind turbines in RLP is 6,782,180,753 kWh, i.e. approximately 6.782 TWh @EnergieagenturRheinlandPfalz.2019.
-
-The amount of electricity generated by a wind turbine, the electricity yield, can be derived from the physical relationship between the kinetic energy and the power of the wind. Without claiming to be exhaustive, the following applies[^1]:
+The amount of electricity generated by a wind turbine -the electricity yield- can be derived from the physical relationship between the kinetic energy and the power of the wind. Without claiming to be exhaustive, the following applies[^1]:
 
 
 \begin{equation}
 E_{kin}\; =\; \frac{1}{2}\;mv^2
 \end{equation}
 
-The air throughput or mass flow $\hat{m}$ that flows through the area swept by the rotor blades can be calculated by multiplying the air density, rotor area and wind speed as well as the time interval required with[^2]:
+The air throughput (mass flow $\hat{m}$) that flows through the area swept by the rotor blades can be calculated by multiplying the air density, rotor area and wind speed as well as the time interval required with[^2]:
 
 \begin{equation}
 \hat{m}\;=\;\rho A vt
 \end{equation}
 
-The power P is equal to the energy per unit of time $\hat{E}$. This results in the power of the wind with[^3]:
+The power $P$ is equal to the energy per unit of time $\hat{E}$. This results in the power of the wind with[^3]:
 
 \begin{equation}
 P_{wind}\;=\;\hat{E}\;=\;\frac{1}{2}\;\hat{m}v^2\;=\;\frac{1}{2}\; \rho \pi r^2 v^3
@@ -96,20 +100,19 @@ P_{wind}\;=\;\hat{E}\;=\;\frac{1}{2}\;\hat{m}v^2\;=\;\frac{1}{2}\; \rho \pi r^2 
 
 (Mac Kay @DavidJCMacKay.2009 and BWE @BWE.2021)
 
-In Formula 3 it becomes clear that the wind speed is the decisive factor for the performance of a WT. Because WT's are build to perform at lower wind speeds most of the time they can not operate at very high wind speeds and have to be taken out of the wind at a certain speed to avoid fatigue and destruction through peak loads. A typical load profile of a WT is shown in figure \@ref(fig:powerofwind). If the density of air is 1.3 kg per m³ and there is an average windspeed of 6 m/s, which could be realistic for many sites in RLP in 140 m above ground, as seen in figure \@ref(fig:wind), then the typical power of the wind per square meter hoop is[^4]:
+In Formula 3 it becomes clear that the wind speed is the determining factor for the performance of a WT. Because WTs are built to perform at lower wind speeds, most of the time they are not able to operate at very high wind speeds and have to be taken out of the wind at a certain speed to avoid fatigue and destruction through peak loads. A typical load profile of a WT is shown in Figure \@ref(fig:powerofwind). If the density of air is 1.3 kg/ m³ and there is an average windspeed of 6 m/s, which could be realistic for many sites in RLP at 140 m above ground, as seen in Figure \@ref(fig:wind), then the typical power of the wind per square meter of rotor area is[^4]:
 
 \begin{equation}
 \frac{1}{2}\; \rho v^3\;=\;\frac{1}{2}\;1.3 kg/m^3\; *\; (6 m/s)^3\;=\;140\; W/m^2\;\;\; [1\; \frac{kg\, m^2}{s^3} = 1\; W]
 \end{equation}
 
-
-The curve of power per m\textsuperscript{2} in relation to the wind speed is also shown in figure \@ref(fig:powerofwind). 
+The curve of power per m\textsuperscript{2} in relation to the wind speed is also shown in Figure \@ref(fig:powerofwind). Of course, not all the wind's power can be converted and there are further losses when converting kinetic energy into electrical energy in the generator.
 
 ```{r powerofwind, echo=FALSE, fig.cap="Left: Power of the wind per rotor area over wind speed; Right: Typical load profile of a WT", out.width = "49%", out.height= "25%", fig.show='hold',fig.align='center'}
 knitr::include_graphics(c("figures/power2.png", "figures/Typical-wind-power-output-versus-wind-speed_W640.jpg"))
 ```
 
-Of course, not all the wind's power can be converted and there are further losses when converting kinetic energy into electrical energy in the generator. The efficiency using the winds energy in theory after Alber Betz is a maximum of 59 % also called the Betz limit @A.Betz.1920, but in practice it is often around 40 % to a maximum of 50 % @WindwartsEnergieausdemNorden.2021. If the average rotor diameter installed in RLP in 2020 was 130 m (figure \@ref(fig:rotor)) with an efficiency of 50 %, then the average power of one WT is[^5]:
+The maximum theoretical efficiency obtained for wind turbines is 59% according to the Betz Limit @A.Betz.1920; however, in practice it is often around 40% up to a maximum of 50% @WindwartsEnergieausdemNorden.2021. If the average rotor diameter installed in RLP in 2020 is 130 m (Figure \@ref(fig:rotor)) with an efficiency of 50%, then the average power of one WT is[^5]:
 
 \begin{equation}
 \begin{split}
@@ -119,7 +122,7 @@ P_{WT130}\; & =\; 70\; W/m^2\; *\; \frac{\pi}{4}(130 m)^2\; =\; 929\; kW
 \end{equation}
 
 
-The amount of energy also increases proportionally with increasing rotor diameter. This explains why the rotor diameters become larger in practice (figure \@ref(fig:rotor)). But WT's with larger rotors have to be spaced further appart. In the literature values from 3 to 8 times the rotor diameter depending on the main direction of the wind can be found @DavidJCMacKay.2009. If we assume further that windmills in RLP are spaced on average 5 times their diameter apart from each other, from equation 5 follows that the energy per area land mass is:
+The amount of energy also increases proportionally with increasing rotor diameter. This explains why the rotor diameters become larger in practice (Figure \@ref(fig:rotor)). But WTs with larger rotors have to be spaced further apart. In the literature, values can be found of 3 to 8 times the rotor diameter, depending on the main direction of the wind @DavidJCMacKay.2009. If we assume further that WTs in RLP are spaced on average 5 times their diameter apart from each other, from the average power calculated in Equation 5 follows that the energy per area of land is::
  
 \begin{equation}
 \begin{split}
@@ -130,52 +133,60 @@ The amount of energy also increases proportionally with increasing rotor diamete
 \end{split}
 \end{equation}
 
-This means that independently of the rotor size, there is a limit of around 2.2 W/m\textsuperscript{2} of electrical energy that can be delivered in Rhineland-Palatinate assuming an average wind speed of about 6 m/s. In the literature values for the electric power per area vary from 1 to 7 W/m\textsuperscript{2} land mass depending on the site conditions @SvenLinow.2020. Nonetheless, building higher WT's can be beneficial due to higher and more constant wind speeds with increasing height and other economic factors. As a rough estimate it can be said that doubling the height increases wind-speed by 10 % and thus increase the power of the wind by 30 % and therefore the hub heights also tend to increase (figure \@ref(fig:nabe)). The actual way that wind speed increases with heigth is much more complicated and depends on the roughness of the surrounding area and time and is beyond of the scope of this study. Usually WT's are design to start operating at wind speeds of around 3 to 5 m/s and stop at around 25 m/s. A WT has a so-called "capacity" or "peak power" which is the maximum power that the WT can generate in optimal conditions. The actual average power that is delivered can be expressed by the capacity multiplied by a factor that describes the fraction of the time that wind conditions are near optimal. This factor can be called the "load factor" and a typical load factor in Germany was around 19 %, 22 % in the Netherlands and 30 % in the United Kingdom in 2009 @DavidJCMacKay.2009. Lastly it can be estimated how much area is needed when we assume a rounded and constant electricity yield of 2.2 W/m\textsuperscript{2} and an electricity demand of 22 TWh per year in RLP:
+This means that independent of the rotor size, there is a limit of around 2.2 W/m\textsuperscript{2} of electrical energy that can be delivered in Rhineland-Palatinate assuming an average wind speed of about 6 m/s. In the literature, values for the electric power per area vary from 1 to 7 W/m\textsuperscript{2} land area depending on the site conditions @SvenLinow.2020. Nonetheless, building taller WTs can be beneficial due to higher and more constant wind speeds with increasing height and other economic factors. As a rough estimate it can be said that doubling the height increases wind speed by 10% and therefore increases the power of the wind by 30%. Thus, the hub heights also tend to increase (Figure \@ref(fig:nabe)). The actual way that wind speed increases with height is much more complicated and depends on the roughness of the surrounding area and time and is beyond of the scope of this study. Usually WTs are designed to start operating at wind speeds of around 3 to 5 m/s and stop at around 25 m/s. A WT has a so-called "capacity" or "peak power" which is the maximum power that the WT can generate in optimal conditions. The actual average power that is delivered can be expressed by the capacity multiplied by a factor that describes the fraction of the time that wind conditions are near optimal. This factor is called the "load factor" and as of 2009, a typical load factor was around 19% in Germany,  22% in the Netherlands and 30% in the United Kingdom @DavidJCMacKay.2009. Lastly it can be estimated how much area is needed when we assume a constant electricity yield of 2.2 W/m\textsuperscript{2} and an electricity demand of 22 TWh per year in RLP:
 
 \begin{equation}
 A_{22TWh}\;=\;\frac{22 * 10^{12}\; Wh}{2.2\;W/m^2\; *\; 8765h\; *\; 10^6}\;=\;1140.9\;km^2
 \end{equation} 
 
-The total area of RLP is 19,847 km\textsuperscript{2}, which means that the desired amount of electricity coming from wind energy would be equivalent with covering roughly 5.8 % of the area with WT's. The actual 6.782 TWh of electrical energy generated in RLP would relate to 351.7 km\textsuperscript{2} which means that currently about 1.8 % of the area of RLP are covered with WT's given the prefixed assumtion are true. If the same calculation for the whole of Germany is done the demanded 655 TWh in 2030 would need an area of about 33,968 km\textsuperscript{2} which is about 9.5 % of the area. Whereas the area consumption for RLP is still somehow imaginable it is clear that covering nearly 10 %  of Germany with WT's is very uncertain. It should also be noted, that the assumption of an average wind speed of 6 m/s could be an under- or overestimate and the area consumption is different in practice. In chapter 3 the actual numbers for RLP are presented and therefore allow for an evaluation of this theoretical approximation.
-For further explanation to the technical development and the calculation method, the study of the German Wind Guard (DWG) "Full load hours of wind turbines on land - development, influences, effects" from October 5th, 2020 @RasmusBorrmannDr.KnudRehfeldtDr.DennisKruse.2020, is used as a guide and its results are presented in the next subsection. 
+The total area of RLP is 19,858 km\textsuperscript{2}, which means that the desired amount of electricity coming from wind energy would be equivalent to covering roughly 5.8 % of the area with WTs. The actual 6.782 TWh of electrical energy generated in RLP would relate to 351.7 km\textsuperscript{2} which means that currently about 1.8% of the area of RLP is covered with WTs given the previously defined assumptions are true. If the same calculation for the whole of Germany is done, the demanded 655 TWh in 2030 would need an area of about 33,968 km\textsuperscript{2} which is about 9.5 % of the total area. Whereas the area consumption for RLP is still somehow imaginable it is clear that covering nearly 10 %  of Germany with WTs is very uncertain. It should also be noted, that the assumption of an average wind speed of 6 m/s could be an under- or overestimate and the area consumption is different in practice. In chapter 3 and 4 the actual numbers for RLP are presented and therefore allow for an evaluation of this theoretical approximation.
+For further explanation of the technical development and the calculation method, the study of the German Wind Guard (DWG) "full-load-hours of wind turbines on land - development, influences, effects" from October 5th, 2020 @RasmusBorrmannDr.KnudRehfeldtDr.DennisKruse.2020, is used as a guide and the relevant results are presented in the next subsection. 
 
 
 ## Technical concepts and development
 
-The study of DWG examines the development of full load hours and thus the wind energy potential in Germany and is divided into the sub-areas Schleswig-Holstein (SH), north (Norden), centre (Mitte) and south (Süden). RLP is part of the southern region. The development of the rotor diameter and hub height is shown in figure \@ref(fig:rotor) and \@ref(fig:nabe). The study of DWG suggests that the wind energy potential, i.e. the theoretical electricity yield of a wind turbine for future systems, can and will be calculated in this work using the following formula:
-$$
-Electricity\;yield\; =\; Full\;load\;hours\; *\; Capacity
-$$  
-The capacity is the installed nominal output, also called **rated capacity** of the generator and can be found in the technical details of a wind turbine generator. The development of the installed nominal power depending on the commissioning date in Germany can be seen in figure \@ref(fig:capacity). The **full load hours** are formed from the quotient of the annual electricity yield and the rated capacity and are an indicator of the degree of utilization of a wind turbine like the load factor.
+The study of DWG examines the development of full-load-hours and thus the wind energy potential in Germany and is divided into the sub-areas Schleswig-Holstein (SH), north (Norden), centre (Mitte) and south (Süden) @RasmusBorrmannDr.KnudRehfeldtDr.DennisKruse.2020. RLP is part of the southern region. 
 
-```{r rotor, echo=FALSE, fig.cap="Development and forecast of the mean rotor diameter according to Deutsche WindGuard, 2020", out.width = "100%"}
-knitr::include_graphics("figures/DWG/DWG_Rotordurchmesser.png")
-```
+The full-load-hours are a measure of the degree of utilization of a power generation plant and denote the time that a plant would have to be operated at nominal load in order to achieve the same power production as it has achieved over the entire reference period with fluctuating generation capacity. The full-load-hours of wind turbines are usually given per calendar year. The full-load-hours per year are calculated from the quotient of the annual energy yield and the nominal output also called as rated capacity. Since the full-load-hours result from the electricity yield and the installed nominal power, there is a dependency and the gain in information is limited. However, knowing the average full-load-hours of all wind turbines and their development is of great importance, as it establishes the connection between installed power and expected energy yield within a certain area. For a forward-looking political control of the future share of wind energy in the energy transition, an assumption for the full-load-hours to be expected in the future is necessary. The aim of the presented study is to make an assessment of the future development of the full-load-hours of wind turbines on land. Furthermore, it should be estimated what total energy yield is possible with the expected system technology on all designated areas. The development of the full-load-hours in different parts of Germany can be seen in Figure \@ref(fig:flh).
 
-```{r nabe, echo=FALSE, fig.cap="Development and forecast of mean hub hight according to Deutsche WindGuard, 2020", out.width = "100%", fig.pos="H"}
-knitr::include_graphics("figures/DWG/DWG_Nabenhöhe.png")
-```
-
-```{r capacity, echo=FALSE, fig.cap="Development and forecast of the mean rated capacity according to Deutsche WindGuard, 2020", out.width = "100%", fig.pos="H"}
-knitr::include_graphics("figures/DWG/DWG_Nennleistung.png")
-```
-
-The full load hours number the hours that the system would have to be operated under nominal load in order to deliver the amount of electricity generated and do not reflect the actual operating time below nominal load. Since the full load hours result from the electricity yield and the installed nominal power, there is a dependency and the gain in information is limited. However, the full load hours are a useful concept in order to be able to draw conclusions about the electricity yield and, therefore, analysis of the full load hours of RLP are presented in section 3.2.3. The development of full load hours in Germany can be seen in figure \@ref(fig:flh).
-
-```{r flh, echo=FALSE, fig.cap="Development and forecast of the mean full load hours according to Deutsche WindGuard, 2020", out.width = "100%"}
+```{r flh, echo=FALSE, fig.cap="Development and forecast of the mean full-load-hours. Figure taken from Deutsche WindGuard 2020", out.width = "100%"}
 knitr::include_graphics("figures/DWG/DWG_Volllaststunden.png")
 ```
 
-If two plants have the same hub height and the same rotor diameter, but a different nominal power, the less powerful plant, i.e. the plant with the lower **specific nominal power**, will achieve more full-load hours but a lower annual energy yield at the same wind speeds. The full load hourly value should therefore always be considered and evaluated in connection with the energy yield. The specific nominal power represents the relationship between the nominal power of the turbine and the swept rotor area. The specific nominal power of the turbines has tended to decrease since 2012, which is due to the increasing rotor diameters figure \@ref(fig:rotor). Systems with a lower specific nominal output, i.e. comparatively larger rotors, have more full-load hours under the same wind conditions or achieve their nominal output at lower wind speeds and are therefore also referred to as low-wind systems. If you compare two systems with the same rotor diameter, the system with a higher absolute and therefore also specific nominal output is always more expensive and is therefore only suitable for comparatively higher wind speeds. Due to the prevailing conditions in RLP, low-wind turbines with a lower specific nominal output are more important in repowering than the increase in absolute turbine output. However, the value of the specific rated capacity in southern Germany is currently stagnating at approx. 270 W/m\textsuperscript{2} seen in figure \@ref(fig:spec). Because the full load hours depend largely on the rated capacity and the wind speed in addition to technical influences, they are a useful indicator for calculating the expected electricity yield if there is no data on electricity yields from existing systems and only technical details and site conditions are available. The mean value of the full load hours of all wind turbines, e.g. of a federal state, can be used as a parameter to infer the future electricity yield from the installed rated capacity.
+The study of DWG suggests that the wind energy potential, i.e., the theoretical electricity yield of a wind turbine for future systems, can be calculated using the following formula:
+$$
+Electricity\;yield\; =\; Full-load-hours\; *\; Capacity
+$$  
+The capacity is the installed nominal output, also called rated capacity of the generator and can be found in the technical details of a wind turbine generator. The development of the installed nominal power depending on the commissioning date in Germany can be seen in Figure \@ref(fig:capacity).
+
+```{r capacity, echo=FALSE, fig.cap="Development and forecast of the mean rated capacity. Figure taken from Deutsche WindGuard 2020", out.width = "100%", fig.pos="H"}
+knitr::include_graphics("figures/DWG/DWG_Nennleistung.png")
+```
+
+With a fixed nominal output, a high full-load hourly value is also associated with a high energy yield. For example, the full load hours achieved by a wind energy installation in different years can be compared well with one another in order to make a statement about the electricity yield for a year. However, If two plants have the same hub height and the same rotor diameter, but a different rated capacity, the less powerful plant, i.e., the plant with the lower specific rated capacity, will achieve more full-load-hours but a lower annual energy yield at the same wind speeds. The full-load-hourly value should therefore always be considered and evaluated in connection with the energy yield. The development of the rotor diameter and hub height is shown in Figure \@ref(fig:rotor) and \@ref(fig:nabe). 
+
+```{r rotor, echo=FALSE, fig.cap="Development and forecast of the mean rotor diameter. Figure taken from Deutsche WindGuard 2020", out.width = "100%"}
+knitr::include_graphics("figures/DWG/DWG_Rotordurchmesser.png")
+```
+
+```{r nabe, echo=FALSE, fig.cap="Development and forecast of mean hub hight. Figure taken from Deutsche WindGuard 2020", out.width = "100%", fig.pos="H"}
+knitr::include_graphics("figures/DWG/DWG_Nabenhöhe.png")
+```
+
+The specific nominal power represents the relationship between the nominal power of the turbine and the swept rotor area. The specific nominal power of the turbines has tended to decrease since 2012, which is due to the increasing rotor diameters Figure \@ref(fig:rotor). Systems with a lower specific nominal output, i.e. comparatively larger rotors, have more full-load hours under the same wind conditions or achieve their nominal output at lower wind speeds and are therefore also referred to as low-wind systems. If you compare two systems with the same rotor diameter, the system with a higher absolute and therefore also specific nominal output is always more expensive and is therefore only suitable for comparatively higher wind speeds. Due to the prevailing conditions in RLP, low-wind turbines with a lower specific nominal output are more important in repowering than the increase in absolute turbine output. However, the value of the specific rated capacity in southern Germany is currently stagnating at approx. 270 W/m\textsuperscript{2} seen in Figure \@ref(fig:spec). Because the full-load-hours depend largely on the rated capacity and the wind speed in addition to technical influences, they are a useful indicator for calculating the expected electricity yield if there is no data on electricity yields from existing systems and only technical details and site conditions are available. The mean value of the full-load-hours of all wind turbines, e.g. of a federal state, can be used as a parameter to infer the future electricity yield from the installed rated capacity.
 
 
-```{r spec, echo=FALSE, fig.cap="Development and forecast of the mean specific rated capacity according to Deutsche WindGuard, 2020", out.width = "100%", fig.pos="H"}
+```{r spec, echo=FALSE, fig.cap="Development and forecast of the mean specific rated capacity. Figure taken from Deutsche WindGuard 2020", out.width = "100%", fig.pos="H"}
 knitr::include_graphics("figures/DWG/DWG_Spezifische_Nennleistung.png")
 ```
 
+Hence, the methodology of the DWG is adopted and applied in an own analysis of the electricity yield, the rated capacity and the full-load-hours as well as rotor diameter and hub height in RLP and the results are presented in section 4.1. 
+
+
+
 ## Résumé
 The study of DWG shows how the technology of onshore wind turbines has developed further since 2000. A clear trend for an increase in the average rated capacity and the average rotor diameter of the newly commissioned systems can be seen. The mean total height of the turbines is also increasing, although this increase has been due to the increase in the mean rotor diameter for some years while the height of the lower blade tip remains the same. This also leads to an increase in the mean hub height. It is assumed that these trends will continue over the next ten years. A look at the configuration of the latest system models from different manufacturers supports this thesis (Enercon and Vestas, 2021). The development of offshore wind turbines suggests that even with a rotor diameter of 170 m and a nominal output of 6.6 MW no end of the system scaling is to be expected, where significantly larger systems are already available. However, the requirements regarding the construction are clearly different and the wind speeds at sea and thus the rotor diameter are of course not easy to transfer. –Source about other technical limitations-
-In order to calculate the electricity yield of future plants in RLP, the following section analyses the master and movement data from 2019 for electricity yield, nominal output and full load hours. Additionally the area consumption of WT's in RLP is being assessed using the market master data register. 
+In order to calculate the electricity yield of future plants in RLP, the following section analyses the master and movement data from 2019 for electricity yield, nominal output and full-load-hours. Additionally the area consumption of WTs in RLP is being assessed using the market master data register. 
 
 ## Regression analysis
 
