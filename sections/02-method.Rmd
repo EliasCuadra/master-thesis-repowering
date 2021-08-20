@@ -1,14 +1,27 @@
 # State of the art
 
+## Greenhouse gas emissions
+
+First of all, the problem of greenhouse gas emissions will be stated briefly as the bases and motivation of this thesis. It is getting warmer, as Ed Hawkins a climate scientist from the University of Reading impressively visualizes with his warming stripes using the World Meteorological Organization (WMO) annual global temperature data set (Figure \@ref(fig:wmo)). The color of each stripe, in which blue indicates cooler and red warmer temperature, represents the anomaly to the average annual temperature in the period of 1971 - 2000. 
+
+(ref:hawkins) Warming stripes for 1850-2018 using the WMO annual global temperature data set @EdHawkins.2018.
+
+```{r wmo, echo=FALSE, fig.cap="(ref:hawkins)", out.width = "100%", out.height="7%"}
+knitr::include_graphics("figures/wmo_stripes.png")
+```
+
+The debate about the significance of global warming and climate change is already omnipresent in social media, newspapers, politics, economics and science, as well as the society as a whole, and its relevance is still growing. The Intergovernmental Panel on Climate Change (IPCC) has brought virtually unequivocal evidence that the increase of average global temperature is related to anthropogenic greenhouse gas (GHG) concentrations
+@IntergovernmentalPanelonClimateChange.2014. The major international project to encounter climate change and adapt to its effects is the Paris Agreement, whose central aim is to minimize the threat of climate
+change by keeping the global temperature increase well below 2 $^\circ$C preferably below 1.5 $^\circ$C of the pre-industrial level @UnitedNations.2015. The Paris Agreement requires all 196 participating countries to proclaim their according efforts through Nationally Determined Contributions. After missing several targets, Germany passed the Climate Protection Law in December 2019. The climate protection targets for 2030 are set to reduce GHG emissions by at least 55% compared to 1990. The law also formulates the goal of GHG neutrality by 2050. The biggest GHG emitter in Germany is the energy industry @Umweltbundesamt.2018. Consequently, to reduce its GHG emissions in the energy sector and to support the development of renewable energy power plants, Germany implemented the Renewable Energy Sources Act in 2000 with latest editions from 2017 and 2021. This law intends to support the expansion of renewable energies with the aim of 65% of electricity from renewable sources in 2030. This should be done by regulating the preferred feed-in of electricity from renewable energy sources (RES), mainly wind and sun, into the power grid as well as ensuring fixed feed-in tariffs (FIT) for a period of 20 years to ensure the fast expansion of renewable energy power plants and therefore reduce GHG emission and limit global warming @BundesamtfurJustiz.2021. 
+
+
 ## Region of interest
 
-First of all, the region of interest (ROI) in this case Rhineland-Palatinate in south-west Germany is presented for it is important to know the site conditions and the statistical parameters of the past to assess the wind energy potential for future years. RLP has diverse geographic structures such as many low mountain ranges and forests namely the Rhenish Slate Mountains, Hunsrück, Eifel, Taunus, Westerwald, North Palatinate Uplands and further south the Palatinate Forest but also plain areas such as the Upper Rhine Plain, Mainz Basin and West Palatinate moorlands to only name a few. It borders North Rhine-Westphalia in the north, Hesse and Baden-Wuerttemberg in the east, the French region of Grand Est and Saarland in the south, and Luxembourg and the province of Liège in the Belgian region of Wallonia in the west. Rhineland-Palatinate is the federal state with the largest area on the left bank of the river Rhine. The climate in Rhineland-Palatinate is characterized by a moderate, humid climate with warm summers and mild to cool winters which makes it a typical Western European climate. The average annual temperature is 10.4 $^\circ$C which is 1.8 $^\circ$C above the long-term average. Settlement areas occupy around 8,6 % and transport infrastructure around 6.1 % of the area @StateStatisticalOfficeofRhinelandPalatinate.2020. 
-
-Rhineland-Palatinate is one of the most densely forested countries in Germany, as the forests here cover around 42 percent of the country's area @HansenandLamour.2021.
+Secondly, the region of interest (ROI) in this case Rhineland-Palatinate in south-west Germany is presented for it is important to know the site conditions and the statistical parameters of the past to assess the wind energy potential for future years. RLP has diverse geographic structures such as many low mountain ranges and forests namely the Rhenish Slate Mountains, Hunsrück, Eifel, Taunus, Westerwald, North Palatinate Uplands and further south the Palatinate Forest but also plain areas such as the Upper Rhine Plain, Mainz Basin and West Palatinate moorlands to only name a few. It borders North Rhine-Westphalia in the north, Hesse and Baden-Wuerttemberg in the east, the French region of Grand Est and Saarland in the south, and Luxembourg and the province of Liège in the Belgian region of Wallonia in the west. Rhineland-Palatinate is the federal state with the largest area on the left bank of the river Rhine. The climate in Rhineland-Palatinate is characterized by a moderate, humid climate with warm summers and mild to cool winters which makes it a typical Western European climate. The average annual temperature is 10.4 $^\circ$C which is 1.8 $^\circ$C above the long-term average. Settlement areas occupy around 8,6 % and transport infrastructure around 6.1 % of the area @StateStatisticalOfficeofRhinelandPalatinate.2020. Rhineland-Palatinate is one of the most densely forested countries in Germany, as the forests here cover around 42 percent of the country's area @HansenandLamour.2021.
 
 Especially the electricity generation and data from existing WTs is important but also information about different types of land cover and the occurrence of wind  are crucial for this work. An overview of important parameters regarding the estimation of the wind energy potential up to the year 2030 are shown in table \@ref(tab:table0).
 
-(ref:stats)  @StateStatisticalOfficeofRhinelandPalatinate.2020. 
+(ref:stats)  @StateStatisticalOfficeofRhinelandPalatinate.2020 
 
 ```{r table0, echo=FALSE}
 col_names <- c(
@@ -18,27 +31,37 @@ row1     <- c(
   "Area", "19,858 km²"
 )
 row2     <- c(
-  "Inhabitants", "4.1 mm"
+  "Agricultural area", "8,110 km²"
 )
 row3     <- c(
-  "Electricity demand 2021", "30 TWh"
+  "Forest area", "8,060 km²"
 )
 row4     <- c(
-  "Electricity demand 2030", "33 TWh"
+  "Settlement and traffic areas", "2,901 km²"
 )
 row5     <- c(
-  "Electricity generation 2017", "20.7 TWh"
+  "Inhabitants", "4.1 mm"
 )
 row6     <- c(
-  "Electricity generation from WTs 2019", "6.78 TWh"
+  "Electricity demand 2021", "30 TWh"
 )
 row7     <- c(
-  "Required generation from WTs in 2030", "22 TWh"
+  "Electricity demand 2030", "33 TWh"
 )
 row8     <- c(
+  "Electricity generation 2017", "20.7 TWh"
+)
+row9     <- c(
+  "Electricity generation from WTs 2019", "6.78 TWh"
+)
+row10     <- c(
+  "Required generation from WTs in 2030", "22 TWh"
+)
+row11     <- c(
   "Total number of WTs", "1,702"
 )
-df <- matrix(data = c(row1, row2, row3, row4, row5, row6, row7), nrow = 7, byrow = T)
+df <- matrix(data = c(row1, row2, row3, row4, row5, row6, row7, 
+                      row8, row9, row10, row11), nrow = 11, byrow = T)
 colnames(df) <- col_names
 df <- data.frame(df)
 knitr::kable(
@@ -49,7 +72,7 @@ knitr::kable(
   escape = FALSE
 ) %>%
 kable_styling(latex_options = c("HOLD_position")) %>%
-row_spec(1:7, hline_after = T, bold = T) %>%
+row_spec(1:11, hline_after = T, bold = T) %>%
 add_header_above(header = "Basic information on Rhineland-Palatinate", bold = T, align = "c") %>% 
 column_spec(1, width = "9cm") %>% 
 column_spec(2, width = "3cm")
