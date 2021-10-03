@@ -9,24 +9,28 @@
 \contentsline {subsection}{\numberline {2.3}Onshore wind turbines and repowering}{7}{subsection.2.3}%
 \contentsline {subsection}{\numberline {2.4}Spatial planning and planning levels in RLP}{7}{subsection.2.4}%
 \contentsline {subsubsection}{\numberline {2.4.1}State level}{7}{subsubsection.2.4.1}%
-\contentsline {subsection}{\numberline {2.5}Physical basics}{8}{subsection.2.5}%
-\contentsline {subsection}{\numberline {2.6}Technical concepts and development}{11}{subsection.2.6}%
-\contentsline {subsection}{\numberline {2.7}Regression analysis}{16}{subsection.2.7}%
-\contentsline {subsection}{\numberline {2.8}Geospatial analysis}{16}{subsection.2.8}%
-\contentsline {subsection}{\numberline {2.9}Résumé}{16}{subsection.2.9}%
-\contentsline {section}{\numberline {3}Materials and Methodology}{16}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Data}{16}{subsection.3.1}%
-\contentsline {subsubsection}{\numberline {3.1.1}Master and Movement data from Amprion}{17}{subsubsection.3.1.1}%
-\contentsline {subsubsection}{\numberline {3.1.2}Data from the market master data register (MaStR - Marktstammdatenregister)}{19}{subsubsection.3.1.2}%
-\contentsline {subsection}{\numberline {3.2}Methods}{20}{subsection.3.2}%
-\contentsline {subsubsection}{\numberline {3.2.1}Regression analysis}{20}{subsubsection.3.2.1}%
-\contentsline {subsubsection}{\numberline {3.2.2}Geospatial analysis}{21}{subsubsection.3.2.2}%
-\contentsline {section}{\numberline {4}Results}{21}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Electricity yield, rated capacity and full-load-hours in Rhineland-Palatinate}{21}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Repowering potential}{26}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Rotor diameter, hub height and area consumption}{26}{subsection.4.3}%
-\contentsline {section}{\numberline {5}Discussion}{29}{section.5}%
-\contentsline {section}{\numberline {6}Conclusion}{29}{section.6}%
-\contentsline {section}{References}{30}{section*.25}%
-\contentsline {section}{\numberline {A}Appendix}{33}{appendix.A}%
-\contentsline {subsection}{\numberline {A.1}Code chunk 1}{33}{subsection.A.1}%
+\contentsline {subsubsection}{\numberline {2.4.2}Regional level}{9}{subsubsection.2.4.2}%
+\contentsline {subsubsection}{\numberline {2.4.3}Local level}{10}{subsubsection.2.4.3}%
+\contentsline {subsection}{\numberline {2.5}Energy policy program}{10}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Climate protection concept RLP}{11}{subsection.2.6}%
+\contentsline {subsection}{\numberline {2.7}Physical basics}{12}{subsection.2.7}%
+\contentsline {subsection}{\numberline {2.8}Technical concepts and development}{15}{subsection.2.8}%
+\contentsline {subsection}{\numberline {2.9}Regression analysis}{20}{subsection.2.9}%
+\contentsline {subsection}{\numberline {2.10}Geospatial analysis}{20}{subsection.2.10}%
+\contentsline {subsection}{\numberline {2.11}Résumé}{20}{subsection.2.11}%
+\contentsline {section}{\numberline {3}Materials and Methodology}{20}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Data}{20}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Master and Movement data from Amprion}{21}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}Data from the market master data register (MaStR - Marktstammdatenregister)}{23}{subsubsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.2}Methods}{24}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Regression analysis}{24}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}Geospatial analysis}{25}{subsubsection.3.2.2}%
+\contentsline {section}{\numberline {4}Results}{25}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Electricity yield, rated capacity and full-load-hours in Rhineland-Palatinate}{25}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Repowering potential}{30}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Rotor diameter, hub height and area consumption}{30}{subsection.4.3}%
+\contentsline {section}{\numberline {5}Discussion}{33}{section.5}%
+\contentsline {section}{\numberline {6}Conclusion}{33}{section.6}%
+\contentsline {section}{References}{34}{section*.25}%
+\contentsline {section}{\numberline {A}Appendix}{38}{appendix.A}%
+\contentsline {subsection}{\numberline {A.1}Code chunk 1}{38}{subsection.A.1}%
