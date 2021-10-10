@@ -19,7 +19,7 @@ change by keeping the global temperature increase well below 2 $^\circ$C prefera
 
 Secondly, the region of interest (ROI) in this case Rhineland-Palatinate in south-west Germany is presented for it is important to know the site conditions and the statistical parameters of the past to assess the wind energy potential for future years. RLP has diverse geographic structures such as many low mountain ranges and forests namely the Rhenish Slate Mountains, Hunsrück, Eifel, Taunus, Westerwald, North Palatinate Uplands and further south the Palatinate Forest but also plain areas such as the Upper Rhine Plain, Mainz Basin and West Palatinate moorlands to only name a few. It borders North Rhine-Westphalia in the north, Hesse and Baden-Wuerttemberg in the east, the French region of Grand Est and Saarland in the south, and Luxembourg and the province of Liège in the Belgian region of Wallonia in the west. Rhineland-Palatinate is the federal state with the largest area on the left bank of the river Rhine. The climate in Rhineland-Palatinate is characterized by a moderate, humid climate with warm summers and mild to cool winters which makes it a typical Western European climate. The average annual temperature is 10.4 $^\circ$C which is 1.8 $^\circ$C above the long-term average. Settlement areas occupy around 8,6 % and transport infrastructure around 6.1 % of the area @StateStatisticalOfficeofRhinelandPalatinate.2020. Rhineland-Palatinate is one of the most densely forested countries in Germany, as the forests here cover around 42 percent of the country's area @HansenandLamour.2021.
 
-Especially the electricity generation and data from existing WTs is important but also information about different types of land cover and the occurrence of wind  are crucial for this work. An overview of important parameters regarding the estimation of the wind energy potential up to the year 2030 are shown in table \@ref(tab:table0).
+Especially the electricity generation and data from existing WTs is important but also information about different types of land cover and the occurrence of wind  are crucial for this work. An overview of important parameters regarding the estimation of the wind energy potential up to the year 2030 are shown in table \@ref(tab:table0). The study area and the modeled wind speeds taken from the Windatlas RLP @MinisteriumfurWirtschaftKlimaschutzEnergieundLandesplanung.2013 are seen in figure \@ref(fig:wind).
 
 (ref:stats)  @StateStatisticalOfficeofRhinelandPalatinate.2020 
 
@@ -79,11 +79,6 @@ column_spec(2, width = "3cm")
 ```
 
 
-
-
-
-The study area and the modeled wind speeds taken from the Windatlas RLP @MinisteriumfurWirtschaftKlimaschutzEnergieundLandesplanung.2013 are seen in Figure \@ref(fig:wind).
-
 (ref:foo) Wind speeds in RLP 140 m above Ground @MinisteriumfurWirtschaftKlimaschutzEnergieundLandesplanung.2013. 
 
 
@@ -99,22 +94,27 @@ Wind energy has been used by humans for thousands of years, but the generation o
 knitr::include_graphics("figures/nacelle.png")
 ```
 
-In addition to its load-bearing function, the tower also contains the power lines that conduct electricity to the grid connection of the distribution network @NetzKonstrukteur.16.11.2020. In the first half of 2021, in Germany 240 new wind turbines with a installed rated capacity of 971 MW. Compared to the first six months of the previous year corresponds to an increase of 62%. In the same period 135 WT's with an installed capacity of 140 MW were shut down. The net expansion in the first half of 2021 is consequently 831 MW. The cumulative installed capacity increased by 1.5% to 55,772 MW as of June 30, 2021. A total of 29,715 onshore WT's are installed in Germany that provide this capacity. To achieve the expansion target for 2022 is thus yet another net addition of around 1.2 GW required. The target, which originates from the EEG 2021, for 2030 is 71,000 MW installed but is not yet adapted by the expected increase in electricity demand in 2030.
+In addition to its load-bearing function, the tower also contains the power lines that conduct electricity to the grid connection of the distribution network @NetzKonstrukteur.16.11.2020. In the first half of 2021, in Germany 240 new WT's with a rated capacity of 971 MW were installed. This corresponds to a 62 % increase if compared to the first six months of the previous year. In the same period 135 WT's with an installed capacity of 140 MW were shut down. The net expansion in the first half of 2021 is consequently 831 MW. The cumulative installed capacity increased by 1.5% to 55,772 MW as of June 30, 2021. A total of 29,715 onshore WT's are installed in Germany that provide this capacity. To achieve the expansion target for 2022 yet another net addition of around 1.2 GW is required. The target for 2030, which originates from the EEG 2021 is 71,000 MW. This number is not yet adapted by the expected increase in electricity demand in 2030. The development of onshore WT's regarding expansion and dismantling according to Deutsche WindGuard is shown in figure \@ref(fig:winddevelopment). The development of repowering processes are shown in figure \@ref(fig:repowering).
 
-```{r winddevelopment, echo=FALSE, fig.cap="Development of expansion and dismantling of WT's in Germany from 1995 until 2021", out.width = "100%"}
+(ref:dwg) Development of expansion and dismantling of WT's in Germany from 1995 until 2021 @DeutscheWindGuard.2021.
+
+```{r winddevelopment, echo=FALSE, fig.cap="(ref:dwg)", out.width = "100%"}
 knitr::include_graphics("figures/wind2.jpg")
 ```
 
+The service provider Deutsche WindGuard in the complex energy market stands for independent, manufacturer-neutral advice and comprehensive scientific, technical and operational services. The wide range of services creates extensive synergy effects. Whether due diligence, market analysis, contract advice or feasibility study: the expertise and know-how of the entire WindGuard group flow into all services. Deutsche WindGuard has been compiling the six-monthly expansion statistics since 2012. Via the BundesverbandWindEnergie e.V. (BWE) As a member of the Federal Renewable Energy Association (BEE), the BWE represents the entire wind energy industry with its more than 20,000 members. Together, the supplier and manufacturing industry anchored in German mechanical engineering, project planners, specialized lawyers, the financial sector and companies from the fields of logistics, construction, service / maintenance and storage technologies, electricity traders, network operators and energy providers ensure that the BWE is available to all questions relating to wind energy is the first point of contact for politics and business, science and the media.
 
 
+(ref:dwg2) Development of the annual and proportionally installed and reduced capacity within the scope of repowering projects @DeutscheWindGuard.2021.
+
+```{r repowering, echo=FALSE, fig.cap="(ref:dwg2)", out.width = "100%"}
+knitr::include_graphics("figures/repowering.png")
+```
+
+The production of WT's can usually be realized within a few months with relatively little material and energy consumption. After a short period of operation, a WT has already "brought in" the energy that was required for its production. This period is known as the energy returned on energy invested (ERoEI) or shorter energy return on investment (EROI). A wind turbine on land takes between three and seven months for energetic amortization. Offshore systems with an output of several megawatts need four to five months to recycle the energy used in production and installation. According to this, every operating hour delivers “net” clean electricity - for an average of at least 20 years @PriyanaRazdan.2019. In comparison photovoltaic systems need between one and four years for this energetic amortization. A wind power plant can therefore provide 40 to 70 times more energy during its entire life cycle than was expended for its manufacture, use and disposal, depending on the design. If this amount of electricity replaces fossil fuels, the wind power plant can credit itself with the avoided emissions from coal and gas power plants. Both the climate and the energy balance are therefore clearly positive - in contrast to fossil-fuel power plants.
 
 
-The production of WT's can usually be realized within a few months with relatively little material and energy consumption. After a short period of operation, a WT has already "brought in" the energy that was required for its production. This period is known as the energy returned on energy invested (ERoEI) or shorter energy return on investment (EROI). A wind turbine on land takes between three and seven months for energetic amortization. Offshore systems with an output of several megawatts need four to five months to recycle the energy used in production and installation. According to this, every operating hour delivers “net” clean electricity - for an average of at least 20 years. A wind power plant can therefore provide 40 to 70 times more energy during its entire life cycle than was expended for its manufacture, use and disposal, depending on the design. If this amount of electricity replaces fossil fuels, the wind power plant can credit itself with the avoided emissions from coal and gas power plants. Both the climate and the energy balance are therefore clearly positive - in contrast to fossil-fuel power plants. Even after completion of the system, these always require an external energy supply in the form of fuels in order to convert them into electricity or heat, often with very poor efficiency - whereby the climate-damaging greenhouse gases are released.
-
-About Deutsche WindGuard In the complex energy market, Deutsche WindGuard stands for independent, manufacturer-neutral advice and comprehensive scientific, technical and operational services. The wide range of services creates extensive synergy effects. Whether due diligence, market analysis, contract advice or feasibility study: the expertise and know-how of the entire WindGuard group flow into all services. Deutsche WindGuard has been compiling the six-monthly expansion statistics since 2012. Via the BundesverbandWindEnergie e.V. (BWE) As a member of the Federal Renewable Energy Association (BEE), the BWE represents the entire wind energy industry with its more than 20,000 members. Together, the supplier and manufacturing industry anchored in German mechanical engineering, project planners, specialized lawyers, the financial sector and companies from the fields of logistics, construction, service / maintenance and storage technologies, electricity traders, network operators and energy providers ensure that the BWE is available to all questions relating to wind energy is the first point of contact for politics and business, science and the media.
-
-
-The transmission system operators, in this case Amprion, are obliged to publish so-called master and movement data for the amount of electricity fed-in with remuneration for each calendar year in accordance with section 77 of the 2017 Renewable Energy Act (EEG) @Bundesgestzblatt.2017. This master and movement data includes information about the annual electricity generation and the EEG system key. The data for RLP is currently available until 2019. The total amount of electricity fed in with remuneration in 2019 from wind turbines in RLP is 6,782,180,753 kWh, i.e. approximately 6.782 TWh @EnergieagenturRheinlandPfalz.2019.
+The electricity generation from wind energy in RLP can be traced by using data from the transmission system operators.In the case of RLP it is the transmission network operator Amprion, who publishes so-called master and movement data for the amount of electricity fed-in with remuneration for each calendar year in accordance with section 77 of the Renewable Energy Act (EEG)2017 @Bundesgestzblatt.2017. This master and movement data includes information about the annual electricity generation and the EEG system key. The data for RLP is currently available until 2019. The total amount of electricity fed-in with remuneration in 2019 from wind turbines in RLP is 6,782,180,753 kWh, i.e. approximately 6.782 TWh @EnergieagenturRheinlandPfalz.2019.
 
 ## Spatial planning in RLP
 
@@ -217,7 +217,7 @@ In Formula 3 it becomes clear that the wind speed is the determining factor for 
 
 The curve of power per m\textsuperscript{2} in relation to the wind speed is also shown in Figure \@ref(fig:powerofwind). Of course, not all the wind's power can be converted and there are further losses when converting kinetic energy into electrical energy in the generator.
 
-```{r powerofwind, echo=FALSE, fig.cap="Left: Power of the wind per rotor area over wind speed; Right: Typical load profile of a WT", out.width = "49%", out.height= "25%", fig.show='hold',fig.align='center'}
+```{r powerofwind, echo=FALSE, fig.cap="Left: Power of the wind per rotor area over wind speed; Right: Typical load profile of a WT.", out.width = "49%", out.height= "25%", fig.show='hold',fig.align='center'}
 knitr::include_graphics(c("figures/power2.png", "figures/Typical-wind-power-output-versus-wind-speed_W640.jpg"))
 ```
 
@@ -258,7 +258,7 @@ The study of DWG examines the development of full-load-hours and thus the wind e
 
 The full-load-hours are a measure of the degree of utilization of a power generation plant and denote the time that a plant would have to be operated at nominal load in order to achieve the same power production as it has achieved over the entire reference period with fluctuating generation capacity. The full-load-hours of wind turbines are usually given per calendar year. The full-load-hours per year are calculated from the quotient of the annual energy yield and the nominal output also called as rated capacity. Since the full-load-hours result from the electricity yield and the installed nominal power, there is a dependency and the gain in information is limited. However, knowing the average full-load-hours of all wind turbines and their development is of great importance, as it establishes the connection between installed power and expected energy yield within a certain area. For a forward-looking political control of the future share of wind energy in the energy transition, an assumption for the full-load-hours to be expected in the future is necessary. The aim of the presented study is to make an assessment of the future development of the full-load-hours of wind turbines on land. Furthermore, it should be estimated what total energy yield is possible with the expected system technology on all designated areas. The development of the full-load-hours in different parts of Germany can be seen in Figure \@ref(fig:flh).
 
-```{r flh, echo=FALSE, fig.cap="Development and forecast of the mean full-load-hours (in h) for Wind turbines installed in Germany. Figure taken from Deutsche WindGuard 2020", out.width = "100%"}
+```{r flh, echo=FALSE, fig.cap="Development and forecast of the mean full-load-hours (in h) for Wind turbines installed in Germany. Figure taken from Deutsche WindGuard 2020.", out.width = "100%"}
 knitr::include_graphics("figures/DWG/DWG_Volllaststunden.png")
 ```
 
@@ -268,7 +268,7 @@ Electricity\;yield\; =\; Full-load-hours\; *\; Capacity
 $$  
 The capacity is the installed nominal output, also called rated capacity of the generator and can be found in the technical details of a wind turbine generator. The development of the installed nominal power depending on the commissioning date in Germany can be seen in Figure \@ref(fig:capacity).
 
-```{r capacity, echo=FALSE, fig.cap="Development and forecast of the mean rated capacity (in kW) for Wind turbines installed in Germany. Figure taken from Deutsche WindGuard 2020", out.width = "100%", fig.pos="H"}
+```{r capacity, echo=FALSE, fig.cap="Development and forecast of the mean rated capacity (in kW) for Wind turbines installed in Germany. Figure taken from Deutsche WindGuard 2020.", out.width = "100%", fig.pos="H"}
 knitr::include_graphics("figures/DWG/DWG_Nennleistung.png")
 ```
 
@@ -278,14 +278,14 @@ With a fixed nominal output, a high full-load hourly value is also associated wi
 knitr::include_graphics("figures/DWG/DWG_Rotordurchmesser.png")
 ```
 
-```{r nabe, echo=FALSE, fig.cap="Development and forecast of mean hub hight (in m) for Wind turbines installed in Germany. Figure taken from Deutsche WindGuard 2020", out.width = "100%", fig.pos="H"}
+```{r nabe, echo=FALSE, fig.cap="Development and forecast of mean hub hight (in m) for Wind turbines installed in Germany. Figure taken from Deutsche WindGuard 2020.", out.width = "100%", fig.pos="H"}
 knitr::include_graphics("figures/DWG/DWG_Nabenhöhe.png")
 ```
 
 The specific nominal power represents the relationship between the nominal power of the turbine and the swept rotor area. The specific nominal power of the turbines has tended to decrease since 2012, which is due to the increasing rotor diameters (Figure \@ref(fig:rotor)). Systems with a lower specific nominal output, i.e. comparatively larger rotors, have more full-load-hours under the same wind conditions or achieve their nominal output at lower wind speeds and are therefore also referred to as low-wind systems. If two systems are compared with the same rotor diameter, the system with a higher absolute and therefore also specific nominal output is always more expensive and is therefore only suitable for comparatively higher wind speeds. Due to the prevailing conditions in RLP, low-wind turbines with a lower specific nominal output are more important in repowering than the increase in absolute turbine output. However, the value of the specific rated capacity in southern Germany is currently stagnating at approx. 270 W/m\textsuperscript{2} as shown in Figure \@ref(fig:spec). Because the full-load-hours depend largely on the rated capacity and the wind speed in addition to technical influences, they are a useful indicator for calculating the expected electricity yield if there is no data on electricity yields from existing systems and only technical details and site conditions are available. The mean value of the full-load-hours of all wind turbines, e.g., for a federal state, can be used as a parameter to infer the future electricity yield from the installed rated capacity @RasmusBorrmannDr.KnudRehfeldtDr.DennisKruse.2020.
 
 
-```{r spec, echo=FALSE, fig.cap="Development and forecast of the mean specific rated capacity (in W/m²) for Wind turbines installed in Germany. Figure taken from Deutsche WindGuard 2020", out.width = "100%", fig.pos="H"}
+```{r spec, echo=FALSE, fig.cap="Development and forecast of the mean specific rated capacity (in W/m²) for Wind turbines installed in Germany. Figure taken from Deutsche WindGuard 2020.", out.width = "100%", fig.pos="H"}
 knitr::include_graphics("figures/DWG/DWG_Spezifische_Nennleistung.png")
 ```
 
