@@ -63,7 +63,7 @@
 % save thesis parameters for later
 \newcommand{\thesistype}{Master's Thesis}
 \newcommand{\thesisauthor}{Elias Cuadra Braatz}
-\newcommand{\thesisdate}{October 10, 2021}
+\newcommand{\thesisdate}{October 11, 2021}
 
 % define tightlist to work with newer versions of pandoc
 \providecommand{\tightlist}{%
@@ -203,7 +203,7 @@
   in partial fulfillment of the requirements \\
   for the degree of \\
   \textbf{Master of Environmental Sciences} \\\vspace{0.5cm}
-  October 10, 2021
+  October 11, 2021
   
 \end{center}
 
@@ -336,7 +336,7 @@ change by keeping the global temperature increase well below 2 \(^\circ\)C prefe
 
 Secondly, the region of interest (ROI) in this case Rhineland-Palatinate in south-west Germany is presented for it is important to know the site conditions and the statistical parameters of the past to assess the wind energy potential for future years. RLP has diverse geographic structures such as many low mountain ranges and forests namely the Rhenish Slate Mountains, Hunsrück, Eifel, Taunus, Westerwald, North Palatinate Uplands and further south the Palatinate Forest but also plain areas such as the Upper Rhine Plain, Mainz Basin and West Palatinate moorlands to only name a few. It borders North Rhine-Westphalia in the north, Hesse and Baden-Wuerttemberg in the east, the French region of Grand Est and Saarland in the south, and Luxembourg and the province of Liège in the Belgian region of Wallonia in the west. Rhineland-Palatinate is the federal state with the largest area on the left bank of the river Rhine. The climate in Rhineland-Palatinate is characterized by a moderate, humid climate with warm summers and mild to cool winters which makes it a typical Western European climate. The average annual temperature is 10.4 \(^\circ\)C which is 1.8 \(^\circ\)C above the long-term average. Settlement areas occupy around 8,6 \% and transport infrastructure around 6.1 \% of the area {[}\protect\hyperlink{ref-StateStatisticalOfficeofRhinelandPalatinate.2020}{19}{]}. Rhineland-Palatinate is one of the most densely forested countries in Germany, as the forests here cover around 42 percent of the country's area {[}\protect\hyperlink{ref-HansenandLamour.2021}{20}{]}.
 
-Especially the electricity generation and data from existing WTs is important but also information about different types of land cover and the occurrence of wind are crucial for this work. An overview of important parameters regarding the estimation of the wind energy potential up to the year 2030 are shown in table \ref{tab:table0}. The study area and the modeled wind speeds taken from the Windatlas RLP {[}\protect\hyperlink{ref-MinisteriumfurWirtschaftKlimaschutzEnergieundLandesplanung.2013}{21}{]} are seen in Figure \ref{fig:wind}.
+Especially the electricity generation and data from existing WTs is important but also information about different types of land cover and the occurrence of wind are crucial for this work. An overview of important parameters regarding the estimation of the wind energy potential up to the year 2030 are shown in table \ref{tab:table0}. The study area and the modeled wind speeds taken from the Windatlas RLP {[}\protect\hyperlink{ref-MinisteriumfurWirtschaftKlimaschutzEnergieundLandesplanung.2013}{21}{]} are seen in figure \ref{fig:wind}.
 
 
 \begin{table}[H]
@@ -631,11 +631,20 @@ The specific nominal power represents the relationship between the nominal power
 
 \caption{Development and forecast of the mean specific rated capacity (in W/m²) for Wind turbines installed in Germany. Figure taken from Deutsche WindGuard 2020.}\label{fig:spec}
 \end{figure}
-Hence, the methodology of the DWG is adopted and applied in an own analysis of the electricity yield, the rated capacity and the full-load-hours as well as rotor diameter and hub height in RLP and the results are presented in section 4.1. This chapter continues with the explanation of the two main methods for the data analysis.
-
 \hypertarget{regression-analysis}{%
 \subsection{Regression analysis}\label{regression-analysis}}
 
+A regression analysis is used to check whether there is a relationship between the values of two or more variables and how strong this relation is. In the context of the data evaluation of the amount of electricity fed into the grid from WT's, the amount of electricity, the installed nominal power and the energy density depending on the commissioning date are of particular interest in order to be able to make statements about future developments. This relationship is tested in a regression analysis in the form of a comparison that measures the change in the dependent variable when the value of the independent variable increases or decreases by the value 1. Since this study uses only a very simple statistical analysis, only a simple linear regression with two variables is used, which in some cases is supplemented by a third-order polynomial equation to simulate disproportionate growth. The procedure is that from the data points, in this case the electricity yield or rated capacity per WT in relation to the commissioning date, that linear function equation is selected which makes the sum of the squares of the deviations, also referred to as the residuals, from the data points to this exact line is as small as possible. This is also why linear regression is also called \emph{least-squares estimation} {[}\protect\hyperlink{ref-NormanMatloff.2017}{45}{]}. A simple overview about a chart that shows a linear regression output with explanations is show in figure \ref{fig:regression}.
+
+
+\begin{figure}[H]
+
+{\centering \includegraphics[width=1\linewidth]{figures/regression} 
+
+}
+
+\caption{Basic representation of linear regression analysis with date points, regression line and confidence intervals {[}\protect\hyperlink{ref-JasonWong.2020}{46}{]}.}\label{fig:regression}
+\end{figure}
 \hypertarget{geospatial-analysis}{%
 \subsection{Geospatial analysis}\label{geospatial-analysis}}
 
@@ -651,7 +660,7 @@ In order to calculate the electricity yield of future WTs in RLP, the following 
 \hypertarget{data}{%
 \subsection{Data}\label{data}}
 
-For the preparation and the analysis of the data, ``R'' which is a language and environment for statistical computing version 4.0.5 (2021-03-31) -- ``Shake and Throw'' and RStudio Version 1.4.1106, which is the associated integrated development environment (IDE), is used {[}\protect\hyperlink{ref-R}{45}{]}. Due to exhaustive code and iterative preparation steps the full documentation is not displayed here but can be found on \url{https://github.com/EliasCuadra/master-thesis-repowering} with explanatory README.md files that contain descriptions of variables and processing steps. Nonetheless, important aspects or code chunks are directly included or can be found in the appendix. Packages in use are: rio, data.table, tidyverse, magrittr, compare, leaflet, sp, raster, rgdal, htmltools, htmlwidgets, tmaptools, maptools, raster, sf, tmap, spatstat, rgeos and diagrammR. The data handling is mostly done with base R and deplyr from the tidyverse package collection. Deplyr is a grammar of data manipulation, providing a consistent set of verbs that help performing common data manipulation challenges {[}\protect\hyperlink{ref-HadleyWickham.2021}{46}{]}. The different sources of data are introduced subsequently.
+For the preparation and the analysis of the data, ``R'' which is a language and environment for statistical computing version 4.0.5 (2021-03-31) -- ``Shake and Throw'' and RStudio Version 1.4.1106, which is the associated integrated development environment (IDE), is used {[}\protect\hyperlink{ref-R}{47}{]}. Due to exhaustive code and iterative preparation steps the full documentation is not displayed here but can be found on \url{https://github.com/EliasCuadra/master-thesis-repowering} with explanatory README.md files that contain descriptions of variables and processing steps. Nonetheless, important aspects or code chunks are directly included or can be found in the appendix. Packages in use are: rio, data.table, tidyverse, magrittr, compare, leaflet, sp, raster, rgdal, htmltools, htmlwidgets, tmaptools, maptools, raster, sf, tmap, spatstat, rgeos and diagrammR. The data handling is mostly done with base R and deplyr from the tidyverse package collection. Deplyr is a grammar of data manipulation, providing a consistent set of verbs that help performing common data manipulation challenges {[}\protect\hyperlink{ref-HadleyWickham.2021}{48}{]}. The different sources of data are introduced subsequently.
 
 \hypertarget{master-and-movement-data-from-amprion}{%
 \subsubsection{Master and Movement data from Amprion}\label{master-and-movement-data-from-amprion}}
@@ -736,7 +745,7 @@ As expected the electricity yield increases with increasing rated capacity and t
 
 \caption{Rated capacity over commissioning date}\label{fig:ratedcapacity}
 \end{figure}
-The next plot shows the full-load-hours over the commissioning date in Figure \ref{fig:full}. The linear trends for the year 2015 until 2019 have more or less the same slope and are not deviating strongly. This indicates relatively stable conditions. It also seems that the more recent the data the higher the estimates, which could be explained through increasing technology especially again the increasing rotor diameter and therefore the reduced specific nominal power is decisive. On the contrary the estimation of the data from 2015 is among the highest, even though the latest technology is not reflected here. The year 2017 also has higher full-load-hours than the year 2018. This nicely reflects the fluctuation in wind conditions and means that the years 2015 and 2017 might be better wind years than the years 2016 and 2018. The mean of all models for 2021 is around 2,300 h/a and is therefore used for further calculation. The prediction for 2030 is around 2,800 h/a on average. If this is compared to the study of the DWG it can be seen that the DWG similarly shows average full-load-hours for the south of Germany in 2000 of around 1,300 and in 2016 of around 2,000 and the prediction for 2021 lies equally at around 2,300 h. The estimation for 2030 of the study of DWG shows a lower value of less than 2,500 h. This might be because the study of the DWG uses more data from different sources, probably a more sophisticated model and also the prediction is done for the whole of southern Germany. But it seems as to calculate with the value of 2,300 full-load-hours does definitely not lead to an overestimation. Divided by the total number of hours per year that equals to a load factor of around 26 \%, which is much more than the mentioned 19 \% from the literature {[}\protect\hyperlink{ref-DavidJCMacKay.2009}{39}{]} from 2009. This can, again, be well explained through the increasing rotor and decreasing specific nominal power which leads to a better utilization of weak winds. Lastly if we multiply the estimated full-load-hours by the average rated capacity for 2021 the result is 8,050 MWh/a, which is higher than the linear trends suggest. This is because the development of the rated capacity and the rotor diameter are actually not completely captured by a linear relationship. If compared to the polynomial models with estimations for the year 2021 of around 8,000 - 10,000 MWh/a this result seems more similar. If we assume an average electricity generation of 7,400 MWh/a the number of WTs needed to generate the demanded 20 TWh is around 2,700 WTs, if on average 8,050 MWh/a could be harvested then this would require around 2,484 WTs. It seems that if the average growth of the total number of WTs in RLP continues as predicted initially the goal of around 2,500 WTs in RLP is realistic. Of course, WTs with lower total electricity yield would have to be repowered additionally but it shows that it is not totally out of the scope. On the contrary, due to legal reasons and resistance from the citizens, the increase was slowed down sharply from 92 newly commissioned WTs in 2017 to 27 newly commissioned WTs in 2019 {[}\protect\hyperlink{ref-EnergieagenturRheinlandPfalz.2019}{28}{]}. Experts from the wind industry particularly criticize the difficult approval procedures. The biggest mistake of the federal government was to introduce an ``obligation to tender'' for new wind turbines {[}\protect\hyperlink{ref-NickSchader.2021}{47}{]}.
+The next plot shows the full-load-hours over the commissioning date in Figure \ref{fig:full}. The linear trends for the year 2015 until 2019 have more or less the same slope and are not deviating strongly. This indicates relatively stable conditions. It also seems that the more recent the data the higher the estimates, which could be explained through increasing technology especially again the increasing rotor diameter and therefore the reduced specific nominal power is decisive. On the contrary the estimation of the data from 2015 is among the highest, even though the latest technology is not reflected here. The year 2017 also has higher full-load-hours than the year 2018. This nicely reflects the fluctuation in wind conditions and means that the years 2015 and 2017 might be better wind years than the years 2016 and 2018. The mean of all models for 2021 is around 2,300 h/a and is therefore used for further calculation. The prediction for 2030 is around 2,800 h/a on average. If this is compared to the study of the DWG it can be seen that the DWG similarly shows average full-load-hours for the south of Germany in 2000 of around 1,300 and in 2016 of around 2,000 and the prediction for 2021 lies equally at around 2,300 h. The estimation for 2030 of the study of DWG shows a lower value of less than 2,500 h. This might be because the study of the DWG uses more data from different sources, probably a more sophisticated model and also the prediction is done for the whole of southern Germany. But it seems as to calculate with the value of 2,300 full-load-hours does definitely not lead to an overestimation. Divided by the total number of hours per year that equals to a load factor of around 26 \%, which is much more than the mentioned 19 \% from the literature {[}\protect\hyperlink{ref-DavidJCMacKay.2009}{39}{]} from 2009. This can, again, be well explained through the increasing rotor and decreasing specific nominal power which leads to a better utilization of weak winds. Lastly if we multiply the estimated full-load-hours by the average rated capacity for 2021 the result is 8,050 MWh/a, which is higher than the linear trends suggest. This is because the development of the rated capacity and the rotor diameter are actually not completely captured by a linear relationship. If compared to the polynomial models with estimations for the year 2021 of around 8,000 - 10,000 MWh/a this result seems more similar. If we assume an average electricity generation of 7,400 MWh/a the number of WTs needed to generate the demanded 20 TWh is around 2,700 WTs, if on average 8,050 MWh/a could be harvested then this would require around 2,484 WTs. It seems that if the average growth of the total number of WTs in RLP continues as predicted initially the goal of around 2,500 WTs in RLP is realistic. Of course, WTs with lower total electricity yield would have to be repowered additionally but it shows that it is not totally out of the scope. On the contrary, due to legal reasons and resistance from the citizens, the increase was slowed down sharply from 92 newly commissioned WTs in 2017 to 27 newly commissioned WTs in 2019 {[}\protect\hyperlink{ref-EnergieagenturRheinlandPfalz.2019}{28}{]}. Experts from the wind industry particularly criticize the difficult approval procedures. The biggest mistake of the federal government was to introduce an ``obligation to tender'' for new wind turbines {[}\protect\hyperlink{ref-NickSchader.2021}{49}{]}.
 
 In the end of this section it is to mention that this increasing development should not be misunderstood that the overall electricity yield of an area can be increased in the same way. Larger WTs have to be spaced further apart, so even though they might have a higher electricity yield, the overall electricity yield per area might not increase as much as expected. Although there might be strong economic reasons to build greater WTs and also to harvest higher wind speeds at greater altitudes, the overall energy extraction per area has certain limits that cannot be exceeded. The calculations of the respective area consumption are presented in subsections XV.
 \begin{figure}[H]
@@ -1012,16 +1021,24 @@ Scenario & Electricity yield per area [kWh/m²a] & Power output per area [W/m²]
 \CSLLeftMargin{44. }
 \CSLRightInline{Rasmus Borrmann, Dr. Knud Rehfeldt, Dr. Dennis Kruse: Volllaststunden von windenergieanlagen an land - entwicklung, einfl{ü}sse, auswirkungen: Volllaststunden von windenergieanlagen an land, \url{https://www.windguard.de/veroeffentlichungen.html?file=files/cto_layout/img/unternehmen/veroeffentlichungen/2020/Volllaststunden\%20von\%20Windenergieanlagen\%20an\%20Land\%202020.pdf}, (2020)}
 
-\leavevmode\hypertarget{ref-R}{}%
+\leavevmode\hypertarget{ref-NormanMatloff.2017}{}%
 \CSLLeftMargin{45. }
+\CSLRightInline{Norman Matloff: Statistical regression and classification: From linear models to machine learning. {CRC Press, Taylor and Francis Group}, 6000 Broken Sound Parkway NW, Suite 300 (2017)}
+
+\leavevmode\hypertarget{ref-JasonWong.2020}{}%
+\CSLLeftMargin{46. }
+\CSLRightInline{Jason Wong: Linear regression explained, \url{https://towardsdatascience.com/linear-regression-explained-1b36f97b7572}, (2020)}
+
+\leavevmode\hypertarget{ref-R}{}%
+\CSLLeftMargin{47. }
 \CSLRightInline{R Core Team: R: A language and environment for statistical computing. R Foundation for Statistical Computing, Vienna, Austria (2021)}
 
 \leavevmode\hypertarget{ref-HadleyWickham.2021}{}%
-\CSLLeftMargin{46. }
+\CSLLeftMargin{48. }
 \CSLRightInline{Hadley Wickham: Deplyr, \url{https://dplyr.tidyverse.org/}, (2021)}
 
 \leavevmode\hypertarget{ref-NickSchader.2021}{}%
-\CSLLeftMargin{47. }
+\CSLLeftMargin{49. }
 \CSLRightInline{Nick Schader: Der windkraftausbau stockt massiv: Der ausbau der windenergie in deutschland ist 2020 teils dramatisch zur{ü}ckgegangen. Genehmigungen f{ü}r windkraftanlagen erreichen in vielen l{ä}ndern einen tiefststand. Kritiker lasten das vor allem der bundesregierung an., \url{https://www.tagesschau.de/investigativ/swr/deutschland-windkraft-ausbau-101.html}, (2021)}
 
 \end{CSLReferences}

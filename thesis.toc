@@ -17,21 +17,21 @@
 \contentsline {subsection}{\numberline {2.7}Physical basics}{16}{subsection.2.7}%
 \contentsline {subsection}{\numberline {2.8}Technical concepts and development}{18}{subsection.2.8}%
 \contentsline {subsection}{\numberline {2.9}Regression analysis}{23}{subsection.2.9}%
-\contentsline {subsection}{\numberline {2.10}Geospatial analysis}{23}{subsection.2.10}%
-\contentsline {subsection}{\numberline {2.11}Résumé}{23}{subsection.2.11}%
-\contentsline {section}{\numberline {3}Materials and Methodology}{23}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Data}{23}{subsection.3.1}%
-\contentsline {subsubsection}{\numberline {3.1.1}Master and Movement data from Amprion}{24}{subsubsection.3.1.1}%
+\contentsline {subsection}{\numberline {2.10}Geospatial analysis}{24}{subsection.2.10}%
+\contentsline {subsection}{\numberline {2.11}Résumé}{24}{subsection.2.11}%
+\contentsline {section}{\numberline {3}Materials and Methodology}{24}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Data}{24}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Master and Movement data from Amprion}{25}{subsubsection.3.1.1}%
 \contentsline {subsubsection}{\numberline {3.1.2}Data from the market master data register (MaStR - Marktstammdatenregister)}{26}{subsubsection.3.1.2}%
 \contentsline {subsection}{\numberline {3.2}Methods}{27}{subsection.3.2}%
 \contentsline {subsubsection}{\numberline {3.2.1}Regression analysis}{27}{subsubsection.3.2.1}%
-\contentsline {subsubsection}{\numberline {3.2.2}Geospatial analysis}{28}{subsubsection.3.2.2}%
-\contentsline {section}{\numberline {4}Results}{28}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Electricity yield, rated capacity and full-load-hours in Rhineland-Palatinate}{28}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Repowering potential}{33}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Rotor diameter, hub height and area consumption}{33}{subsection.4.3}%
-\contentsline {section}{\numberline {5}Discussion}{36}{section.5}%
-\contentsline {section}{\numberline {6}Conclusion}{36}{section.6}%
-\contentsline {section}{References}{37}{section*.28}%
-\contentsline {section}{\numberline {A}Appendix}{41}{appendix.A}%
-\contentsline {subsection}{\numberline {A.1}Code chunk 1}{41}{subsection.A.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}Geospatial analysis}{29}{subsubsection.3.2.2}%
+\contentsline {section}{\numberline {4}Results}{29}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Electricity yield, rated capacity and full-load-hours in Rhineland-Palatinate}{29}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Repowering potential}{34}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Rotor diameter, hub height and area consumption}{34}{subsection.4.3}%
+\contentsline {section}{\numberline {5}Discussion}{37}{section.5}%
+\contentsline {section}{\numberline {6}Conclusion}{37}{section.6}%
+\contentsline {section}{References}{38}{section*.29}%
+\contentsline {section}{\numberline {A}Appendix}{42}{appendix.A}%
+\contentsline {subsection}{\numberline {A.1}Code chunk 1}{42}{subsection.A.1}%

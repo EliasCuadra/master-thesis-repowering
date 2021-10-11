@@ -289,11 +289,16 @@ The specific nominal power represents the relationship between the nominal power
 knitr::include_graphics("figures/DWG/DWG_Spezifische_Nennleistung.png")
 ```
 
-Hence, the methodology of the DWG is adopted and applied in an own analysis of the electricity yield, the rated capacity and the full-load-hours as well as rotor diameter and hub height in RLP and the results are presented in section 4.1. This chapter continues with the explanation of the two main methods for the data analysis.
-
-
 
 ## Regression analysis
+A regression analysis is used to check whether there is a relationship between the values of two or more variables and how strong this relation is. In the context of the data evaluation of the amount of electricity fed into the grid from WT's, the amount of electricity, the installed nominal power and the energy density depending on the commissioning date are of particular interest in order to be able to make statements about future developments. This relationship is tested in a regression analysis in the form of a comparison that measures the change in the dependent variable when the value of the independent variable increases or decreases by the value 1. Since this study uses only a very simple statistical analysis, only a simple linear regression with two variables is used, which in some cases is supplemented by a third-order polynomial equation to simulate disproportionate growth. The procedure is that from the data points, in this case the electricity yield or rated capacity per WT in relation to the commissioning date, that linear function equation is selected which makes the sum of the squares of the deviations, also referred to as the residuals, from the data points to this exact line is as small as possible. This is also why linear regression is also called *least-squares estimation* @NormanMatloff.2017. A simple overview about a chart that shows a linear regression output with explanations is show in figure \@ref(fig:regression).
+
+(ref:regr) Basic representation of linear regression analysis with date points, regression line and confidence intervals @JasonWong.2020. 
+
+
+```{r regression, echo=FALSE, fig.cap="(ref:regr)", out.width = "100%", fig.pos="H"}
+knitr::include_graphics("figures/regression.jpeg")
+```
 
 ## Geospatial analysis
 

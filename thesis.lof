@@ -9,11 +9,12 @@
 \contentsline {figure}{\numberline {9}{\ignorespaces Development and forecast of the mean rotor diameter (in m) for Wind turbines installed in Germany. Figure taken from Deutsche WindGuard 2020\relax }}{21}{figure.caption.15}%
 \contentsline {figure}{\numberline {10}{\ignorespaces Development and forecast of mean hub hight (in m) for Wind turbines installed in Germany. Figure taken from Deutsche WindGuard 2020.\relax }}{21}{figure.caption.16}%
 \contentsline {figure}{\numberline {11}{\ignorespaces Development and forecast of the mean specific rated capacity (in W/m²) for Wind turbines installed in Germany. Figure taken from Deutsche WindGuard 2020.\relax }}{22}{figure.caption.17}%
-\contentsline {figure}{\numberline {12}{\ignorespaces Number of total WTs in RLP from 2012 to 2019 according to transmission system operator Amprion\relax }}{25}{figure.caption.18}%
-\contentsline {figure}{\numberline {13}{\ignorespaces Flow chart of the proccessing steps\relax }}{26}{figure.caption.19}%
-\contentsline {figure}{\numberline {14}{\ignorespaces Flow chart of merging process\relax }}{27}{figure.caption.20}%
-\contentsline {figure}{\numberline {15}{\ignorespaces Development and forecast of electricity yield in Rhineland-Palatinate using data from 2017 to 2019 and a linear an polynomial model\relax }}{29}{figure.caption.21}%
-\contentsline {figure}{\numberline {16}{\ignorespaces Electricity yield over rated capacity in RLP with data from 2017 to 2019\relax }}{30}{figure.caption.22}%
-\contentsline {figure}{\numberline {17}{\ignorespaces Rated capacity over commissioning date\relax }}{31}{figure.caption.23}%
-\contentsline {figure}{\numberline {18}{\ignorespaces full-load-hours over the commissioning date using data from 2015 - 2019\relax }}{32}{figure.caption.24}%
-\contentsline {figure}{\numberline {19}{\ignorespaces Electricity yield per m² and year over the commissioning date\relax }}{34}{figure.caption.26}%
+\contentsline {figure}{\numberline {12}{\ignorespaces Basic representation of linear regression analysis with date points, regression line and confidence intervals {[}\hyperlink {ref-JasonWong.2020}{46}{]}.\relax }}{23}{figure.caption.18}%
+\contentsline {figure}{\numberline {13}{\ignorespaces Number of total WTs in RLP from 2012 to 2019 according to transmission system operator Amprion\relax }}{26}{figure.caption.19}%
+\contentsline {figure}{\numberline {14}{\ignorespaces Flow chart of the proccessing steps\relax }}{27}{figure.caption.20}%
+\contentsline {figure}{\numberline {15}{\ignorespaces Flow chart of merging process\relax }}{28}{figure.caption.21}%
+\contentsline {figure}{\numberline {16}{\ignorespaces Development and forecast of electricity yield in Rhineland-Palatinate using data from 2017 to 2019 and a linear an polynomial model\relax }}{30}{figure.caption.22}%
+\contentsline {figure}{\numberline {17}{\ignorespaces Electricity yield over rated capacity in RLP with data from 2017 to 2019\relax }}{31}{figure.caption.23}%
+\contentsline {figure}{\numberline {18}{\ignorespaces Rated capacity over commissioning date\relax }}{32}{figure.caption.24}%
+\contentsline {figure}{\numberline {19}{\ignorespaces full-load-hours over the commissioning date using data from 2015 - 2019\relax }}{33}{figure.caption.25}%
+\contentsline {figure}{\numberline {20}{\ignorespaces Electricity yield per m² and year over the commissioning date\relax }}{35}{figure.caption.27}%
