@@ -304,12 +304,24 @@ A regression analysis is used to check whether there is a relationship between t
 (ref:regr) Basic representation of linear regression analysis with date points, regression line and confidence intervals @JasonWong.2020. 
 
 
-```{r regression, echo=FALSE, fig.cap="(ref:regr)", out.width = "100%", fig.pos="H"}
+```{r regression, echo=FALSE, fig.cap="(ref:regr)", out.width = "100%"}
 knitr::include_graphics("figures/regression.jpeg")
 ```
 
 
-To explain some fundamentals, the variance in statistics is the expectation of the squared deviation of a random variable from its population mean or sample mean. Variance is therefore a measure of dispersion, meaning it is a measure of how far a set of numbers is spread out from their average value. The R-squared (R²) value in this context is the proportion by which the variance of the dependent variable is explained by the variance of the independent variable. This should not be mistaken for the strength of the overall relationship which would be the correlation. For example if R² is 0.5 this means that 50 % of the variation in the data can be explained by the variation of the input data. The results in chapter X are also presented with a p-value. The p-value is the probability that random chance created the result that were observed or something that is even more extreme and is therefore a measure of the statistical significance. The lower the p-value the greater the significance. To find outliers and clean the data respectively Cook’s distance is used in this work which is a commonly used estimate of the influence of a data point when performing a regression analysis. All the statistical methods are carried out with the R programming language and all outputs and diagnostic plots did not show any critical structures within the data. Further explanation of statistical procedures is therefore avoided and also regarded as common sense. Nonetheless the handling of the regression analysis in R is explained in the following.
+To explain some fundamentals, the variance in statistics is the expectation of the squared deviation of a random variable from its population mean or sample mean. Variance is therefore a measure of dispersion, meaning it is a measure of how far a set of numbers is spread out from their average value. The R-squared (R²) value in this context is the proportion by which the variance of the dependent variable is explained by the variance of the independent variable. This should not be mistaken for the strength of the overall relationship which would be the correlation. For example if R² is 0.5 this means that 50 % of the variation in the data can be explained by the variation of the input data. The results in chapter X are also presented with a p-value. The p-value is the probability that random chance created the result that were observed or something that is even more extreme and is therefore a measure of the statistical significance. The lower the p-value the greater the significance @LeoH.Kahane.2006. To find outliers and clean the data respectively Cook’s distance is used in this work which is a commonly used estimate of the influence of a data point when performing a regression analysis. All the statistical methods are carried out with the R programming language and all outputs and diagnostic plots did not show any critical structures within the data. Further explanation of statistical procedures is therefore avoided and also regarded as common sense. In the following example code it is shown how a linear model of the electricity yield in MWh as *menge_mwh* over the commissioning date as *inbetriebnahme* from the amprion data set is created using the lm() function, subsequently the summary function is called to see the significance and the R² value of the model and finally the diagnostic plots of the model are printed to check the model assumptions of a linear regression model such as normal distribution, independence of error, homogeneity of the variance and that no outliers are detected with Cook's distance.
+
+
+```{r, eval=FALSE, echo=TRUE}
+lm_electricity_yield_2019 <- 
+  lm(amprion_2019$menge_mwh ~ amprion_2019$inbetriebnahme)
+summary(lm_electricity_yield_2019)
+plot(lm_electricity_yield_2019)
+```
+
+```{r diagnostics, echo=FALSE, fig.cap="Example diagnostic plot of linear model of the electricity yield of all WT'S in RLP over the commissioning date in 2019 from the transmition system operator Amprion created with base R", out.width = "100%", fig.pos="H"}
+knitr::include_graphics("figures/diagnostics.png")
+```
 
 ## Geospatial analysis
 

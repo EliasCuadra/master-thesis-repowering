@@ -1,7 +1,7 @@
 \contentsline {section}{Abstract}{4}{section*.2}%
 \contentsline {section}{List of Abbreviations}{5}{section*.3}%
-\contentsline {section}{List of Figures}{6}{section*.4}%
-\contentsline {section}{List of Tables}{7}{section*.5}%
+\contentsline {section}{List of Figures}{7}{section*.4}%
+\contentsline {section}{List of Tables}{8}{section*.5}%
 \contentsline {section}{\numberline {1}Introduction}{1}{section.1}%
 \contentsline {section}{\numberline {2}State of the art}{3}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Greenhouse gas emissions}{3}{subsection.2.1}%
@@ -20,8 +20,8 @@
 \contentsline {subsection}{\numberline {2.10}Regression analysis}{24}{subsection.2.10}%
 \contentsline {subsection}{\numberline {2.11}Geospatial analysis}{26}{subsection.2.11}%
 \contentsline {subsection}{\numberline {2.12}Résumé}{26}{subsection.2.12}%
-\contentsline {section}{\numberline {3}Materials and Methodology}{26}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Data}{26}{subsection.3.1}%
+\contentsline {section}{\numberline {3}Materials and Methodology}{27}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Data}{27}{subsection.3.1}%
 \contentsline {subsubsection}{\numberline {3.1.1}Master and Movement data from Amprion}{27}{subsubsection.3.1.1}%
 \contentsline {subsubsection}{\numberline {3.1.2}Data from the market master data register (MaStR - Marktstammdatenregister)}{28}{subsubsection.3.1.2}%
 \contentsline {subsection}{\numberline {3.2}Methods}{29}{subsection.3.2}%
@@ -33,6 +33,6 @@
 \contentsline {subsection}{\numberline {4.3}Rotor diameter, hub height and area consumption}{36}{subsection.4.3}%
 \contentsline {section}{\numberline {5}Discussion}{39}{section.5}%
 \contentsline {section}{\numberline {6}Conclusion}{39}{section.6}%
-\contentsline {section}{References}{40}{section*.29}%
+\contentsline {section}{References}{40}{section*.30}%
 \contentsline {section}{\numberline {A}Appendix}{44}{appendix.A}%
 \contentsline {subsection}{\numberline {A.1}Code chunk 1}{44}{subsection.A.1}%
