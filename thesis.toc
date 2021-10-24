@@ -27,10 +27,11 @@
 \contentsline {subsection}{\numberline {3.4}Geospatial analysis}{34}{subsection.3.4}%
 \contentsline {section}{\numberline {4}Results}{35}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Electricity yield, rated capacity and full-load-hours in Rhineland-Palatinate}{35}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Repowering potential}{39}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.2}Repowering potential}{40}{subsection.4.2}%
 \contentsline {subsection}{\numberline {4.3}Rotor diameter, hub height and area consumption}{40}{subsection.4.3}%
-\contentsline {section}{\numberline {5}Discussion}{43}{section.5}%
-\contentsline {section}{\numberline {6}Conclusion}{43}{section.6}%
-\contentsline {section}{References}{44}{section*.31}%
-\contentsline {section}{\numberline {A}Appendix}{49}{appendix.A}%
-\contentsline {subsection}{\numberline {A.1}Code chunk 1}{49}{subsection.A.1}%
+\contentsline {section}{\numberline {5}Discussion}{44}{section.5}%
+\contentsline {section}{\numberline {6}Conclusion}{44}{section.6}%
+\contentsline {section}{References}{45}{section*.31}%
+\contentsline {section}{\numberline {A}Appendix}{50}{appendix.A}%
+\contentsline {subsection}{\numberline {A.1}Code chunk 1}{50}{subsection.A.1}%
+\contentsline {subsection}{\numberline {A.2}Code chunk 2}{54}{subsection.A.2}%
