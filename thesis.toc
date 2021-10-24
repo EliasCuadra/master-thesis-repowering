@@ -3,36 +3,34 @@
 \contentsline {section}{List of Figures}{7}{section*.4}%
 \contentsline {section}{List of Tables}{8}{section*.5}%
 \contentsline {section}{\numberline {1}Introduction}{1}{section.1}%
-\contentsline {section}{\numberline {2}State of the art}{3}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Greenhouse gas emissions}{3}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Region of interest}{4}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Onshore wind turbines and repowering}{7}{subsection.2.3}%
-\contentsline {subsection}{\numberline {2.4}Spatial planning in RLP}{11}{subsection.2.4}%
-\contentsline {subsubsection}{\numberline {2.4.1}State level}{11}{subsubsection.2.4.1}%
-\contentsline {subsubsection}{\numberline {2.4.2}Regional level}{13}{subsubsection.2.4.2}%
-\contentsline {subsubsection}{\numberline {2.4.3}Local level}{13}{subsubsection.2.4.3}%
-\contentsline {subsubsection}{\numberline {2.4.4}Approval}{14}{subsubsection.2.4.4}%
-\contentsline {subsection}{\numberline {2.5}Energy policy program}{14}{subsection.2.5}%
-\contentsline {subsection}{\numberline {2.6}Climate protection concept RLP}{15}{subsection.2.6}%
-\contentsline {subsection}{\numberline {2.7}Physical basics}{16}{subsection.2.7}%
-\contentsline {subsection}{\numberline {2.8}Technical concepts and development}{19}{subsection.2.8}%
-\contentsline {subsection}{\numberline {2.9}Reproducable research and data science with R}{24}{subsection.2.9}%
-\contentsline {subsection}{\numberline {2.10}Regression analysis}{25}{subsection.2.10}%
-\contentsline {subsection}{\numberline {2.11}Geospatial analysis}{27}{subsection.2.11}%
-\contentsline {subsection}{\numberline {2.12}Résumé}{27}{subsection.2.12}%
-\contentsline {section}{\numberline {3}Materials and Methodology}{28}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Data}{28}{subsection.3.1}%
-\contentsline {subsubsection}{\numberline {3.1.1}Master and Movement data from Amprion}{28}{subsubsection.3.1.1}%
-\contentsline {subsubsection}{\numberline {3.1.2}Data from the market master data register (MaStR - Marktstammdatenregister)}{30}{subsubsection.3.1.2}%
-\contentsline {subsection}{\numberline {3.2}Methods}{31}{subsection.3.2}%
-\contentsline {subsubsection}{\numberline {3.2.1}Regression analysis}{31}{subsubsection.3.2.1}%
-\contentsline {subsubsection}{\numberline {3.2.2}Geospatial analysis}{32}{subsubsection.3.2.2}%
-\contentsline {section}{\numberline {4}Results}{32}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Electricity yield, rated capacity and full-load-hours in Rhineland-Palatinate}{32}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Repowering potential}{37}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Rotor diameter, hub height and area consumption}{37}{subsection.4.3}%
-\contentsline {section}{\numberline {5}Discussion}{40}{section.5}%
-\contentsline {section}{\numberline {6}Conclusion}{40}{section.6}%
-\contentsline {section}{References}{41}{section*.31}%
-\contentsline {section}{\numberline {A}Appendix}{46}{appendix.A}%
-\contentsline {subsection}{\numberline {A.1}Code chunk 1}{46}{subsection.A.1}%
+\contentsline {section}{\numberline {2}State of the art}{4}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Greenhouse gas emissions}{4}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Region of interest}{5}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Onshore wind turbines and repowering}{8}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Spatial planning in RLP}{12}{subsection.2.4}%
+\contentsline {subsubsection}{\numberline {2.4.1}State level}{12}{subsubsection.2.4.1}%
+\contentsline {subsubsection}{\numberline {2.4.2}Regional level}{14}{subsubsection.2.4.2}%
+\contentsline {subsubsection}{\numberline {2.4.3}Local level}{14}{subsubsection.2.4.3}%
+\contentsline {subsubsection}{\numberline {2.4.4}Approval}{15}{subsubsection.2.4.4}%
+\contentsline {subsection}{\numberline {2.5}Energy policy program}{15}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Climate protection concept RLP}{16}{subsection.2.6}%
+\contentsline {subsection}{\numberline {2.7}Physical basics}{17}{subsection.2.7}%
+\contentsline {subsection}{\numberline {2.8}Technical concepts and development}{20}{subsection.2.8}%
+\contentsline {subsection}{\numberline {2.9}Reproducable research and data science with R}{25}{subsection.2.9}%
+\contentsline {subsection}{\numberline {2.10}Regression analysis}{26}{subsection.2.10}%
+\contentsline {subsection}{\numberline {2.11}Geospatial analysis}{28}{subsection.2.11}%
+\contentsline {subsection}{\numberline {2.12}Résumé}{28}{subsection.2.12}%
+\contentsline {section}{\numberline {3}Materials and Methodology}{30}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Master and Movement data from Amprion}{30}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Data from the market master data register (MaStR - Marktstammdatenregister)}{32}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Regression analysis}{32}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Geospatial analysis}{34}{subsection.3.4}%
+\contentsline {section}{\numberline {4}Results}{35}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Electricity yield, rated capacity and full-load-hours in Rhineland-Palatinate}{35}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Repowering potential}{39}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Rotor diameter, hub height and area consumption}{40}{subsection.4.3}%
+\contentsline {section}{\numberline {5}Discussion}{43}{section.5}%
+\contentsline {section}{\numberline {6}Conclusion}{43}{section.6}%
+\contentsline {section}{References}{44}{section*.31}%
+\contentsline {section}{\numberline {A}Appendix}{49}{appendix.A}%
+\contentsline {subsection}{\numberline {A.1}Code chunk 1}{49}{subsection.A.1}%
