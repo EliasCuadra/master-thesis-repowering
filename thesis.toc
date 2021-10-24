@@ -22,8 +22,8 @@
 \contentsline {subsection}{\numberline {2.12}Résumé}{28}{subsection.2.12}%
 \contentsline {section}{\numberline {3}Materials and Methodology}{30}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Master and Movement data from Amprion}{30}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Data from the market master data register (MaStR - Marktstammdatenregister)}{32}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Regression analysis}{32}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.2}Data from the market master data register}{32}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Regression analysis}{33}{subsection.3.3}%
 \contentsline {subsection}{\numberline {3.4}Geospatial analysis}{34}{subsection.3.4}%
 \contentsline {section}{\numberline {4}Results}{35}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Electricity yield, rated capacity and full-load-hours in Rhineland-Palatinate}{35}{subsection.4.1}%

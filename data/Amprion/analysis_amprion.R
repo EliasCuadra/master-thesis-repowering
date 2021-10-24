@@ -156,23 +156,17 @@ pe_over_ratedcapacity_2019 <- ggplot() +
               aes(x=leistung, y=menge_mwh, colour = "2019"), 
               method=lm, se=TRUE, fullrange = TRUE)  +
   theme_light() +
-  ylim(-1000, 12000) +
-  xlim(0,5000) +
+  ylim(-1000, 20000) +
+  xlim(0,8000) +
   xlab("Rated capacity (kW)") +
-  ylab("Electricity yield [MWh]") +
+  ylab("Electricity yield per year [MWh/a]") +
   theme( axis.text=element_text(size=12),
          axis.title=element_text(size=13),
          plot.title = element_text(size=16),
          legend.position = c(0.85, 0.9),
          legend.direction = "horizontal") +
-  geom_hline(yintercept = 7400, linetype = 'dashed', size = 0.25) +
-  geom_vline(xintercept = 3500, linetype = 'dashed', size = 0.25) +
-  annotate(geom="text",x=1000,
-           y=7000,label="7,400 MWh/a in 2021 from plot above") +
-  annotate(geom="text",x=4000,
-           y=2000,label="min 3.5 MW") +
-  annotate(geom="text",x=4500,
-           y=11500,label= "R² = ~ 79 %") +
+  annotate(geom="text",x=6500,
+           y=3500,label= "R² = ~ 79 %") +
   scale_colour_manual(name = "Year", values=c("#03a1fc", "#fc5a03", "#94fc03")) 
 
 #print plot
