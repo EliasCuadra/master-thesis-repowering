@@ -1,14 +1,9 @@
 # Conclusion
 
-* Give a short summary of what has been done and what has been found.
+The results of this work show that the expansion targets for electricity generation of 22 TWh from wind power in 2030 can indeed be achieved with a number of 2,500 wind turbines.
 
-* Expose results concisely.
+For this, a politically or socially controlled designation of areas totalling approx. X% of the country's area is necessary. This is a concrete recommendation for action to the state government. But because the bigger hurdles in this process lie in nature conservation and in the resistance of the population, measures should be taken especially here. With regard to nature conservation, the main concern here is the creation of compensatory habitats and the use of mechanisms and techniques, such as the shutdown of systems in situations where animal species are endangered. For this purpose, further research on the behaviour of the animals is recommended and it should be checked whether the endangerment of red list species can be minimized. Another very important topic is acceptance by the local people. In particular, it should be investigated how better participation and communication increases the acceptance of such projects and reduces resistance. The issues of noise pollution, the optically oppressive effect and the throwing of ice are also a constant cause of concern in wind power projects. A lot of energy is already invested in engineering research into noise reduction and rotor blade heating, and this is certainly recommended for the future and will be continuously developed.
 
-* Draw conclusions about the problem studied. What are the implications of your
-  findings?
+It is therefore almost certain that the expansion of wind power in RLP will proceed at a similar speed or even accelerated, the expansion targets and thus also the targets for climate protection by 2030 will be achieved. However, this only applies explicitly to the assumed electricity demand of 33 TWh of which 22 TWh can come from wind power. However, it can be assumed that the electricity demand will continue to increase due to the electrification of mobility and heating and also for energy-intensive industries, above all BASF in Ludwigshafen with extremely energy-intensive processes such as steam cracking. Whether a power supply of the whole economy of RLP with own wind and solar power will then be possible remains questionable and must be investigated in further studies.
 
-* Point out some limitations of study (assist reader in judging validity of
-  findings).
-
-* Suggest issues for future research.
 

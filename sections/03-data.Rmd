@@ -41,7 +41,6 @@ plot(lm_electricity_yield_2019)
 ```
 
 
-## Geospatial analysis
 
 
 

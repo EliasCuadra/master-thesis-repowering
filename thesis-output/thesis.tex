@@ -63,7 +63,7 @@
 % save thesis parameters for later
 \newcommand{\thesistype}{Master's Thesis}
 \newcommand{\thesisauthor}{Elias Cuadra Braatz}
-\newcommand{\thesisdate}{October 24, 2021}
+\newcommand{\thesisdate}{October 29, 2021}
 
 % define tightlist to work with newer versions of pandoc
 \providecommand{\tightlist}{%
@@ -203,7 +203,7 @@
   in partial fulfillment of the requirements \\
   for the degree of \\
   \textbf{Master of Environmental Sciences} \\\vspace{0.5cm}
-  October 24, 2021
+  October 29, 2021
   
 \end{center}
 
@@ -670,9 +670,6 @@ To explain some fundamentals, the variance in statistics is the expectation of t
 \end{figure}
 The residual vs fitted values plot in the upper left reveals if the residuals are equally distributed among the outcome variables or have a non-linear pattern. In this case the residuals become larger with increasing fitted values which indicates a increasing error. The normal QQ plot in the upper right shows that the data is normaly distributed if the dots follow the straight line. In this case it small and high values stray from the line. The scale-location plot in the lower left similar to the first plot shows whether the assumption of equal variance (homoscedasticity) is matched if there is a straight line with equally spread points. The residuals vs leverage plot in the lower right helps to find influential points. When points are outside Cook's distance (red dotted line - not visible here) they are considered to be influential and can be removed from the data, although every case and data set has to be judged individually {[}\protect\hyperlink{ref-BommaeKim.2015}{57}{]}.
 
-\hypertarget{geospatial-analysis}{%
-\subsection{Geospatial analysis}\label{geospatial-analysis}}
-
 \hypertarget{ruxe9sumuxe9}{%
 \subsection{Résumé}\label{ruxe9sumuxe9}}
 
@@ -733,9 +730,6 @@ Since it is crucial not only to know the electricity yield per WT but also the e
 \FunctionTok{plot}\NormalTok{(lm\_electricity\_yield\_2019)}
 \end{Highlighting}
 \end{Shaded}
-\hypertarget{geospatial-analysis-1}{%
-\subsection{Geospatial analysis}\label{geospatial-analysis-1}}
-
 \newpage
 
 \hypertarget{results}{%
@@ -753,7 +747,7 @@ The diagnostics of the electricity yield show in all linear and polynomial model
 
 \caption{Development and forecast of electricity yield in Rhineland-Palatinate using data from 2017 to 2019 and a linear an polynomial model}\label{fig:electricityyield}
 \end{figure}
-All models are highly significant with p-values less than 0.001 and the linear models have R\textsuperscript{2} values of 0.68 - 0.70, which means that around 70 \% of the variation in the electricity yield can be explained by the commissioning date. By using a 3\textsuperscript{rd} order polynomial formula the value for R\textsuperscript{2} increases to up to 73 \%. This value could not significantly be increased by using a higher order. This means that the fit of the model can be slightly improved using the polynomial model but it might lose prediction power due to the bias variance trade-off. Intuitively an infinitely or exponentially growing electricity yield is of course not realistic from a physical or technical point of view. Therefore, the prediction of the polynomial models of more than 15,000 MWh/a per WT on average in the year 2030 seems very high and the assumption of 10,000 MWh per WT of the linear trends is more reasonable. However, the DWG forecast in figure \ref{fig:capacity} shows a disproportionate increase in the average nominal power, which in turn means that at locations with optimal wind conditions and rapidly advancing technology, disproportionate growth in electricity yield per WT is possible. Additionally, as presented in chapter 2.3, the WT manufacturers give reason to believe that the electricity output per year will increase to 15,000 - 20,000 MWh/a with an average wind speed of 6 m/s within the next years. Nonetheless, only a few locations have optimal conditions and the old systems also reduce the average output.
+All models are highly significant with p-values less than 0.001 and the linear models have R\textsuperscript{2} values of 0.68 - 0.70, which means that around 70 \% of the variation in the electricity yield can be explained by the commissioning date. By using a 3\textsuperscript{rd} order polynomial formula the value for R\textsuperscript{2} increases to up to 73 \%. This value could not significantly be increased by using a higher order. This means that the fit of the model can be slightly improved using the polynomial model but it might lose prediction power due to the bias variance trade-off. Intuitively an infinitely or exponentially growing electricity yield is of course not realistic from a physical or technical point of view. Therefore, the prediction of the polynomial models of more than 15,000 MWh/a per WT on average in the year 2030 seems very high and the assumption of 10,000 MWh per WT of the linear trends is more reasonable. However, the DWG forecast in figure \ref{fig:capacity} shows a disproportionate increase in the average nominal power, which in turn means that at locations with optimal wind conditions and rapidly advancing technology, disproportionate growth in electricity yield per WT is possible. Additionally, as presented in chapter 2.3, the WT manufacturers give reason to believe that the electricity output per year will increase to 15,000 - 20,000 MWh/a with an average wind speed of 6 m/s within the next years. Nonetheless, only a few locations have optimal conditions and the older systems reduce the average output.
 
 For the following plots and trends the diagnostics and significance is not further discussed since there is no sign of abnormalities apart from the patterns that occur due to the steps in which the rated capacity of generators increase and the assumed non-linear technological development. The plot of the electricity over the rated capacity is shown in figure \ref{fig:eratedcapacity}.
 \begin{figure}[H]
@@ -790,12 +784,14 @@ The prediction for 2030 is around 2,800 h/a on average. If this is compared to t
 
 If an an average electricity generation of 7,400 MWh/a per WT is assumed the number of WTs needed to generate the demanded 22 TWh is around 2,973 WTs. If on average 8,050 MWh/a could be harvested then this would require around 2,733 WTs. It seems that if the average growth of the total number of WTs in RLP continues as predicted initially, the goal of around 2,500 WTs in RLP is very realistic. If the 22 TWh shall be generated with 2,500 WTs the average annual output must be 8,800 MWh, which also seems quit realistic because the numbers presented before are first conservative and second estimates for the year 2021 and will certainly increase over the next ten years. Of course, WTs with lower total electricity yield would have to be repowered additionally to increase the mean output and effort has to be made to push ahead with the expansion of WTs in RLP, but it shows that it is certainly not out of the scope.
 
-On the contrary to the technical potential, due to legal reasons and resistance from the citizens, the increase was slowed down sharply from 92 newly commissioned WTs in 2017 to 27 newly commissioned WTs in 2019 {[}\protect\hyperlink{ref-EnergieagenturRheinlandPfalz.2019}{30}{]}. Experts from the wind industry particularly criticize the difficult approval procedures. The biggest mistake of the federal government was to introduce an ``obligation to tender'' for new wind turbines that slows down the whole process {[}\protect\hyperlink{ref-NickSchader.2021}{59}{]}. In the end of this section it is to mention that this increasing development should not be misunderstood that the overall electricity yield of an area can be increased in the same way. Larger WTs have to be spaced further apart, so even though they might have a higher electricity yield, the overall electricity yield per area might not increase as much as expected. Although there might be strong economic reasons to build greater WTs and also to harvest higher wind speeds at greater altitudes, the overall energy extraction per area has certain limits that cannot be exceeded. Therefore the calculations of the respective area consumption are presented in subsections 4.3.
+On the contrary to the technical potential, due to legal reasons and resistance from the citizens, the increase was slowed down sharply from 92 newly commissioned WTs in 2017 to 27 newly commissioned WTs in 2019 {[}\protect\hyperlink{ref-EnergieagenturRheinlandPfalz.2019}{30}{]}. Experts from the wind industry particularly criticize the difficult approval procedures. The biggest mistake of the federal government was to introduce an ``obligation to tender'' for new wind turbines that slows down the whole process {[}\protect\hyperlink{ref-NickSchader.2021}{59}{]}. In the end of this section it is to mention that this increasing development should not be misunderstood that the overall electricity yield of an area can be increased in the same way. Larger WTs have to be spaced further apart, so even though they might have a higher electricity yield, the overall electricity yield per area might not increase as much as expected. Although there might be strong economic reasons to build greater WTs and also to harvest higher wind speeds at greater altitudes, the overall energy extraction per area has certain limits that cannot be exceeded. Therefore the calculations of the respective area consumption are presented in subsections 4.3. Before that the repowering potential is investigated next.
 
 \hypertarget{repowering-potential}{%
 \subsection{Repowering potential}\label{repowering-potential}}
 
-The WTs in RLP that are potentially suitable for repowering within the next 10 years are older systems which have been divided into two categories: commissioned before 2001 and between 2001 and 2005 (table \ref{tab:table1}). The electricity yield would be more than 7 times greater if all systems with a commissioning date before 2001 would be repowered and around 3.7 times as much if additionally all systems with a commissioning date between 2001 and 2005 are repowered. These values are theoretical and represent a repowering rate of 100 \%. This means a total replacement of 514 WTs with accordingly larger area consumption. It is also highly questionable if all of the old systems can be replaced due to distance regulations and approval procedures. In this context repowering is a misleading term since it suggests that a system is technically enhanced, but in this case it means the deconstruction of old systems and new building of another system, which might even be in a different location. This is also why the the approval procedures and distance regulations and also measures to protect the environment are not different as in the case of first construction of a WT. Thus, for a technical assessment of the wind energy potential in RLP, the respective electricity yield per WT and especially per area is determining. Whether and how WTs are repowered is then once the potential is assessed an economic and legal consideration. Hence, the calculation of the area consumption follows next.
+The WTs in RLP that are potentially suitable for repowering within the next 10 years are systems with commissioning date before 2006. If possible this means a total replacement of 514 WTs with a total electricity output of 841 GWh. If we assume by looking into chapter 4.1 and figure \ref{fig:electricityyield} that the average electricity yield of a newly commissioned WT within the next ten years can be 12,500 MWh. The combined electricity yield of 514 WT of that kind would be 6,425 GWh or 6.4 TWh which would be more than seven times more than before. Further the 514 WT have been arbitrarily divided into the categories; commissioned before 2001 and between 2001 and 2005 to see the influence of the commissioning date and are listed in (table \ref{tab:table1}). It is highly questionable if all of the old systems can be replaced due to distance regulations and approval procedures because larger WTs might have an accordingly larger area consumption due to larger rotor diameter. But it could also be that the areas in which old systems are already in use due to good wind conditions that more WTs will be built in that place.
+
+In this context repowering is a misleading term since it suggests that a system is technically enhanced, but in this case it means the deconstruction of old systems and new building of another system, which might even be in a different location. This is also why the approval procedures and distance regulations and also measures to protect the environment are not different as in the case of first construction of a WT. Thus, for a technical assessment of the wind energy potential in RLP, the respective electricity yield per WT and especially per area is determining. Whether and how WTs are repowered is then once the potential is assessed an economic and legal consideration. Hence, the calculation of the area consumption follows next.
 \begin{table}[H]
 
 \caption{\label{tab:table1}Repowering potential based on the 100 percent replacement of wind turbines commissioned either 
@@ -805,8 +801,8 @@ The WTs in RLP that are potentially suitable for repowering within the next 10 y
 \toprule
 Commission & Number of WTs & Electricity yield [GWh] & Potential [GWh] & Increase [\%]\\
 \midrule
-before 2001 & 186 & 186 & 1376 & 740\\
-2001 to 2005 & 328 & 655 & 2427 & 371\\
+before 2001 & 186 & 186 & 2325 & 1250\\
+2001 to 2005 & 328 & 655 & 4100 & 625\\
 \midrule
 \bottomrule
 \end{tabular}
@@ -853,22 +849,31 @@ Scenario & Electricity yield per area [kWh/m²a] & Power output per area [W/m²]
 \hypertarget{discussion}{%
 \section{Discussion}\label{discussion}}
 
+After the state of the art, the data basis, the approach and the results of the data analysis have been presented, this work will be critically discussed and placed in a wider context in this chapter. At the beginning of this thesis it could be shown that the topic of the energy turnaround and in particular the development of wind power onshore is given high social relevance as well as importance in terms of security of supply. Against the background of the German federal election in September 2021 and the ongoing trend-setting coalition negotiations, the energy transition will be visibly highlighted. This state of focus on the current development and imminent transformation of the energy systems is of course not a German phenomenon, but rather a preoccupation and affects the European Union as well as all states and communities of states, but affects at the same time, especially due to the consequences of climate change and changes in the environment and supply systems, the local people in the respective regions. In this sense the research and development of renewable energy systems is more topical than ever. Renowned institutions such as the Fraunhofer Society, the Institute for Climate Impact Research and many universities and organizations deal in detail with the question of how exactly this transformation can succeed. One answer to this question seems to be clear: The capacity of onshore wind power will be further expanded! This is reflected in the development trends of Deutsche WindGuard shown in Chapter 2 and the other reports presented on the technical development of wind power. However, there are certain limits to wind power on land. The availability of suitable locations is limited by the amount of wind, nature conservation issues and of course by the acceptance of the citizens. For this reason, a potential analysis, as in this case for Rhineland-Palatinate, which must then be compared with the climate protection goals to be achieved, is logical. In this master's thesis, based on the feed-in data from the transmission system operator Amprion and the data from the MaStR, a relatively technical but robust analysis of the expected feed-in quantities and the expansion rate as well as the space consumption was made. Due to the high reliability of the publicly available data and the correspondence with the most recent and largest German DWG study, this result is very reliable. However, the criticism here is that the expansion of wind power or an individual system or an entire wind farm cannot be viewed in an idealized manner, but always depends on legal and social regulators and thus eludes a specific scientific analysis. Nevertheless, these results are very informative and the basic statements can be made:
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  The total number of wind turbines will continue to increase in RLP and the expected number of 2.500 will be reached in 2030 if the expansion rate remains the same.
+\item
+  The amount of electricity to be expected that can be fed in by a wind power plant, which will be built around 2026, will rise steadily and is at an average wind speed of 6 m/s, as is realistic in Rhineland-Palatinate, depending on the manufacturer's information at 12,000 MWh - 18,000 MWh.
+\item
+  According to own modeling, there is an average feed-in quantity over all WTs of approx. 7,400 MWh in 2021 and approx. 10,000 MWh in 2030, assuming a linear increase. With an exponential increase even at 10,000 MWh in 2021 and 15,000 MWh in 2030. It is therefore difficult to reliably determine a specific value here, since the speed of expansion is strongly related to political decisions.
+\item
+  The total number of repowering plants, i.e.~plants with a commissioning date before 2006, is 510 with a total feed-in quantity of Y MWh. If all of these systems were to be replaced with an output of 10,000 MWh, there would be a potential of X MWh.
+\item
+  The area, which means only the area of the rotor overflight, if the system rotates once through 360 ° and not the entire area to be identified, which these 2500 systems would consume, is Z m², which is W ha and K\% of the land area. This would be for an average rotor diameter of Q m and a hub height of 169 m. That means the area that the country has to designate is around twice as large.
+\end{enumerate}
+These results were also confirmed by my practical work and training at a project development company. For their profitability calculations, for example in Baden-Württemberg, project development companies expect yields of 13,000 - 15,000 MWh at wind speeds of around 6 m/s for a Nordex N163-5.X wind turbine with commissioning in 2026. All this means that RLP meets the expansion targets in the area of wind power and so that the climate protection goals can also be achieved from a technical point of view. However, it should be noted that this analysis did not really address the regulatory and societal hurdles. In project development, for example, many areas cannot be used for wind power projects due to restrictions and hard and soft taboo criteria. The most important restrictions include sufficient distance from landscape and nature protection areas and endangered animal and plant species such as the red kite, black stork, sea eagle or certain bat and newt species as well as military areas, radars for aviation and radio relay routes, etc. To illuminate this and analysing potential areas in detail cannot do this work, but it is absolutely necessary in practice to implement the project. However, this also eludes a specific quantitative analysis, as these restrictions are constantly changing and therefore cannot be clearly identified over a longer period of time.
+
 \hypertarget{conclusion}{%
 \section{Conclusion}\label{conclusion}}
-\begin{itemize}
-\item
-  Give a short summary of what has been done and what has been found.
-\item
-  Expose results concisely.
-\item
-  Draw conclusions about the problem studied. What are the implications of your
-  findings?
-\item
-  Point out some limitations of study (assist reader in judging validity of
-  findings).
-\item
-  Suggest issues for future research.
-\end{itemize}
+
+The results of this work show that the expansion targets for electricity generation of 22 TWh from wind power in 2030 can indeed be achieved with a number of 2,500 wind turbines.
+
+For this, a politically or socially controlled designation of areas totalling approx. X\% of the country's area is necessary. This is a concrete recommendation for action to the state government. But because the bigger hurdles in this process lie in nature conservation and in the resistance of the population, measures should be taken especially here. With regard to nature conservation, the main concern here is the creation of compensatory habitats and the use of mechanisms and techniques, such as the shutdown of systems in situations where animal species are endangered. For this purpose, further research on the behaviour of the animals is recommended and it should be checked whether the endangerment of red list species can be minimized. Another very important topic is acceptance by the local people. In particular, it should be investigated how better participation and communication increases the acceptance of such projects and reduces resistance. The issues of noise pollution, the optically oppressive effect and the throwing of ice are also a constant cause of concern in wind power projects. A lot of energy is already invested in engineering research into noise reduction and rotor blade heating, and this is certainly recommended for the future and will be continuously developed.
+
+It is therefore almost certain that the expansion of wind power in RLP will proceed at a similar speed or even accelerated, the expansion targets and thus also the targets for climate protection by 2030 will be achieved. However, this only applies explicitly to the assumed electricity demand of 33 TWh of which 22 TWh can come from wind power. However, it can be assumed that the electricity demand will continue to increase due to the electrification of mobility and heating and also for energy-intensive industries, above all BASF in Ludwigshafen with extremely energy-intensive processes such as steam cracking. Whether a power supply of the whole economy of RLP with own wind and solar power will then be possible remains questionable and must be investigated in further studies.
+
 \newpage
 
 \hypertarget{references}{%
@@ -1640,7 +1645,7 @@ literally or in general matter taken out of publications or other sources are
 marked as such.
 \vspace{1cm}
 
-Berlin, \thesisdate{}
+Landau, \thesisdate{}
 \vspace{3cm}
 
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .

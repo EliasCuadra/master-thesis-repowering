@@ -1,2 +1,40 @@
 # Discussion
 
+After the state of the art, the data basis, the approach and the results of the data analysis have been presented, this work will be critically discussed and placed in a wider context in this chapter. At the beginning of this thesis it could be shown that the topic of the energy turnaround and in particular the development of wind power onshore is given high social relevance as well as importance in terms of security of supply. Against the background of the German federal election in September 2021 and the ongoing trend-setting coalition negotiations, the energy transition will be visibly highlighted. This state of focus on the current development and imminent transformation of the energy systems is of course not a German phenomenon, but rather a preoccupation and affects the European Union as well as all states and communities of states, but affects at the same time, especially due to the consequences of climate change and changes in the environment and supply systems, the local people in the respective regions. In this sense the research and development of renewable energy systems is more topical than ever. Renowned institutions such as the Fraunhofer Society, the Institute for Climate Impact Research and many universities and organizations deal in detail with the question of how exactly this transformation can succeed. One answer to this question seems to be clear: The capacity of onshore wind power will be further expanded! This is reflected in the development trends of Deutsche WindGuard shown in Chapter 2 and the other reports presented on the technical development of wind power. However, there are certain limits to wind power on land. The availability of suitable locations is limited by the amount of wind, nature conservation issues and of course by the acceptance of the citizens. For this reason, a potential analysis, as in this case for Rhineland-Palatinate, which must then be compared with the climate protection goals to be achieved, is logical. In this master's thesis, based on the feed-in data from the transmission system operator Amprion and the data from the MaStR, a relatively technical but robust analysis of the expected feed-in quantities and the expansion rate as well as the space consumption was made. Due to the high reliability of the publicly available data and the correspondence with the most recent and largest German DWG study, this result is very reliable. However, the criticism here is that the expansion of wind power or an individual system or an entire wind farm cannot be viewed in an idealized manner, but always depends on legal and social regulators and thus eludes a specific scientific analysis. Nevertheless, these results are very informative and the basic statements can be made:
+
+1. The total number of wind turbines will continue to increase in RLP and the expected number of 2.500 will be reached in 2030 if the expansion rate remains the same.
+
+2. The amount of electricity to be expected that can be fed in by a wind power plant, which will be built around 2026, will rise steadily and is at an average wind speed of 6 m/s, as is realistic in Rhineland-Palatinate, depending on the manufacturer's information at 12,000 MWh - 18,000 MWh.
+
+3. According to own modeling, there is an average feed-in quantity over all WTs of approx. 7,400 MWh in 2021 and approx. 10,000 MWh in 2030, assuming a linear increase. With an exponential increase even at 10,000 MWh in 2021 and 15,000 MWh in 2030. It is therefore difficult to reliably determine a specific value here, since the speed of expansion is strongly related to political decisions.
+
+4. The total number of repowering plants, i.e. plants with a commissioning date before 2006, is 510 with a total feed-in quantity of Y MWh. If all of these systems were to be replaced with an output of 10,000 MWh, there would be a potential of X MWh.
+
+5. The area, which means only the area of the rotor overflight, if the system rotates once through 360 ° and not the entire area to be identified, which these 2500 systems would consume, is Z m², which is W ha and K% of the land area. This would be for an average rotor diameter of Q m and a hub height of 169 m. That means the area that the country has to designate is around twice as large.
+
+These results were also confirmed by my practical work and training at a project development company. For their profitability calculations, for example in Baden-Württemberg, project development companies expect yields of 13,000 - 15,000 MWh at wind speeds of around 6 m/s for a Nordex N163-5.X wind turbine with commissioning in 2026. All this means that RLP meets the expansion targets in the area of wind power and so that the climate protection goals can also be achieved from a technical point of view. However, it should be noted that this analysis did not really address the regulatory and societal hurdles. In project development, for example, many areas cannot be used for wind power projects due to restrictions and hard and soft taboo criteria. The most important restrictions include sufficient distance from landscape and nature protection areas and endangered animal and plant species such as the red kite, black stork, sea eagle or certain bat and newt species as well as military areas, radars for aviation and radio relay routes, etc. To illuminate this and analysing potential areas in detail cannot do this work, but it is absolutely necessary in practice to implement the project. However, this also eludes a specific quantitative analysis, as these restrictions are constantly changing and therefore cannot be clearly identified over a longer period of time.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
