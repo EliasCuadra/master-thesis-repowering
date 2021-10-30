@@ -122,7 +122,7 @@ wts_rlp_filtered <- filter(wts_rlp_filtered, menge_mwh > 20)
 wts_rlp_filtered <- filter(wts_rlp_filtered, nearest > 30)
 
 #filter out with electricity yield per m2 above 100 kwh/m2 
-wts_rlp_filtered <- filter(wts_rlp_filtered, kwh_m2 < 100)
+wts_rlp_filtered <- filter(wts_rlp_filtered, kwh_m2 < 500)
 
 #create linear model
 lm_e_yield_per_area <- lm(

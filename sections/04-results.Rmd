@@ -80,6 +80,9 @@ I want to argue that repowering is in this context a misleading term since it su
 
 ## Rotor diameter, hub height and area consumption
 
+
+
+
 After taking WTs out of the data that would distort the results 1195 WTs remained for analysis. The distortion w It is to mention that almost 400 WTs had to be taken out of the data set and also the R\textsuperscript{2}-value is not very high, thus the overall prediction power of the model might be low.
 
 Nonetheless, the average distance to the nearest WT of all WTs is a reasonable 417 m which equals to an area consumption per WT of about 174,168 m\textsuperscript{2} or 0.174 km\textsuperscript{2}. This means that the total area covered with currently 1702 WTs is about 296.4 km\textsuperscript{2}, this equals to around 1.5 % instead of the 1.9 % that were theoretically derived in chapter 2.1 of the total area of RLP which is 19,847 km\textsuperscript{2}. With an electricity yield of 6.782 TWh in 2019 this means that the average electricity yield per area and year equals to around 22.88 kWh/m\textsuperscript{2}a which is a constant power output of about 2.61 W/m\textsuperscript{2}. This exceeds the value of 2.2 W/m\textsuperscript{2} if compared to the literature value from 2009 with an assumed average wind speed of 6 m/s that was introduced in chapter 2.1 and calculated in formula 4 and 6. The actual average wind speed must be 6.3 m/s to reach a power output of about 2.61 W/m\textsuperscript{2}. Hence, this is definitely an indicator for the utilization of higher wind speeds in greater altitude with the technical development towards greater hub heights. The increase in rotor diameter cannot explain this development if the WTs have to be spaced further apart as seen in formula 6. The average distance to the next WT in relation to the rotor diameter is 4.9 which is relatively close to the five times the rotor diameter mentioned earlier and in the literature @DavidJCMacKay.2009.
