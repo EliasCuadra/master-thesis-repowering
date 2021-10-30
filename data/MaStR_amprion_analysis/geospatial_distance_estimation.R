@@ -4,7 +4,7 @@
 
 Sys.setenv(LANG = "en")
 pacman::p_load(data.table, tidyverse, magrittr, leaflet, sp, raster, htmltools,
-               htmlwidgets, sf, spatstat, rgeos)
+               htmlwidgets, sf, spatstat, rgeos, rgdal, DiagrammeR)
 
 #import data
 MaStR_amprion <- read.csv("MaStR_amprion2019.csv")
@@ -110,5 +110,33 @@ rm(border_sp, border_flat, border_owin, border_sf, wts_rlp_ppp, wts_rlp_flat,
 write.csv(wts_rlp_distances, "wts_rlp_distances.csv")
 
 
-
+#create flow chart of distance estimation
+grViz(diagram = "digraph flowchart {
+  node [fontname = arial, shape = oval, fixedsize = FALSE]
+  tab1 [label = '@@1', fontsize=30]
+  tab2 [label = '@@2', fontsize=30]
+  tab3 [label = '@@3', fontsize=30]
+  tab4 [label = '@@4', fontsize=30]
+  tab5 [label = '@@5', fontsize=30]
+  tab6 [label = '@@6', fontsize=30]
+  tab7 [label = '@@7', fontsize=30]
+  tab8 [label = '@@8', fontsize=30]
+  tab9 [label = '@@9', fontsize=30]
+  
+  
+  tab1 -> tab2 -> tab3 -> tab4 -> tab5 -> tab6 -> tab7 -> tab8 -> tab9;
+  
+}
+  
+  [1]: 'Import of merged data set of Amprion and MaStR'
+  [2]: 'Adjust format' 
+  [3]: 'Load border of RLP as shape files'
+  [4]: 'Unify CRS'
+  [5]: 'Transform to flat projection'
+  [6]: 'Create ppp format of the WT data set'
+  [7]: 'Clip those WTs inside RLP'
+  [8]: 'Calculate nearest neighbor with nndist() function and add collumn to data frame'
+  [9]: 'Check for reliability with Leaflet and create wts_rlp_distances.csv'
+  
+  ")
 

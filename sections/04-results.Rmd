@@ -43,11 +43,7 @@ On the contrary to the technical potential, due to legal reasons and resistance 
 
 ## Repowering potential
 
-The WTs in RLP that are potentially suitable for repowering within the next 10 years are systems with commissioning date before 2006. If possible this means a total replacement of 514 WTs with a total electricity output of 841 GWh. If we assume by looking into chapter 4.1 and figure \@ref(fig:electricityyield) that the average electricity yield of a newly commissioned WT within the next ten years can be 12,500 MWh. The combined electricity yield of 514 WT of that kind would be 6,425 GWh or 6.4 TWh which would be more than seven times more than before. Further the 514 WT have been arbitrarily divided into the categories; commissioned before 2001 and between 2001 and 2005 to see the influence of the commissioning date and are listed in (table \@ref(tab:table1)). It is highly questionable if all of the old systems can be replaced due to distance regulations and approval procedures because larger WTs might have an accordingly larger area consumption due to larger rotor diameter. But it could also be that the areas in which old systems are already in use due to good wind conditions that more WTs will be built in that place.
- 
-In this context repowering is a misleading term since it suggests that a system is technically enhanced, but in this case it means the deconstruction of old systems and new building of another system, which might even be in a different location. This is also why the approval procedures and distance regulations and also measures to protect the environment are not different as in the case of first construction of a WT. Thus, for a technical assessment of the wind energy potential in RLP, the respective electricity yield per WT and especially per area is determining. Whether and how WTs are repowered is then once the potential is assessed an economic and legal consideration. Hence, the calculation of the area consumption follows next.
-
-
+The WTs in RLP that are potentially suitable for repowering within the next 10 years are systems with commissioning date before 2006. If possible this means a total replacement of 514 WTs with a total electricity output of 841 GWh. If we assume, by looking into chapter 4.1 and figure \@ref(fig:electricityyield), that the average electricity yield of a newly commissioned WT within the next 10 years can be 12,500 MWh on average the combined electricity yield of 514 WTs of that kind would be 6,425 GWh or roughly 6.4 TWh which is well above seven times more than before. Further, the 514 WTs have been arbitrarily divided into the categories; commissioned before 2001 and between 2001 and 2005 to see the influence of the commissioning date and are listed in (table \@ref(tab:table1)). It is highly questionable if all of the old systems can be replaced due to distance regulations and approval procedures because larger WTs might have an accordingly larger area consumption due to larger rotor diameter. But it could also be possible that the areas in which old systems are already in use due to good wind conditions are chosen for further harvesting of the winds energy and that more WTs will be built in those places. This consideration is beyond the scope of this thesis.
 
 ```{r table1, echo=FALSE}
 col_names <- c(
@@ -66,7 +62,7 @@ df <- data.frame(df)
 knitr::kable(
   df,
   booktabs = TRUE,
-  caption = "Repowering potential based on the 100 percent replacement of wind turbines commissioned either 
+  caption = "Repowering potential based on the 100 % replacement of wind turbines commissioned either 
   before 2001 or from 2001 to 2005.",
   col.names = col_names, 
   escape = FALSE
@@ -74,6 +70,12 @@ knitr::kable(
 kable_styling(latex_options = c("HOLD_position")) %>%
 row_spec(2, hline_after = T)
 ```
+
+ 
+I want to argue that repowering is in this context a misleading term since it suggests that a system is technically enhanced, but in this case it means the deconstruction of old systems and new building of another system, which might even be in a different location. This is also why the approval procedures and distance regulations and also measures to protect the environment are not different as in the case of first construction of a WT. Thus, for a technical assessment of the wind energy potential in RLP, the respective electricity yield per WT and especially per area is determining. Whether and how WTs are repowered is then once the potential is assessed an economic and legal consideration. Hence, the calculation of the area consumption follows next.
+
+
+\newpage
 
 
 ## Rotor diameter, hub height and area consumption

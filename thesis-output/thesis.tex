@@ -63,7 +63,7 @@
 % save thesis parameters for later
 \newcommand{\thesistype}{Master's Thesis}
 \newcommand{\thesisauthor}{Elias Cuadra Braatz}
-\newcommand{\thesisdate}{October 29, 2021}
+\newcommand{\thesisdate}{October 30, 2021}
 
 % define tightlist to work with newer versions of pandoc
 \providecommand{\tightlist}{%
@@ -203,7 +203,7 @@
   in partial fulfillment of the requirements \\
   for the degree of \\
   \textbf{Master of Environmental Sciences} \\\vspace{0.5cm}
-  October 29, 2021
+  October 30, 2021
   
 \end{center}
 
@@ -670,6 +670,18 @@ To explain some fundamentals, the variance in statistics is the expectation of t
 \end{figure}
 The residual vs fitted values plot in the upper left reveals if the residuals are equally distributed among the outcome variables or have a non-linear pattern. In this case the residuals become larger with increasing fitted values which indicates a increasing error. The normal QQ plot in the upper right shows that the data is normaly distributed if the dots follow the straight line. In this case it small and high values stray from the line. The scale-location plot in the lower left similar to the first plot shows whether the assumption of equal variance (homoscedasticity) is matched if there is a straight line with equally spread points. The residuals vs leverage plot in the lower right helps to find influential points. When points are outside Cook's distance (red dotted line - not visible here) they are considered to be influential and can be removed from the data, although every case and data set has to be judged individually {[}\protect\hyperlink{ref-BommaeKim.2015}{57}{]}.
 
+\hypertarget{geospatial-analysis-and-area-calculation}{%
+\subsection{Geospatial analysis and area calculation}\label{geospatial-analysis-and-area-calculation}}
+
+For the estimation of the distance between WTs in RLP and the subsequent calculation of the area consumption, a short geospatial analysis of the data was carried out. The data contained geographic references in a spherical coordinate system using longitude and latitude values called World Geodic System 1984 (WGS84). A Geographic Reference System (GEOREF) or coordinate reference system (CRS) is a geocode or coordinate-based local, regional or global system used to locate geographical entities or specifying locations on the surface of the earth {[}\protect\hyperlink{ref-ISO.2007}{58}{]}. To perform the analysis the R packages sp, sf, spatstats, rgeos and rgdal were used. In particular or as a central operation the nndist() function was used to calculate the nearest neighbor of each WT. A flow chart that shows the processing steps is shown in figure \ref{fig:nearest}.
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{figures/flowchart_nearest} 
+
+}
+
+\caption{Flow chart of the geospatial processing}\label{fig:nearest}
+\end{figure}
 \hypertarget{ruxe9sumuxe9}{%
 \subsection{Résumé}\label{ruxe9sumuxe9}}
 
@@ -686,7 +698,7 @@ In order to calculate the electricity yield of future WTs in RLP, the following 
 
 The so-called master and movement data from the transmission system operator Amprion of the years 2012 to 2019 was available and used for analysis {[}\protect\hyperlink{ref-EnergieagenturRheinlandPfalz.2021}{9}{]}. Despite the availability of older data sets in some cases only more recent years are used since it is assumed, that the usage of older data would, due to fast technical development, only distort the results in regards to future prediction. The original two data sets were already joined and prepared by the energy agency of RLP. The master data contains information about the location, commissioning and decommissioning date and the EEG system key of all EEG systems that were reported by the distribution network operator as part of the annual EEG report. The files also contain the systems connected directly or indirectly to the networks of the transmission system operator. Additionally, the transmission system operators are obliged to publish the so-called movement data that contains information about the quantity of electricity fed in and the amount of funded tariffs that have been payed {[}\protect\hyperlink{ref-AmprionGmbH.2019}{13}{]}. The pre-processed data sets from the years 2015 to 2019 are stored within this project in data/amprion as EEG\_StammBew\_2015( - 2019)\_Amprion-EAtlas.csv.
 
-Further, The data from Amprion comes with 28 variables for the year 2019 of which only some are interesting for the analysis, some variable formats are not suitable and distorting data points are included. Thus, a preparation process must initially be carried out to clean and prepare the data. The kept variables are: community key, post code, place, rated capacity, commissioning date, system key and electricity yield. Since it is considered best practice to examine the data for influential points and reliability this is also thoroughly done here {[}\protect\hyperlink{ref-JasonW.Osborne.2013}{58}{]}. For the prediction of the electricity yield not all the WTs are considered meaningful and some outliers are removed from the data. On the one hand WTs with a rated capacity lower than 100 kW are considered too small for a reasonable assessment of new commercially operated systems. On the other hand some WTs are listed with a rated capacity up to 12 MW which might be because several WTs are registered as one. It is therefore assumed that a rated capacity larger than 4.5 MW does not reflect the average conditions, even though systems of this size exist. Also WTs that are built after February 15th each year are excluded since they have less time to generate electricity and therefore deliver misleading data. An interim result are five CSV files of the different years that only have relevant variables in the correct format and are free of outliers. As an insight the data from 2017 shows 1,623 WTs of which 101 are outliers, the data from 2018 shows 1,674 WTs of which 76 are outliers and the data from 2019 shows 1,702 WTs of which 46 are outliers. A plot that shows the total number of WTs from 2012 to 2019 is shown in figure \ref{fig:yearswts}, which contains, as a foresight on the results section, a linear trend, that shows an estimated number of around 2,500 WTs in the year 2030 .
+Further, The data from Amprion comes with 28 variables for the year 2019 of which only some are interesting for the analysis, some variable formats are not suitable and distorting data points are included. Thus, a preparation process must initially be carried out to clean and prepare the data. The kept variables are: community key, post code, place, rated capacity, commissioning date, system key and electricity yield. Since it is considered best practice to examine the data for influential points and reliability this is also thoroughly done here {[}\protect\hyperlink{ref-JasonW.Osborne.2013}{59}{]}. For the prediction of the electricity yield not all the WTs are considered meaningful and some outliers are removed from the data. On the one hand WTs with a rated capacity lower than 100 kW are considered too small for a reasonable assessment of new commercially operated systems. On the other hand some WTs are listed with a rated capacity up to 12 MW which might be because several WTs are registered as one. It is therefore assumed that a rated capacity larger than 4.5 MW does not reflect the average conditions, even though systems of this size exist. Also WTs that are built after February 15th each year are excluded since they have less time to generate electricity and therefore deliver misleading data. An interim result are five CSV files of the different years that only have relevant variables in the correct format and are free of outliers. As an insight the data from 2017 shows 1,623 WTs of which 101 are outliers, the data from 2018 shows 1,674 WTs of which 76 are outliers and the data from 2019 shows 1,702 WTs of which 46 are outliers. A plot that shows the total number of WTs from 2012 to 2019 is shown in figure \ref{fig:yearswts}, which contains, as a foresight on the results section, a linear trend, that shows an estimated number of around 2,500 WTs in the year 2030 .
 \begin{figure}[H]
 
 {\centering \includegraphics[width=1\linewidth]{data/Amprion/results_of_analysis/year_wts} 
@@ -784,17 +796,15 @@ The prediction for 2030 is around 2,800 h/a on average. If this is compared to t
 
 If an an average electricity generation of 7,400 MWh/a per WT is assumed the number of WTs needed to generate the demanded 22 TWh is around 2,973 WTs. If on average 8,050 MWh/a could be harvested then this would require around 2,733 WTs. It seems that if the average growth of the total number of WTs in RLP continues as predicted initially, the goal of around 2,500 WTs in RLP is very realistic. If the 22 TWh shall be generated with 2,500 WTs the average annual output must be 8,800 MWh, which also seems quit realistic because the numbers presented before are first conservative and second estimates for the year 2021 and will certainly increase over the next ten years. Of course, WTs with lower total electricity yield would have to be repowered additionally to increase the mean output and effort has to be made to push ahead with the expansion of WTs in RLP, but it shows that it is certainly not out of the scope.
 
-On the contrary to the technical potential, due to legal reasons and resistance from the citizens, the increase was slowed down sharply from 92 newly commissioned WTs in 2017 to 27 newly commissioned WTs in 2019 {[}\protect\hyperlink{ref-EnergieagenturRheinlandPfalz.2019}{30}{]}. Experts from the wind industry particularly criticize the difficult approval procedures. The biggest mistake of the federal government was to introduce an ``obligation to tender'' for new wind turbines that slows down the whole process {[}\protect\hyperlink{ref-NickSchader.2021}{59}{]}. In the end of this section it is to mention that this increasing development should not be misunderstood that the overall electricity yield of an area can be increased in the same way. Larger WTs have to be spaced further apart, so even though they might have a higher electricity yield, the overall electricity yield per area might not increase as much as expected. Although there might be strong economic reasons to build greater WTs and also to harvest higher wind speeds at greater altitudes, the overall energy extraction per area has certain limits that cannot be exceeded. Therefore the calculations of the respective area consumption are presented in subsections 4.3. Before that the repowering potential is investigated next.
+On the contrary to the technical potential, due to legal reasons and resistance from the citizens, the increase was slowed down sharply from 92 newly commissioned WTs in 2017 to 27 newly commissioned WTs in 2019 {[}\protect\hyperlink{ref-EnergieagenturRheinlandPfalz.2019}{30}{]}. Experts from the wind industry particularly criticize the difficult approval procedures. The biggest mistake of the federal government was to introduce an ``obligation to tender'' for new wind turbines that slows down the whole process {[}\protect\hyperlink{ref-NickSchader.2021}{60}{]}. In the end of this section it is to mention that this increasing development should not be misunderstood that the overall electricity yield of an area can be increased in the same way. Larger WTs have to be spaced further apart, so even though they might have a higher electricity yield, the overall electricity yield per area might not increase as much as expected. Although there might be strong economic reasons to build greater WTs and also to harvest higher wind speeds at greater altitudes, the overall energy extraction per area has certain limits that cannot be exceeded. Therefore the calculations of the respective area consumption are presented in subsections 4.3. Before that the repowering potential is investigated next.
 
 \hypertarget{repowering-potential}{%
 \subsection{Repowering potential}\label{repowering-potential}}
 
-The WTs in RLP that are potentially suitable for repowering within the next 10 years are systems with commissioning date before 2006. If possible this means a total replacement of 514 WTs with a total electricity output of 841 GWh. If we assume by looking into chapter 4.1 and figure \ref{fig:electricityyield} that the average electricity yield of a newly commissioned WT within the next ten years can be 12,500 MWh. The combined electricity yield of 514 WT of that kind would be 6,425 GWh or 6.4 TWh which would be more than seven times more than before. Further the 514 WT have been arbitrarily divided into the categories; commissioned before 2001 and between 2001 and 2005 to see the influence of the commissioning date and are listed in (table \ref{tab:table1}). It is highly questionable if all of the old systems can be replaced due to distance regulations and approval procedures because larger WTs might have an accordingly larger area consumption due to larger rotor diameter. But it could also be that the areas in which old systems are already in use due to good wind conditions that more WTs will be built in that place.
-
-In this context repowering is a misleading term since it suggests that a system is technically enhanced, but in this case it means the deconstruction of old systems and new building of another system, which might even be in a different location. This is also why the approval procedures and distance regulations and also measures to protect the environment are not different as in the case of first construction of a WT. Thus, for a technical assessment of the wind energy potential in RLP, the respective electricity yield per WT and especially per area is determining. Whether and how WTs are repowered is then once the potential is assessed an economic and legal consideration. Hence, the calculation of the area consumption follows next.
+The WTs in RLP that are potentially suitable for repowering within the next 10 years are systems with commissioning date before 2006. If possible this means a total replacement of 514 WTs with a total electricity output of 841 GWh. If we assume, by looking into chapter 4.1 and figure \ref{fig:electricityyield}, that the average electricity yield of a newly commissioned WT within the next 10 years can be 12,500 MWh on average the combined electricity yield of 514 WTs of that kind would be 6,425 GWh or roughly 6.4 TWh which is well above seven times more than before. Further, the 514 WTs have been arbitrarily divided into the categories; commissioned before 2001 and between 2001 and 2005 to see the influence of the commissioning date and are listed in (table \ref{tab:table1}). It is highly questionable if all of the old systems can be replaced due to distance regulations and approval procedures because larger WTs might have an accordingly larger area consumption due to larger rotor diameter. But it could also be possible that the areas in which old systems are already in use due to good wind conditions are chosen for further harvesting of the winds energy and that more WTs will be built in those places. This consideration is beyond the scope of this thesis.
 \begin{table}[H]
 
-\caption{\label{tab:table1}Repowering potential based on the 100 percent replacement of wind turbines commissioned either 
+\caption{\label{tab:table1}Repowering potential based on the 100 % replacement of wind turbines commissioned either 
   before 2001 or from 2001 to 2005.}
 \centering
 \begin{tabular}[t]{lllll}
@@ -807,6 +817,10 @@ before 2001 & 186 & 186 & 2325 & 1250\\
 \bottomrule
 \end{tabular}
 \end{table}
+I want to argue that repowering is in this context a misleading term since it suggests that a system is technically enhanced, but in this case it means the deconstruction of old systems and new building of another system, which might even be in a different location. This is also why the approval procedures and distance regulations and also measures to protect the environment are not different as in the case of first construction of a WT. Thus, for a technical assessment of the wind energy potential in RLP, the respective electricity yield per WT and especially per area is determining. Whether and how WTs are repowered is then once the potential is assessed an economic and legal consideration. Hence, the calculation of the area consumption follows next.
+
+\newpage
+
 \hypertarget{rotor-diameter-hub-height-and-area-consumption}{%
 \subsection{Rotor diameter, hub height and area consumption}\label{rotor-diameter-hub-height-and-area-consumption}}
 
@@ -1116,12 +1130,16 @@ It is therefore almost certain that the expansion of wind power in RLP will proc
 \CSLLeftMargin{57. }
 \CSLRightInline{Bommae Kim: Understanding diagnostic plots for linear regression analysis, \url{https://data.library.virginia.edu/diagnostic-plots/}, (2015)}
 
-\leavevmode\hypertarget{ref-JasonW.Osborne.2013}{}%
+\leavevmode\hypertarget{ref-ISO.2007}{}%
 \CSLLeftMargin{58. }
+\CSLRightInline{ISO: ISO 19111:2007: Geographic information - spatial referencing by coordinates, \url{https://www.iso.org/standard/41126.html}, (2007)}
+
+\leavevmode\hypertarget{ref-JasonW.Osborne.2013}{}%
+\CSLLeftMargin{59. }
 \CSLRightInline{Jason W. Osborne: Best practices in data cleaning. {SAGE Publications, Inc} (2013)}
 
 \leavevmode\hypertarget{ref-NickSchader.2021}{}%
-\CSLLeftMargin{59. }
+\CSLLeftMargin{60. }
 \CSLRightInline{Nick Schader: Der windkraftausbau stockt massiv: Der ausbau der windenergie in deutschland ist 2020 teils dramatisch zur{ü}ckgegangen. Genehmigungen f{ü}r windkraftanlagen erreichen in vielen l{ä}ndern einen tiefststand. Kritiker lasten das vor allem der bundesregierung an., \url{https://www.tagesschau.de/investigativ/swr/deutschland-windkraft-ausbau-101.html}, (2021)}
 
 \end{CSLReferences}
