@@ -27,9 +27,9 @@
 \contentsline {subsection}{\numberline {4.1}Electricity yield, rated capacity and full-load-hours in Rhineland-Palatinate}{35}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Repowering potential}{40}{subsection.4.2}%
 \contentsline {subsection}{\numberline {4.3}Rotor diameter, hub height and area consumption}{41}{subsection.4.3}%
-\contentsline {section}{\numberline {5}Discussion}{44}{section.5}%
-\contentsline {section}{\numberline {6}Conclusion}{46}{section.6}%
-\contentsline {section}{References}{47}{section*.32}%
-\contentsline {section}{\numberline {A}Appendix}{52}{appendix.A}%
-\contentsline {subsection}{\numberline {A.1}Code chunk 1}{52}{subsection.A.1}%
-\contentsline {subsection}{\numberline {A.2}Code chunk 2}{56}{subsection.A.2}%
+\contentsline {section}{\numberline {5}Discussion}{45}{section.5}%
+\contentsline {section}{\numberline {6}Conclusion}{47}{section.6}%
+\contentsline {section}{References}{48}{section*.33}%
+\contentsline {section}{\numberline {A}Appendix}{53}{appendix.A}%
+\contentsline {subsection}{\numberline {A.1}Code chunk 1}{53}{subsection.A.1}%
+\contentsline {subsection}{\numberline {A.2}Code chunk 2}{57}{subsection.A.2}%

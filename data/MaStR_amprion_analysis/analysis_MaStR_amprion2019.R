@@ -4,7 +4,7 @@
 
 Sys.setenv(LANG = "en")
 pacman::p_load(data.table, tidyverse, magrittr, leaflet, htmltools,
-               htmlwidgets)
+               htmlwidgets, gridExtra)
 
 #import data
 wts_rlp_distances <- read.csv(
@@ -31,7 +31,7 @@ plot(lm_rotor)
 #plot rotor diameter over commissioning date
 p_rotor <- ggplot() +
   geom_point(data = wts_rlp_rotor, aes(x=inbetriebnahme, y=rotor_m), 
-             size = 0.4, colour = "#4500fe") +
+             size = 0.4, colour = "#fde600") +
   geom_smooth(data = wts_rlp_rotor, 
               aes(x=inbetriebnahme, y=rotor_m, colour = "2019"), 
               method=lm, se=TRUE, fullrange = TRUE, size = 0.5)  +
@@ -48,17 +48,9 @@ p_rotor <- ggplot() +
   annotate(geom="text",x=as.Date("2025-01-01"),
            y=50,label= "R² = 68.7 % \n p-value << 0.001") +
   scale_colour_manual(name = "Data from MaStR", 
-                      values="#4500fe")
+                      values="#fde600") +
+  theme(legend.position = c(0.3,0.9))
 
-#plot
-p_rotor +  theme(legend.position = c(0.3,0.9))
-
-#save plot
-ggsave("results_of_analysis/rotor_diameter.png",
-       plot = last_plot(),
-       dpi = 900,
-       width = 7,
-       height = 4)
 
 ########################
 #Analysis of hub height#
@@ -77,7 +69,7 @@ plot(lm_nabe)
 #plot hub height over commissioning date
 p_nabe <- ggplot() +
   geom_point(data = wts_rlp_nabe, aes(x=inbetriebnahme, y=nabe_m), 
-             size = 0.4, colour = "#0051fd") +
+             size = 0.4, colour = "#fc5a03") +
   geom_smooth(data = wts_rlp_nabe, 
               aes(x=inbetriebnahme, y=nabe_m, colour = "2019"), 
               method=lm, se=TRUE, fullrange = TRUE, size = 0.5)  +
@@ -94,18 +86,22 @@ p_nabe <- ggplot() +
   annotate(geom="text",x=as.Date("2025-01-01"),
            y=50,label= "R² = 77.9 % \n p-value << 0.001") +
   scale_colour_manual(name = "Data from MaStR", 
-                      values="#0051fd")
+                      values="#fc5a03") +
+  theme(legend.position = c(0.3,0.9))
 
-#plot
-p_nabe  +  theme(legend.position = c(0.3,0.9))
+p_nabe
+
+#plot both in one
+grid.arrange(p_rotor, p_nabe, ncol=1)
 
 #save plot
-ggsave("results_of_analysis/hub_height.png",
-       plot = last_plot(),
+ggsave("results_of_analysis/rotor_diameter_hub_height.png",
+       plot = grid.arrange(p_rotor, p_nabe, ncol=1),
        dpi = 900,
        width = 7,
        height = 4)
 
+par(mfrow=c(1,1))
 ########################################
 #Analysis of electricity yield per area#
 ########################################
@@ -136,22 +132,22 @@ mean(wts_rlp_filtered$d)
 
 #calculate mean distance again and area consumption with average
 mean(wts_rlp_filtered$nearest)
-#~417.3347m that means 174168.3 m2 or 0.1741683 km2 per WT
+#~417.3347m that means 169,744 m2 or 0.17 km2 per WT
 #area of RLP 19847
-#total are consumption with 1702 WT's is about 296434447 m2 and 296.4344 km2
-#that is 1.493598 % of RLP
-#with a total electricity yield of 6,782 TWh that means 22.87858 kWh/m2
-#constant power output of 2.61022 W/m2
+#total are consumption with 1702 WT's is  289.34 km2 this is about 289,340,000 m2
+#that is 1.457 % of RLP
+#with a total electricity yield of 6,782 TWh that means 23,439 kWh/m2
+#constant power output of 2.675 W/m2
 #calculate wind speed with third root of electricity yield per area divided 
 #by 0.016 * 1.3 * 0.5 = 0.0104
-#2.61022/0.0104 = 250.9827
+#2.675/0.0104 = 257.2115
 #250.9827^(1/3)
-#wind speed with 6.307671 m/s required
+#wind speed with 6.359605 m/s required
 
 
 #calculate actual total mean electricity yield per m2 in data
 mean(wts_rlp_filtered$kwh_m2)
-#~23.3kwh/m2 close to the theoretical value of 22.87 kWh/m2 from above
+#~26.17383 kwh/m2 
 #Calculate average power per area with 23.3(1000/8765)
 #~2.6583 W/m2
 #2.6583/0.0104 = 255.6058
@@ -163,21 +159,16 @@ mean(wts_rlp_filtered$kwh_m2)
 #calculate area consumption with mean of WT's built after 2010
 wts_rlp_filtered_2010 <- filter(wts_rlp_filtered, inbetriebnahme > "2010-01-01")
 mean(wts_rlp_filtered_2010$nearest)
-#474.8368 m
+#467.9847 m
 mean(wts_rlp_filtered_2010$d)
-#4.671875 times d
+#4.60781 times d
 mean(wts_rlp_filtered_2010$area_m2)
-#243284.6 m2
+#238527.4 m2
 mean(wts_rlp_filtered_2010$area_km2)
-#0.2432846 km2
+#0.2385161 km2
 mean(wts_rlp_filtered_2010$kwh_m2)
-#27.41782 kWh/m2
-#3.128103 W/m2
-#3.128103/0.0104 = 300.7791
-#300.7791^(1/3) = 6.70012 m/s wind speed required
-#calculate area consumption of 22 TWh with ~24.7 kWh/m2
-#this equals 802397857m? = 802.3979km? = 4.042918 % 
-# = 2.695279 times the current area
+#30.46168 kWh/m2
+#3.477361 W/m2
 
 
 #plot electricity yield per area over commissioning date
@@ -197,9 +188,6 @@ p_e_yield_per_area <- ggplot() +
          plot.title = element_text(size=14),
          legend.position = c(0.85, 0.9),
          legend.direction = "horizontal") +
-  geom_hline(yintercept = 27.4, linetype = 'dashed', size = 0.25) +
-  annotate(geom="text",x=as.Date("2025-01-01"),
-           y=25,label="Mean of ~ 27.4 kWh/m²a after 2010", size = 2.5) +
   geom_hline(yintercept = 33.5, linetype = 'dashed', size = 0.25) +
   annotate(geom="text",x=as.Date("1995-01-01"),
            y=35.5,label="Predicted mean of  ~ 33.5 kWh/m²a in 2021", 
@@ -226,8 +214,10 @@ ggsave("results_of_analysis/e_yield_per_m2_over_commissioning_date.png",
 
 #the model assumes an average of around 33.5 kWh/m2a in 2021
 #3.822019 W/m2
-#3.822019/0.0104 = 367.5018
-#367.5018^(1/3) = 7.16286 m/s wind speed required
+#3.822019/0.0104 = 367.5018 (5d)
+#3.822019/0.0436 = 87.66099 (3d)
+#367.5018^(1/3) = 7.16286 m/s wind speed required (5d)
+#87.66099^(1/3) = 4.442241 m/s wind speed required (3d)
 #wind speed of 7.16286 m/s
 ##calculate area consumption of 22 TWh
 #This requires an area of 656716418 m2 = 656.7164 km2 = 3.308895 % 
@@ -235,9 +225,29 @@ ggsave("results_of_analysis/e_yield_per_m2_over_commissioning_date.png",
 
 #if average is 40.5 kwh/m2a in 2030
 #4.62065 W/m2
-#4.62065/0.0104 = 444.2933
-#444.2933^(1/3) = 7.630563 m/s wind speed required
+#4.62065/0.0104 = 444.2933 (5d)
+#4.62065/0.0436 = 105.9782 (3d)
+#444.2933^(1/3) = 7.630563 m/s wind speed required (5d)
+#105.9782^(1/3) = 4.732299 m/s wind speed required (3d)
 #area consumption with demand of 22 TWh
 # 543209877 m2 = 543.2099 km2 = 2.736987 % = 1.824658 times as much
+
+#if average is 63.5 kWh/m2a in 2030
+#7.2 W/m2
+#7.2/0.0104 = 692.3077 (5d)
+#7.2/0.0436 = 165.1376
+#692.3077^(1/3) = 8.846396 m/s (5d)
+#165.1376^(1/3) = 5.486331 m/s (3d)
+#area of 346.456 km2 = 1.74 %
+
+
+
+
+
+
+
+
+
+
 
 
