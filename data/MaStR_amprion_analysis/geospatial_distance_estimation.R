@@ -1,6 +1,6 @@
-########################################################################
-#Calculation  and visualization of area consumption                    #
-########################################################################
+################################
+#geospatial distance estimation#
+################################
 
 Sys.setenv(LANG = "en")
 pacman::p_load(data.table, tidyverse, magrittr, leaflet, sp, raster, htmltools,
@@ -102,12 +102,12 @@ wts_rlp_distances <- wts_rlp_distances %>%
   mutate(kwh_m2 = round(menge_kwh/area_m2, digits = 3)) %>% 
   mutate(d = round(nearest/rotor_m))
 
+#write csv file 
+write.csv(wts_rlp_distances, "wts_rlp_distances.csv")
+
 #clean environment
 rm(border_sp, border_flat, border_owin, border_sf, wts_rlp_ppp, wts_rlp_flat, 
    wts_rlp_sf, nearest, MaStR_amprion, WGS84, wts_rlp_df, wts_rlp)
-
-#write csv file 
-write.csv(wts_rlp_distances, "wts_rlp_distances.csv")
 
 
 #create flow chart of distance estimation

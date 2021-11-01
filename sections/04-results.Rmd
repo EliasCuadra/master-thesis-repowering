@@ -123,10 +123,10 @@ knitr::kable(
   df,
   booktabs = TRUE,
   caption = "Three scenarios of electricity yield per area and year and their respective area consumption 
-  and required (Req.) average (av.) wind speed once for a distance between the WT of 5 times the diameter (5d)
-  and once with 3 times the diameter (3d), if a consumption of 22 TWh should be generated with WTs in 2030.
-  Mean 2021 and Mean 2030 were taken from the linear regression model shown in figure 24 and the Vestas scenario 
-  is as described in the text with the V162-5.6 IEC S machine.",
+  and theoretically required (Req.) average (av.) wind speed once for a distance between the WT of 5 times 
+  the diameter (5d)  and once with 3 times the diameter (3d), if a consumption of 22 TWh should be generated 
+  with WTs in 2030. Mean 2021 and Mean 2030 were taken from the linear regression model shown in figure 24 
+  and the Vestas scenario is as described in the text with the V162-5.6 IEC S machine.",
   col.names = col_names, 
   escape = FALSE
 ) %>%

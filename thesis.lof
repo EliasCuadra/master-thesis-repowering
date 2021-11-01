@@ -1,24 +1,24 @@
 \contentsline {figure}{\numberline {1}{\ignorespaces Warming stripes for 1850-2018 using the WMO annual global temperature data set {[}\hyperlink {ref-EdHawkins.2018}{16}{]}.\relax }}{4}{figure.caption.6}%
-\contentsline {figure}{\numberline {2}{\ignorespaces Wind speeds in RLP 140 m above Ground {[}\hyperlink {ref-MinisteriumfurWirtschaftKlimaschutzEnergieundLandesplanung.2013}{21}{]}.\relax }}{7}{figure.caption.8}%
-\contentsline {figure}{\numberline {3}{\ignorespaces Main components in the nacelle (Vestas)\relax }}{8}{figure.caption.9}%
-\contentsline {figure}{\numberline {4}{\ignorespaces Development of expansion and dismantling of WTs in Germany from 1995 until 2021 {[}\hyperlink {ref-DeutscheWindGuard.2021}{25}{]}.\relax }}{9}{figure.caption.10}%
-\contentsline {figure}{\numberline {5}{\ignorespaces Development of the annual and proportionally installed and reduced capacity within the scope of repowering projects {[}\hyperlink {ref-DeutscheWindGuard.2021}{25}{]}.\relax }}{10}{figure.caption.11}%
-\contentsline {figure}{\numberline {6}{\ignorespaces Annual energy production of a V162-5.6 IEC S in relation to the wind speed {[}\hyperlink {ref-VestasWindSystemsAS.2019}{33}{]}\relax }}{11}{figure.caption.12}%
-\contentsline {figure}{\numberline {7}{\ignorespaces Left: Power of the wind per rotor area over wind speed; Right: Typical load profile of a WT.\relax }}{18}{figure.caption.13}%
-\contentsline {figure}{\numberline {8}{\ignorespaces Development and forecast of the mean full-load-hours (in h) for Wind turbines installed in Germany. Figure taken from Deutsche WindGuard 2020.\relax }}{21}{figure.caption.14}%
-\contentsline {figure}{\numberline {9}{\ignorespaces Development and forecast of the mean rated capacity (in kW) for Wind turbines installed in Germany. Figure taken from Deutsche WindGuard 2020.\relax }}{22}{figure.caption.15}%
-\contentsline {figure}{\numberline {10}{\ignorespaces Development and forecast of the mean rotor diameter (in m) for Wind turbines installed in Germany. Figure taken from Deutsche WindGuard 2020\relax }}{23}{figure.caption.16}%
-\contentsline {figure}{\numberline {11}{\ignorespaces Development and forecast of mean hub hight (in m) for Wind turbines installed in Germany. Figure taken from Deutsche WindGuard 2020.\relax }}{23}{figure.caption.17}%
-\contentsline {figure}{\numberline {12}{\ignorespaces Development and forecast of the mean specific rated capacity (in W/m²) for Wind turbines installed in Germany. Figure taken from Deutsche WindGuard 2020.\relax }}{24}{figure.caption.18}%
-\contentsline {figure}{\numberline {13}{\ignorespaces Basic representation of linear regression analysis with date points, regression line and confidence intervals {[}\hyperlink {ref-JasonWong.2020}{55}{]}.\relax }}{27}{figure.caption.19}%
-\contentsline {figure}{\numberline {14}{\ignorespaces Example diagnostic plot of linear model of the electricity yield of all WTs in RLP over the commissioning date in 2019 from the transmition system operator Amprion created with the plot() function in base R\relax }}{28}{figure.caption.20}%
-\contentsline {figure}{\numberline {15}{\ignorespaces Number of total WTs in RLP from 2012 to 2019 according to Amprion with linear trend up to 2030\relax }}{31}{figure.caption.21}%
-\contentsline {figure}{\numberline {16}{\ignorespaces Flow chart of the cleaning and proccessing steps of the data from Amprion\relax }}{32}{figure.caption.22}%
-\contentsline {figure}{\numberline {17}{\ignorespaces Flow chart of merging process of the data set from Amprion of 2019 and the data from the MaStR\relax }}{33}{figure.caption.23}%
-\contentsline {figure}{\numberline {18}{\ignorespaces Flow chart of the geospatial processing\relax }}{34}{figure.caption.24}%
-\contentsline {figure}{\numberline {19}{\ignorespaces Development and forecast of electricity yield in Rhineland-Palatinate using data from 2017 to 2019 and a linear an polynomial model\relax }}{35}{figure.caption.25}%
-\contentsline {figure}{\numberline {20}{\ignorespaces Electricity yield over rated capacity in RLP with data from 2017 to 2019\relax }}{36}{figure.caption.26}%
-\contentsline {figure}{\numberline {21}{\ignorespaces Rated capacity over commissioning date\relax }}{37}{figure.caption.27}%
-\contentsline {figure}{\numberline {22}{\ignorespaces full-load-hours over the commissioning date using data from 2015 - 2019\relax }}{38}{figure.caption.28}%
-\contentsline {figure}{\numberline {23}{\ignorespaces Rotor diameter and hub height of WTs in RLP over the commissioning date from 1990 to 2019 with linear trend to the year 2030\relax }}{41}{figure.caption.30}%
-\contentsline {figure}{\numberline {24}{\ignorespaces Electricity density in kWh/ m² and year over the commissioning date\relax }}{42}{figure.caption.31}%
+\contentsline {figure}{\numberline {2}{\ignorespaces Wind speeds in RLP 140 m above ground {[}\hyperlink {ref-MinisteriumfurWirtschaftKlimaschutzEnergieundLandesplanung.2013}{21}{]}.\relax }}{6}{figure.caption.8}%
+\contentsline {figure}{\numberline {3}{\ignorespaces Main components in the nacelle (Vestas)\relax }}{7}{figure.caption.9}%
+\contentsline {figure}{\numberline {4}{\ignorespaces Development of expansion and dismantling of WTs in Germany from 1995 until 2021 {[}\hyperlink {ref-DeutscheWindGuard.2021}{25}{]}.\relax }}{8}{figure.caption.10}%
+\contentsline {figure}{\numberline {5}{\ignorespaces Development of the annual and proportionally installed and reduced capacity within the scope of repowering projects {[}\hyperlink {ref-DeutscheWindGuard.2021}{25}{]}.\relax }}{9}{figure.caption.11}%
+\contentsline {figure}{\numberline {6}{\ignorespaces Annual energy production of a V162-5.6 IEC S in relation to the wind speed {[}\hyperlink {ref-VestasWindSystemsAS.2019}{33}{]}\relax }}{10}{figure.caption.12}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Left: Power of the wind per rotor area over wind speed; Right: Typical load profile of a WT.\relax }}{17}{figure.caption.13}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Development and forecast of the mean full-load-hours (in h) for Wind turbines installed in Germany. Figure taken from Deutsche WindGuard 2020.\relax }}{20}{figure.caption.14}%
+\contentsline {figure}{\numberline {9}{\ignorespaces Development and forecast of the mean rated capacity (in kW) for Wind turbines installed in Germany. Figure taken from Deutsche WindGuard 2020.\relax }}{21}{figure.caption.15}%
+\contentsline {figure}{\numberline {10}{\ignorespaces Development and forecast of the mean rotor diameter (in m) for Wind turbines installed in Germany. Figure taken from Deutsche WindGuard 2020\relax }}{22}{figure.caption.16}%
+\contentsline {figure}{\numberline {11}{\ignorespaces Development and forecast of mean hub hight (in m) for Wind turbines installed in Germany. Figure taken from Deutsche WindGuard 2020.\relax }}{22}{figure.caption.17}%
+\contentsline {figure}{\numberline {12}{\ignorespaces Development and forecast of the mean specific rated capacity (in W/m²) for Wind turbines installed in Germany. Figure taken from Deutsche WindGuard 2020.\relax }}{23}{figure.caption.18}%
+\contentsline {figure}{\numberline {13}{\ignorespaces Basic representation of linear regression analysis with date points, regression line and confidence intervals {[}\hyperlink {ref-JasonWong.2020}{55}{]}.\relax }}{26}{figure.caption.19}%
+\contentsline {figure}{\numberline {14}{\ignorespaces Example diagnostic plot of linear model of the electricity yield of all WTs in RLP over the commissioning date in 2019 from the transmition system operator Amprion created with the plot() function in base R\relax }}{27}{figure.caption.20}%
+\contentsline {figure}{\numberline {15}{\ignorespaces Number of total WTs in RLP from 2012 to 2019 according to Amprion with linear trend up to 2030\relax }}{30}{figure.caption.21}%
+\contentsline {figure}{\numberline {16}{\ignorespaces Flow chart of the cleaning and proccessing steps of the data from Amprion\relax }}{31}{figure.caption.22}%
+\contentsline {figure}{\numberline {17}{\ignorespaces Flow chart of merging process of the data set from Amprion of 2019 and the data from the MaStR\relax }}{32}{figure.caption.23}%
+\contentsline {figure}{\numberline {18}{\ignorespaces Flow chart of the geospatial processing\relax }}{33}{figure.caption.24}%
+\contentsline {figure}{\numberline {19}{\ignorespaces Development and forecast of electricity yield in Rhineland-Palatinate using data from 2017 to 2019 and a linear an polynomial model\relax }}{34}{figure.caption.25}%
+\contentsline {figure}{\numberline {20}{\ignorespaces Electricity yield over rated capacity in RLP with data from 2017 to 2019\relax }}{35}{figure.caption.26}%
+\contentsline {figure}{\numberline {21}{\ignorespaces Rated capacity over commissioning date\relax }}{36}{figure.caption.27}%
+\contentsline {figure}{\numberline {22}{\ignorespaces full-load-hours over the commissioning date using data from 2015 - 2019\relax }}{37}{figure.caption.28}%
+\contentsline {figure}{\numberline {23}{\ignorespaces Rotor diameter and hub height of WTs in RLP over the commissioning date from 1990 to 2019 with linear trend to the year 2030\relax }}{40}{figure.caption.30}%
+\contentsline {figure}{\numberline {24}{\ignorespaces Electricity density in kWh/ m² and year over the commissioning date\relax }}{41}{figure.caption.31}%
