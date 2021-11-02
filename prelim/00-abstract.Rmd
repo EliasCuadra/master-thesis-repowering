@@ -1,13 +1,6 @@
 # Abstract {-}
 
-This is the template for a thesis at the Chair of Econometrics of
-Humboldt--Universit\"at zu Berlin. A popular approach to write a thesis or a
-paper is the IMRAD method (Introduction, Methods, Results and Discussion). This
-approach is not mandatory! You can find more information about formal
-requirements in the booklet `Hinweise zur Gestaltung der äußeren Form von
-Diplomarbeiten' which is available in the office of studies.
- 
-The abstract should not be longer than a paragraph of around 10-15 lines (or
-about 150 words). The abstract should contain a concise description of the
-econometric/economic problem you analyze and of your results. This allows the
-busy reader to obtain quickly a clear idea of the thesis content.
+
+This master's thesis was written in the context of climate protection through the energy transition and with regard to the threat to people and the environment from the consequences of climate change. The initial question here is how can the temperature increase be limited to 2 $^\circ$C above the pre-industrial level, as formulated by the Intergovernmental Panel on Climate Change (IPCC). There is consensus on the assumption that energy from wind plays and will continue to play a decisive role in avoiding fossil fuels and thus CO\textsubscript{2} emissions. This was the reason to examine the potential of wind power in Rhineland-Palatinate from 2021 to 2030 and to critically question the expansion goals and the climate protection goals of 2030.
+
+The central result of this work is that with a consistent and substantial expansion of wind power, an existing number of 2,500 wind power plants can be realized in Rhineland-Palatinate. This stock can contribute a quantity of 22 TWh to the total electricity demand and thus also make a substantial contribution to the achievement of the climate protection goals. It is even realistic, e.g. by designating additional areas, to increase electricity generation from wind power.

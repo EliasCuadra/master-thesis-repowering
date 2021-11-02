@@ -5,7 +5,7 @@
     GHG & & Greenhouse gas \\  
     RLP     & &  Rhineland-Palatinate \\
     TWh     & &  Tera Watt hours  \\
-    WT      & &  Wind turbine  \\
+    WT(s)      & &  Wind turbine(s)  \\
     MWh     & &  Mega Watt hours \\
     kWh     & &  Kilo Watt hours \\
     GIS     & &  Geographic Information System \\

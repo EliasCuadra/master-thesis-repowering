@@ -63,7 +63,7 @@
 % save thesis parameters for later
 \newcommand{\thesistype}{Master's Thesis}
 \newcommand{\thesisauthor}{Elias Cuadra Braatz}
-\newcommand{\thesisdate}{November 01, 2021}
+\newcommand{\thesisdate}{November 02, 2021}
 
 % define tightlist to work with newer versions of pandoc
 \providecommand{\tightlist}{%
@@ -203,7 +203,7 @@
   in partial fulfillment of the requirements \\
   for the degree of \\
   \textbf{Master of Environmental Sciences} \\\vspace{0.5cm}
-  November 01, 2021
+  November 02, 2021
   
 \end{center}
 
@@ -223,17 +223,9 @@
 \section*{Abstract}\label{abstract}}
 \addcontentsline{toc}{section}{Abstract}
 
-This is the template for a thesis at the Chair of Econometrics of
-Humboldt--Universit"at zu Berlin. A popular approach to write a thesis or a
-paper is the IMRAD method (Introduction, Methods, Results and Discussion). This
-approach is not mandatory! You can find more information about formal
-requirements in the booklet `Hinweise zur Gestaltung der Ã¤uÃŸeren Form von
-Diplomarbeiten' which is available in the office of studies.
+This master's thesis was written in the context of climate protection through the energy transition and with regard to the threat to people and the environment from the consequences of climate change. The initial question here is how can the temperature increase be limited to 2 \(^\circ\)C above the pre-industrial level, as formulated by the Intergovernmental Panel on Climate Change (IPCC). There is consensus on the assumption that energy from wind plays and will continue to play a decisive role in avoiding fossil fuels and thus CO\textsubscript{2} emissions. This was the reason to examine the potential of wind power in Rhineland-Palatinate from 2021 to 2030 and to critically question the expansion goals and the climate protection goals of 2030.
 
-The abstract should not be longer than a paragraph of around 10-15 lines (or
-about 150 words). The abstract should contain a concise description of the
-econometric/economic problem you analyze and of your results. This allows the
-busy reader to obtain quickly a clear idea of the thesis content.
+The central result of this work is that with a consistent and substantial expansion of wind power, an existing number of 2,500 wind power plants can be realized in Rhineland-Palatinate. This stock can contribute a quantity of 22 TWh to the total electricity demand and thus also make a substantial contribution to the achievement of the climate protection goals. It is even realistic, e.g.~by designating additional areas, to increase electricity generation from wind power.
 
 % ----------------------------------------------------------
 % --- frontmatter: List of Abbreviations (not mandatory) ---
@@ -247,7 +239,7 @@ busy reader to obtain quickly a clear idea of the thesis content.
     GHG & & Greenhouse gas \\  
     RLP     & &  Rhineland-Palatinate \\
     TWh     & &  Tera Watt hours  \\
-    WT      & &  Wind turbine  \\
+    WT(s)      & &  Wind turbine(s)  \\
     MWh     & &  Mega Watt hours \\
     kWh     & &  Kilo Watt hours \\
     GIS     & &  Geographic Information System \\
@@ -297,6 +289,8 @@ Similarly to the Federal law there is the State Climate Protection Act (Landeskl
 Whether on a global, national or a local scale it is clear that a cornerstone of the transition of our society to a ecological sustainable form is the change of our fossil fuel based economy to a economy that is powered by renewable energies. Thus, the energy transition is regarded as the main focus of the strategy to climate neutrality and RLP wants to play a pioneering role in the implementation of the energy transition . In addition to energy from the sun, water and biomass, two thirds of the electricity generated in 2030 should come from wind power and is therefore the subject of the research presented in this master thesis {[}\protect\hyperlink{ref-LandesregierungRheinlandPfalz.2021}{8}{]}. This study was carried out on behalf of the state-owned Energy Agency of Rhineland-Palatinate {[}\protect\hyperlink{ref-EnergieagenturRheinlandPfalz.2021}{9}{]} within the project ``Municipal Greenhouse Gas Accounting and Regional Climate Protection Portals in Rhineland-Palatinate'' {[}\protect\hyperlink{ref-KomBiReK.2021}{10}{]}, which is funded by the European Regional Development Fund {[}\protect\hyperlink{ref-EuropeanRegionalDevelopmentFund.2021}{11}{]} and the state of RLP. This project supports the creation of municipal climate protection measures in order to mitigate CO\textsubscript{2} emissions and achieve the climate protection goals of the municipalities and the state and thereby increases regional added value, ensures sustainability and thus improves the quality of life of all citizens.
 
 As of 2017, the gross electricity generation in RLP from wind power was 5.9 TWh, which was 29\% of the total 20.7 TWh of electricity generated in the state {[}\protect\hyperlink{ref-Lehnert.2020}{12}{]}. By 2019, the electricity generated from wind turbines (WTs) has already increased to more than 6.7 TWh {[}\protect\hyperlink{ref-AmprionGmbH.2019}{13}{]}. It can be assumed that, on the one hand, electricity consumption will increase in the future due to the electrification of transport and domestic heating, and on the other hand, efficiency measures can also lead to a lower energy consumption. Whereas, some past studies and scenarios estimated a slight increase and others a slight decrease but on average a relatively unchanged electricity consumption in Germany, which is currently about 560 TWh {[}\protect\hyperlink{ref-NormanGerhardt.2015}{14}{]}, the newest press release of the Federal Ministry for Economic Affairs and Energy makes it very clear. An increase to a previous prediction of about 12\% from 580 to 655 TWh is expected {[}\protect\hyperlink{ref-AndreasMertens.13.07.2021}{15}{]}, and further studies will follow in the autumn of 2021. If RLP wants to become independent of electricity imports and achieve the self-set goals of covering two thirds of the electricity consumption from wind power with an estimated electricity demand of 33 TWh in 2030, electricity supply from WTs must be about 22 TWh per year. There are two ways of increasing the amount of electricity generated by wind energy. Either areas can be used that have already been identified as suitable for WTs but have not yet been built on, or else, existing old systems whose absolute electricity feed-in quantity is low, can be replaced by new, taller and more efficient systems through so-called ``repowering.''
+
+\newpage
 
 The aim of this work is to develop a method for calculating the wind energy potential and its related area consumption at a state level regarding the two described options. The objective is then to evaluate the desired expansion and emission reduction targets up to 2030 and assess weather they are realistic and in line with the current distance rules and approval procedures and give recommendations for policy makers. Accordingly, the central questions of this work are:
 \begin{enumerate}
@@ -406,14 +400,12 @@ The expansion of wind power in Germany has slowed in recent years as can be seen
 
 \caption{Development of expansion and dismantling of WTs in Germany from 1995 until 2021 {[}\protect\hyperlink{ref-DeutscheWindGuard.2021}{25}{]}.}\label{fig:winddevelopment}
 \end{figure}
-As seen in figure \ref{fig:winddevelopment}, in the first half of 2021 the first half of 2021, 240 new WTs with a rated capacity of 971 MW were installed in Germany. This corresponds to a 62 \% increase if compared to the first six months of the previous year. In the same period, 135 WTs with an installed capacity of 140 MW were shut down. The net expansion in the first half of 2021 is consequently 831 MW. The cumulative installed capacity increased by 1.5 \% to 55,772 MW as of June 30, 2021. A total of 29,715 onshore WTs are installed in Germany that provide this capacity. To achieve the expansion target for 2022 yet another net addition of around 1.2 GW is required. The target for 2030, which originates from the EEG 2021 is 71,000 MW. This number is not yet adapted by the expected increase in electricity demand in 2030. The development of onshore WTs regarding expansion and dismantling according to Deutsche WindGuard is shown in figure \ref{fig:winddevelopment}. Another important player in the onshore wind energy industry is the Bundesverband Windenergie e.V. (BWE) as a member of the Federal Renewable Energy Association (BEE). The BWE represents the entire wind energy industry with its more than 20,000 members. Together, the supplier and manufacturing industry anchored in German mechanical engineering, project planners, specialized lawyers, the financial sector and companies from the fields of logistics, construction, service / maintenance and storage technologies, electricity traders, network operators and energy providers ensure that the BWE is available to all questions relating to wind energy and is the first point of contact for politics and business, science and the media.
-
-The production of WTs can usually be realized within a few months with relatively little material and energy consumption. After a short period of operation, a WT has already ``brought in'' the energy that was required for its production. This period is known as the energy returned on energy invested (ERoEI) or, more simply, energy return on investment (EROI) and is for WTs on land between three and seven months. Offshore systems with an even higher rated capacity need four to five months to recycle the energy used in production and installation. Due to this relatively short energetic amortization, every operating hour delivers ``net'' clean electricity - for an average of at least 20 years {[}\protect\hyperlink{ref-PriyanaRazdan.2019}{26}{]}. In comparison, photovoltaic systems need between one and four years for this energetic amortization. A wind power plant can therefore provide 40 to 70 times more energy during its entire life cycle than was expended for its manufacture, use and disposal, depending on the design. If this amount of electricity replaces fossil fuels, the wind power plant can credit itself with the avoided emissions from coal and gas power plants. Of course WTs are not entirely free of emmissions but the whole amount of CO\textsubscript{2} equivalent of a WT is about 10.6 g/kWh according to Memmler et al. {[}\protect\hyperlink{ref-M.MemmlerDr.T.LaufS.Schneider.2017}{27}{]} and about 400 g/kWh in the federal electricity mix {[}\protect\hyperlink{ref-Umweltbundesamt.2021}{28}{]}. After dismantling the old WT, a new one can be built in the same location or at least in the same area. This is referred to as repowering. The development of repowering processes according to Deutsche WindGuard is shown in figure \ref{fig:repowering}.
+As seen in figure \ref{fig:winddevelopment}, in the first half of 2021 the first half of 2021, 240 new WTs with a rated capacity of 971 MW were installed in Germany. This corresponds to a 62 \% increase if compared to the first six months of the previous year. In the same period, 135 WTs with an installed capacity of 140 MW were shut down. The net expansion in the first half of 2021 is consequently 831 MW. The cumulative installed capacity increased by 1.5 \% to 55,772 MW as of June 30, 2021. A total of 29,715 onshore WTs are installed in Germany that provide this capacity. To achieve the expansion target for 2022 yet another net addition of around 1.2 GW is required. The target for 2030, which originates from the EEG 2021 is 71,000 MW. This number is not yet adapted by the expected increase in electricity demand in 2030. The development of onshore WTs regarding expansion and dismantling according to Deutsche WindGuard is shown in figure \ref{fig:winddevelopment}. Another important player in the onshore wind energy industry is the Bundesverband Windenergie e.V. (BWE) as a member of the Federal Renewable Energy Association (BEE). The BWE represents the entire wind energy industry with its more than 20,000 members. Together, the supplier and manufacturing industry anchored in German mechanical engineering, project planners, specialized lawyers, the financial sector and companies from the fields of logistics, construction, service / maintenance and storage technologies, electricity traders, network operators and energy providers ensure that the BWE is available to all questions relating to wind energy and is the first point of contact for politics and business, science and the media. The production of WTs can usually be realized within a few months with relatively little material and energy consumption. After a short period of operation, a WT has already ``brought in'' the energy that was required for its production. This period is known as the energy returned on energy invested (ERoEI) or, more simply, energy return on investment (EROI) and is for WTs on land between three and seven months. Offshore systems with an even higher rated capacity need four to five months to recycle the energy used in production and installation. Due to this relatively short energetic amortization, every operating hour delivers ``net'' clean electricity - for an average of at least 20 years {[}\protect\hyperlink{ref-PriyanaRazdan.2019}{26}{]}. In comparison, photovoltaic systems need between one and four years for this energetic amortization. A wind power plant can therefore provide 40 to 70 times more energy during its entire life cycle than was expended for its manufacture, use and disposal, depending on the design. If this amount of electricity replaces fossil fuels, the wind power plant can credit itself with the avoided emissions from coal and gas power plants. Of course WTs are not entirely free of emmissions but the whole amount of CO\textsubscript{2} equivalent of a WT is about 10.6 g/kWh according to Memmler et al. {[}\protect\hyperlink{ref-M.MemmlerDr.T.LaufS.Schneider.2017}{27}{]} and about 400 g/kWh in the federal electricity mix {[}\protect\hyperlink{ref-Umweltbundesamt.2021}{28}{]}. After dismantling the old WT, a new one can be built in the same location or at least in the same area. This is referred to as repowering. The development of repowering processes according to Deutsche WindGuard is shown in figure \ref{fig:repowering}.
 
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=1\linewidth]{figures/repowering} 
+{\centering \includegraphics[width=1\linewidth,height=0.35\textheight]{figures/repowering} 
 
 }
 
@@ -424,7 +416,7 @@ The electricity generation from wind energy in RLP can be traced by using data f
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.8\linewidth]{figures/V162} 
+{\centering \includegraphics[width=1\linewidth,height=0.33\textheight]{figures/V162} 
 
 }
 
@@ -464,8 +456,6 @@ The 2008 version of the State Development Program IV (Landesentwicklungsprogramm
 
 \textbf{Minimum distance to areas with residential use}. Required minimum distance from wind turbines of 1,000 meters to pure, general and special residential areas as well as to villages, mixed and core areas and a minimum distance of at least 1,100 meters for systems with a total height of more than 200 meters (Z 163 h). Falling short of the distances is only permitted in the case of the particularly desired repowering of old systems (Z 163 i).
 
-.
-
 \hypertarget{regional-level}{%
 \subsubsection{Regional level}\label{regional-level}}
 
@@ -486,9 +476,22 @@ The approval of wind turbines takes place in the approval process according to t
 \hypertarget{energy-policy-program}{%
 \subsection{Energy policy program}\label{energy-policy-program}}
 
-In the newly formed coalition agreement of the government of the federal state of RLP from 2021-2026, the goal of 100 \% renewable energies in the electricity mix by 2030 is reaffirmed and stated: {[}\ldots{]} ``We will vigorously expand wind power and solar energy in order to double the installed capacity for wind power (\ldots) by 2030.'' . ''This means the net expansion of 500 megawatts of photovoltaics and \textbf{500 megawatts of wind power per year}. In addition, the goal of 100 \% renewable energies in the electricity mix should be anchored in the Climate Protection Act. It is further stated that:
-``We want to abandon the rigid concentration offer in State Development Plan IV (Z163g), but continue to strive to establish larger wind farms with several systems. With repowering, the sum of the output of the new systems must at least reach the sum of the output value of the old systems to be replaced, or better. This enables a reduction in the number of systems at a location, possibly also in the form of a single system. We want to continue to work with fixed distance rules for new systems and when repowering existing systems. In the future, a minimum distance of 900 meters should apply to new systems. When it comes to repowering, we work with a 20\% reduction in the distance. In this way, we want to avoid having to give up accepted locations. In the future, the distance should be measured from the center of the mast base. We adhere to the regulation in the State Development Plan IV (Z.163h) that the minimum distance to pure, general and special residential areas, village, mixed and core areas must be observed. The rule-exception principle applies to us for wind turbines in the core zones of nature parks. The core zones are generally excluded for wind turbines. A case-by-case examination should be possible where the protection goal is not significantly disrupted. Our medium-term goal within this legislative period is to review the nature conservation core zones and to adapt the associated ordinance. We want to check whether we can generally go the way of a liberation in the case of pre-polluted areas (railway lines, motorways, conversion areas) in the area of nature parks'' {[}\protect\hyperlink{ref-SPD.2021}{41}{]}.
-
+In the newly formed coalition agreement of the government of the federal state of RLP from 2021-2026, the goal of 100 \% renewable energies in the electricity mix by 2030 is reaffirmed and stated: {[}\ldots{]} ``We will vigorously expand wind power and solar energy in order to double the installed capacity for wind power (\ldots) by 2030.'' . ''This means the net expansion of 500 megawatts of photovoltaics and \textbf{500 megawatts of wind power per year}. In addition, the goal of 100 \% renewable energies in the electricity mix should be anchored in the Climate Protection Act". It is further stated that:
+\begin{itemize}
+\tightlist
+\item
+  The rigid concentration offer in the State Development Plan IV should be abandoned, while continue to strive to establish larger wind parks
+\item
+  The sum of the rated capacity after a repowering must at least reach the sum of the output that was generated by the old system, which should nonetheless enable to reduce the number of WTs in one location
+\item
+  The working with fixed distances rules which should be 900 m for newly approved WTs a 20 \% reduction for repowering systems, should continue.
+\item
+  The regulation in the State Development Plan IV (Z.163h) that the minimum distance to pure, general and special residential areas, village, mixed and core areas must be observed. The rule-exception principle applies to WTs in the core zones of nature parks. The core zones are generally excluded for WTs. A case-by-case examination should be possible where the protection goal is not significantly disrupted.
+\item
+  The medium-term goal within this legislative period is to review the nature conservation core zones and to adapt the associated ordinance.
+\item
+  It should be checked whether pre-polluted areas (railway lines, motorways, conversion areas) in the area of nature parks can be freely built upon {[}\protect\hyperlink{ref-SPD.2021}{41}{]}.
+\end{itemize}
 \hypertarget{climate-protection-concept-rlp}{%
 \subsection{Climate protection concept RLP}\label{climate-protection-concept-rlp}}
 
@@ -525,6 +528,8 @@ The Ministry of the Environment, Energy, Food and Forests of RLP firstly publish
   Development of framework conditions, information and advice with regard to new business models, such as Power Purchase Agreements (PPA), longer-term electricity supply contracts between system operators and electricity consumers (e.g.~industry or energy supply companies), in particular as an option for the continued operation of wind turbines with ending EEG remuneration and as an alternative business model for EEG remuneration for new systems. It is also important to adapt the EEG to abolish the EEG surcharge on self-supply and direct supply with wind energy electricity (not EEG-remunerated) by the federal government.
   {[}\protect\hyperlink{ref-MinisteriumfurUmweltEnergieErnahrungundForsten.2020}{43}{]}
 \end{itemize}
+\newpage
+
 \hypertarget{physical-basics}{%
 \subsection{Physical basics}\label{physical-basics}}
 
@@ -546,6 +551,8 @@ In Formula 3 it becomes clear that the wind speed is the determining factor for 
 \begin{equation}
 \frac{1}{2}\; \rho v^3\;=\;\frac{1}{2}\;1.3 kg/m^3\; *\; (6 m/s)^3\;=\;140\; W/m^2\;\;\; [1\; \frac{kg\, m^2}{s^3} = 1\; W]
 \end{equation}
+\newpage
+
 The curve of power per m\textsuperscript{2} in relation to the wind speed is also shown in figure \ref{fig:powerofwind}. Of course, not all the wind's power can be converted and there are further losses when converting kinetic energy into electrical energy in the generator.
 \begin{figure}
 
@@ -582,13 +589,15 @@ For further explanation of the technical development and the calculation method,
 \subsection{Technical concepts and development}\label{technical-concepts-and-development}}
 
 The study of DWG examines the development of full-load-hours and thus the wind energy potential in Germany and is divided into the sub-areas Schleswig-Holstein (SH), north (Norden), centre (Mitte) and south (Süden) {[}\protect\hyperlink{ref-RasmusBorrmannDr.KnudRehfeldtDr.DennisKruse.2020}{49}{]}. RLP is part of the southern region. The full-load-hours are a measure of the degree of utilization of a power generation plant and denote the time that a plant would have to be operated at nominal load in order to achieve the same power production as it has achieved over the entire reference period with fluctuating generation capacity. The full-load-hours per year are calculated from the quotient of the annual energy yield and the nominal output also called as rated capacity, which means the gain in information is limited. However, knowing the average full-load-hours of all wind turbines and their development is of great importance, as it establishes the connection between installed power and expected energy yield within a certain area. For a forward-looking political control of the future share of wind energy in the energy transition, an assumption for the full-load-hours to be expected in the future is necessary. The aim of the presented study is to make an assessment of the future development of the full-load-hours of wind turbines on land. Furthermore, it should be estimated what total energy yield is possible with the expected system technology on all designated areas. The development of the full-load-hours in different parts of Germany can be seen in figure \ref{fig:flh}.
+
+
 \begin{figure}[H]
 
 {\centering \includegraphics[width=1\linewidth]{figures/DWG/DWG_Volllaststunden} 
 
 }
 
-\caption{Development and forecast of the mean full-load-hours (in h/a) for WTs installed in Germany. Figure taken from Deutsche WindGuard 2020.}\label{fig:flh}
+\caption{Development and forecast of the mean full-load-hours (in h/a) for WTs installed in Germany. Figure taken from Deutsche WindGuard 2020 {[}\protect\hyperlink{ref-RasmusBorrmannDr.KnudRehfeldtDr.DennisKruse.2020}{49}{]}.}\label{fig:flh}
 \end{figure}
 The study of DWG suggests that the wind energy potential, i.e., the theoretical electricity yield of a wind turbine for future systems, can be calculated using the following formula:
 \[
@@ -601,7 +610,7 @@ The capacity is the installed nominal output, also called rated capacity of the 
 
 }
 
-\caption{Development and forecast of the mean rated capacity (in kW) for Wind turbines installed in Germany. Figure taken from Deutsche WindGuard 2020.}\label{fig:capacity}
+\caption{Development and forecast of the mean rated capacity (in kW) for Wind turbines installed in Germany. Figure taken from Deutsche WindGuard 2020 {[}\protect\hyperlink{ref-RasmusBorrmannDr.KnudRehfeldtDr.DennisKruse.2020}{49}{]}.}\label{fig:capacity}
 \end{figure}
 With a fixed nominal output, a high full-load hourly value is also associated with a high energy yield. For example, the full load hours achieved by a WT in different years can be compared well with one another in order to make a statement about the electricity yield for a year. However, if two WTs have the same hub height and the same rotor diameter, but a different rated capacity, the less powerful WT, i.e., the WT with the lower specific rated capacity, will achieve more full-load-hours but a lower annual energy yield at the same wind speeds. The full-load-hourly value should therefore always be considered and evaluated in connection with the energy yield. The development of the rotor diameter and hub height is shown in figure \ref{fig:rotor} and \ref{fig:nabe}.
 \begin{figure}
@@ -610,7 +619,7 @@ With a fixed nominal output, a high full-load hourly value is also associated wi
 
 }
 
-\caption{Development and forecast of the mean rotor diameter (in m) for WTs installed in Germany. Figure taken from Deutsche WindGuard 2020}\label{fig:rotor}
+\caption{Development and forecast of the mean rotor diameter (in m) for WTs installed in Germany. Figure taken from Deutsche WindGuard 2020 {[}\protect\hyperlink{ref-RasmusBorrmannDr.KnudRehfeldtDr.DennisKruse.2020}{49}{]}.}\label{fig:rotor}
 \end{figure}
 \begin{figure}[H]
 
@@ -618,7 +627,7 @@ With a fixed nominal output, a high full-load hourly value is also associated wi
 
 }
 
-\caption{Development and forecast of mean hub hight (in m) for WTs installed in Germany. Figure taken from Deutsche WindGuard 2020.}\label{fig:nabe}
+\caption{Development and forecast of mean hub hight (in m) for WTs installed in Germany. Figure taken from Deutsche WindGuard 2020 {[}\protect\hyperlink{ref-RasmusBorrmannDr.KnudRehfeldtDr.DennisKruse.2020}{49}{]}.}\label{fig:nabe}
 \end{figure}
 The specific nominal power represents the relationship between the nominal power of the turbine and the swept rotor area. The specific nominal power of the turbines has tended to decrease since 2012, which is due to the increasing rotor diameters (figure \ref{fig:rotor}). Systems with a lower specific nominal output, i.e., comparatively larger rotors, have more full-load-hours under the same wind conditions or achieve their nominal output at lower wind speeds and are therefore also referred to as low-wind systems. If two systems are compared with the same rotor diameter, the system with a higher absolute and therefore also specific nominal output is always more expensive and is therefore only suitable for comparatively higher wind speeds. Due to the prevailing conditions in RLP, low-wind turbines with a lower specific nominal output are more important in repowering than the increase in absolute turbine output. However, the value of the specific rated capacity in southern Germany is currently stagnating at approx. 270 W/m\textsuperscript{2} as shown in figure \ref{fig:spec}. Because the full-load-hours depend largely on the rated capacity and the wind speed in addition to technical influences, they are a useful indicator for calculating the expected electricity yield if there is no data on electricity yields from existing systems and only technical details and site conditions are available. The mean value of the full-load-hours of all wind turbines, e.g., for a federal state, can be used as a parameter to infer the future electricity yield from the installed rated capacity {[}\protect\hyperlink{ref-RasmusBorrmannDr.KnudRehfeldtDr.DennisKruse.2020}{49}{]}.
 \begin{figure}[H]
@@ -627,12 +636,12 @@ The specific nominal power represents the relationship between the nominal power
 
 }
 
-\caption{Development and forecast of the mean specific rated capacity (in W/m²) for WTs installed in Germany. Figure taken from Deutsche WindGuard 2020.}\label{fig:spec}
+\caption{Development and forecast of the mean specific rated capacity (in W/m²) for WTs installed in Germany. Figure taken from Deutsche WindGuard 2020 {[}\protect\hyperlink{ref-RasmusBorrmannDr.KnudRehfeldtDr.DennisKruse.2020}{49}{]}.}\label{fig:spec}
 \end{figure}
 \hypertarget{ruxe9sumuxe9}{%
 \subsection{Résumé}\label{ruxe9sumuxe9}}
 
-This chapter will shortly summarize the main trends of development, that area important regarding onshore WTs and in relation to the own calculations and findings. The study of DWG shows how the technology of onshore wind turbines has continued to develop since 2000. A clear trend for an increase in the average rated capacity and the average rotor diameter of the newly commissioned systems can be seen. The mean total height of the turbines is also increasing, although this increase has been due to the increase in the mean rotor diameter for some years while the height of the lower blade tip remains the same. This also leads to an increase in the mean hub height. It is assumed that these trends will continue over the next ten years. A look at the configuration of the latest system models from different manufacturers supports this thesis {[}\protect\hyperlink{ref-VestasWindSystemsAS.2019}{33}{]}. The development of offshore wind turbines suggests that even with a rotor diameter of 170 m and a nominal output of 6.6 MW no end of the system scaling is to be expected, where significantly larger systems are already available. However, the requirements regarding the construction are clearly different and the wind speeds at sea and thus the rotor diameter are of course not easy to transfer. In order to calculate the electricity yield of future WTs in RLP modern data processing with R is used and in the following section the analysis of the master and movement data from Amprion of 2019 for electricity yield, nominal output and full-load-hours is described. Additionally the area consumption of WTs in RLP is being assessed using the market master data register.
+This chapter will shortly summarize the main trends of development, that area important regarding onshore WTs and in relation to the own calculations and findings. The study of DWG shows how the technology of onshore wind turbines has continued to develop since 2000. A clear trend for an increase in the average rated capacity and the average rotor diameter of the newly commissioned systems can be seen. The mean total height of the turbines is also increasing, although this increase has been due to the increase in the mean rotor diameter for some years while the height of the lower blade tip remains the same. This also leads to an increase in the mean hub height. It is assumed that these trends will continue over the next ten years. A look at the configuration of the latest system models from different manufacturers supports this thesis {[}\protect\hyperlink{ref-VestasWindSystemsAS.2019}{33}{]}. The development of offshore wind turbines suggests that even with a rotor diameter of 170 m and a nominal output of 6.6 MW no end of the system scaling is to be expected, where significantly larger systems are already available. However, the requirements regarding the construction are clearly different and the wind speeds at sea and thus the rotor diameter are of course not easy to transfer. In order to calculate the wind energy potential specifically for RLP in the context of climate change as described earlier the methodology is partly adopted from the study of the DWG. Modern data processing with R is used to estimate the electricity yield of future WTs in RLP. The following section therefore describes the own methodology of the analysis of the master and movement data from Amprion of 2012-2019. Additionally the area consumption of WTs in RLP is being assessed using the market master data register.
 
 \newpage
 
@@ -644,7 +653,7 @@ This chapter will shortly summarize the main trends of development, that area im
 
 Reproducibility or reproducible research is a major principle of reliable scientific methodology and is becoming increasingly popular and common practice with advancing computer technology, open source programming languages and fast self-developed statistical analysis. For the findings of a study to be found reproducible means that results obtained by an experiment or an observational study or in a statistical analysis of a data set should be achieved again with a high degree of reliability when the study is replicated. For the preparation and the analysis of the data included in this thesis, ``R'' which is an open source programming language and environment for statistical computing version 4.0.5 (2021-03-31) -- ``Shake and Throw'' and RStudio Version 1.4.1106, which is the associated integrated development environment (IDE), is used {[}\protect\hyperlink{ref-R}{50}{]}. Extensions of the actual language are called packages of those the following are in use: rio, data.table, tidyverse, magrittr, compare, leaflet, sp, raster, rgdal, htmltools, htmlwidgets, tmaptools, maptools, raster, sf, tmap, spatstat, rgeos and diagrammR. The data handling is mostly done with base R and deplyr from the tidyverse package collection. Deplyr is a grammar of data manipulation, providing a consistent set of verbs that help performing common data manipulation challenges {[}\protect\hyperlink{ref-HadleyWickham.2021}{51}{]}. All the data preparation, filtering, merging and formatting in this work was performed using base R or dplyr.
 
-For the purpose of education and reproducibility, which are prerequisites for this study, the whole work was written with the programming language R. To be more precise the statistical analysis was done in R and the thesis itself was written in R Markdown. In essence R Markdown stands on the shoulders of knitr, which is an R package and translates all sorts of code, mainly the R code itself into markdown code {[}\protect\hyperlink{ref-YihuiXieJ.J.AllaireGarrettGrolemund.2021}{52}{]}. Pandoc, which is a free and open-source document converter, then translates this code into an output format such as HTML, PDF or Word. In this case the R Markdown code is translated first into a LaTeX form which then is further transferred into a PDF output. Markdown itself is a markup language that is widely used in blogging, instant messaging, online forums and readme files. LaTeX on the other hand is a software system that is used for document preparation and is also sometimes referred to as literate programming because the user types plain text and code elements for specifying the formatting of the document in contrast to the ``what you see is what you get'' and drag and drop principle of word processors like Microsoft Word or Libre Office {[}\protect\hyperlink{ref-LaTeX.2021}{53}{]}. The formatting and layout of this master thesis comes from a package of the Humboldt-University of Berlin (HU) which offers a template for a thesis according to the regulations of the HU. This package is related to the bookdown package, which is a template structure for writing books, ebooks, manuscripts, HTML documents and more. Due to exhaustive code only the line chart outputs are shown in this work as well as some important pieces of code in the appendix. The full documentation, especially the preparation steps can be found on \url{https://github.com/EliasCuadra/master-thesis-repowering} with explanatory README.md files that contain descriptions of variables and processing steps. Git, which is a version control software, was used initially to create several versions of the same chunk of code and ultimately to create a backup in the cloud. The reader is requested to have a look since quite a significant part of the time that was spend doing this work was making it reproducible despite the fact that the results itself are not world-shattering.
+For the purpose of education and reproducibility, which are prerequisites for this study, the whole work was written with the programming language R. To be more precise the statistical analysis was done in R and the thesis itself was written in R Markdown. In essence R Markdown stands on the shoulders of knitr, which is an R package and translates all sorts of code, mainly the R code itself into markdown code {[}\protect\hyperlink{ref-YihuiXieJ.J.AllaireGarrettGrolemund.2021}{52}{]}. Pandoc, which is a free and open-source document converter, then translates this code into an output format such as HTML, PDF or Word. In this case the R Markdown code is translated first into a LaTeX form which then is further transferred into a PDF output. Markdown itself is a markup language that is widely used in blogging, instant messaging, online forums and readme files. LaTeX on the other hand is a software system that is used for document preparation and is also sometimes referred to as literate programming because the user types plain text and code elements for specifying the formatting of the document in contrast to the ``what you see is what you get'' and drag and drop principle of word processors like Microsoft Word or Libre Office {[}\protect\hyperlink{ref-LaTeX.2021}{53}{]}. The formatting and layout of this master thesis comes from a package of the Humboldt-University of Berlin (HU) which offers a template for a thesis according to the regulations of HU. This package is related to the bookdown package, which is a template structure for writing books, ebooks, manuscripts, HTML documents and more. Due to exhaustive code only the line chart outputs are shown in this work as well as some important pieces of code in the appendix. The full documentation, especially the preparation steps can be found on \url{https://github.com/EliasCuadra/master-thesis-repowering} with explanatory README.md files that contain descriptions of variables and processing steps. Git, which is a version control software, was used initially to create several versions of the same chunk of code and ultimately to create a backup in the cloud. When this work is to be completely comprehended and reproduced or the methodology should be applied in another context or is to be adopted in another state it is definitely recommended to look into the GitHub folder since the majority of the time for this work was actually spend creating all the code and files needed for the analysis, which is not necessarily reflected in the written thesis.
 
 \hypertarget{regression-analysis}{%
 \subsection{Regression analysis}\label{regression-analysis}}
@@ -711,8 +720,8 @@ The market master data register (Marktstammdatenregister - MaStR) contains data 
 \href{https://www.marktstammdatenregister.de/MaStR/Einheit/Einheiten/OeffentlicheEinheitenuebersicht}{https://www.marktstammdatenregister.de/MaStR/Einheit/Einheiten/
 OeffentlicheEinheitenuebersicht}
 
-The electricity units with the generation type ``wind'' for Rhineland-Palatinate that are in operation are extracted on the 23th of July 2021 as MaStR.csv and stored in this project in data/MaStR\_amprion. This data set counts 1,752 WTs with 50 variables of which only 8 are kept: the rated capacity, the commissioning date, the community key, the coordinates (CRS: WGS84), hub height, rotor diameter and EEG system key. It does not contain the amount of electricity fed into the public grid. Thus, to calculate the electricity generation per area the data of the MaStR and Amprion needs to be joined together according to the EEG system key. The process of preparing the MaStR data and joining it with the data from Amprion of 2019 is shown as a flow chart in figure \ref{fig:merge}. The R code is stored as MaStR\_amprion.R in the MaStR\_amprion folder and can be seen in the Appendix as XXX.
-\begin{figure}
+The electricity units with the generation type ``wind'' for Rhineland-Palatinate that are in operation are extracted on the 23th of July 2021 as MaStR.csv and stored in this project in data/MaStR\_amprion. This data set counts 1,752 WTs with 50 variables of which only 8 are kept: the rated capacity, the commissioning date, the community key, the coordinates (CRS: WGS84), hub height, rotor diameter and EEG system key. It does not contain the amount of electricity fed into the public grid. Thus, to calculate the electricity generation per area the data of the MaStR and Amprion needs to be joined together according to the EEG system key. The process of preparing the MaStR data and joining it with the data from Amprion of 2019 is shown as a flow chart in figure \ref{fig:merge}. The R code is stored as MaStR\_amprion.R in the MaStR\_amprion folder.
+\begin{figure}[H]
 
 {\centering \includegraphics[width=0.8\linewidth]{data/MaStR_amprion_join/mergeflow} 
 
