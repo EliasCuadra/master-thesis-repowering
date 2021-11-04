@@ -1,7 +1,7 @@
-\contentsline {section}{Abstract}{4}{section*.2}%
-\contentsline {section}{List of Abbreviations}{5}{section*.3}%
-\contentsline {section}{List of Figures}{7}{section*.4}%
-\contentsline {section}{List of Tables}{8}{section*.5}%
+\contentsline {section}{Abstract}{}{section*.2}%
+\contentsline {section}{List of Abbreviations}{}{section*.3}%
+\contentsline {section}{List of Figures}{}{section*.4}%
+\contentsline {section}{List of Tables}{}{section*.5}%
 \contentsline {section}{\numberline {1}Introduction}{1}{section.1}%
 \contentsline {section}{\numberline {2}State of the art}{4}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Greenhouse gas emissions}{4}{subsection.2.1}%
@@ -16,21 +16,21 @@
 \contentsline {subsection}{\numberline {2.6}Climate protection concept RLP}{15}{subsection.2.6}%
 \contentsline {subsection}{\numberline {2.7}Physical basics}{17}{subsection.2.7}%
 \contentsline {subsection}{\numberline {2.8}Technical concepts and development}{20}{subsection.2.8}%
-\contentsline {subsection}{\numberline {2.9}Résumé}{24}{subsection.2.9}%
-\contentsline {section}{\numberline {3}Materials and Methodology}{25}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Reproducable research and data science with R}{25}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Regression analysis}{26}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Geospatial analysis and area calculation with R}{28}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}Master and Movement data from Amprion}{29}{subsection.3.4}%
-\contentsline {subsection}{\numberline {3.5}Data from the market master data register}{32}{subsection.3.5}%
-\contentsline {section}{\numberline {4}Results}{35}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Electricity yield, rated capacity and full-load-hours in Rhineland-Palatinate}{35}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Repowering potential}{40}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Rotor diameter, hub height and area consumption}{41}{subsection.4.3}%
-\contentsline {section}{\numberline {5}Discussion}{45}{section.5}%
-\contentsline {section}{\numberline {6}Conclusion}{48}{section.6}%
-\contentsline {section}{References}{49}{section*.33}%
-\contentsline {section}{\numberline {A}Appendix}{54}{appendix.A}%
-\contentsline {subsection}{\numberline {A.1}Code chunk 1}{54}{subsection.A.1}%
-\contentsline {subsection}{\numberline {A.2}Code chunk 2}{64}{subsection.A.2}%
-\contentsline {subsection}{\numberline {A.3}Code chunk 3}{67}{subsection.A.3}%
+\contentsline {subsection}{\numberline {2.9}Résumé}{25}{subsection.2.9}%
+\contentsline {section}{\numberline {3}Materials and Methodology}{26}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Reproducable research and data science with R}{26}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Regression analysis}{27}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Geospatial analysis and area calculation with R}{29}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Master and Movement data from Amprion}{30}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Data from the market master data register}{33}{subsection.3.5}%
+\contentsline {section}{\numberline {4}Results}{36}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Electricity yield, rated capacity and full-load-hours in Rhineland-Palatinate}{36}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Repowering potential}{41}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Rotor diameter, hub height and area consumption}{42}{subsection.4.3}%
+\contentsline {section}{\numberline {5}Discussion}{46}{section.5}%
+\contentsline {section}{\numberline {6}Conclusion}{49}{section.6}%
+\contentsline {section}{References}{50}{section*.33}%
+\contentsline {section}{\numberline {A}Appendix}{55}{appendix.A}%
+\contentsline {subsection}{\numberline {A.1}Code chunk 1}{55}{subsection.A.1}%
+\contentsline {subsection}{\numberline {A.2}Code chunk 2}{65}{subsection.A.2}%
+\contentsline {subsection}{\numberline {A.3}Code chunk 3}{68}{subsection.A.3}%

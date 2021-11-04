@@ -18,7 +18,7 @@
     d       & &  Diameter \\
     m$^2$   & &  Square meter \\
     m$^3$   & &  Cubic meter \\
-    DWG     & &  German Wind Guard \\
+    DWG     & &  German WindGuard \\
     CRS     & &  Coordinate Reference System \\
     WGS84   & &  World Geodetic System 1984 \\ 
     

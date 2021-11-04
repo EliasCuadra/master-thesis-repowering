@@ -137,19 +137,19 @@ write.csv(
 commissioning_before2001 <- subset(selection_2019_without_outliers, 
                                    inbetriebnahme < "2000-12-31")
 sum(commissioning_before2001$menge_mwh)
-commissioning_before2005 <- subset(selection_2019_without_outliers, 
+commissioning_before2006 <- subset(selection_2019_without_outliers, 
                                    inbetriebnahme < "2005-12-31")
-commissioning_2001_2005 <- subset(commissioning_before2005, 
+commissioning_2001_2006 <- subset(commissioning_before2006, 
                                   inbetriebnahme > "2000-12-31")
-sum(commissioning_2001_2005$menge_mwh)
+sum(commissioning_2001_2006$menge_mwh)
 
 #write csv
 write.csv(commissioning_before2001,
           "results_of_preparation/commissioning_before_2001.csv")
-write.csv(commissioning_2001_2005,
-          "results_of_preparation/commissioning_2001_2005.csv")
-write.csv(commissioning_before2005,
-          "results_of_preparation/commissioning_before_2005.csv")
+write.csv(commissioning_2001_2006,
+          "results_of_preparation/commissioning_2001_2006.csv")
+write.csv(commissioning_before2006,
+          "results_of_preparation/commissioning_before_2006.csv")
 
 #create flow chart of data preparation
 grViz(diagram = "digraph flowchart {
