@@ -30,7 +30,7 @@
 \contentsline {section}{\numberline {5}Discussion}{46}{section.5}%
 \contentsline {section}{\numberline {6}Conclusion}{49}{section.6}%
 \contentsline {section}{References}{50}{section*.33}%
-\contentsline {section}{\numberline {A}Appendix}{55}{appendix.A}%
-\contentsline {subsection}{\numberline {A.1}Code chunk 1}{55}{subsection.A.1}%
-\contentsline {subsection}{\numberline {A.2}Code chunk 2}{65}{subsection.A.2}%
-\contentsline {subsection}{\numberline {A.3}Code chunk 3}{68}{subsection.A.3}%
+\contentsline {section}{\numberline {A}Appendix}{56}{appendix.A}%
+\contentsline {subsection}{\numberline {A.1}Code chunk 1}{56}{subsection.A.1}%
+\contentsline {subsection}{\numberline {A.2}Code chunk 2}{66}{subsection.A.2}%
+\contentsline {subsection}{\numberline {A.3}Code chunk 3}{69}{subsection.A.3}%
