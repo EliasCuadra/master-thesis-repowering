@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # master-thesis-wind-energy-and-repowering-potential (submitted)
+=======
+# master-thesis-repowering (submitted)
+>>>>>>> 97f4a27a110392eebf67a4d52c7454f50f6633a9
 This is my master thesis about the windenergy and repowering potential in Rhineland-Palatinate.
 The template was taken from the huwiwidown package for the Humbold-University of Berlin. This folder contains the index.Rmd file that specifies all neccessary information and enables to knit all the files together, the LaTeX template.tex file that is used to create the actual output as well as the bookdown.yml file which specifies the order of knighting the different sections.
 
